@@ -13,6 +13,29 @@ add_action( 'wp_enqueue_scripts', 'ml_enqueue_assets' );
 add_action( 'wp_resource_hints', 'ml_resource_hints', 10, 2 );
 
 /**
+ * Cache-busting version for a theme asset, derived from its mtime.
+ *
+ * A hardcoded version leaves the asset URL unchanged after an edit, so
+ * browsers, CDNs and page caches keep serving the previous file. Keying the
+ * query string off filemtime() changes the URL whenever the file does.
+ *
+ * @param string $relative_path Path relative to the theme root, e.g. 'assets/css/site.css'.
+ * @return string
+ */
+function ml_asset_version( $relative_path ) {
+	$file = get_template_directory() . '/' . ltrim( $relative_path, '/' );
+
+	if ( is_readable( $file ) ) {
+		$mtime = filemtime( $file );
+		if ( $mtime ) {
+			return (string) $mtime;
+		}
+	}
+
+	return ML_THEME_VERSION;
+}
+
+/**
  * Enqueue front-end CSS/JS.
  */
 function ml_enqueue_assets() {
@@ -27,13 +50,13 @@ function ml_enqueue_assets() {
 		'ma-lumiere',
 		get_stylesheet_uri(),
 		array(),
-		ML_THEME_VERSION
+		ml_asset_version( 'style.css' )
 	);
 	wp_enqueue_style(
 		'ml-site',
 		ML_THEME_URI . '/assets/css/site.css',
 		array( 'ma-lumiere' ),
-		ML_THEME_VERSION
+		ml_asset_version( 'assets/css/site.css' )
 	);
 
 	// Main behaviour (header, nav, accordion, reveals).
@@ -41,7 +64,7 @@ function ml_enqueue_assets() {
 		'ml-main',
 		ML_THEME_URI . '/assets/js/main.js',
 		array(),
-		ML_THEME_VERSION,
+		ml_asset_version( 'assets/js/main.js' ),
 		array( 'strategy' => 'defer' )
 	);
 
@@ -52,7 +75,7 @@ function ml_enqueue_assets() {
 			'ml-before-after',
 			ML_THEME_URI . '/assets/js/before-after.js',
 			array(),
-			ML_THEME_VERSION,
+			ml_asset_version( 'assets/js/before-after.js' ),
 			array( 'strategy' => 'defer' )
 		);
 	}
@@ -63,7 +86,7 @@ function ml_enqueue_assets() {
 			'ml-contact',
 			ML_THEME_URI . '/assets/js/contact-form.js',
 			array(),
-			ML_THEME_VERSION,
+			ml_asset_version( 'assets/js/contact-form.js' ),
 			array( 'strategy' => 'defer' )
 		);
 		wp_localize_script(

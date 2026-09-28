@@ -143,7 +143,7 @@ function ml_admin_media_assets( $hook ) {
 		return;
 	}
 	wp_enqueue_media();
-	wp_enqueue_script( 'ml-admin-media', ML_THEME_URI . '/assets/js/admin-media.js', array( 'jquery' ), ML_THEME_VERSION, true );
+	wp_enqueue_script( 'ml-admin-media', ML_THEME_URI . '/assets/js/admin-media.js', array( 'jquery' ), ml_asset_version( 'assets/js/admin-media.js' ), true );
 }
 
 /* -----------------------------------------------------------------
