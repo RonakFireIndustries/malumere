@@ -1,2 +1,0 @@
-# Local environment secrets — never commit. Each server keeps its own copy.
-wp-config.php
