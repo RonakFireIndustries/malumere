@@ -20,13 +20,16 @@
 
 // ** Database settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */
-define( 'DB_NAME', 'malumere' );
+// define( 'DB_NAME', 'malumere' ); // development
+define( 'DB_NAME', 'a17590e4_malumere' ); // production
 
 /** Database username */
-define( 'DB_USER', 'root' );
+// define( 'DB_USER', 'root' ); // development
+define( 'DB_USER', 'a17590e4_root' ); // production
 
 /** Database password */
-define( 'DB_PASSWORD', '' );
+// define( 'DB_PASSWORD', '' ); // development
+define( 'DB_PASSWORD', 'Predator@6565' ); // production
 
 /** Database hostname */
 define( 'DB_HOST', 'localhost' );
