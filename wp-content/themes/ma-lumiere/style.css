@@ -1,0 +1,17 @@
+/*
+Theme Name: Ma Lumière
+Theme URI: https://malumere.clinic/
+Author: Ma Lumière
+Author URI: https://malumere.clinic/
+Description: Luxury editorial theme for Ma Lumière — personalised dermatology and aesthetic care by a single dermatologist. Black, off-white, grey-green and sage palette with a blue accent, elegant serif typography, accessible, responsive and SEO-friendly.
+Version: 1.8.0
+Requires at least: 6.5
+Tested up to: 7.0
+Requires PHP: 8.0
+License: GNU General Public License v2 or later
+License URI: https://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: ma-lumiere
+Tags: custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
+*/
+
+/* All theme styles live in assets/css/site.css (enqueued by inc/enqueue.php). */

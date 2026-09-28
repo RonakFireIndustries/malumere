@@ -1,0 +1,173 @@
+/**
+ * Patient portal — public styles.
+ *
+ * @package MaLumiere\Clinic
+ */
+
+.ml-portal {
+	max-width: 860px;
+	margin: 2rem auto;
+	padding: 1.5rem;
+	background: #fff;
+	border: 1px solid #e3dccd;
+	border-radius: 10px;
+	color: #1d2327;
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+	line-height: 1.55;
+}
+
+.ml-portal__title {
+	margin: 0 0 .5rem;
+	font-size: 1.35rem;
+}
+
+.ml-portal__intro {
+	margin: 0 0 1rem;
+	color: #50575e;
+}
+
+.ml-portal__form p {
+	margin: 0 0 .75rem;
+}
+
+.ml-portal__form label {
+	font-weight: 600;
+	font-size: .9rem;
+}
+
+.ml-portal__form input[type="email"],
+.ml-portal__form input[type="tel"] {
+	width: 100%;
+	max-width: 340px;
+	margin-top: .25rem;
+	padding: .5rem .6rem;
+	border: 1px solid #c9c2b5;
+	border-radius: 6px;
+}
+
+.ml-portal-notice {
+	padding: .7rem .9rem;
+	margin: 0 0 1rem;
+	border-radius: 6px;
+	background: #f8f3ea;
+	border: 1px solid #e3d0b3;
+}
+
+.ml-portal-notice--ok {
+	background: #f0fbf2;
+	border-color: #a6e3b4;
+}
+
+.ml-portal-notice--error {
+	background: #fdf0ef;
+	border-color: #f5b8b4;
+}
+
+.ml-portal-done {
+	margin: 2rem auto;
+	max-width: 600px;
+	text-align: center;
+}
+
+.ml-portal--dashboard .ml-portal__head {
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-start;
+	gap: 1rem;
+	border-bottom: 1px solid #eee8dc;
+	padding-bottom: 1rem;
+	margin-bottom: 1.25rem;
+}
+
+.ml-portal__who {
+	display: flex;
+	flex-direction: column;
+	gap: .15rem;
+}
+
+.ml-portal__uid {
+	font-size: .85rem;
+	color: #646970;
+}
+
+.ml-portal__logout {
+	font-size: .85rem;
+}
+
+.ml-portal__section {
+	margin: 0 0 1.75rem;
+}
+
+.ml-portal__section h3 {
+	margin: 0 0 .6rem;
+	padding-bottom: .3rem;
+	border-bottom: 1px solid #eee8dc;
+}
+
+.ml-portal__dl {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+	gap: .6rem 1.5rem;
+	margin: 0;
+}
+
+.ml-portal__dl div {
+	display: flex;
+	flex-direction: column;
+}
+
+.ml-portal__dl dt {
+	font-size: .78rem;
+	text-transform: uppercase;
+	letter-spacing: .03em;
+	color: #646970;
+}
+
+.ml-portal__dl dd {
+	margin: 0;
+}
+
+.ml-portal__table {
+	width: 100%;
+	border-collapse: collapse;
+	font-size: .9rem;
+}
+
+.ml-portal__table th,
+.ml-portal__table td {
+	text-align: left;
+	padding: .45rem .6rem;
+	border-bottom: 1px solid #eee8dc;
+}
+
+.ml-portal__table thead th {
+	font-size: .78rem;
+	text-transform: uppercase;
+	letter-spacing: .03em;
+	color: #646970;
+}
+
+.ml-portal__pdf {
+	white-space: nowrap;
+	font-weight: 600;
+}
+
+.ml-portal__muted {
+	color: #8c9398;
+	font-size: .8em;
+}
+
+.ml-portal__empty {
+	color: #646970;
+}
+
+.ml-portal__pay {
+	display: flex;
+	align-items: center;
+	gap: .6rem;
+	margin: 1rem 0 0;
+}
+
+.ml-portal__pay-amount {
+	font-weight: 700;
+}

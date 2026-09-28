@@ -1,0 +1,1451 @@
+/**
+ * Ma Lumière Clinic — admin foundation styles.
+ *
+ * Uses the luxury clinic identity on top of WordPress admin defaults.
+ */
+
+.ml-clinic-wrap {
+	max-width: 1200px;
+}
+
+.ml-clinic-header {
+	display: flex;
+	align-items: baseline;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	gap: 8px 24px;
+	margin: 8px 0 24px;
+	padding-bottom: 16px;
+	border-bottom: 1px solid #e7e0d5;
+}
+
+.ml-clinic-title {
+	margin: 0;
+	font-size: 24px;
+	font-weight: 600;
+	color: #2e2a26;
+	letter-spacing: 0.2px;
+}
+
+.ml-clinic-subtitle {
+	margin: 0;
+	color: #8a8379;
+}
+
+.ml-clinic-cards {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+	gap: 16px;
+}
+
+.ml-clinic-card {
+	background: #fffdf9;
+	border: 1px solid #eee6d8;
+	border-radius: 10px;
+	padding: 18px 20px;
+	box-shadow: 0 1px 2px rgba(46, 42, 38, 0.04);
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+}
+
+.ml-clinic-card__label {
+	font-size: 12px;
+	text-transform: uppercase;
+	letter-spacing: 0.6px;
+	color: #9c6a5a;
+}
+
+.ml-clinic-card__value {
+	font-size: 30px;
+	font-weight: 700;
+	line-height: 1;
+	color: #2e2a26;
+	font-variant-numeric: tabular-nums;
+}
+
+.ml-clinic-note {
+	margin-top: 20px;
+	color: #8a8379;
+	font-size: 13px;
+}
+
+.ml-clinic-empty {
+	border: 1px dashed #d9cfbe;
+	border-radius: 10px;
+	padding: 40px 24px;
+	text-align: center;
+	color: #8a8379;
+	background: #fffdf9;
+}
+
+.ml-clinic-table td,
+
+.ml-clinic-table th {
+	padding: 8px 10px;
+	font-size: 13px;
+}
+
+.ml-checkbox {
+	cursor: pointer;
+}
+
+@media (max-width: 600px) {
+	.ml-clinic-cards {
+		grid-template-columns: 1fr 1fr;
+	}
+
+	.ml-clinic-card__value {
+		font-size: 24px;
+	}
+}
+
+/* ---- Patients screens ---- */
+
+.ml-clinic-toolbar {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 8px;
+	align-items: center;
+	margin: 4px 0 16px;
+}
+
+.ml-clinic-search {
+	width: 260px;
+	max-width: 100%;
+}
+
+.ml-clinic-actions {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 8px;
+	align-items: center;
+}
+
+.ml-clinic-list-table th.ml-col-actions,
+.ml-clinic-list-table td.ml-col-actions {
+	white-space: nowrap;
+	width: 1%;
+}
+
+.ml-muted {
+	color: #8a8379;
+}
+
+.ml-badge {
+	display: inline-block;
+	padding: 2px 10px;
+	border-radius: 20px;
+	font-size: 11px;
+	letter-spacing: 0.4px;
+	text-transform: uppercase;
+	font-weight: 600;
+	vertical-align: 2px;
+	margin-left: 6px;
+}
+
+.ml-badge--success {
+	background: #e7f3e8;
+	color: #2e7d32;
+}
+
+.ml-badge--muted {
+	background: #f0f0ef;
+	color: #7b7670;
+}
+
+.ml-clinic-pagination {
+	display: flex;
+	gap: 12px;
+	align-items: center;
+	margin-top: 16px;
+}
+
+.ml-clinic-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+	gap: 20px;
+}
+
+.ml-clinic-panel {
+	background: #fffdf9;
+	border: 1px solid #eee6d8;
+	border-radius: 10px;
+	padding: 4px 24px 20px;
+	box-shadow: 0 1px 2px rgba(46, 42, 38, 0.04);
+}
+
+.ml-clinic-dl {
+	margin: 0;
+}
+
+.ml-clinic-dl > div {
+	display: flex;
+	gap: 12px;
+	border-bottom: 1px solid #f6f0e6;
+	padding: 8px 0;
+}
+
+.ml-clinic-dl dt {
+	width: 40%;
+	color: #8a8379;
+	font-size: 12px;
+	text-transform: uppercase;
+	letter-spacing: 0.4px;
+}
+
+.ml-clinic-dl dd {
+	margin: 0;
+	flex: 1;
+	word-break: break-word;
+}
+
+.ml-clinic-summary {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+	gap: 12px;
+	margin-top: 14px;
+}
+
+.ml-clinic-summary__item {
+	background: #fbf6ef;
+	border: 1px solid #f0e6d6;
+	border-radius: 8px;
+	padding: 12px;
+	display: flex;
+	flex-direction: column;
+	gap: 4px;
+}
+
+.ml-clinic-summary__label {
+	font-size: 11px;
+	text-transform: uppercase;
+	letter-spacing: 0.4px;
+	color: #9c6a5a;
+}
+
+.ml-clinic-summary__value {
+	font-size: 20px;
+	color: #2e2a26;
+	font-variant-numeric: tabular-nums;
+}
+
+.button-link-delete {
+	color: #b32d2e;
+	border-color: #d99595;
+}
+
+.button-link-delete:hover {
+	background: #b32d2e;
+	border-color: #b32d2e;
+	color: #fff;
+}
+
+/* =============================================================
+   Form system
+   Every plugin form is built from these parts so labels, controls,
+   hints, errors and buttons look identical on every screen.
+
+     <form class="ml-form">
+       <section class="ml-form-section">
+         <h2 class="ml-form-section__title">…</h2>
+         <div class="ml-form-grid">
+           <p class="ml-field">
+             <label class="ml-field__label" for="x">Label <span class="ml-field__req">*</span></label>
+             <input id="x" class="ml-control" …>
+             <span class="ml-field__hint">…</span>
+             <span class="ml-field__error">…</span>
+           </p>
+         </div>
+       </section>
+       <p class="ml-form-actions">…</p>
+     </form>
+   ============================================================= */
+
+.ml-form,
+.ml-clinic-form {
+	display: block;
+}
+
+/* --- Section: a titled card grouping related fields --- */
+
+.ml-form-section,
+.ml-settings-section {
+	margin: 0 0 16px;
+	padding: 20px 24px;
+	background: #fffdf9;
+	border: 1px solid #eee6d8;
+	border-radius: 10px;
+	box-shadow: 0 1px 2px rgba(46, 42, 38, 0.04);
+}
+
+.ml-form-section > :first-child,
+.ml-settings-section > :first-child {
+	margin-top: 0;
+}
+
+.ml-form-section > :last-child,
+.ml-settings-section > :last-child {
+	margin-bottom: 0;
+}
+
+.ml-form-section__title,
+.ml-settings-section__title,
+.ml-clinic-section-title {
+	margin: 0 0 4px;
+	padding-bottom: 10px;
+	border-bottom: 1px solid #f0e9dd;
+	font-size: 14px;
+	font-weight: 600;
+	text-transform: uppercase;
+	letter-spacing: 0.6px;
+	color: #6b5a3e;
+}
+
+.ml-form-section__title + .ml-form-grid,
+.ml-settings-section__title + .ml-clinic-form-grid {
+	margin-top: 16px;
+}
+
+.ml-form-section__subtitle {
+	margin: 0 0 12px;
+	color: #8a8379;
+	font-size: 13px;
+}
+
+/* --- Grid: responsive field layout --- */
+
+.ml-form-grid,
+.ml-clinic-form-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+	gap: 0 24px;
+}
+
+/* Compact grid for short controls (status pickers, quantity boxes). */
+.ml-form-grid--tight {
+	grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+}
+
+.ml-form-grid--single {
+	grid-template-columns: 1fr;
+}
+
+/* --- Field: label + control + hint + error --- */
+
+.ml-field,
+.ml-clinic-form-field {
+	display: flex;
+	flex-direction: column;
+	gap: 4px;
+	margin: 0 0 16px;
+	min-width: 0;
+}
+
+.ml-field--wide,
+.ml-clinic-form-field--wide {
+	grid-column: 1 / -1;
+}
+
+.ml-field--half {
+	grid-column: span 1;
+}
+
+.ml-field__label,
+.ml-clinic-form-field label,
+.ml-form-row label {
+	font-weight: 600;
+	font-size: 13px;
+	color: #6b5a3e;
+}
+
+/* Required marker, appended to the label text. */
+.ml-field__req {
+	color: #b32d2e;
+	font-weight: 700;
+}
+
+/* Checkbox/radio rows sit on one line instead of stacking. */
+.ml-field--inline,
+.ml-checkbox {
+	flex-direction: row;
+	align-items: center;
+	gap: 8px;
+}
+
+.ml-field--inline .ml-field__label,
+.ml-checkbox label {
+	font-weight: 400;
+	color: #2e2a26;
+}
+
+.ml-field__hint,
+.ml-hint,
+.ml-clinic-hint {
+	color: #8a8379;
+	font-size: 12px;
+	font-style: normal;
+	line-height: 1.5;
+}
+
+.ml-field__error,
+.ml-error {
+	color: #b32d2e;
+	font-size: 12px;
+	line-height: 1.5;
+}
+
+/* --- Controls: one look for every input type --- */
+
+.ml-form input[type="text"],
+.ml-form input[type="number"],
+.ml-form input[type="date"],
+.ml-form input[type="time"],
+.ml-form input[type="datetime-local"],
+.ml-form input[type="tel"],
+.ml-form input[type="email"],
+.ml-form input[type="url"],
+.ml-form input[type="password"],
+.ml-form input[type="search"],
+.ml-form input[type="file"],
+.ml-form select,
+.ml-form textarea,
+.ml-control,
+.ml-clinic-form input[type="text"],
+.ml-clinic-form input[type="number"],
+.ml-clinic-form input[type="date"],
+.ml-clinic-form input[type="time"],
+.ml-clinic-form input[type="tel"],
+.ml-clinic-form input[type="email"],
+.ml-clinic-form input[type="url"],
+.ml-clinic-form input[type="password"],
+.ml-clinic-form input[type="search"],
+.ml-clinic-form input[type="file"],
+.ml-clinic-form select,
+.ml-clinic-form textarea {
+	width: 100%;
+	max-width: 100%;
+	min-height: 34px;
+	margin: 0;
+	padding: 5px 10px;
+	background: #fff;
+	border: 1px solid #d9d1c2;
+	border-radius: 4px;
+	color: #2e2a26;
+	font-size: 14px;
+	line-height: 1.5;
+	box-shadow: none;
+	transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.ml-form textarea,
+.ml-clinic-form textarea {
+	min-height: 68px;
+	resize: vertical;
+}
+
+/* Core width classes are neutralised so our sizing rules win. */
+.ml-form .regular-text,
+.ml-form .large-text,
+.ml-clinic-form .regular-text,
+.ml-clinic-form .large-text {
+	width: 100%;
+	max-width: 100%;
+}
+
+.ml-form input:focus,
+.ml-form select:focus,
+.ml-form textarea:focus,
+.ml-control:focus,
+.ml-clinic-form input:focus,
+.ml-clinic-form select:focus,
+.ml-clinic-form textarea:focus {
+	border-color: #6b5a3e;
+	box-shadow: 0 0 0 1px #6b5a3e;
+	outline: 2px solid transparent;
+	outline-offset: 0;
+}
+
+.ml-form input:disabled,
+.ml-form select:disabled,
+.ml-form textarea:disabled,
+.ml-form input[readonly],
+.ml-clinic-form input:disabled,
+.ml-clinic-form select:disabled,
+.ml-clinic-form textarea:disabled,
+.ml-clinic-form input[readonly] {
+	background: #f6f3ee;
+	color: #8a8379;
+	cursor: not-allowed;
+}
+
+.ml-form input[type="checkbox"],
+.ml-form input[type="radio"],
+.ml-clinic-form input[type="checkbox"],
+.ml-clinic-form input[type="radio"] {
+	width: auto;
+	min-height: 0;
+	margin: 0 6px 0 0;
+	padding: 0;
+	flex: 0 0 auto;
+}
+
+.ml-form input[aria-invalid="true"],
+.ml-form select[aria-invalid="true"],
+.ml-field__error + input,
+.ml-clinic-form input[aria-invalid="true"],
+.ml-clinic-form select[aria-invalid="true"] {
+	border-color: #b32d2e;
+	box-shadow: 0 0 0 1px #b32d2e;
+}
+
+/* --- Rows: compact horizontal field --- */
+
+.ml-form-row,
+.ml-clinic-form-row {
+	display: grid;
+	grid-template-columns: minmax(140px, 220px) 1fr;
+	align-items: center;
+	gap: 12px;
+	margin: 0 0 12px;
+}
+
+.ml-form-row--stack {
+	grid-template-columns: 1fr;
+	gap: 4px;
+}
+
+/* --- Actions: the submit row --- */
+
+.ml-form-actions,
+.ml-form-actions.submit,
+.ml-clinic-actions,
+.submit {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: 10px;
+	margin: 20px 0 0;
+	padding: 16px 0 0;
+	border-top: 1px solid #f0e9dd;
+}
+
+.ml-form-actions .button,
+.ml-clinic-actions .button,
+.ml-clinic-form .button {
+	min-height: 34px;
+	padding: 0 16px;
+	border-radius: 4px;
+	font-size: 14px;
+	line-height: 32px;
+}
+
+.ml-form-actions .button-primary {
+	background: #9c6a5a;
+	border-color: #9c6a5a;
+	box-shadow: none;
+	color: #fff;
+}
+
+.ml-form-actions .button-primary:hover,
+.ml-form-actions .button-primary:focus {
+	background: #85574a;
+	border-color: #85574a;
+}
+
+/* Secondary/danger variants used by destructive row actions. */
+.ml-form-actions .button-link-delete {
+	color: #b32d2e;
+}
+
+.ml-form-actions__spacer {
+	flex: 1 1 auto;
+}
+
+/* --- Inline form: a single control posted on its own --- */
+
+.ml-form-inline,
+.ml-clinic-inline-form {
+	display: inline-flex;
+	align-items: center;
+	gap: 6px;
+	margin: 0;
+	vertical-align: middle;
+}
+
+.ml-form-inline select,
+.ml-clinic-inline-form select {
+	margin: 0;
+	width: auto;
+	min-width: 120px;
+	max-width: 160px;
+}
+
+/* --- Filter/toolbar form: search and filter controls in a strip --- */
+
+.ml-form-filter,
+.ml-clinic-filter,
+.ml-report-filter {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: flex-end;
+	gap: 10px 12px;
+	margin: 0 0 16px;
+	padding: 12px 16px;
+	background: #fbf9f4;
+	border: 1px solid #eee6d8;
+	border-radius: 8px;
+}
+
+.ml-form-filter .ml-field,
+.ml-clinic-filter .ml-field,
+.ml-report-filter .ml-field {
+	margin: 0;
+	min-width: 150px;
+}
+
+.ml-form-filter input,
+.ml-form-filter select,
+.ml-clinic-filter input,
+.ml-clinic-filter select,
+.ml-report-filter input,
+.ml-report-filter select {
+	min-width: 140px;
+}
+
+/* --- Repeatable item rows (invoice lines, prescription lines) --- */
+
+.ml-form-repeat,
+.ml-clinic-itemsrow,
+.ml-invoice-item {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+	align-items: center;
+	gap: 8px;
+	margin: 0 0 8px;
+	padding: 8px;
+	background: #fbf9f4;
+	border: 1px solid #eee6d8;
+	border-radius: 6px;
+}
+
+.ml-invoice-items {
+	margin: 0 0 12px;
+}
+
+/* Column captions sitting above a repeat grid. */
+.ml-form-repeat__head {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+	gap: 8px;
+	margin: 0 0 6px;
+	font-size: 11px;
+	font-weight: 600;
+	text-transform: uppercase;
+	letter-spacing: 0.5px;
+	color: #8a8379;
+}
+
+/* --- Adjust bar: signed correction in a lot --- */
+
+.ml-clinic-adjust-form {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: flex-end;
+	gap: 12px;
+	padding: 12px;
+	margin: 0 0 16px;
+	background: #fbf9f4;
+	border: 1px solid #e8e0d0;
+	border-radius: 4px;
+}
+
+.ml-clinic-adjust-form .ml-field,
+.ml-clinic-adjust-form .ml-clinic-form-field {
+	margin-bottom: 0;
+}
+
+.ml-clinic-adjust-form input[type="number"],
+.ml-clinic-adjust-form input[type="text"] {
+	width: 120px;
+}
+
+/* --- Collapsible "add new" block --- */
+
+.ml-clinic-add > summary,
+details.ml-clinic-add > summary {
+	cursor: pointer;
+	margin-top: 14px;
+	padding: 10px 16px;
+	background: #fbf9f4;
+	border: 1px solid #eee6d8;
+	border-radius: 8px;
+	font-weight: 600;
+	color: #6b5a3e;
+	list-style: none;
+}
+
+.ml-clinic-add > summary::-webkit-details-marker {
+	display: none;
+}
+
+.ml-clinic-add[open] > summary {
+	margin-bottom: 16px;
+	border-radius: 8px 8px 0 0;
+}
+
+.ml-clinic-add .ml-form,
+.ml-clinic-add .ml-clinic-form {
+	padding: 16px;
+	background: #fff;
+	border: 1px solid #eee6d8;
+	border-top: 0;
+	border-radius: 0 0 8px 8px;
+}
+
+.ml-clinic-add .ml-form textarea,
+.ml-clinic-add .ml-clinic-form textarea {
+	width: 100%;
+}
+
+/* --- Utility layout helpers replacing inline styles --- */
+
+.ml-u-inline {
+	display: inline;
+}
+
+.ml-u-inline-block {
+	display: inline-block;
+}
+
+.ml-u-flex {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 8px;
+	align-items: center;
+}
+
+.ml-u-stack > * + * {
+	margin-top: 12px;
+}
+
+.ml-u-muted {
+	color: #8a8379;
+}
+
+.ml-u-narrow {
+	max-width: 6em;
+}
+
+.ml-u-right {
+	text-align: right;
+}
+
+.ml-u-no-margin {
+	margin: 0;
+}
+
+.ml-u-mt-sm {
+	margin-top: 10px;
+}
+
+.ml-u-mt-md {
+	margin-top: 16px;
+}
+
+.ml-form-table {
+	width: 100%;
+	max-width: 720px;
+}
+
+.ml-form-table th {
+	padding-left: 0;
+}
+
+.ml-form-table th label {
+	font-weight: 600;
+	color: #6b5a3e;
+}
+
+.ml-form-table td input[type="checkbox"] {
+	margin: 0;
+}
+
+.ml-form-table .ml-field__hint {
+	display: block;
+	margin-top: 4px;
+	font-weight: 400;
+	font-size: 12px;
+	color: #8a8379;
+}
+
+.ml-form-table--compact {
+	max-width: 480px;
+}
+
+/* --- Modal forms inherit the same controls --- */
+
+.ml-modal__row label {
+	display: block;
+	font-weight: 600;
+	font-size: 13px;
+	color: #6b5a3e;
+}
+
+.ml-modal__row input[type="text"],
+.ml-modal__row input[type="number"],
+.ml-modal__row input[type="date"],
+.ml-modal__row input[type="time"],
+.ml-modal__row input[type="tel"],
+.ml-modal__row input[type="email"],
+.ml-modal__row input[type="search"],
+.ml-modal__row select,
+.ml-modal__row textarea {
+	width: 100%;
+	min-height: 34px;
+	padding: 5px 10px;
+	border: 1px solid #d9d1c2;
+	border-radius: 4px;
+}
+
+.ml-modal__row textarea {
+	resize: vertical;
+}
+
+.ml-modal__row--cols {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+	gap: 0 16px;
+}
+
+.ml-modal__row--cols > div {
+	margin-bottom: 12px;
+	min-width: 0;
+}
+
+.ml-modal__foot {
+	display: flex;
+	gap: 8px;
+	justify-content: flex-end;
+	padding: 12px 20px;
+	border-top: 1px solid #f0e9dd;
+	background: #fbf9f4;
+}
+
+.ml-modal__hint {
+	margin: 0;
+	color: #8a8379;
+	font-size: 12px;
+}
+
+
+
+/* ---- Appointments ---- */
+
+.ml-badge--danger {
+	background: #fbe3e3;
+	color: #b32d2e;
+}
+
+.ml-badge--warning {
+	background: #fdf3de;
+	color: #8f6a12;
+}
+
+.ml-badge--info {
+	background: #e3f1fa;
+	color: #1b5f8f;
+}
+
+.ml-clinic-header__actions {
+	display: flex;
+	gap: 8px;
+}
+
+.ml-appt-tabs {
+	margin-top: 0;
+}
+
+.ml-appt-tab {
+	display: inline-block;
+	padding: 7px 14px;
+	border-radius: 8px;
+	text-decoration: none;
+	color: #6b5a3e;
+	background: #fbf6ef;
+	border: 1px solid #f0e6d6;
+	font-weight: 500;
+}
+
+.ml-appt-tab.is-active {
+	background: #2e2a26;
+	color: #fffdf9;
+	border-color: #2e2a26;
+}
+
+.ml-appt-nav {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	margin: 8px 0 14px;
+}
+
+.ml-appt-nav strong {
+	min-width: 160px;
+	text-align: center;
+}
+
+/* Calendar grids */
+
+.ml-appt-cal {
+	background: #fffdf9;
+	border: 1px solid #eee6d8;
+	border-radius: 10px;
+	padding: 14px;
+	margin-top: 4px;
+}
+
+.ml-appt-cal--day .ml-appt-cal__head {
+	margin-bottom: 12px;
+	display: flex;
+	gap: 10px;
+	align-items: center;
+}
+
+.ml-appt-cal__timeline {
+	display: flex;
+	flex-direction: column;
+}
+
+.ml-appt-cal__row {
+	display: grid;
+	grid-template-columns: 70px 1fr;
+	border-bottom: 1px solid #f6f0e6;
+	min-height: 44px;
+}
+
+.ml-appt-cal__time {
+	color: #8a8379;
+	padding: 8px 12px 0 4px;
+	font-size: 12px;
+	font-variant-numeric: tabular-nums;
+	text-align: right;
+}
+
+.ml-appt-cal__slot {
+	padding: 4px 0;
+}
+
+.ml-appt-cal__card {
+	border-left: 3px solid #cfc4b2;
+	border-radius: 6px;
+	background: #fbf6ef;
+	padding: 6px 10px;
+	font-size: 12px;
+	margin: 2px 0;
+}
+
+.ml-appt-cal__card--pending {
+	border-left-color: #d99a26;
+}
+
+.ml-appt-cal__card--confirmed {
+	border-left-color: #2e7d32;
+}
+
+.ml-appt-cal__card--checked_in {
+	border-left-color: #1b5f8f;
+}
+
+.ml-appt-cal__card--completed {
+	border-left-color: #9aa4ab;
+}
+
+.ml-appt-cal__card--cancelled,
+.ml-appt-cal__card--no_show {
+	border-left-color: #b32d2e;
+	opacity: 0.65;
+}
+
+.ml-appt-cal__closed {
+	color: #b32d2e;
+	font-size: 12px;
+	margin-top: 8px;
+	opacity: 0.75;
+}
+
+/* Week */
+
+.ml-appt-cal--week .ml-appt-cal__cols {
+	display: grid;
+	grid-template-columns: repeat(7, 1fr);
+	gap: 8px;
+}
+
+.ml-appt-cal__col {
+	border: 1px solid #eee6d8;
+	border-radius: 8px;
+	min-height: 260px;
+	display: flex;
+	flex-direction: column;
+}
+
+.ml-appt-cal__col.is-today {
+	border-color: #d99a26;
+}
+
+.ml-appt-cal__colhead {
+	padding: 8px 10px;
+	border-bottom: 1px solid #f0e8dc;
+	font-size: 12px;
+	display: flex;
+	flex-direction: column;
+	gap: 2px;
+}
+
+.ml-appt-cal__colbody {
+	padding: 8px;
+	display: flex;
+	flex-direction: column;
+	gap: 6px;
+	overflow: auto;
+	max-height: 520px;
+}
+
+.ml-appt-cal__none {
+	font-size: 12px;
+	margin: 4px 0;
+}
+
+.ml-appt-cal__mini {
+	display: block;
+	margin-top: 6px;
+}
+
+/* Month */
+
+.ml-appt-cal--month .ml-appt-cal__grid {
+	display: grid;
+	grid-template-columns: repeat(7, 1fr);
+	gap: 6px;
+}
+
+.ml-appt-cal__cellhead {
+	font-size: 11px;
+	text-transform: uppercase;
+	letter-spacing: 0.5px;
+	color: #8a8379;
+	text-align: center;
+	padding: 4px;
+}
+
+.ml-appt-cal__cell {
+	border: 1px solid #eee6d8;
+	border-radius: 8px;
+	min-height: 96px;
+	padding: 6px;
+	background: #fffdf9;
+}
+
+.ml-appt-cal__cell.is-dim {
+	background: #faf7f2;
+	opacity: 0.55;
+}
+
+.ml-appt-cal__cell.is-today {
+	border-color: #d99a26;
+	box-shadow: 0 0 0 1px #d99a26 inset;
+}
+
+.ml-appt-cal__date {
+	font-size: 12px;
+	font-weight: 700;
+	color: #6b5a3e;
+	display: flex;
+	align-items: center;
+	gap: 6px;
+	margin-bottom: 4px;
+}
+
+.ml-appt-cal__add {
+	margin-left: auto;
+	border: none;
+	background: #e7f3e8;
+	color: #2e7d32;
+	border-radius: 50%;
+	width: 18px;
+	height: 18px;
+	line-height: 1;
+	cursor: pointer;
+	font-weight: 700;
+}
+
+.ml-appt-cal__chip {
+	display: block;
+	text-decoration: none;
+	border-radius: 5px;
+	background: #fbf6ef;
+	border-left: 3px solid #cfc4b2;
+	padding: 3px 7px;
+	margin: 3px 0;
+	font-size: 11px;
+	color: #2e2a26;
+}
+
+.ml-appt-cal__chip--pending {
+	border-left-color: #d99a26;
+}
+
+.ml-appt-cal__chip--confirmed {
+	border-left-color: #2e7d32;
+}
+
+.ml-appt-cal__chip--checked_in {
+	border-left-color: #1b5f8f;
+}
+
+.ml-appt-cal__chip--completed,
+.ml-appt-cal__chip--rescheduled {
+	border-left-color: #9aa4ab;
+}
+
+.ml-appt-cal__chip--cancelled,
+.ml-appt-cal__chip--no_show {
+	border-left-color: #b32d2e;
+	opacity: 0.6;
+}
+
+.ml-appt-cal__chip em {
+	display: block;
+	font-style: normal;
+}
+
+/* Modals */
+
+.ml-modal {
+	position: fixed;
+	inset: 0;
+	background: rgba(30, 26, 22, 0.45);
+	z-index: 99999;
+	display: flex;
+	align-items: flex-start;
+	justify-content: center;
+	padding: 8vh 16px 16px;
+	overflow: auto;
+}
+
+.ml-modal[hidden] {
+	display: none;
+}
+
+.ml-modal__box {
+	background: #fffdf9;
+	border-radius: 12px;
+	box-shadow: 0 18px 60px rgba(0, 0, 0, 0.28);
+	width: 560px;
+	max-width: 100%;
+}
+
+.ml-modal__head {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 16px 20px 12px;
+	border-bottom: 1px solid #f0e8dc;
+}
+
+.ml-modal__head h2 {
+	margin: 0;
+	font-size: 17px;
+	color: #2e2a26;
+}
+
+.ml-modal__close {
+	border: none;
+	background: none;
+	font-size: 24px;
+	line-height: 1;
+	color: #8a8379;
+	cursor: pointer;
+}
+
+.ml-modal__body {
+	padding: 16px 20px;
+}
+
+.ml-modal__dl {
+
+	margin: 0;
+	display: grid;
+	grid-template-columns: 40% 1fr;
+}
+
+.ml-modal__dl dt {
+	color: #8a8379;
+	font-size: 12px;
+	text-transform: uppercase;
+	letter-spacing: 0.4px;
+	padding: 7px 0;
+	border-bottom: 1px solid #f6f0e6;
+}
+
+.ml-modal__dl dd {
+	margin: 0;
+	padding: 7px 0 7px 12px;
+	border-bottom: 1px solid #f6f0e6;
+	word-break: break-word;
+}
+
+.ml-patient-results {
+	position: absolute;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	background: #fff;
+	border: 1px solid #c9c0b2;
+	border-radius: 6px;
+	max-height: 220px;
+	overflow: auto;
+	width: 100%;
+	z-index: 5;
+	box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+.ml-modal__row--patient {
+	position: relative;
+}
+
+.ml-patient-results button {
+	display: block;
+	width: 100%;
+	text-align: left;
+	border: none;
+	background: none;
+	padding: 8px 10px;
+	cursor: pointer;
+}
+
+.ml-patient-results button:hover {
+	background: #fbf6ef;
+}
+
+.ml-clinic-toolbar {
+	display: flex;
+	align-items: center;
+	flex-wrap: wrap;
+	gap: 8px;
+	margin: 0 0 16px;
+}
+
+.ml-clinic-search,
+.ml-clinic-filter {
+	min-width: 220px;
+}
+
+.ml-clinic-list-table .details {
+	cursor: pointer;
+}
+
+.ml-clinic-list-table .details summary,
+.ml-clinic-list-table details summary > * {
+	display: inline;
+}
+
+.ml-col-actions {
+	white-space: nowrap;
+}
+
+.ml-inline-actions {
+	display: flex;
+	align-items: center;
+	flex-wrap: wrap;
+	gap: 6px;
+}
+
+.ml-clinic-empty {
+	background: #fffdf9;
+	border: 1px dashed #d8cdb9;
+	border-radius: 10px;
+	padding: 28px;
+	text-align: center;
+	color: #8a8379;
+}
+
+.ml-clinic-empty p {
+	margin: 0;
+}
+
+.ml-clinic-pagination {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	margin-top: 14px;
+}
+
+.ml-clinic-expand__list {
+	margin: 6px 0 0;
+	padding-left: 18px;
+	line-height: 1.5;
+}
+
+.ml-clinic-quicklinks {
+	margin-top: 24px;
+}
+
+.ml-clinic-quicklinks .button {
+	margin: 0 6px 6px 0;
+}
+
+/* Patient photos gallery */
+
+.ml-photo-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+	gap: 16px;
+	margin-top: 16px;
+}
+
+.ml-photo-card {
+	margin: 0;
+	border: 1px solid #e2e8ef;
+	border-radius: 8px;
+	overflow: hidden;
+	background: #fff;
+	display: flex;
+	flex-direction: column;
+}
+
+.ml-photo-card a img {
+	display: block;
+	width: 100%;
+	height: 180px;
+	object-fit: cover;
+	background: #f2f6fa;
+}
+
+.ml-photo-card figcaption {
+	padding: 8px 10px;
+	display: flex;
+	flex-direction: column;
+	gap: 4px;
+	font-size: 12px;
+}
+
+.ml-photo-card form,
+.ml-photo-card__actions {
+	margin: 0;
+	padding: 0 10px 10px;
+}
+
+/* Billing */
+.ml-search-results {
+	margin: 6px 0 0;
+	padding-left: 18px;
+	columns: 1;
+	gap: 4px;
+}
+
+.ml-search-results li {
+	list-style: disc;
+}
+
+.ml-search-results label {
+	display: inline-flex;
+	align-items: center;
+	gap: 6px;
+	font-weight: 400;
+}
+
+.ml-detail-table {
+	max-width: 640px;
+}
+
+.ml-col-num {
+	text-align: right !important;
+}
+
+.ml-report-export {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: 8px;
+	margin: 0;
+}
+
+.ml-report-filter input[type="date"] {
+	max-width: 170px;
+}
+
+.ml-report-scroll {
+	max-height: 420px;
+	overflow: auto;
+	border: 1px solid #e2e2e2;
+	border-radius: 6px;
+	background: #fff;
+}
+
+.ml-report-table {
+	width: 100%;
+}
+
+.ml-report-table th.num,
+.ml-report-table td.num {
+	text-align: right;
+}
+
+/* --- Section: sample data status + install/remove controls --- */
+
+.ml-settings-section--sample {
+	border-left: 3px solid #c96f4a;
+}
+
+.ml-sample-state {
+	margin: 0 0 4px;
+	font-size: 13px;
+	color: #6b655c;
+}
+
+.ml-sample-state strong {
+	margin-right: 4px;
+	color: #3a352f;
+}
+
+.ml-sample-state--on strong {
+	color: #1f7a4d;
+}
+
+.ml-sample-state--off strong {
+	color: #8a8379;
+}
+
+.ml-sample-breakdown {
+	max-width: 360px;
+	margin-top: 12px;
+}
+
+.ml-sample-breakdown td:last-child,
+.ml-sample-breakdown th:last-child {
+	width: 90px;
+	text-align: right;
+}
+
+.ml-sample-form {
+	margin-top: 16px;
+	max-width: 640px;
+}
+
+.ml-sample-form--danger {
+	border: 1px solid #f0c3c3;
+	border-radius: 8px;
+	padding: 16px 20px;
+	background: #fff7f7;
+}
+
+.ml-sample-form--danger .ml-field__label code {
+	font-size: 12px;
+	letter-spacing: 0.5px;
+}
+
+.ml-sample-form .description {
+	max-width: 60ch;
+}
