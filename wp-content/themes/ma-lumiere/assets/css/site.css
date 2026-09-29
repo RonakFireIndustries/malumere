@@ -529,14 +529,26 @@ textarea:focus-visible,
   flex-shrink: 0;
 }
 
-.site-brand__logo {
-  width: 46px;
+.site-brand__link,
+.custom-logo-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
+}
+
+/* The mark is a tall oval ornament rather than a square badge, so it is
+   letterboxed instead of cropped — contain keeps the whole cartouche in view
+   and stays correct for whatever logo is uploaded instead. */
+.site-brand__logo,
+.custom-logo {
+  width: auto;
   height: 46px;
-  border-radius: 50%;
-  object-fit: cover;
+  max-width: 100%;
+  object-fit: contain;
 }
 
 .site-brand__name {
+  display: block;
   font-family: var(--font-heading);
   font-size: 1.65rem;
   font-weight: 600;
@@ -545,7 +557,7 @@ textarea:focus-visible,
   color: var(--color-rose-deep);
 }
 
-.site-brand__name:hover {
+.site-brand__link:hover .site-brand__name {
   color: var(--color-rose-deep);
 }
 
@@ -2064,6 +2076,22 @@ button:disabled {
 }
 
 @media (max-width: 560px) {
+  /* The nav is out of flow below 860px, so the brand shares its row with the
+     toggle button and has to fit in the space that is left. */
+  .site-brand__logo,
+  .custom-logo {
+    height: 36px;
+  }
+
+  .site-brand__name {
+    font-size: 1.35rem;
+  }
+
+  .site-brand__tag {
+    font-size: 0.52rem;
+    letter-spacing: 0.16em;
+  }
+
   .treatments__grid,
   .testimonials__grid,
   .posts-grid,

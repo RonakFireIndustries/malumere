@@ -24,9 +24,15 @@
 			<?php if ( has_custom_logo() ) : ?>
 				<?php the_custom_logo(); ?>
 			<?php else : ?>
-				<a class="site-brand__name" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
-					<?php echo esc_html( ml_clinic_name() ); ?>
-					<span class="site-brand__tag"><?php esc_html_e( 'Dermatology & Aesthetic Clinic', 'ma-lumiere' ); ?></span>
+				<a class="site-brand__link" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
+					<?php $logo = ml_default_logo_url(); ?>
+					<?php if ( $logo ) : ?>
+						<img class="site-brand__logo" src="<?php echo esc_url( $logo ); ?>" width="35" height="46" alt="" />
+					<?php endif; ?>
+					<span class="site-brand__text">
+						<span class="site-brand__name"><?php echo esc_html( ml_clinic_name() ); ?></span>
+						<span class="site-brand__tag"><?php esc_html_e( 'Dermatology & Aesthetic Clinic', 'ma-lumiere' ); ?></span>
+					</span>
 				</a>
 			<?php endif; ?>
 		</div>

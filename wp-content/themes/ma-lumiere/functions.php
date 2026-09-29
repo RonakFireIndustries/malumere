@@ -18,6 +18,7 @@ define( 'ML_THEME_URI', get_template_directory_uri() );
 require get_template_directory() . '/inc/theme-setup.php';
 require get_template_directory() . '/inc/enqueue.php';
 require get_template_directory() . '/inc/helpers.php';
+require get_template_directory() . '/inc/branding.php';
 require get_template_directory() . '/inc/template-tags.php';
 require get_template_directory() . '/inc/custom-post-types.php';
 require get_template_directory() . '/inc/custom-taxonomies.php';

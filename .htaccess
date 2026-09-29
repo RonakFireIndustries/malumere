@@ -4,12 +4,14 @@ RewriteEngine On
 
 RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
 
-RewriteBase /
-RewriteRule ^index\.php$ - [L]
-
+# The substitution is relative rather than "/index.php", so it resolves against
+# the directory holding this file. With an absolute "/index.php" a subdirectory
+# install rewrites to the web root instead and every permalink resolves to
+# whatever index.php sits there. Relative keeps this correct in a subdirectory,
+# at the domain root, and on the live host, without hardcoding a path.
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule . /index.php [L]
+RewriteRule . index.php [L]
 
 </IfModule>
 # END WordPress

@@ -26,7 +26,8 @@ function ml_organization_schema() {
 
 	$name    = wp_specialchars_decode( ml_clinic_name(), ENT_QUOTES );
 	$url     = home_url( '/' );
-	$logo    = get_theme_mod( 'custom_logo' ) ? wp_get_attachment_image_url( get_theme_mod( 'custom_logo' ), 'full' ) : '';
+	$logo_id = (int) get_theme_mod( 'custom_logo' );
+	$logo    = $logo_id ? wp_get_attachment_image_url( $logo_id, 'full' ) : ml_default_logo_url();
 	$phone   = ml_clinic_phone();
 	$email   = ml_clinic_email();
 	$address = ml_clinic_address();
