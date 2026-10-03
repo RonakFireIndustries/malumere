@@ -2622,3 +2622,44 @@ Stack trace:
 [29-Sep-2026 19:37:03 UTC]   Automatic plugin updates starting...
 [29-Sep-2026 19:37:03 UTC]   Automatic plugin updates complete.
 [29-Sep-2026 19:37:03 UTC] Automatic updates complete.
+[01-Oct-2026 20:38:36 UTC] PHP Warning:  mysqli_real_connect(): (HY000/1045): Access denied for user 'a17590e4_root'@'localhost' (using password: YES) in C:\xampp\htdocs\malumere\wp-includes\class-wpdb.php on line 1990
+[01-Oct-2026 20:39:04 UTC] Automatic updates starting...
+[01-Oct-2026 20:39:05 UTC]   Automatic plugin updates starting...
+[01-Oct-2026 20:39:05 UTC]   Automatic plugin updates complete.
+[01-Oct-2026 20:39:06 UTC] Automatic updates complete.
+[01-Oct-2026 20:53:40 UTC] PHP Warning:  Array to string conversion in C:\Users\Jay\AppData\Local\Temp\opencode\ml-check-1.php on line 70
+[01-Oct-2026 20:53:40 UTC] PHP Warning:  Array to string conversion in C:\Users\Jay\AppData\Local\Temp\opencode\ml-check-1.php on line 70
+[01-Oct-2026 20:53:40 UTC] PHP Warning:  Array to string conversion in C:\Users\Jay\AppData\Local\Temp\opencode\ml-check-1.php on line 70
+[01-Oct-2026 20:53:40 UTC] PHP Warning:  Array to string conversion in C:\Users\Jay\AppData\Local\Temp\opencode\ml-check-1.php on line 70
+[01-Oct-2026 20:53:40 UTC] PHP Warning:  Array to string conversion in C:\Users\Jay\AppData\Local\Temp\opencode\ml-check-1.php on line 70
+[01-Oct-2026 20:53:40 UTC] PHP Warning:  Array to string conversion in C:\Users\Jay\AppData\Local\Temp\opencode\ml-check-1.php on line 70
+[01-Oct-2026 20:53:40 UTC] PHP Warning:  Array to string conversion in C:\Users\Jay\AppData\Local\Temp\opencode\ml-check-1.php on line 70
+[01-Oct-2026 20:53:40 UTC] PHP Warning:  Array to string conversion in C:\Users\Jay\AppData\Local\Temp\opencode\ml-check-1.php on line 70
+[03-Oct-2026 17:27:24 UTC] Automatic updates starting...
+[03-Oct-2026 17:27:25 UTC]   Automatic plugin updates starting...
+[03-Oct-2026 17:27:25 UTC]   Automatic plugin updates complete.
+[03-Oct-2026 17:27:26 UTC] Automatic updates complete.
+[03-Oct-2026 17:35:51 UTC] ML Clinic: confirmation email not sent for appointment 254: Email sending is disabled for this environment.
+[03-Oct-2026 17:40:08 UTC] ML Clinic: confirmation email not sent for appointment 255: Email sending is disabled for this environment.
+[03-Oct-2026 17:58:00 UTC] ML Clinic: confirmation email not sent for appointment 256: Email sending is disabled for this environment.
+[03-Oct-2026 17:58:56 UTC] ML Clinic: confirmation email not sent for appointment 257: Email sending is disabled for this environment.
+[03-Oct-2026 18:02:29 UTC] PHP Warning:  Undefined array key "doctor_name" in C:\xampp\htdocs\malumere\wp-content\plugins\ma-lumiere-clinic-manager\admin\views\_appointment-list.php on line 116
+[03-Oct-2026 18:02:29 UTC] PHP Warning:  Undefined array key "doctor_name" in C:\xampp\htdocs\malumere\wp-content\plugins\ma-lumiere-clinic-manager\admin\views\_appointment-list.php on line 116
+[03-Oct-2026 18:02:29 UTC] PHP Warning:  Undefined array key "doctor_name" in C:\xampp\htdocs\malumere\wp-content\plugins\ma-lumiere-clinic-manager\admin\views\_appointment-list.php on line 116
+[03-Oct-2026 18:02:29 UTC] PHP Warning:  Undefined array key "doctor_name" in C:\xampp\htdocs\malumere\wp-content\plugins\ma-lumiere-clinic-manager\admin\views\_appointment-list.php on line 116
+[03-Oct-2026 18:02:45 UTC] PHP Warning:  Undefined array key "doctor_name" in C:\xampp\htdocs\malumere\wp-content\plugins\ma-lumiere-clinic-manager\admin\views\_appointment-list.php on line 116
+[03-Oct-2026 18:02:45 UTC] PHP Warning:  Undefined array key "doctor_name" in C:\xampp\htdocs\malumere\wp-content\plugins\ma-lumiere-clinic-manager\admin\views\_appointment-list.php on line 116
+[03-Oct-2026 18:02:45 UTC] PHP Warning:  Undefined array key "doctor_name" in C:\xampp\htdocs\malumere\wp-content\plugins\ma-lumiere-clinic-manager\admin\views\_appointment-list.php on line 116
+[03-Oct-2026 18:02:56 UTC] ML Clinic: cancellation email not sent for appointment 255: Email sending is disabled for this environment.
+[03-Oct-2026 18:02:56 UTC] PHP Warning:  Undefined array key "doctor_name" in C:\xampp\htdocs\malumere\wp-content\plugins\ma-lumiere-clinic-manager\admin\views\_appointment-list.php on line 116
+[03-Oct-2026 18:02:56 UTC] PHP Warning:  Undefined array key "doctor_name" in C:\xampp\htdocs\malumere\wp-content\plugins\ma-lumiere-clinic-manager\admin\views\_appointment-list.php on line 116
+[03-Oct-2026 18:02:56 UTC] PHP Warning:  Undefined array key "doctor_name" in C:\xampp\htdocs\malumere\wp-content\plugins\ma-lumiere-clinic-manager\admin\views\_appointment-list.php on line 116
+[03-Oct-2026 18:03:00 UTC] ML Clinic: cancellation email not sent for appointment 256: Email sending is disabled for this environment.
+[03-Oct-2026 18:03:01 UTC] PHP Warning:  Undefined array key "doctor_name" in C:\xampp\htdocs\malumere\wp-content\plugins\ma-lumiere-clinic-manager\admin\views\_appointment-list.php on line 116
+[03-Oct-2026 18:03:01 UTC] PHP Warning:  Undefined array key "doctor_name" in C:\xampp\htdocs\malumere\wp-content\plugins\ma-lumiere-clinic-manager\admin\views\_appointment-list.php on line 116
+[03-Oct-2026 18:03:01 UTC] PHP Warning:  Undefined array key "doctor_name" in C:\xampp\htdocs\malumere\wp-content\plugins\ma-lumiere-clinic-manager\admin\views\_appointment-list.php on line 116
+[03-Oct-2026 18:03:04 UTC] ML Clinic: cancellation email not sent for appointment 257: Email sending is disabled for this environment.
+[03-Oct-2026 18:03:04 UTC] PHP Warning:  Undefined array key "doctor_name" in C:\xampp\htdocs\malumere\wp-content\plugins\ma-lumiere-clinic-manager\admin\views\_appointment-list.php on line 116
+[03-Oct-2026 18:03:04 UTC] PHP Warning:  Undefined array key "doctor_name" in C:\xampp\htdocs\malumere\wp-content\plugins\ma-lumiere-clinic-manager\admin\views\_appointment-list.php on line 116
+[03-Oct-2026 18:03:04 UTC] PHP Warning:  Undefined array key "doctor_name" in C:\xampp\htdocs\malumere\wp-content\plugins\ma-lumiere-clinic-manager\admin\views\_appointment-list.php on line 116
+[03-Oct-2026 18:13:33 UTC] ML Clinic: confirmation email not sent for appointment 258: Email sending is disabled for this environment.

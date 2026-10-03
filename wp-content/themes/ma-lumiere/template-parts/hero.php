@@ -5,11 +5,11 @@
  * @package ma-lumiere
  */
 
-$eyebrow  = ml_mod( 'ml_hero_eyebrow', __( 'Personalised Dermatology & Aesthetic Care', 'ma-lumiere' ) );
-$title    = ml_mod( 'ml_hero_title', __( 'Personalised Dermatology. Beautifully, Scientifically.', 'ma-lumiere' ) );
+$eyebrow  = ml_mod( 'ml_hero_eyebrow', __( 'PERSONALISED AESTHETIC & SKIN CARE', 'ma-lumiere' ) );
+$title    = ml_mod( 'ml_hero_title', __( 'Personalised Aesthetic Medicine. Beautifully, Scientifically.', 'ma-lumiere' ) );
 $title    = explode( ' ', $title ); // Simple graceful italics on the closing word.
 $last     = array_pop( $title );
-$text     = ml_mod( 'ml_hero_text', __( 'Medical dermatology and aesthetic care tailored to your skin, your concerns and your journey.', 'ma-lumiere' ) );
+$text     = ml_mod( 'ml_hero_text', __( 'Medical-grade aesthetic care, tailored to your skin, your concerns and your long-term goals.', 'ma-lumiere' ) );
 
 $cta_primary = ml_mod( 'ml_hero_cta_primary', __( 'Book a Consultation', 'ma-lumiere' ) );
 $cta_primary_url = ml_mod( 'ml_hero_cta_primary_url', '' );
@@ -31,7 +31,7 @@ $phone         = ml_clinic_phone();
 	<div class="container hero__inner">
 
 		<div class="hero__content">
-			<p class="eyebrow" data-reveal="fade"><?php echo esc_html( $eyebrow ); ?></p>
+			<p class="eyebrow" data-reveal="f e"><?php echo esc_html( $eyebrow ); ?></p>
 			<h1 class="hero__title" data-reveal="left">
 				<?php echo esc_html( implode( ' ', $title ) ); ?> <em><?php echo esc_html( $last ); ?></em>
 			</h1>

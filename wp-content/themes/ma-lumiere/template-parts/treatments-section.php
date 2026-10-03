@@ -30,7 +30,7 @@ $categories = get_terms(
 
 		<div class="section__head section__head--center">
 			<p class="eyebrow" data-reveal="fade"><?php esc_html_e( 'What we treat', 'ma-lumiere' ); ?></p>
-			<h2 class="section__title" data-reveal="fade"><?php esc_html_e( 'Dermatology, thoughtfully done', 'ma-lumiere' ); ?></h2>
+			<h2 class="section__title" data-reveal="fade"><?php esc_html_e( 'Aesthetic Medicine, thoughtfully done', 'ma-lumiere' ); ?></h2>
 			<p class="section__lead" data-reveal="fade"><?php esc_html_e( 'Medical and aesthetic care across the conditions that matter to you.', 'ma-lumiere' ); ?></p>
 		</div>
 

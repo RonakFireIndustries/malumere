@@ -17,7 +17,7 @@
 				<p class="footer__about">
 					<?php
 					$about = ml_mod( 'ml_footer_about', '' );
-					echo esc_html( $about ? $about : __( 'Personalised dermatology and aesthetic care — beautifully, scientifically.', 'ma-lumiere' ) );
+					echo esc_html( $about ? $about : __( 'SKIN | HAIR | LASER ', 'ma-lumiere' ) );
 					?>
 				</p>
 				<?php
@@ -76,7 +76,7 @@
 				<p class="footer__heading"><?php esc_html_e( 'Contact', 'ma-lumiere' ); ?></p>
 				<ul class="footer__contact">
 					<?php if ( ml_clinic_address() ) : ?>
-						<li><?php ml_icon( 'marker', 16 ); ?><span><?php echo esc_html( ml_clinic_address() ); ?></span></li>
+						<li><?php ml_icon( 'marker', 80 ); ?><span><?php echo esc_html( ml_clinic_address() ); ?></span></li>
 					<?php endif; ?>
 					<?php if ( ml_clinic_phone() ) : ?>
 						<li><?php ml_icon( 'phone', 16 ); ?><a href="tel:<?php echo esc_attr( preg_replace( '/[^0-9+]/', '', ml_clinic_phone() ) ); ?>"><?php echo esc_html( ml_clinic_phone() ); ?></a></li>

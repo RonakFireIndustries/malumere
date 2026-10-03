@@ -713,7 +713,7 @@ textarea:focus-visible,
 }
 
 .hero__title {
-  font-size: clamp(2.8rem, 6.4vw, 5rem);
+  font-size: 4rem;
   margin-bottom: 0.35em;
   color: var(--color-ivory);
 }

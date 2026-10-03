@@ -31,7 +31,7 @@
 					<?php endif; ?>
 					<span class="site-brand__text">
 						<span class="site-brand__name"><?php echo esc_html( ml_clinic_name() ); ?></span>
-						<span class="site-brand__tag"><?php esc_html_e( 'Dermatology & Aesthetic Clinic', 'ma-lumiere' ); ?></span>
+						<span class="site-brand__tag"><?php esc_html_e( 'SKIN | HAIR | LASER', 'ma-lumiere' ); ?></span>
 					</span>
 				</a>
 			<?php endif; ?>

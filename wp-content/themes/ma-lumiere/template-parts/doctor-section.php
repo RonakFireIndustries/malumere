@@ -24,7 +24,7 @@ $expertise = ml_doctor_expertise();
 		</div>
 
 		<div class="doctor__content" data-reveal="right">
-			<p class="eyebrow"><?php esc_html_e( 'Meet your dermatologist', 'ma-lumiere' ); ?></p>
+			<p class="eyebrow"><?php esc_html_e( 'MEET YOUR PHYSICIAN', 'ma-lumiere' ); ?></p>
 			<h2 class="doctor__name"><?php echo esc_html( $name ); ?></h2>
 			<p class="doctor__qual"><?php echo esc_html( $qual ); ?></p>
 			<div class="doctor__bio entry-content">

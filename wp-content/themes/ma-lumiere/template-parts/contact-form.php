@@ -14,8 +14,8 @@
 			<input type="text" id="cf-name" name="name" autocomplete="name" required />
 		</div>
 		<div class="form-field">
-			<label for="cf-phone"><?php esc_html_e( 'Phone', 'ma-lumiere' ); ?></label>
-			<input type="tel" id="cf-phone" name="phone" autocomplete="tel" />
+			<label for="cf-phone"><?php esc_html_e( 'Phone', 'ma-lumiere' ); ?> <span aria-hidden="true">*</span></label>
+			<input type="tel" id="cf-phone" name="phone" autocomplete="tel" required/>
 		</div>
 	</div>
 
@@ -25,8 +25,17 @@
 			<input type="email" id="cf-email" name="email" autocomplete="email" required />
 		</div>
 		<div class="form-field">
-			<label for="cf-subject"><?php esc_html_e( 'Subject', 'ma-lumiere' ); ?></label>
-			<input type="text" id="cf-subject" name="subject" />
+			<label for="cf-subject"><?php esc_html_e( 'How can we help?', 'ma-lumiere' ); ?> <span aria-hidden="true">*</span></label>
+			<select name="subject" id="cf-subject" required>
+				<option value="" disabled selected><?php esc_html_e( 'Select an option', 'ma-lumiere' ); ?></option>
+				<option value="general"><?php esc_html_e( 'Consultation', 'ma-lumiere' ); ?></option>
+				<option value="general"><?php esc_html_e( 'Acne / Acne Scars', 'ma-lumiere' ); ?></option>
+				<option value="general"><?php esc_html_e( 'Pigmentation', 'ma-lumiere' ); ?></option>
+				<option value="general"><?php esc_html_e( 'Hair Loss', 'ma-lumiere' ); ?></option>
+				<option value="quote"><?php esc_html_e( 'Laser Hair Reduction', 'ma-lumiere' ); ?></option>
+				<option value="support"><?php esc_html_e( 'Injectables', 'ma-lumiere' ); ?></option>
+				<option value="support"><?php esc_html_e( 'Others', 'ma-lumiere' ); ?></option>
+			</select>
 		</div>
 	</div>
 

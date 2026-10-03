@@ -93,7 +93,7 @@ function ml_doctor_name() {
  * @return string
  */
 function ml_doctor_qualifications() {
-	return ml_mod( 'ml_doctor_qualifications', 'Founder & Aesthetic Physician' );
+	return ml_mod( 'ml_doctor_qualifications', 'Aesthetic Physician' );
 }
 
 /**

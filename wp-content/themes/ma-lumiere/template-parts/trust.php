@@ -18,8 +18,8 @@ $items = array(
 	),
 	array(
 		'icon'  => 'advanced',
-		'title' => __( 'Advanced Dermatology', 'ma-lumiere' ),
-		'text'  => __( 'From medical dermatology to aesthetic procedures — under one roof.', 'ma-lumiere' ),
+		'title' => __( 'Advanced Aesthetics', 'ma-lumiere' ),
+		'text'  => __( 'From medical-grade skin treatments to advanced aesthetic procedures — thoughtfully selected for your individual needs.', 'ma-lumiere' ),
 	),
 	array(
 		'icon'  => 'patient',

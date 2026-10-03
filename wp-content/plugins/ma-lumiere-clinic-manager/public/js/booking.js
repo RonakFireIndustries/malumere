@@ -397,7 +397,10 @@
 				summaryLine('Reference', appt.booking_reference || '—') +
 			'</div>' +
 			'<div class="ml-booking__calendar">' + calendarLinks(appt) + '</div>' +
-			'<button type="button" class="ml-booking__again" data-action="again">' + esc(S.bookAnother || 'Book another appointment') + '</button>' +
+			'<div class="ml-booking__actions">' +
+				'<a href="/" class="ml-booking__btn ml-booking__btn--ghost">' + esc(S.home || 'Return to homepage') + '</a>' +
+				'<button type="button" class="ml-booking__btn ml-booking__btn--primary" data-action="again">' + esc(S.bookAnother || 'Book another appointment') + '</button>' +
+			'</div>' +
 			'</div>';
 		body.setAttribute('aria-busy', 'false');
 	};
@@ -421,9 +424,7 @@
 			'&dates=' + fmt(start) + '/' + fmt(end) +
 			'&details=' + encodeURIComponent(details);
 		var href = gcal;
-		var icsHref = icsLink(appt, summary, details, start, end);
-		return '<a href="' + escAttr(href) + '" target="_blank" rel="noopener noreferrer">' + esc(S.googleCal || 'Google Calendar') + '</a>' +
-			'<a download="appointment.ics" href="' + escAttr(icsHref) + '">' + esc(S.ics || 'Download .ics') + '</a>';
+		return '<a href="' + escAttr(href) + '" target="_blank" rel="noopener noreferrer">' + esc(S.googleCal || 'Google Calendar') + '</a>';
 	};
 
 	var toUtc = function (y, m, d, h, min) {
@@ -505,7 +506,7 @@
 			}
 			var msg;
 			if (res.status === 429 || (res.json && res.json.data && res.json.data.code === 'ml_booking_limited')) {
-				msg = S.errorLimit || 'Too many requests. Please wait a moment and try again.';
+				msg = (res.json && res.json.data && res.json.data.message) ? res.json.data.message : (S.errorLimit || 'Too many requests. Please wait a moment and try again.');
 			} else if (res.status === 403) {
 				msg = S.errorSession || 'Your session could not be verified. Please refresh the page and try again.';
 			} else {
