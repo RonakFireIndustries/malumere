@@ -77,6 +77,16 @@ class ML_Prescription_Service {
 			self::send_email( $id );
 		}
 
+		// Raise the configured prescription fee as an ordinary invoice. The
+		// clinical document is already issued, so a billing failure must not
+		// block the prescription; the error is returned for the caller/UI.
+		$fee_invoice = ML_Fee_Service::create_prescription_invoice( $result );
+		if ( is_wp_error( $fee_invoice ) ) {
+			$result['fee_invoice_error'] = $fee_invoice->get_error_message();
+		} elseif ( $fee_invoice ) {
+			$result['fee_invoice_id'] = (int) $fee_invoice;
+		}
+
 		return $result;
 	}
 

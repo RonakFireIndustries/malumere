@@ -856,7 +856,7 @@ class ML_Portal {
 				function openMLCashier(d) {
 					var handler = new window.Razorpay({
 						key: d.key_id,
-						amount: d.amount,
+						amount: Math.round(Number(d.amount) * 100),
 						currency: d.currency,
 						name: MLPortal.clinicName || "Clinic",
 						order_id: d.order_id,

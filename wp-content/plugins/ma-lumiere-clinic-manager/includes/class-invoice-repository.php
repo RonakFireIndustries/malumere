@@ -130,14 +130,87 @@ class ML_Invoice_Repository {
 	}
 
 	/**
+	 * Most recent invoice raised for an appointment, optionally restricted
+	 * to an invoice that contains a given item type. Used to keep the
+	 * booking fee invoice idempotent on repeated submissions.
+	 *
+	 * @param int    $appointment_id Appointment ID.
+	 * @param string $item_type      Optional invoice item type.
+	 *
+	 * @return array|null
+	 */
+	public static function find_for_appointment( $appointment_id, $item_type = '' ) {
+		global $wpdb;
+		$invoice_id = absint( $appointment_id )
+			? (int) $wpdb->get_var(
+				$wpdb->prepare(
+					'SELECT i.id FROM ' . ML_Database::table( 'invoices' ) . ' i'
+					. ( '' !== $item_type ? ' WHERE i.appointment_id = %d AND EXISTS (SELECT 1 FROM ' . ML_Database::table( 'invoice_items' ) . ' it WHERE it.invoice_id = i.id AND it.item_type = %s)' : ' WHERE i.appointment_id = %d' )
+					. ' ORDER BY i.id DESC LIMIT 1',
+					'' !== $item_type ? array( absint( $appointment_id ), sanitize_key( $item_type ) ) : absint( $appointment_id )
+				)
+			)
+			: 0;
+		return $invoice_id ? self::get( $invoice_id ) : null;
+	}
+
+	/**
+	 * Invoice raised for a finalized prescription, if any.
+	 *
+	 * @param int $prescription_id Prescription ID.
+	 *
+	 * @return array|null
+	 */
+	public static function find_for_prescription( $prescription_id ) {
+		global $wpdb;
+		$prescription_id = absint( $prescription_id );
+		if ( ! $prescription_id ) {
+			return null;
+		}
+		$invoice_id = (int) $wpdb->get_var(
+			$wpdb->prepare(
+				'SELECT id FROM ' . ML_Database::table( 'invoices' ) . ' WHERE prescription_id = %d ORDER BY id DESC LIMIT 1',
+				$prescription_id
+			)
+		);
+		return $invoice_id ? self::get( $invoice_id ) : null;
+	}
+
+	/**
 	 * Create an invoice with its line items. Totals are computed here from
 	 * the item rows; the submitted total is never stored directly.
 	 *
-	 * @param array $input { patient_id, invoice_date, due_date, items[], appointment_id, visit_id }.
+	 * @param array $input { patient_id, invoice_date, due_date, items[], appointment_id, visit_id, prescription_id }.
 	 *
 	 * @return int|WP_Error New invoice id.
 	 */
 	public static function create( array $input ) {
+		return self::create_with_access( $input, true );
+	}
+
+	/**
+	 * Create an invoice from a trusted system flow (e.g. the public booking
+	 * handler or a finalized prescription) where the patient authority has
+	 * already been established by the calling service. Never expose this to
+	 * a request handler that accepts a caller-supplied patient ID.
+	 *
+	 * @param array $input Same shape as create().
+	 *
+	 * @return int|WP_Error New invoice id.
+	 */
+	public static function create_internal( array $input ) {
+		return self::create_with_access( $input, false );
+	}
+
+	/**
+	 * Shared invoice writer.
+	 *
+	 * @param array $input          Invoice payload.
+	 * @param bool  $enforce_access Run the current-user patient access check.
+	 *
+	 * @return int|WP_Error
+	 */
+	private static function create_with_access( array $input, $enforce_access ) {
 		global $wpdb;
 
 		$patient_id = isset( $input['patient_id'] ) ? absint( $input['patient_id'] ) : 0;
@@ -145,7 +218,7 @@ class ML_Invoice_Repository {
 		if ( ! $patient ) {
 			return new WP_Error( 'ml_invoice_patient', __( 'A valid patient is required.', 'ma-lumiere-clinic' ) );
 		}
-		if ( ! ML_Security::can_access_patient( $patient_id ) ) {
+		if ( $enforce_access && ! ML_Security::can_access_patient( $patient_id ) ) {
 			return new WP_Error( 'ml_invoice_forbidden', __( 'You are not allowed to bill this patient.', 'ma-lumiere-clinic' ) );
 		}
 
@@ -158,8 +231,9 @@ class ML_Invoice_Repository {
 			$due_date = '';
 		}
 
-		$appointment_id = isset( $input['appointment_id'] ) ? absint( $input['appointment_id'] ) : 0;
-		$visit_id       = isset( $input['visit_id'] ) ? absint( $input['visit_id'] ) : 0;
+		$appointment_id  = isset( $input['appointment_id'] ) ? absint( $input['appointment_id'] ) : 0;
+		$visit_id        = isset( $input['visit_id'] ) ? absint( $input['visit_id'] ) : 0;
+		$prescription_id = isset( $input['prescription_id'] ) ? absint( $input['prescription_id'] ) : 0;
 
 		// Normalize line items: only rows with a description + qty > 0 count.
 		$raw_items = isset( $input['items'] ) && is_array( $input['items'] ) ? $input['items'] : array();
@@ -229,6 +303,7 @@ class ML_Invoice_Repository {
 			'patient_id'      => $patient_id,
 			'appointment_id'  => $appointment_id ? $appointment_id : null,
 			'visit_id'        => $visit_id ? $visit_id : null,
+			'prescription_id' => $prescription_id ? $prescription_id : null,
 			'subtotal'        => round( $subtotal, 2 ),
 			'discount'        => round( $total_disc, 2 ),
 			'tax'             => round( $total_tax, 2 ),
@@ -374,6 +449,7 @@ class ML_Invoice_Repository {
 			'patient_id'      => '%d',
 			'appointment_id'  => '%d',
 			'visit_id'        => '%d',
+			'prescription_id' => '%d',
 			'subtotal'        => '%f',
 			'discount'        => '%f',
 			'tax'             => '%f',

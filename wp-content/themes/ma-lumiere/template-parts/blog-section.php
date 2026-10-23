@@ -40,5 +40,12 @@ if ( ! $blog_url ) {
 				<p><?php esc_html_e( 'Articles will appear once published.', 'ma-lumiere' ); ?></p>
 			<?php endif; ?>
 		</div>
+
+		<p class="blog-section__action">
+			<a class="link-arrow" href="<?php echo esc_url( $blog_url ); ?>">
+				<?php esc_html_e( 'View all articles', 'ma-lumiere' ); ?>
+				<?php ml_icon( 'arrow-right', 18 ); ?>
+			</a>
+		</p>
 	</div>
 </section>

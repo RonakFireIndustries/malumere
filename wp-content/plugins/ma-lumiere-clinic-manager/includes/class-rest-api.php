@@ -88,6 +88,13 @@ class ML_Rest_Api {
 				'handler' => 'create_public_booking',
 			),
 			array(
+				'route'  => '/appointments/book/payment-order',
+				'method' => 'POST',
+				'cap'    => '',
+				'permission' => 'public',
+				'handler' => 'create_booking_razorpay_order',
+			),
+			array(
 				'route'  => '/appointments',
 				'method' => 'GET',
 				'cap'    => 'ml_view_appointments',
@@ -727,6 +734,18 @@ array(
 		}
 		if ( '/appointments/book' === $definition['route'] && 'POST' === $definition['method'] ) {
 			$args['_nonce'] = array(
+				'type'              => 'string',
+				'default'           => '',
+				'sanitize_callback' => 'sanitize_text_field',
+			);
+		}
+		if ( '/appointments/book/payment-order' === $definition['route'] && 'POST' === $definition['method'] ) {
+			$args['invoice_id'] = array(
+				'type'              => 'integer',
+				'default'           => 0,
+				'sanitize_callback' => 'absint',
+			);
+			$args['pay_nonce'] = array(
 				'type'              => 'string',
 				'default'           => '',
 				'sanitize_callback' => 'sanitize_text_field',
@@ -1712,6 +1731,61 @@ array(
 				'meta' => array( 'created' => true ),
 			),
 			201
+		);
+	}
+
+	/**
+	 * Create a Razorpay order for the consultation-fee invoice raised by the
+	 * public booking flow.
+	 *
+	 * Authorization is a nonce bound to the invoice ID and returned only in
+	 * the booking response, so a visitor cannot open orders for invoices that
+	 * are not theirs. Order creation is rate-limited per IP; the amount always
+	 * comes from the stored invoice balance, never from the request.
+	 *
+	 * @param WP_REST_Request $request Request.
+	 *
+	 * @return WP_REST_Response
+	 */
+	public static function create_booking_razorpay_order( $request ) {
+		$invoice_id = absint( $request['invoice_id'] );
+		$nonce      = sanitize_text_field( (string) $request['pay_nonce'] );
+
+		if ( ! $invoice_id || ! wp_verify_nonce( $nonce, ML_Fee_Service::pay_nonce_action( $invoice_id ) ) ) {
+			return self::rest_error( new WP_Error( 'ml_booking_pay_nonce', __( 'This payment session is no longer valid. Please contact the clinic.', 'ma-lumiere-clinic' ) ), 403 );
+		}
+
+		$invoice = ML_Invoice_Repository::get( $invoice_id );
+		if ( ! $invoice ) {
+			return self::rest_error( new WP_Error( 'ml_invoice_not_found', __( 'Invoice not found.', 'ma-lumiere-clinic' ) ), 404 );
+		}
+		if ( empty( $invoice['appointment_id'] ) || 'void' === (string) $invoice['payment_status'] || 'paid' === (string) $invoice['payment_status'] ) {
+			return self::rest_error( new WP_Error( 'ml_booking_pay_closed', __( 'This invoice can no longer be paid online.', 'ma-lumiere-clinic' ) ), 400 );
+		}
+
+		$limit_key = 'ml_rl_bookpay_' . md5( ML_Security::current_ip() );
+		$attempts  = (int) get_transient( $limit_key );
+		if ( $attempts >= 10 ) {
+			return new WP_REST_Response( array( 'data' => array( 'message' => __( 'Too many payment attempts. Please wait a few minutes.', 'ma-lumiere-clinic' ) ) ), 429 );
+		}
+		set_transient( $limit_key, $attempts + 1, 15 * MINUTE_IN_SECONDS );
+
+		$result = ML_Payment_Repository::create_razorpay_order( $invoice_id, false );
+		if ( is_wp_error( $result ) ) {
+			return self::rest_error( $result, 400 );
+		}
+
+		return rest_ensure_response(
+			array(
+				'data' => array(
+					'order_id' => $result['order_id'],
+					'amount'   => $result['amount'],
+					'currency' => $result['currency'],
+					'key_id'   => $result['key_id'],
+					'receipt'  => $result['receipt'],
+				),
+				'meta' => array( 'payment' => $result['payment'] ),
+			)
 		);
 	}
 

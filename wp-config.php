@@ -1,4 +1,3 @@
-@ -1,107 +0,0 @@
 <?php
 /**
  * The base configuration for WordPress

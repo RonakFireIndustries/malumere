@@ -103,6 +103,8 @@ class ML_Settings {
 				'tax_enabled'   => 0,
 				'tax_percent'   => 0,
 				'invoice_prefix' => 'ML-INV-',
+				'consultation_fee' => 0,
+				'prescription_fee' => 0,
 				'razorpay'      => array(
 					'mode'       => 'off',
 					'key_id'     => '',
@@ -244,6 +246,8 @@ class ML_Settings {
 			'tax_enabled'    => isset( $input['billing']['tax_enabled'] ) ? absint( $input['billing']['tax_enabled'] ) : 0,
 			'tax_percent'    => isset( $input['billing']['tax_percent'] ) ? max( 0, min( 100, floatval( $input['billing']['tax_percent'] ) ) ) : 0,
 			'invoice_prefix' => isset( $input['billing']['invoice_prefix'] ) ? sanitize_text_field( $input['billing']['invoice_prefix'] ) : 'ML-INV-',
+			'consultation_fee' => isset( $input['billing']['consultation_fee'] ) ? max( 0, round( floatval( $input['billing']['consultation_fee'] ), 2 ) ) : 0,
+			'prescription_fee' => isset( $input['billing']['prescription_fee'] ) ? max( 0, round( floatval( $input['billing']['prescription_fee'] ), 2 ) ) : 0,
 			'razorpay'       => array(
 				'mode'       => $rz_mode,
 				'key_id'     => isset( $rz['key_id'] ) ? sanitize_text_field( $rz['key_id'] ) : '',

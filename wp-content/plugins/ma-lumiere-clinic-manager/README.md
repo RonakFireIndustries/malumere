@@ -53,7 +53,7 @@ payment verification architecture and a full audit trail.
 No rewrite rules are flushed (the plugin registers no public rewrite-driven
 content), and **no data is ever deleted on activation or deactivation**.
 
-## 3. Database tables (version `1.4.0`)
+## 3. Database tables (version `1.4.1`)
 
 All tables use `{$wpdb->prefix}ml_` (never a hard-coded `wp_` prefix) and are
 managed by `ML_Database` using `dbDelta()`.
@@ -265,6 +265,7 @@ PUT   /appointments/{id}        update (non-terminal only, slot re-validated)
 POST  /appointments/{id}/reschedule|cancel|checkin|complete|no-show
 GET   /appointments/availability  PUBLIC — open days, or slots for a date
 POST  /appointments/book          PUBLIC — six-step booking (nonce-guarded)
+POST  /appointments/book/payment-order  PUBLIC — Razorpay order for a booking's consultation-fee invoice (invoice nonce + rate-limited)
 GET   /visits                   list (page/per_page/status/search)
 POST  /visits                   create visit (ml_manage_visits)
 GET   /visits/{id}              single visit (IDOR-guarded)
@@ -332,7 +333,9 @@ honeypot (`ml_website`), de-duplicates via `idempotency_key`, and returns
 - **SQL** — `$wpdb->prepare()` for every dynamic query; table names come from
   the namespace helper. No string-concatenated user input in SQL.
 - **Payment integrity** — payment records are server-side only; gateway success
-  reported by frontend JS is never trusted. Razorpay integration is deferred.
+  reported by frontend JS is never trusted. Razorpay uses order creation plus
+  HMAC signature verification, and every amount is re-read from the stored
+  invoice (never from the client).
 - **Private files** — see below.
 - **Audit log** — every sensitive action is recorded; passwords/secrets/clinical
   content are never written to logs.
@@ -418,6 +421,14 @@ Implemented end-to-end through `ML_Appointment_Repository`,
   `public/css/booking.css`) on the theme's Appointment template; `?treatment=`
   preselects; confirm screen offers Google Calendar + `.ics` add-to-calendar.
   Treatment artwork uses the post's featured image or a curated stock hotlink.
+- **Consultation fee** — when `billing.consultation_fee` is greater than zero,
+  the booking creates an unpaid invoice linked by `appointment_id` and the
+  review/confirmation screens show the amount. Online payment is **optional**:
+  the appointment is confirmed immediately, and the widget receives a
+  nonce-bound payment envelope (`invoice_id` + `pay_nonce`) that
+  `POST /appointments/book/payment-order` exchanges for a Razorpay order.
+  Patients can also pay later from the portal. The fee is billed once per
+  appointment, including on idempotent replays.
 - **Abuse protection** — `ml_website` honeypot, per-IP/per-email rate limits,
   `idempotency_key` replay protection and a `ml_public_booking` nonce on the
   public booking endpoint.
@@ -452,6 +463,11 @@ and `ML_Followup_Repository`:
   "Recommended". Scoped under the visits capabilities.
 - **Follow-ups** — scheduled per patient, auto-derived from prescription issue
   dates; `complete`/`cancel` recorded in the audit log.
+- **Prescription fee** — when `billing.prescription_fee` is greater than zero,
+  finalizing a prescription creates one unpaid invoice linked by the new
+  `prescription_id` column. Corrections (drafts with `revision_of`) never
+  re-bill, and an issuance failure is reported via `fee_invoice_error` without
+  blocking the prescription itself. The patient pays it from the portal.
 - **Email** — the patient prescription notice (`ML_Email_Service`, type
   `prescription_notification`) stays disabled unless the `ml_clinic_send_email`
   filter opts in; the finalize method never blocks on transport.
@@ -494,4 +510,4 @@ scheduled (cron) expiry alerts instead of on-demand calculation only.
 
 ---
 
-**Version 1.4.0** — Ma Lumière Dermatology & Aesthetic Clinic.
+**Version 1.4.1** — Ma Lumière Dermatology & Aesthetic Clinic.

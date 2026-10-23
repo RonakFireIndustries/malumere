@@ -383,13 +383,14 @@ function ml_schema_definitions() {
 		),
 
 		'invoices' => array(
-			'version' => 1,
+			'version' => 2,
 			'schema'  => "CREATE TABLE {prefix}ml_invoices (
 				id BIGINT(20) UNSIGNED NOT NULL AUTO_INCREMENT,
 				invoice_number VARCHAR(50) NOT NULL,
 				patient_id BIGINT(20) UNSIGNED NOT NULL,
 				appointment_id BIGINT(20) UNSIGNED NULL,
 				visit_id BIGINT(20) UNSIGNED NULL,
+				prescription_id BIGINT(20) UNSIGNED NULL,
 				subtotal DECIMAL(10,2) NOT NULL DEFAULT 0,
 				discount DECIMAL(10,2) NOT NULL DEFAULT 0,
 				tax DECIMAL(10,2) NOT NULL DEFAULT 0,
@@ -406,6 +407,7 @@ function ml_schema_definitions() {
 				UNIQUE KEY invoice_number (invoice_number),
 				KEY patient_id (patient_id),
 				KEY appointment_id (appointment_id),
+				KEY prescription_id (prescription_id),
 				KEY payment_status (payment_status),
 				KEY invoice_date (invoice_date)
 			)",

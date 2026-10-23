@@ -63,7 +63,7 @@ class ML_Appointment_Service {
 		if ( '' !== $idem ) {
 			$existing = ML_Appointment_Repository::get_by_idempotency( $idem );
 			if ( $existing ) {
-				return $existing;
+				return self::attach_consultation_fee( $existing );
 			}
 		}
 
@@ -99,6 +99,23 @@ class ML_Appointment_Service {
 		$appointment = ML_Appointment_Repository::get( $id );
 		self::notify( (int) $id, 'confirmation' );
 
+		return self::attach_consultation_fee( $appointment );
+	}
+
+	/**
+	 * Add the consultation-fee payment envelope to a booking response.
+	 *
+	 * The appointment stays confirmed even when no fee is configured or the
+	 * gateway is off, so online payment remains optional. The invoice itself
+	 * is still raised (when a fee is configured) so the clinic can collect it
+	 * later from Billing or the patient portal.
+	 *
+	 * @param array $appointment Appointment row.
+	 *
+	 * @return array Appointment row plus `consultation` payment details.
+	 */
+	private static function attach_consultation_fee( array $appointment ) {
+		$appointment['consultation'] = ML_Fee_Service::booking_payment_payload( $appointment );
 		return $appointment;
 	}
 

@@ -264,16 +264,17 @@ class ML_Payment_Repository {
 	 * Create a Razorpay order for the invoice's outstanding balance and open
 	 * a pending payment row to be completed on verification.
 	 *
-	 * @param int $invoice_id Invoice ID.
+	 * @param int  $invoice_id     Invoice ID.
+	 * @param bool $enforce_access Run the current-user patient access check.
 	 *
 	 * @return array|WP_Error { order_id, amount (INR float), currency, key_id, receipt, invoice, payment }.
 	 */
-	public static function create_razorpay_order( $invoice_id ) {
+	public static function create_razorpay_order( $invoice_id, $enforce_access = true ) {
 		$invoice = ML_Invoice_Repository::get( $invoice_id );
 		if ( ! $invoice ) {
 			return new WP_Error( 'ml_invoice_not_found', __( 'Invoice not found.', 'ma-lumiere-clinic' ) );
 		}
-		if ( ! ML_Security::can_access_patient( (int) $invoice['patient_id'] ) ) {
+		if ( $enforce_access && ! ML_Security::can_access_patient( (int) $invoice['patient_id'] ) ) {
 			return new WP_Error( 'ml_payment_forbidden', __( 'You are not allowed to do this.', 'ma-lumiere-clinic' ) );
 		}
 

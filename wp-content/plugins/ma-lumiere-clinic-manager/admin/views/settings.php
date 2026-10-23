@@ -210,6 +210,20 @@ $ml_settings = ML_Settings::all();
 					<td><input class="regular-text" type="text" id="ml-invoice-prefix" name="ml_clinic_settings[billing][invoice_prefix]" value="<?php echo esc_attr( $ml_settings['billing']['invoice_prefix'] ); ?>" /></td>
 				</tr>
 				<tr>
+					<th scope="row"><label class="ml-field__label" for="ml-consultation-fee"><?php esc_html_e( 'Consultation Fee', 'ma-lumiere-clinic' ); ?></label></th>
+					<td>
+						<input class="small-text" type="number" min="0" step="0.01" id="ml-consultation-fee" name="ml_clinic_settings[billing][consultation_fee]" value="<?php echo esc_attr( isset( $ml_settings['billing']['consultation_fee'] ) ? $ml_settings['billing']['consultation_fee'] : 0 ); ?>" />
+						<p class="description"><?php esc_html_e( 'Amount invoiced when a booking is made. Patients can pay it online or later from the portal; the appointment is confirmed either way. Set to 0 to disable.', 'ma-lumiere-clinic' ); ?></p>
+					</td>
+				</tr>
+				<tr>
+					<th scope="row"><label class="ml-field__label" for="ml-prescription-fee"><?php esc_html_e( 'Prescription Fee', 'ma-lumiere-clinic' ); ?></label></th>
+					<td>
+						<input class="small-text" type="number" min="0" step="0.01" id="ml-prescription-fee" name="ml_clinic_settings[billing][prescription_fee]" value="<?php echo esc_attr( isset( $ml_settings['billing']['prescription_fee'] ) ? $ml_settings['billing']['prescription_fee'] : 0 ); ?>" />
+						<p class="description"><?php esc_html_e( 'Amount invoiced automatically when a prescription is finalized. Corrections to a finalized prescription are not billed again. Set to 0 to disable.', 'ma-lumiere-clinic' ); ?></p>
+					</td>
+				</tr>
+				<tr>
 					<th scope="row"><label class="ml-field__label" for="ml-razr-mode"><?php esc_html_e( 'Razorpay mode', 'ma-lumiere-clinic' ); ?></label></th>
 					<td>
 						<select class="ml-control" id="ml-razr-mode" name="ml_clinic_settings[billing][razorpay][mode]">

@@ -2663,3 +2663,45 @@ Stack trace:
 [03-Oct-2026 18:03:04 UTC] PHP Warning:  Undefined array key "doctor_name" in C:\xampp\htdocs\malumere\wp-content\plugins\ma-lumiere-clinic-manager\admin\views\_appointment-list.php on line 116
 [03-Oct-2026 18:03:04 UTC] PHP Warning:  Undefined array key "doctor_name" in C:\xampp\htdocs\malumere\wp-content\plugins\ma-lumiere-clinic-manager\admin\views\_appointment-list.php on line 116
 [03-Oct-2026 18:13:33 UTC] ML Clinic: confirmation email not sent for appointment 258: Email sending is disabled for this environment.
+[23-Oct-2026 05:39:59 UTC] PHP Warning:  mysqli_real_connect(): (HY000/1045): Access denied for user 'a17590e4_root'@'localhost' (using password: YES) in C:\xampp\htdocs\malumere\wp-includes\class-wpdb.php on line 1990
+[23-Oct-2026 05:40:00 UTC] PHP Warning:  mysqli_real_connect(): (HY000/1045): Access denied for user 'a17590e4_root'@'localhost' (using password: YES) in C:\xampp\htdocs\malumere\wp-includes\class-wpdb.php on line 1990
+[23-Oct-2026 07:07:42 UTC] PHP Warning:  Undefined array key "quantity_available" in C:\xampp\htdocs\malumere\wp-content\plugins\ma-lumiere-clinic-manager\admin\views\inventory.php on line 621
+[23-Oct-2026 07:07:42 UTC] PHP Warning:  Undefined array key "quantity_available" in C:\xampp\htdocs\malumere\wp-content\plugins\ma-lumiere-clinic-manager\admin\views\inventory.php on line 621
+[23-Oct-2026 07:07:42 UTC] PHP Warning:  Undefined array key "quantity_available" in C:\xampp\htdocs\malumere\wp-content\plugins\ma-lumiere-clinic-manager\admin\views\inventory.php on line 621
+[23-Oct-2026 07:07:42 UTC] PHP Warning:  Undefined array key "quantity_available" in C:\xampp\htdocs\malumere\wp-content\plugins\ma-lumiere-clinic-manager\admin\views\inventory.php on line 621
+[23-Oct-2026 07:07:42 UTC] PHP Warning:  Undefined array key "quantity_available" in C:\xampp\htdocs\malumere\wp-content\plugins\ma-lumiere-clinic-manager\admin\views\inventory.php on line 621
+[23-Oct-2026 07:23:20 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at C:\xampp\htdocs\malumere\wp-config.php:1) in C:\Users\Admin\AppData\Local\Temp\opencode\ml-booking-test.php on line 5
+[23-Oct-2026 07:23:20 UTC] ML Clinic: confirmation email not sent for appointment 254: Email sending is disabled for this environment.
+[23-Oct-2026 07:23:28 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at C:\xampp\htdocs\malumere\wp-config.php:1) in C:\Users\Admin\AppData\Local\Temp\opencode\ml-rest-test.php on line 5
+[23-Oct-2026 07:23:28 UTC] ML Clinic: confirmation email not sent for appointment 255: Email sending is disabled for this environment.
+[23-Oct-2026 08:00:35 UTC] ML Clinic: confirmation email not sent for appointment 256: Email sending is disabled for this environment.
+[23-Oct-2026 08:02:22 UTC] PHP Warning:  Undefined variable $ml_state in C:\xampp\htdocs\malumere\wp-content\plugins\ma-lumiere-clinic-manager\admin\views\billing.php on line 438
+[23-Oct-2026 08:02:22 UTC] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\malumere\wp-content\plugins\ma-lumiere-clinic-manager\admin\views\billing.php on line 438
+[23-Oct-2026 08:02:22 UTC] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\malumere\wp-content\plugins\ma-lumiere-clinic-manager\admin\views\billing.php on line 446
+[23-Oct-2026 08:02:22 UTC] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\malumere\wp-content\plugins\ma-lumiere-clinic-manager\admin\views\billing.php on line 446
+[23-Oct-2026 08:02:22 UTC] PHP Warning:  Undefined variable $ml_state in C:\xampp\htdocs\malumere\wp-content\plugins\ma-lumiere-clinic-manager\admin\views\billing.php on line 438
+[23-Oct-2026 08:02:22 UTC] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\malumere\wp-content\plugins\ma-lumiere-clinic-manager\admin\views\billing.php on line 438
+[23-Oct-2026 08:02:22 UTC] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\malumere\wp-content\plugins\ma-lumiere-clinic-manager\admin\views\billing.php on line 446
+[23-Oct-2026 08:02:22 UTC] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\malumere\wp-content\plugins\ma-lumiere-clinic-manager\admin\views\billing.php on line 446
+[23-Oct-2026 08:02:22 UTC] PHP Warning:  Undefined variable $ml_state in C:\xampp\htdocs\malumere\wp-content\plugins\ma-lumiere-clinic-manager\admin\views\billing.php on line 438
+[23-Oct-2026 08:02:22 UTC] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\malumere\wp-content\plugins\ma-lumiere-clinic-manager\admin\views\billing.php on line 438
+[23-Oct-2026 08:02:22 UTC] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\malumere\wp-content\plugins\ma-lumiere-clinic-manager\admin\views\billing.php on line 446
+[23-Oct-2026 08:02:22 UTC] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\malumere\wp-content\plugins\ma-lumiere-clinic-manager\admin\views\billing.php on line 446
+[23-Oct-2026 08:02:22 UTC] PHP Warning:  Undefined variable $ml_state in C:\xampp\htdocs\malumere\wp-content\plugins\ma-lumiere-clinic-manager\admin\views\billing.php on line 438
+[23-Oct-2026 08:02:22 UTC] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\malumere\wp-content\plugins\ma-lumiere-clinic-manager\admin\views\billing.php on line 438
+[23-Oct-2026 08:02:22 UTC] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\malumere\wp-content\plugins\ma-lumiere-clinic-manager\admin\views\billing.php on line 446
+[23-Oct-2026 08:02:22 UTC] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\malumere\wp-content\plugins\ma-lumiere-clinic-manager\admin\views\billing.php on line 446
+[23-Oct-2026 08:02:22 UTC] PHP Warning:  Undefined variable $ml_state in C:\xampp\htdocs\malumere\wp-content\plugins\ma-lumiere-clinic-manager\admin\views\billing.php on line 438
+[23-Oct-2026 08:02:22 UTC] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\malumere\wp-content\plugins\ma-lumiere-clinic-manager\admin\views\billing.php on line 438
+[23-Oct-2026 08:02:22 UTC] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\malumere\wp-content\plugins\ma-lumiere-clinic-manager\admin\views\billing.php on line 446
+[23-Oct-2026 08:02:22 UTC] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\malumere\wp-content\plugins\ma-lumiere-clinic-manager\admin\views\billing.php on line 446
+[23-Oct-2026 08:02:22 UTC] PHP Warning:  Undefined variable $ml_state in C:\xampp\htdocs\malumere\wp-content\plugins\ma-lumiere-clinic-manager\admin\views\billing.php on line 438
+[23-Oct-2026 08:02:22 UTC] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\malumere\wp-content\plugins\ma-lumiere-clinic-manager\admin\views\billing.php on line 438
+[23-Oct-2026 08:02:22 UTC] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\malumere\wp-content\plugins\ma-lumiere-clinic-manager\admin\views\billing.php on line 446
+[23-Oct-2026 08:02:22 UTC] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\malumere\wp-content\plugins\ma-lumiere-clinic-manager\admin\views\billing.php on line 446
+[23-Oct-2026 08:56:44 UTC] Automatic updates starting...
+[23-Oct-2026 08:56:45 UTC]   Automatic plugin updates starting...
+[23-Oct-2026 08:56:45 UTC]   Automatic plugin updates complete.
+[23-Oct-2026 08:56:45 UTC] Automatic updates complete.
+[23-Oct-2026 09:42:13 UTC] PHP Warning:  Attempt to read property "post_title" on null in C:\Users\Admin\AppData\Local\Temp\opencode\ml-debug-pool.php on line 25
+[23-Oct-2026 11:29:41 UTC] ML Clinic: confirmation email not sent for appointment 257: Email sending is disabled for this environment.

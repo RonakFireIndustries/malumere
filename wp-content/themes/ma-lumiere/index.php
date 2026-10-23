@@ -13,7 +13,7 @@ if ( is_home() && ! is_front_page() ) :
 		<div class="container">
 			<?php ml_breadcrumbs(); ?>
 			<h1 class="page-hero__title"><?php echo esc_html( get_the_title( get_option( 'page_for_posts' ) ) ); ?></h1>
-			<p class="page-hero__lead"><?php esc_html_e( 'Insights from the Ma Lumière clinic.', 'ma-lumiere' ); ?></p>
+			<p class="page-hero__lead"><?php esc_html_e( 'Practical guides on skin, hair, consultations, and aftercare from Ma Lumière in Mira Road East.', 'ma-lumiere' ); ?></p>
 		</div>
 	</section>
 <?php endif; ?>

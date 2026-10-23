@@ -137,6 +137,75 @@ function ml_hero_image_id() {
 }
 
 /**
+ * Editorial image URLs for treatment layouts.
+ *
+ * Starts with the site hero portrait, then large media-library images that
+ * are not used as a treatment's featured image. This keeps the alternating
+ * treatment rows on-brand instead of borrowing another treatment's photo.
+ *
+ * @param int $limit Maximum number of images.
+ * @return array
+ */
+function ml_treatment_editorial_images( $limit = 2 ) {
+	static $pool = null;
+
+	if ( null === $pool ) {
+		$pool    = array();
+		$hero_id = ml_hero_image_id();
+
+		if ( $hero_id ) {
+			$hero_url = wp_get_attachment_image_url( $hero_id, 'large' );
+			if ( $hero_url ) {
+				$pool[] = $hero_url;
+			}
+		}
+
+		$treatment_ids    = get_posts(
+			array(
+				'post_type'      => 'ml_treatment',
+				'posts_per_page' => -1,
+				'post_status'    => 'publish',
+				'fields'         => 'ids',
+			)
+		);
+		$treatment_thumbs = array();
+		foreach ( $treatment_ids as $treatment_id ) {
+			$thumb_id = get_post_thumbnail_id( $treatment_id );
+			if ( $thumb_id ) {
+				$treatment_thumbs[] = $thumb_id;
+			}
+		}
+
+		$exclude    = array_filter( array_merge( array( $hero_id ), $treatment_thumbs ) );
+		$candidates = get_posts(
+			array(
+				'post_type'      => 'attachment',
+				'post_mime_type' => 'image',
+				'post_status'    => 'inherit',
+				'posts_per_page' => 6,
+				'fields'         => 'ids',
+				'post__not_in'   => $exclude,
+				'orderby'        => 'date',
+				'order'          => 'DESC',
+			)
+		);
+
+		foreach ( $candidates as $candidate_id ) {
+			$meta = wp_get_attachment_metadata( $candidate_id );
+			if ( empty( $meta['width'] ) || empty( $meta['height'] ) || $meta['width'] < 900 || $meta['height'] < 600 ) {
+				continue;
+			}
+			$url = wp_get_attachment_image_url( $candidate_id, 'large' );
+			if ( $url && ! in_array( $url, $pool, true ) ) {
+				$pool[] = $url;
+			}
+		}
+	}
+
+	return array_slice( $pool, 0, max( 0, (int) $limit ) );
+}
+
+/**
  * Find a published page by its template file.
  *
  * @param string $template Template file name.

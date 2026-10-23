@@ -34,6 +34,8 @@
 			notes: ''
 		},
 		idempotency: Math.random().toString(36).slice(2) + Date.now().toString(36),
+		booking: null,
+		paying: false,
 		submitting: false
 	};
 
@@ -375,6 +377,13 @@
 			html += '</div>';
 		}
 		html += '</div>';
+		if (cfg.consultationFee > 0) {
+			html += '<div class="ml-booking__fee ml-booking__fee--review">';
+			html += '<div class="ml-booking__summary-row"><span class="ml-booking__summary-key">' + esc(S.feeLabel || 'Consultation fee') + '</span>';
+			html += '<span class="ml-booking__summary-value">' + esc(cfg.consultationFeeLabel || '') + '</span></div>';
+			html += '<p class="ml-booking__hint">' + esc(S.paymentOptional || 'Online payment is optional — your appointment is confirmed.') + '</p>';
+			html += '</div>';
+		}
 		html += '<button type="button" class="ml-booking__submit" data-action="submit">' + esc(S.confirmBtn || 'Confirm my booking') + '</button>';
 		html += nav({ back: true });
 		body.innerHTML = html;
@@ -384,7 +393,9 @@
 	var renderSuccess = function (appt) {
 		state.step = 5;
 		stepper();
-		body.innerHTML = '<div class="ml-booking__success">' +
+		state.booking = appt || {};
+		var pay = state.booking.consultation || null;
+		var html = '<div class="ml-booking__success">' +
 			'<span class="ml-booking__check">✓</span>' +
 			'<h3>' + esc(S.confirmed || 'Booking confirmed') + '</h3>' +
 			'<p>' + esc(S.with || 'Consultation') + ': ' + esc(state.treatmentData ? state.treatmentData.name : '') + '</p>' +
@@ -395,14 +406,181 @@
 				summaryLine(S.time || 'Time', state.time + (state.end ? '–' + state.end : '')) +
 				summaryLine(S.treatment || 'Treatment', state.treatmentData ? state.treatmentData.name : 'Consultation') +
 				summaryLine('Reference', appt.booking_reference || '—') +
-			'</div>' +
-			'<div class="ml-booking__calendar">' + calendarLinks(appt) + '</div>' +
+			'</div>';
+		if (pay && Number(pay.fee) > 0) {
+			html += renderFeeBlock(pay);
+		}
+		html += '<div class="ml-booking__calendar">' + calendarLinks(appt) + '</div>' +
 			'<div class="ml-booking__actions">' +
 				'<a href="/" class="ml-booking__btn ml-booking__btn--ghost">' + esc(S.home || 'Return to homepage') + '</a>' +
 				'<button type="button" class="ml-booking__btn ml-booking__btn--primary" data-action="again">' + esc(S.bookAnother || 'Book another appointment') + '</button>' +
 			'</div>' +
 			'</div>';
+		body.innerHTML = html;
 		body.setAttribute('aria-busy', 'false');
+	};
+
+	/**
+	 * Consultation-fee block on the confirmation screen. Payment is
+	 * optional: the appointment is already confirmed either way.
+	 *
+	 * @param {Object} pay Consultation payment payload from the booking API.
+	 * @return {string} Markup.
+	 */
+	var renderFeeBlock = function (pay) {
+		var amount = pay.fee_label || cfg.consultationFeeLabel || '';
+		var html = '<div class="ml-booking__fee">';
+		html += '<div class="ml-booking__summary-row"><span class="ml-booking__summary-key">' + esc(S.feeLabel || 'Consultation fee') + '</span>';
+		html += '<span class="ml-booking__summary-value ml-booking__fee-amount">' + esc(amount) + '</span></div>';
+		if (pay.payable) {
+			html += '<button type="button" class="ml-booking__btn ml-booking__btn--primary ml-booking__pay" data-action="pay">' + esc(S.payNow || 'Pay consultation fee') + '</button>';
+			html += '<p class="ml-booking__hint">' + esc(S.paymentOptional || 'Online payment is optional — your appointment is confirmed.') + '</p>';
+		} else {
+			var note = cfg.gatewayEnabled && pay.invoice_id ? (S.payLater || '') : (S.paymentUnavailable || '');
+			html += '<p class="ml-booking__hint">' + esc(note) + '</p>';
+		}
+		html += '<p class="ml-booking__pay-status" role="status" aria-live="polite"></p>';
+		html += '</div>';
+		return html;
+	};
+
+	/**
+	 * Update the inline payment status line.
+	 *
+	 * @param {string}  message Message to show.
+	 * @param {boolean} isError Error styling flag.
+	 * @return {void}
+	 */
+	var setPayStatus = function (message, isError) {
+		var box = body.querySelector('.ml-booking__pay-status');
+		if (!box) {
+			return;
+		}
+		box.textContent = message || '';
+		box.className = 'ml-booking__pay-status' + (isError ? ' ml-booking__pay-status--error' : '');
+	};
+
+	/**
+	 * Lazily load Razorpay checkout.js.
+	 *
+	 * @param {Function} done Called with an error (or nothing) when ready.
+	 * @return {void}
+	 */
+	var loadRazorpay = function (done) {
+		if (window.Razorpay) {
+			done();
+			return;
+		}
+		var s = document.createElement('script');
+		s.src = 'https://checkout.razorpay.com/v1/checkout.js';
+		s.onload = function () { done(); };
+		s.onerror = function () { done(new Error('checkout')); };
+		document.body.appendChild(s);
+	};
+
+	/**
+	 * Ask the server for a Razorpay order for this booking's fee invoice,
+	 * then open checkout. The invoice amount is always server-resolved.
+	 *
+	 * @return {void}
+	 */
+	var payConsultation = function () {
+		var info = state.booking && state.booking.consultation;
+		if (!info || !info.payable || state.paying) {
+			return;
+		}
+		var btn = body.querySelector('[data-action="pay"]');
+		state.paying = true;
+		if (btn) {
+			btn.disabled = true;
+			btn.textContent = S.loading || 'Loading…';
+		}
+
+		var fail = function (message) {
+			state.paying = false;
+			if (btn) {
+				btn.disabled = false;
+				btn.textContent = S.payNow || 'Pay consultation fee';
+			}
+			setPayStatus(message || S.paymentFailed || 'The payment could not be completed.', true);
+		};
+
+		fetch(base('appointments/book/payment-order'), {
+			method: 'POST',
+			headers: {
+				'Accept': 'application/json',
+				'Content-Type': 'application/json'
+			},
+			body: JSON.stringify({ invoice_id: info.invoice_id, pay_nonce: info.pay_nonce })
+		}).then(function (resp) {
+			return resp.json().then(function (json) {
+				return { ok: resp.ok, json: json };
+			});
+		}).then(function (res) {
+			if (!res.ok || !res.json.data || !res.json.data.order_id) {
+				throw new Error('order');
+			}
+			var order = res.json.data;
+			loadRazorpay(function (err) {
+				if (err || !window.Razorpay) {
+					fail(S.paymentUnavailable || 'Online payment is not available right now.');
+					return;
+				}
+				var rz = new window.Razorpay({
+					key: order.key_id,
+					amount: Math.round(Number(order.amount) * 100),
+					currency: order.currency,
+					name: (state.treatmentData ? state.treatmentData.name : '') || document.title,
+					description: S.feeLabel || 'Consultation fee',
+					order_id: order.order_id,
+					handler: function (pay) {
+						fetch(base('invoices/' + info.invoice_id + '/razorpay-verify'), {
+							method: 'POST',
+							headers: { 'Content-Type': 'application/json' },
+							body: JSON.stringify({
+								razorpay_order_id: pay.razorpay_order_id,
+								razorpay_payment_id: pay.razorpay_payment_id,
+								razorpay_signature: pay.razorpay_signature
+							})
+						}).then(function (r) {
+							return r.json().then(function (json) {
+								return { ok: r.ok, json: json };
+							});
+						}).then(function (v) {
+							if (!v.ok) {
+								throw new Error('verify');
+							}
+							state.paying = false;
+							info.payable = false;
+							info.fee = 0;
+							var payBtn = body.querySelector('[data-action="pay"]');
+							if (payBtn) {
+								payBtn.parentNode.removeChild(payBtn);
+							}
+							setPayStatus(S.paymentSuccess || 'Payment received. Thank you!', false);
+						}).catch(function () {
+							fail(S.paymentFailed || 'The payment could not be completed.');
+						});
+					},
+					modal: {
+						ondismiss: function () {
+							state.paying = false;
+							if (btn) {
+								btn.disabled = false;
+								btn.textContent = S.payNow || 'Pay consultation fee';
+							}
+							setPayStatus(S.paymentCancelled || 'Payment was cancelled.', true);
+						}
+					}
+				});
+				rz.on('payment.failed', function () {
+					fail(S.paymentFailed || 'The payment could not be completed.');
+				});
+				rz.open();
+			});
+		}).catch(function () {
+			fail(S.paymentFailed || 'The payment could not be completed.');
+		});
 	};
 
 	var summaryLine = function (key, value) {
@@ -566,7 +744,13 @@
 				submit();
 				return;
 			}
+			if (action === 'pay') {
+				payConsultation();
+				return;
+			}
 			if (action === 'again') {
+				state.booking = null;
+				state.paying = false;
 				state.treatment = 0;
 				state.treatmentData = null;
 				state.date = '';

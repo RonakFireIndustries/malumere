@@ -95,6 +95,10 @@ class ML_Booking_Shortcode {
 			'treatments'          => $items,
 			'preselectTreatment'  => $preselect,
 			'doctorId'            => 0,
+			'consultationFee'     => ML_Fee_Service::consultation_fee(),
+			'consultationFeeLabel'=> ml_money( ML_Fee_Service::consultation_fee() ),
+			'currency'            => ML_Fee_Service::currency(),
+			'gatewayEnabled'      => ML_Fee_Service::gateway_enabled(),
 			'gmtOffsetSeconds'    => (int) ( get_option( 'gmt_offset' ) * HOUR_IN_SECONDS ),
 			'now'                 => current_time( 'mysql' ),
 			'strings'             => array(
@@ -136,6 +140,14 @@ class ML_Booking_Shortcode {
 				'message'     => __( 'Anything we should know? (optional)', 'ma-lumiere-clinic' ),
 				'ref'         => __( 'Reference', 'ma-lumiere-clinic' ),
 				'with'        => __( 'Consultation', 'ma-lumiere-clinic' ),
+				'feeLabel'    => __( 'Consultation fee', 'ma-lumiere-clinic' ),
+				'payNow'      => __( 'Pay consultation fee', 'ma-lumiere-clinic' ),
+				'payLater'    => __( 'You can also pay this fee later at the clinic or from your patient portal.', 'ma-lumiere-clinic' ),
+				'paymentOptional' => __( 'Online payment is optional — your appointment is confirmed.', 'ma-lumiere-clinic' ),
+				'paymentSuccess'  => __( 'Payment received. Thank you!', 'ma-lumiere-clinic' ),
+				'paymentFailed'   => __( 'The payment could not be completed. You can try again or pay at the clinic.', 'ma-lumiere-clinic' ),
+				'paymentCancelled'=> __( 'Payment was cancelled. Your appointment is still confirmed.', 'ma-lumiere-clinic' ),
+				'paymentUnavailable' => __( 'Online payment is not available right now. Please pay at the clinic.', 'ma-lumiere-clinic' ),
 			),
 		);
 
