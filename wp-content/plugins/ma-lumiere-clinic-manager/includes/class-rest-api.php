@@ -1772,7 +1772,7 @@ array(
 
 		$result = ML_Payment_Repository::create_razorpay_order( $invoice_id, false );
 		if ( is_wp_error( $result ) ) {
-			return self::rest_error( $result, 400 );
+			return self::razorpay_error( $result );
 		}
 
 		return rest_ensure_response(
@@ -1831,6 +1831,50 @@ array(
 			$payload['data']['errors'] = $error_data['errors'];
 		}
 		return new WP_REST_Response( $payload, $status );
+	}
+
+	/**
+	 * Map Razorpay repository errors to meaningful HTTP statuses.
+	 *
+	 * Gateway transport/order failures carry an explicit `status` from the
+	 * repository (401 for auth, 500 for upstream errors). Verification
+	 * failures are client errors (400) and must never look like success.
+	 *
+	 * @param WP_Error $error   Error.
+	 * @param int      $default Fallback status.
+	 *
+	 * @return WP_REST_Response
+	 */
+	private static function razorpay_error( WP_Error $error, $default = 400 ) {
+		$status = $default;
+		$data   = $error->get_error_data();
+
+		if ( is_array( $data ) && isset( $data['status'] ) ) {
+			$candidate = (int) $data['status'];
+			if ( $candidate >= 400 && $candidate <= 599 ) {
+				$status = $candidate;
+			}
+		} else {
+			switch ( $error->get_error_code() ) {
+				case 'ml_invoice_not_found':
+					$status = 404;
+					break;
+				case 'ml_razorpay_disabled':
+				case 'ml_razorpay_config':
+					$status = 503;
+					break;
+				case 'ml_razorpay_signature':
+				case 'ml_razorpay_payload':
+				case 'ml_razorpay_amount':
+				case 'ml_razorpay_currency':
+				case 'ml_razorpay_order_match':
+				case 'ml_razorpay_min_amount':
+					$status = 400;
+					break;
+			}
+		}
+
+		return self::rest_error( $error, $status );
 	}
 
 	/**
@@ -2422,7 +2466,7 @@ array(
 	public static function create_razorpay_order( $request ) {
 		$result = ML_Payment_Repository::create_razorpay_order( (int) $request['id'] );
 		if ( is_wp_error( $result ) ) {
-			return self::rest_error( $result, 400 );
+			return self::razorpay_error( $result );
 		}
 		return rest_ensure_response(
 			array(
@@ -2441,7 +2485,7 @@ array(
 	public static function verify_razorpay_payment( $request ) {
 		$result = ML_Payment_Repository::verify_razorpay_payment( (int) $request['id'], $request->get_params() );
 		if ( is_wp_error( $result ) ) {
-			return self::rest_error( $result, 403 );
+			return self::razorpay_error( $result );
 		}
 		return rest_ensure_response(
 			array(
@@ -2463,7 +2507,7 @@ array(
 
 		$result = ML_Payment_Repository::create_razorpay_order( (int) $request['id'] );
 		if ( is_wp_error( $result ) ) {
-			return self::rest_error( $result, 400 );
+			return self::razorpay_error( $result );
 		}
 		return rest_ensure_response(
 			array(

@@ -477,34 +477,62 @@ if ( 'invoice_created' === $ml_notice ) {
 		 * Lazily load the Razorpay checkout library and open the pay modal
 		 * for an invoice.
 		 *
-		 * @param {string} orderId Razorpay order id.
-		 * @param {Object} cfg     { key_id, amount, currency, receipt }.
-		 * @param {Function} onDone Called once the payment modal flow completes.
+		 * @param {string}   orderId Razorpay order id.
+		 * @param {Object}   cfg     { key_id, amount, currency, receipt }.
+		 * @param {Function} onDone  Called once the payment modal succeeds.
+		 * @param {Function} onFail  Called when checkout is dismissed/fails.
 		 * @return {void}
 		 */
-		function openRazorpayCashier(orderId, cfg, onDone) {
-			if (window.Razorpay) {
+		function openRazorpayCashier(orderId, cfg, onDone, onFail) {
+			var open = function () {
 				var rz = new window.Razorpay({
 					key: cfg.key_id,
-					amount: Math.round(cfg.amount * 100),
+					amount: Math.round(Number(cfg.amount) * 100),
 					currency: cfg.currency,
 					name: cfg.receipt ? ('Invoice ' + cfg.receipt) : document.title,
 					order_id: orderId,
 					handler: onDone,
-					modal: { ondismiss: function () { } }
+					modal: {
+						ondismiss: function () {
+							if (onFail) { onFail('Payment was cancelled.'); }
+						}
+					}
+				});
+				rz.on('payment.failed', function (resp) {
+					var msg = (resp && resp.error && resp.error.description) ? resp.error.description : 'Payment failed. Please try again.';
+					if (onFail) { onFail(msg); }
 				});
 				rz.open();
+			};
+
+			if (window.Razorpay) {
+				open();
 				return;
 			}
 			var s = document.createElement('script');
 			s.src = 'https://checkout.razorpay.com/v1/checkout.js';
-			s.onload = function () { openRazorpayCashier(orderId, cfg, onDone); };
+			s.onload = open;
+			s.onerror = function () {
+				if (onFail) { onFail('Could not load Razorpay checkout. Check your connection and try again.'); }
+			};
 			document.head.appendChild(s);
 		}
 
-		function loadCashier(orderId, cfg) {
+		function loadCashier(orderId, cfg, btn) {
 			return function () {
+				var done = false;
+				var reset = function () {
+					btn.removeAttribute('data-busy');
+					btn.disabled = false;
+				};
+				var fail = function (message) {
+					if (done) { return; }
+					reset();
+					window.alert(message || 'Payment could not be completed.');
+				};
+
 				openRazorpayCashier(orderId, cfg, function (pay) {
+					done = true;
 					var vUrl = window.MLClinicAdmin.restUrl + 'invoices/' + cfg.invoiceId + '/razorpay-verify';
 					fetch(vUrl, {
 						method: 'POST',
@@ -512,12 +540,27 @@ if ( 'invoice_created' === $ml_notice ) {
 						body: JSON.stringify({
 							razorpay_order_id: pay.razorpay_order_id,
 							razorpay_payment_id: pay.razorpay_payment_id,
-							razorpay_signature: pay.razorpay_signature
+							razorpay_signature: pay.razorpay_signature,
+							captured_amount: Math.round(Number(cfg.amount) * 100),
+							captured_currency: cfg.currency
 						})
-					}).then(function (r) { return r.json(); })
-						.then(function () { window.location.reload(); })
-						.catch(function () { window.location.reload(); });
-				});
+					}).then(function (r) {
+						return r.json().then(function (d) {
+							return { ok: r.ok, d: d };
+						});
+					}).then(function (res) {
+						btn.removeAttribute('data-busy');
+						if (!res.ok || !res.d || !res.d.data || !res.d.data.payment) {
+							var msg = (res.d && res.d.data && res.d.data.message) ? res.d.data.message : 'The payment could not be verified.';
+							window.alert(msg + ' Payment ID: ' + pay.razorpay_payment_id + '. Please contact the clinic before retrying.');
+							return;
+						}
+						window.location.reload();
+					}).catch(function () {
+						btn.removeAttribute('data-busy');
+						window.alert('The payment could not be verified. Payment ID: ' + pay.razorpay_payment_id + '. Please contact the clinic before retrying.');
+					});
+				}, fail);
 			};
 		}
 
@@ -527,6 +570,7 @@ if ( 'invoice_created' === $ml_notice ) {
 			ev.preventDefault();
 			if (btn.getAttribute('data-busy')) { return; }
 			btn.setAttribute('data-busy', '1');
+			btn.disabled = true;
 			var orderUrl = window.MLClinicAdmin.restUrl + 'invoices/' + btn.getAttribute('data-invoice') + '/razorpay-order';
 			fetch(orderUrl, {
 				method: 'POST',
@@ -535,6 +579,7 @@ if ( 'invoice_created' === $ml_notice ) {
 				.then(function (res) {
 					btn.removeAttribute('data-busy');
 					if (!res.ok) {
+						btn.disabled = false;
 						var msg = (res.d && res.d.data && res.d.data.message) ? res.d.data.message : 'Payment could not be started.';
 						window.alert(msg);
 						return;
@@ -546,10 +591,11 @@ if ( 'invoice_created' === $ml_notice ) {
 						currency: o.currency,
 						receipt: o.receipt,
 						invoiceId: btn.getAttribute('data-invoice')
-					})();
+					}, btn)();
 				})
 				.catch(function () {
 					btn.removeAttribute('data-busy');
+					btn.disabled = false;
 					window.alert('Payment could not be started. Use the manual form below.');
 				});
 		});

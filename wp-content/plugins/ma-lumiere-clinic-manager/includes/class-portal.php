@@ -835,47 +835,99 @@ class ML_Portal {
 			MLPortal.currency = ' . wp_json_encode( $currency ) . ';
 			MLPortal.amount = ' . $amount_js . ';
 			MLPortal.errMsg = ' . wp_json_encode( __( 'Something went wrong. Please try again.', 'ma-lumiere-clinic' ) ) . ';
+			MLPortal.cancelMsg = ' . wp_json_encode( __( 'Payment was cancelled.', 'ma-lumiere-clinic' ) ) . ';
+			MLPortal.failMsg = ' . wp_json_encode( __( 'The payment could not be completed.', 'ma-lumiere-clinic' ) ) . ';
+			MLPortal.successMsg = ' . wp_json_encode( __( 'Payment received. Thank you!', 'ma-lumiere-clinic' ) ) . ';
 			MLPortal.clinicName = ' . wp_json_encode( (string) ML_Settings::get( 'clinic.clinic_name', '' ) ) . ';
 			MLPortal.payBtn = document.getElementById("ml-portal-pay");
+			MLPortal.payStatus = document.getElementById("ml-portal-pay-status");
+			MLPortal.setStatus = function (message, isError) {
+				var box = MLPortal.payStatus;
+				if (!box) { if (message) { alert(message); } return; }
+				box.textContent = message || "";
+				box.className = "ml-portal__pay-status" + (isError ? " ml-portal__pay-status--error" : "");
+			};
 			if (MLPortal.payBtn) {
 				MLPortal.payBtn.addEventListener("click", function () {
 					var me = MLPortal;
+					if (me.payBtn.disabled) { return; }
+					var done = false;
+					var reset = function () { me.payBtn.disabled = false; };
+					var fail = function (message) {
+						if (done) { return; }
+						reset();
+						me.setStatus(message || me.failMsg, true);
+					};
+					me.payBtn.disabled = true;
+					me.setStatus("", false);
 					fetch(me.restUrl + "portal/invoices/" + me.invoice + "/razorpay-order", {
 						method: "POST",
 						headers: { "X-ML-Portal": me.nonce, "Content-Type": "application/json" }
-					}).then(function (r) { return r.json(); }).then(function (res) {
-						if (!res || !res.data || !res.data.order_id) { alert(me.errMsg); return; }
-						if (window.Razorpay) { openMLCashier(res.data); return; }
+					}).then(function (r) {
+						return r.json().then(function (json) { return { ok: r.ok, json: json }; });
+					}).then(function (res) {
+						if (!res.ok || !res.json || !res.json.data || !res.json.data.order_id) {
+							var msg = (res.json && res.json.data && res.json.data.message) ? res.json.data.message : me.errMsg;
+							fail(msg);
+							return;
+						}
+						var d = res.json.data;
+						var open = function () {
+							var rz = new window.Razorpay({
+								key: d.key_id,
+								amount: Math.round(Number(d.amount) * 100),
+								currency: d.currency,
+								name: me.clinicName || "Clinic",
+								order_id: d.order_id,
+								handler: function (pay) {
+									done = true;
+									fetch(me.restUrl + "invoices/" + me.invoice + "/razorpay-verify", {
+										method: "POST",
+										headers: { "Content-Type": "application/json" },
+										body: JSON.stringify({
+											razorpay_order_id: pay.razorpay_order_id,
+											razorpay_payment_id: pay.razorpay_payment_id,
+											razorpay_signature: pay.razorpay_signature,
+											captured_amount: Math.round(Number(d.amount) * 100),
+											captured_currency: d.currency
+										})
+									}).then(function (r) {
+										return r.json().then(function (json) { return { ok: r.ok, json: json }; });
+									}).then(function (v) {
+										if (!v.ok || !v.json || !v.json.data || !v.json.data.payment) {
+											var msg = (v.json && v.json.data && v.json.data.message) ? v.json.data.message : me.failMsg;
+											me.setStatus(msg + " Payment ID: " + pay.razorpay_payment_id + ". Please contact the clinic before retrying.", true);
+											return;
+										}
+										me.setStatus(me.successMsg, false);
+										window.location.reload();
+									}).catch(function () {
+										me.setStatus("The payment could not be verified. Payment ID: " + pay.razorpay_payment_id + ". Please contact the clinic before retrying.", true);
+									});
+								},
+								modal: {
+									ondismiss: function () { fail(me.cancelMsg); }
+								}
+							});
+							rz.on("payment.failed", function (resp) {
+								var msg = (resp && resp.error && resp.error.description) ? resp.error.description : me.failMsg;
+								fail(msg);
+							});
+							rz.open();
+						};
+						if (window.Razorpay) { open(); return; }
 						var s = document.createElement("script");
 						s.src = "https://checkout.razorpay.com/v1/checkout.js";
-						s.onload = function () { openMLCashier(res.data); };
-						s.onerror = function () { alert(me.errMsg); };
+						s.onload = open;
+						s.onerror = function () { fail(me.failMsg); };
 						document.body.appendChild(s);
-					}).catch(function () { alert(me.errMsg); });
+					}).catch(function () { fail(me.errMsg); });
 				});
-				function openMLCashier(d) {
-					var handler = new window.Razorpay({
-						key: d.key_id,
-						amount: Math.round(Number(d.amount) * 100),
-						currency: d.currency,
-						name: MLPortal.clinicName || "Clinic",
-						order_id: d.order_id,
-						handler: function (pay) {
-							fetch(me.restUrl + "invoices/" + me.invoice + "/razorpay-verify", {
-								method: "POST",
-								headers: { "Content-Type": "application/json" },
-								body: JSON.stringify({ razorpay_order_id: pay.razorpay_order_id, razorpay_payment_id: pay.razorpay_payment_id, razorpay_signature: pay.razorpay_signature })
-							}).then(function (r) { return r.json(); }).then(function () { window.location.reload(); })
-							  .catch(function () { alert(me.errMsg); });
-						},
-						modal: { ondismiss: function () { window.location.reload(); } }
-					});
-					handler.open();
-				}
 			}';
 
 		$markup = '<p class="ml-portal__pay"><button type="button" class="button button-primary" id="ml-portal-pay">' . esc_html__( 'Pay online (Razorpay)', 'ma-lumiere-clinic' ) . '</button>'
 			. '<span class="ml-portal__pay-amount">' . esc_html( ml_money( (float) $invoice['balance_amount'] ) ) . '</span></p>'
+			. '<p class="ml-portal__pay-status" id="ml-portal-pay-status" role="status" aria-live="polite"></p>'
 			. '<script>/* <![CDATA[ */' . $script . '/* ]]> */</script>';
 
 		return $markup;

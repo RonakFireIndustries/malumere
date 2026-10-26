@@ -98,6 +98,7 @@ class ML_Booking_Shortcode {
 			'consultationFee'     => ML_Fee_Service::consultation_fee(),
 			'consultationFeeLabel'=> ml_money( ML_Fee_Service::consultation_fee() ),
 			'currency'            => ML_Fee_Service::currency(),
+			'clinicName'          => (string) ML_Settings::get( 'clinic.clinic_name', '' ),
 			'gatewayEnabled'      => ML_Fee_Service::gateway_enabled(),
 			'gmtOffsetSeconds'    => (int) ( get_option( 'gmt_offset' ) * HOUR_IN_SECONDS ),
 			'now'                 => current_time( 'mysql' ),

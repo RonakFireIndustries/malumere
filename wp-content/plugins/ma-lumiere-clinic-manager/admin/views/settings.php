@@ -15,6 +15,7 @@ if ( ! current_user_can( ML_Settings::CAP ) ) {
 }
 
 $ml_settings = ML_Settings::all();
+$ml_rz_env   = ML_Env::razorpay();
 ?>
 <div class="wrap ml-clinic-wrap">
 	<div class="ml-clinic-header">
@@ -231,7 +232,11 @@ $ml_settings = ML_Settings::all();
 								<option value="<?php echo esc_attr( $ml_rk ); ?>" <?php selected( isset( $ml_settings['billing']['razorpay']['mode'] ) ? $ml_settings['billing']['razorpay']['mode'] : 'off', $ml_rk ); ?>><?php echo esc_html( $ml_rlabel ); ?></option>
 							<?php endforeach; ?>
 						</select>
-						<p class="description"><?php esc_html_e( 'Enables the "Pay online (Razorpay)" button on invoice screens in the selected environment. Test and live credentials are kept separate.', 'ma-lumiere-clinic' ); ?></p>
+						<?php if ( $ml_rz_env['configured'] ) : ?>
+							<p class="description"><?php echo esc_html( sprintf( __( 'Using .env credentials: %1$s (%2$s mode). The key secret is never displayed, and environment values take precedence over the fields below.', 'ma-lumiere-clinic' ), $ml_rz_env['key_id'], '' !== $ml_rz_env['mode'] ? $ml_rz_env['mode'] : 'test' ) ); ?></p>
+						<?php else : ?>
+							<p class="description"><?php esc_html_e( 'Enables the "Pay online (Razorpay)" button on invoice screens in the selected environment. Test and live credentials are kept separate.', 'ma-lumiere-clinic' ); ?></p>
+						<?php endif; ?>
 					</td>
 				</tr>
 				<tr>

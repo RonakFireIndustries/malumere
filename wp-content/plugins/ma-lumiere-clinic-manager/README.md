@@ -53,6 +53,40 @@ payment verification architecture and a full audit trail.
 No rewrite rules are flushed (the plugin registers no public rewrite-driven
 content), and **no data is ever deleted on activation or deactivation**.
 
+### Razorpay configuration
+
+Razorpay Standard Web Checkout is integrated server-side (no PHP SDK required;
+orders are created through the WordPress HTTP API and signatures are verified
+with `hash_hmac`). Put credentials in a `.env` file at the WordPress root, or
+set them as real environment variables:
+
+```
+RAZORPAY_KEY_ID=rzp_test_xxxxxxxxxxxx
+RAZORPAY_KEY_SECRET=xxxxxxxxxxxxxxxxxxxxxxxx
+RAZORPAY_MODE=test
+```
+
+`RAZORPAY_MODE` may be `test`, `live` or `off`; when omitted it is inferred from
+the key ID prefix. Environment values take precedence over Settings → Billing.
+The key **secret** is only read server-side and is never sent to the browser —
+order responses include the public key ID only. The root `.htaccess` denies
+direct access to `.env`.
+
+Checkout endpoints (WordPress REST equivalents of `/api/create-order` and
+`/api/verify-payment`):
+
+```
+POST /wp-json/ml-clinic/v1/invoices/{id}/razorpay-order
+POST /wp-json/ml-clinic/v1/invoices/{id}/razorpay-verify
+POST /wp-json/ml-clinic/v1/portal/invoices/{id}/razorpay-order   (portal session)
+POST /wp-json/ml-clinic/v1/appointments/book/payment-order       (public booking)
+```
+
+Orders are always created for the stored invoice balance (minimum 100 paise),
+never for a client-supplied amount. Verification compares
+`HMAC-SHA256(order_id + "|" + payment_id, KEY_SECRET)` in constant time and only
+marks the pending payment completed when it matches.
+
 ## 3. Database tables (version `1.4.1`)
 
 All tables use `{$wpdb->prefix}ml_` (never a hard-coded `wp_` prefix) and are

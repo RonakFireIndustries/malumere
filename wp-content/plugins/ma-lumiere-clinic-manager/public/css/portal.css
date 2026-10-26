@@ -176,3 +176,12 @@
 .ml-portal__pay-amount {
 	font-weight: 700;
 }
+
+.ml-portal__pay-status {
+	margin: .4rem 0 0;
+	font-size: .9em;
+}
+
+.ml-portal__pay-status--error {
+	color: #b32d2e;
+}

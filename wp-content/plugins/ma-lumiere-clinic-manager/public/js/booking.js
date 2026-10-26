@@ -497,6 +497,9 @@
 		}
 
 		var fail = function (message) {
+			if (paid) {
+				return;
+			}
 			state.paying = false;
 			if (btn) {
 				btn.disabled = false;
@@ -504,6 +507,7 @@
 			}
 			setPayStatus(message || S.paymentFailed || 'The payment could not be completed.', true);
 		};
+		var paid = false;
 
 		fetch(base('appointments/book/payment-order'), {
 			method: 'POST',
@@ -530,25 +534,31 @@
 					key: order.key_id,
 					amount: Math.round(Number(order.amount) * 100),
 					currency: order.currency,
-					name: (state.treatmentData ? state.treatmentData.name : '') || document.title,
+					name: cfg.clinicName || document.title,
 					description: S.feeLabel || 'Consultation fee',
 					order_id: order.order_id,
 					handler: function (pay) {
+						paid = true;
 						fetch(base('invoices/' + info.invoice_id + '/razorpay-verify'), {
 							method: 'POST',
 							headers: { 'Content-Type': 'application/json' },
 							body: JSON.stringify({
 								razorpay_order_id: pay.razorpay_order_id,
 								razorpay_payment_id: pay.razorpay_payment_id,
-								razorpay_signature: pay.razorpay_signature
+								razorpay_signature: pay.razorpay_signature,
+								captured_amount: Math.round(Number(order.amount) * 100),
+								captured_currency: order.currency
 							})
 						}).then(function (r) {
 							return r.json().then(function (json) {
 								return { ok: r.ok, json: json };
 							});
 						}).then(function (v) {
-							if (!v.ok) {
-								throw new Error('verify');
+							if (!v.ok || !v.json || !v.json.data || !v.json.data.payment) {
+								var msg = (v.json && v.json.data && v.json.data.message) ? v.json.data.message : (S.paymentFailed || 'The payment could not be verified.');
+								state.paying = false;
+								setPayStatus(msg + ' Payment ID: ' + pay.razorpay_payment_id + '. Please contact the clinic before retrying.', true);
+								return;
 							}
 							state.paying = false;
 							info.payable = false;
@@ -559,11 +569,15 @@
 							}
 							setPayStatus(S.paymentSuccess || 'Payment received. Thank you!', false);
 						}).catch(function () {
-							fail(S.paymentFailed || 'The payment could not be completed.');
+							state.paying = false;
+							setPayStatus('The payment could not be verified. Payment ID: ' + pay.razorpay_payment_id + '. Please contact the clinic before retrying.', true);
 						});
 					},
 					modal: {
 						ondismiss: function () {
+							if (paid) {
+								return;
+							}
 							state.paying = false;
 							if (btn) {
 								btn.disabled = false;
@@ -573,8 +587,9 @@
 						}
 					}
 				});
-				rz.on('payment.failed', function () {
-					fail(S.paymentFailed || 'The payment could not be completed.');
+				rz.on('payment.failed', function (resp) {
+					var detail = (resp && resp.error && resp.error.description) ? resp.error.description : (S.paymentFailed || 'The payment could not be completed.');
+					fail(detail);
 				});
 				rz.open();
 			});

@@ -241,6 +241,25 @@ class ML_Payment_Repository {
 	 * @return array|WP_Error { mode, key_id, key_secret }.
 	 */
 	public static function gateway_config() {
+		$env = ML_Env::razorpay();
+
+		// Environment configuration wins over stored settings. This keeps the
+		// key secret out of the database and out of committed source files.
+		if ( '' !== $env['key_id'] || '' !== $env['key_secret'] ) {
+			if ( 'off' === $env['mode'] ) {
+				return new WP_Error( 'ml_razorpay_disabled', __( 'Razorpay is disabled by RAZORPAY_MODE=off.', 'ma-lumiere-clinic' ) );
+			}
+			if ( ! $env['configured'] ) {
+				return new WP_Error( 'ml_razorpay_config', __( 'Both RAZORPAY_KEY_ID and RAZORPAY_KEY_SECRET are required in .env.', 'ma-lumiere-clinic' ) );
+			}
+			return array(
+				'mode'       => 'live' === $env['mode'] ? 'live' : 'test',
+				'key_id'     => $env['key_id'],
+				'key_secret' => $env['key_secret'],
+			);
+		}
+
+		// Fall back to credentials stored through Settings → Billing.
 		$rz = ML_Settings::get( 'billing.razorpay', array() );
 		$rz = is_array( $rz ) ? $rz : array();
 		$mode = isset( $rz['mode'] ) ? sanitize_key( $rz['mode'] ) : 'off';
@@ -289,7 +308,10 @@ class ML_Payment_Repository {
 
 		// Amount must be an integer number of paise.
 		$amount_paise = (int) round( $balance * 100 );
-		$currency     = (string) ( ML_Settings::get( 'billing.currency', 'INR' ) ?: 'INR' );
+		if ( $amount_paise < 100 ) {
+			return new WP_Error( 'ml_razorpay_min_amount', __( 'Razorpay requires a minimum amount of 100 paise (1.00).', 'ma-lumiere-clinic' ) );
+		}
+		$currency     = strtoupper( (string) ( ML_Settings::get( 'billing.currency', 'INR' ) ?: 'INR' ) );
 
 		$body = array(
 			'amount'          => $amount_paise,
@@ -315,14 +337,34 @@ class ML_Payment_Repository {
 		);
 
 		if ( is_wp_error( $response ) ) {
-			return $response;
+			return new WP_Error(
+				'ml_razorpay_http',
+				__( 'Razorpay could not be reached. Please try again.', 'ma-lumiere-clinic' ),
+				array( 'status' => 500 )
+			);
 		}
 		$code = wp_remote_retrieve_response_code( $response );
 		$data = json_decode( wp_remote_retrieve_body( $response ), true );
-		if ( 200 !== $code || ! is_array( $data ) || empty( $data['id'] ) ) {
+
+		// Distinguish bad credentials from ordinary gateway/validation errors.
+		if ( 401 === (int) $code || 403 === (int) $code ) {
+			return new WP_Error(
+				'ml_razorpay_auth',
+				__( 'Razorpay authentication failed. Check the API credentials.', 'ma-lumiere-clinic' ),
+				array(
+					'status'         => 401,
+					'gateway_status' => (int) $code,
+				)
+			);
+		}
+		if ( 200 !== (int) $code || ! is_array( $data ) || empty( $data['id'] ) ) {
 			return new WP_Error(
 				'ml_razorpay_order',
-				isset( $data['error']['description'] ) ? $data['error']['description'] : __( 'Razorpay could not create the order.', 'ma-lumiere-clinic' )
+				isset( $data['error']['description'] ) ? (string) $data['error']['description'] : __( 'Razorpay could not create the order.', 'ma-lumiere-clinic' ),
+				array(
+					'status'         => 500,
+					'gateway_status' => (int) $code,
+				)
 			);
 		}
 
@@ -429,10 +471,18 @@ class ML_Payment_Repository {
 
 		// Amount was fixed at order time; confirm the captured value equals
 		// what the pending payment was opened for (the outstanding balance).
+		// REST defaults captured_amount to 0, which means "not supplied":
+		// the signature already binds the payment to this server-created order.
 		$expected_amount = (int) round( (float) $payment['amount'] * 100 );
-		$captured = isset( $input['captured_amount'] ) ? (int) $input['captured_amount'] : $expected_amount;
-		if ( (int) $captured !== $expected_amount ) {
+		$captured        = isset( $input['captured_amount'] ) ? (int) $input['captured_amount'] : 0;
+		if ( $captured > 0 && $captured !== $expected_amount ) {
 			return new WP_Error( 'ml_razorpay_amount', __( 'Captured amount does not match the order.', 'ma-lumiere-clinic' ) );
+		}
+
+		$expected_currency = strtoupper( (string) ( ML_Settings::get( 'billing.currency', 'INR' ) ?: 'INR' ) );
+		$captured_currency = isset( $input['captured_currency'] ) ? strtoupper( sanitize_text_field( (string) $input['captured_currency'] ) ) : '';
+		if ( '' !== $captured_currency && $captured_currency !== $expected_currency ) {
+			return new WP_Error( 'ml_razorpay_currency', __( 'Captured currency does not match the order.', 'ma-lumiere-clinic' ) );
 		}
 
 		// Capture payment details server-side (best effort; never fails the

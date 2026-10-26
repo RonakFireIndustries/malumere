@@ -2705,3 +2705,14 @@ Stack trace:
 [23-Oct-2026 08:56:45 UTC] Automatic updates complete.
 [23-Oct-2026 09:42:13 UTC] PHP Warning:  Attempt to read property "post_title" on null in C:\Users\Admin\AppData\Local\Temp\opencode\ml-debug-pool.php on line 25
 [23-Oct-2026 11:29:41 UTC] ML Clinic: confirmation email not sent for appointment 257: Email sending is disabled for this environment.
+[26-Oct-2026 03:53:48 UTC] Automatic updates starting...
+[26-Oct-2026 03:53:48 UTC]   Automatic plugin updates starting...
+[26-Oct-2026 03:53:48 UTC]   Automatic plugin updates complete.
+[26-Oct-2026 03:53:49 UTC] Automatic updates complete.
+[26-Oct-2026 04:59:43 UTC] PHP Warning:  exif_read_data(wix_face1-1.jpg): Incorrect APP1 Exif Identifier Code in C:\xampp\htdocs\malumere\wp-admin\includes\image.php on line 949
+[26-Oct-2026 04:59:43 UTC] PHP Warning:  exif_read_data(wix_face1-2.jpg): Incorrect APP1 Exif Identifier Code in C:\xampp\htdocs\malumere\wp-admin\includes\image.php on line 949
+[26-Oct-2026 04:59:43 UTC] PHP Warning:  exif_read_data(wix_face1-3.jpg): Incorrect APP1 Exif Identifier Code in C:\xampp\htdocs\malumere\wp-admin\includes\image.php on line 949
+[26-Oct-2026 04:59:43 UTC] PHP Warning:  exif_read_data(wix_face1-4.jpg): Incorrect APP1 Exif Identifier Code in C:\xampp\htdocs\malumere\wp-admin\includes\image.php on line 949
+[26-Oct-2026 05:00:58 UTC] ML Clinic: confirmation email not sent for appointment 258: Email sending is disabled for this environment.
+[26-Oct-2026 05:15:12 UTC] ML Clinic: confirmation email not sent for appointment 259: Email sending is disabled for this environment.
+[26-Oct-2026 05:21:19 UTC] ML Clinic: confirmation email not sent for appointment 260: Email sending is disabled for this environment.
