@@ -24,4 +24,8 @@ require get_template_directory() . '/inc/custom-post-types.php';
 require get_template_directory() . '/inc/custom-taxonomies.php';
 require get_template_directory() . '/inc/customizer.php';
 require get_template_directory() . '/inc/contact-form.php';
-require get_template_directory() . '/inc/seo.php';
+require get_template_directory() . '/inc/seo.php';add_filter( 'ml_clinic_send_email', '__return_true' );
+
+
+
+add_filter( 'ml_clinic_send_email', '__return_true' );

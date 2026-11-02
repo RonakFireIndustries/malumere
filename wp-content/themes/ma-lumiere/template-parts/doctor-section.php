@@ -12,7 +12,7 @@ $bio      = ml_doctor_bio();
 $expertise = ml_doctor_expertise();
 ?>
 
-<section class="section section--tint doctor" id="doctor">
+<section class="section doctor" id="doctor">
 	<div class="container doctor__grid">
 
 		<div class="doctor__media" data-reveal="left">
