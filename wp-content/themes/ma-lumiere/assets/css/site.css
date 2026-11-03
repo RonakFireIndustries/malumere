@@ -9,24 +9,24 @@
 :root {
   color-scheme: dark; /* native selects, pickers and scrollbars follow the dark world */
 
-  /* Palette — three dark "worlds" cycling through the page */
-  --color-canvas: #0a0806;        /* abyss — page floor */
-  --color-canvas-soft: #0f0b08;   /* quiet dark band */
-  --color-espresso: #17100b;      /* espresso world — tinted sections */
-  --color-surface: #1a120c;       /* resting cards, inputs */
-  --color-surface-2: #22170f;     /* elevated cards, chips */
-  --color-surface-3: #2c1d13;     /* deepest brown highlight */
-  --color-brown: #3a271a;         /* clay-brown accent surface */
-  --color-ink: #f4ede3;           /* primary text / cream */
-  --color-ink-strong: #fbf6ee;    /* brightest display text */
-  --color-stone: #c8b9a8;         /* secondary text */
-  --color-muted: #9a8b7b;         /* captions, metadata */
-  --color-gold: #c9a26f;          /* champagne metal accent */
-  --color-gold-soft: #debe8e;     /* lighter champagne */
-  --color-gold-deep: #a87f4f;     /* pressed / hover metal */
-  --color-hairline: rgba(244, 237, 227, 0.12);
-  --color-hairline-strong: rgba(244, 237, 227, 0.22);
-  --color-on-gold: #1a120c;
+  /* Palette — mostly black with bright gold accents */
+  --color-canvas: #000000;        /* pure black — page floor */
+  --color-canvas-soft: #050403;   /* near-black band */
+  --color-espresso: #0a0806;      /* very dark sections */
+  --color-surface: #0f0c09;       /* resting cards, inputs */
+  --color-surface-2: #15100b;     /* elevated cards, chips */
+  --color-surface-3: #1d150e;     /* deepest highlight */
+  --color-brown: #251a10;         /* subtle accent surface */
+  --color-ink: #f7f3ea;           /* primary text / cream */
+  --color-ink-strong: #ffffff;    /* brightest display text */
+  --color-stone: #d7c9b6;         /* secondary text */
+  --color-muted: #b5a08a;         /* captions, metadata */
+  --color-gold: #D4AF37;          /* bright gold/amber accent */
+  --color-gold-soft: #F0D98C;     /* lighter bright gold */
+  --color-gold-deep: #B8860B;     /* pressed / hover gold */
+  --color-hairline: rgba(212, 175, 55, 0.18);
+  --color-hairline-strong: rgba(212, 175, 55, 0.32);
+  --color-on-gold: #000000;
   --color-error: #e07a66;
   --color-success: #82b89a;
   --color-warning: #d9b072;
@@ -733,10 +733,7 @@ textarea:focus-visible,
   padding-top: calc(var(--header-h) + var(--sp-xl));
   padding-bottom: var(--sp-2xl);
   overflow: hidden;
-  background:
-    radial-gradient(ellipse at 78% 18%, rgba(201, 162, 111, 0.1), transparent 55%),
-    radial-gradient(ellipse at 28% 0%, rgba(58, 39, 26, 0.42), transparent 60%),
-    linear-gradient(180deg, #120c08 0%, var(--color-canvas) 72%);
+  background: var(--color-canvas);
 }
 
 .hero::after {
@@ -747,7 +744,7 @@ textarea:focus-visible,
   width: 55vw;
   height: 55vw;
   border-radius: 50%;
-  background: radial-gradient(circle at 50% 50%, rgba(201, 162, 111, 0.13), transparent 50%);
+  background: radial-gradient(circle at 50% 50%, rgba(212, 175, 55, 0.08), transparent 50%);
   pointer-events: none;
 }
 

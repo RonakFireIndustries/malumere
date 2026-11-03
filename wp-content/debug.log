@@ -2716,3 +2716,8 @@ Stack trace:
 [26-Oct-2026 05:00:58 UTC] ML Clinic: confirmation email not sent for appointment 258: Email sending is disabled for this environment.
 [26-Oct-2026 05:15:12 UTC] ML Clinic: confirmation email not sent for appointment 259: Email sending is disabled for this environment.
 [26-Oct-2026 05:21:19 UTC] ML Clinic: confirmation email not sent for appointment 260: Email sending is disabled for this environment.
+[03-Nov-2026 04:46:30 UTC] PHP Warning:  mysqli_real_connect(): (HY000/1045): Access denied for user 'a17590e4_root'@'localhost' (using password: YES) in C:\xampp\htdocs\malumere\wp-includes\class-wpdb.php on line 1990
+[03-Nov-2026 04:46:53 UTC] Automatic updates starting...
+[03-Nov-2026 04:46:54 UTC]   Automatic plugin updates starting...
+[03-Nov-2026 04:46:54 UTC]   Automatic plugin updates complete.
+[03-Nov-2026 04:46:55 UTC] Automatic updates complete.
