@@ -5,11 +5,12 @@
  * @package ma-lumiere
  */
 
-$image_id = ml_doctor_image_id();
-$name     = ml_doctor_name();
-$qual     = ml_doctor_qualifications();
-$bio      = ml_doctor_bio();
-$expertise = ml_doctor_expertise();
+$image_id       = ml_doctor_image_id();
+$image_fallback = ml_asset_href( 'assets/images/doctor-portrait.jpg' );
+$name           = ml_doctor_name();
+$qual           = ml_doctor_qualifications();
+$bio            = ml_doctor_bio();
+$expertise      = ml_doctor_expertise();
 ?>
 
 <section class="section doctor" id="doctor">
@@ -18,6 +19,8 @@ $expertise = ml_doctor_expertise();
 		<div class="doctor__media" data-reveal="left">
 			<?php if ( $image_id ) : ?>
 				<?php echo wp_get_attachment_image( $image_id, 'ml-portrait', false, array( 'class' => 'doctor__img' ) ); ?>
+			<?php elseif ( $image_fallback ) : ?>
+				<img class="doctor__img" src="<?php echo esc_url( $image_fallback ); ?>" width="900" height="1100" alt="<?php echo esc_attr( $name ); ?>" loading="lazy" decoding="async" />
 			<?php else : ?>
 				<div class="ph" style="border-radius:var(--radius-arch);min-height:480px">[DOCTOR IMAGE]</div>
 			<?php endif; ?>
