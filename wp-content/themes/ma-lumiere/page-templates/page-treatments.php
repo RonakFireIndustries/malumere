@@ -25,7 +25,7 @@ foreach ( $all_treatments as $treatment ) {
 	if ( count( $hero_images ) >= 3 ) {
 		break;
 	}
-	$image_url = get_the_post_thumbnail_url( $treatment->ID, 'large' );
+	$image_url = ml_treatment_image_url( $treatment->ID, 'large' );
 	if ( $image_url ) {
 		$hero_images[] = $image_url;
 	}
@@ -153,9 +153,7 @@ $total       = count( $all_treatments );
 
 						<figure class="td-row__media treatments-list__media">
 							<a href="<?php the_permalink(); ?>" tabindex="-1" aria-hidden="true">
-								<?php if ( has_post_thumbnail() ) : ?>
-									<?php the_post_thumbnail( 'ml-card' ); ?>
-								<?php else : ?>
+								<?php if ( ! ml_treatment_image( get_the_ID(), 'ml-card' ) ) : ?>
 									<span class="td-row__placeholder"><?php esc_html_e( '[TREATMENT IMAGE]', 'ma-lumiere' ); ?></span>
 								<?php endif; ?>
 							</a>

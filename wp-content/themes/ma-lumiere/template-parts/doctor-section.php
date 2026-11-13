@@ -17,7 +17,7 @@ $expertise      = ml_doctor_expertise();
 	<div class="container doctor__grid">
 
 		<div class="doctor__media" data-reveal="left">
-			<?php if ( $image_id ) : ?>
+			<?php if ( ml_attachment_is_deployed( $image_id ) ) : ?>
 				<?php echo wp_get_attachment_image( $image_id, 'ml-portrait', false, array( 'class' => 'doctor__img' ) ); ?>
 			<?php elseif ( $image_fallback ) : ?>
 				<img class="doctor__img" src="<?php echo esc_url( $image_fallback ); ?>" width="900" height="1100" alt="<?php echo esc_attr( $name ); ?>" loading="lazy" decoding="async" />

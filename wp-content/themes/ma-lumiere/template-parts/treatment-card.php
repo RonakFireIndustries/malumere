@@ -11,9 +11,7 @@ $terms = get_the_terms( get_the_ID(), 'treatment_category' );
 <article <?php post_class( 'card' ); ?> data-reveal="up">
 	<a class="card__media" href="<?php the_permalink(); ?>" tabindex="-1" aria-hidden="true">
 		<?php
-		if ( has_post_thumbnail() ) {
-			the_post_thumbnail( 'ml-card' );
-		} else {
+		if ( ! ml_treatment_image( get_the_ID(), 'ml-card' ) ) {
 			echo '<div class="ph" style="border:0;border-radius:0;min-height:100%">[IMAGE REQUIRED]</div>';
 		}
 		?>

@@ -10,7 +10,7 @@ $after_id  = (int) get_post_meta( get_the_ID(), '_ml_ba_after', true );
 $treatment = get_post_meta( get_the_ID(), '_ml_ba_treatment', true );
 $terms     = get_the_terms( get_the_ID(), 'treatment_category' );
 
-$has_images = $before_id && $after_id;
+$has_images = ml_attachment_is_deployed( $before_id ) && ml_attachment_is_deployed( $after_id );
 ?>
 <figure class="ba-card" data-reveal="up">
 	<div class="ba-slider" data-ba-slider <?php echo $has_images ? 'style="--pos:50"' : ''; ?>>

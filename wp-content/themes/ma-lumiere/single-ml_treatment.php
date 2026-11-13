@@ -62,7 +62,7 @@ while ( have_posts() ) :
 		if ( count( $supporting_images ) >= 2 ) {
 			break;
 		}
-		$image_url = get_the_post_thumbnail_url( $related_id, 'large' );
+		$image_url = ml_treatment_image_url( $related_id, 'large' );
 		if ( $image_url && ! in_array( $image_url, $supporting_images, true ) ) {
 			$supporting_images[] = $image_url;
 		}
@@ -75,7 +75,7 @@ while ( have_posts() ) :
 			$supporting_images[] = $editorial_url;
 		}
 	}
-	$featured_url = get_the_post_thumbnail_url( get_the_ID(), 'large' );
+	$featured_url = ml_treatment_image_url( get_the_ID(), 'large' );
 	if ( empty( $supporting_images ) && $featured_url ) {
 		$supporting_images[] = $featured_url;
 	}
@@ -121,9 +121,7 @@ while ( have_posts() ) :
 				</div>
 
 				<div class="td-hero__media" data-reveal="fade">
-					<?php if ( has_post_thumbnail() ) : ?>
-						<?php the_post_thumbnail( 'large' ); ?>
-					<?php else : ?>
+					<?php if ( ! ml_treatment_image( get_the_ID(), 'large' ) ) : ?>
 						<div class="td-hero__placeholder"><?php esc_html_e( '[TREATMENT IMAGE]', 'ma-lumiere' ); ?></div>
 					<?php endif; ?>
 				</div>

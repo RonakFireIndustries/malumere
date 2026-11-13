@@ -137,6 +137,153 @@ function ml_hero_image_id() {
 }
 
 /**
+ * Whether an attachment's file is actually present on this server.
+ *
+ * A media-library URL is only as reliable as the uploads directory behind it.
+ * Hosts that deploy code but not `wp-content/uploads` keep the attachment rows
+ * in the database while the files 404, which renders as broken-image icons.
+ * Checking the file lets templates fall back to artwork bundled with the theme.
+ *
+ * @param int $attachment_id Attachment ID.
+ * @return bool
+ */
+function ml_attachment_is_deployed( $attachment_id ) {
+	$attachment_id = (int) $attachment_id;
+
+	if ( ! $attachment_id ) {
+		return false;
+	}
+
+	$file = get_attached_file( $attachment_id );
+
+	return $file && file_exists( $file );
+}
+
+/**
+ * URL of the theme-bundled photo for a treatment, keyed by its slug.
+ *
+ * @param int $post_id Treatment post ID. Defaults to the current post.
+ * @return string Empty string when no bundled photo exists.
+ */
+function ml_treatment_fallback_image_url( $post_id = 0 ) {
+	$post_id = $post_id ? $post_id : get_the_ID();
+	$slug    = $post_id ? get_post_field( 'post_name', $post_id ) : '';
+
+	if ( ! $slug ) {
+		return '';
+	}
+
+	$relative = 'assets/images/treatments/' . sanitize_file_name( $slug ) . '.jpg';
+	$file     = ML_THEME_DIR . '/' . $relative;
+
+	if ( ! is_readable( $file ) ) {
+		return '';
+	}
+
+	return ML_THEME_URI . '/' . $relative . '?v=' . ml_asset_version( $relative );
+}
+
+/**
+ * Image URL for a treatment: media library when the file is deployed, else the
+ * bundled photo shipped with the theme.
+ *
+ * @param int    $post_id Treatment post ID. Defaults to the current post.
+ * @param string $size    Registered image size.
+ * @return string Empty string when neither source is available.
+ */
+function ml_treatment_image_url( $post_id = 0, $size = 'ml-card' ) {
+	$post_id = $post_id ? $post_id : get_the_ID();
+	$thumb   = $post_id ? get_post_thumbnail_id( $post_id ) : 0;
+
+	if ( ml_attachment_is_deployed( $thumb ) ) {
+		$url = wp_get_attachment_image_url( $thumb, $size );
+		if ( $url ) {
+			return $url;
+		}
+	}
+
+	return ml_treatment_fallback_image_url( $post_id );
+}
+
+/**
+ * Print a treatment image, preferring the media library and falling back to
+ * the bundled photo.
+ *
+ * @param int    $post_id Treatment post ID. Defaults to the current post.
+ * @param string $size    Registered image size.
+ * @param array  $attr    Extra attributes: class, alt, loading, eager.
+ * @return bool True when an image was printed.
+ */
+function ml_treatment_image( $post_id = 0, $size = 'ml-card', $attr = array() ) {
+	$post_id = $post_id ? $post_id : get_the_ID();
+	$thumb   = $post_id ? get_post_thumbnail_id( $post_id ) : 0;
+	$attr    = wp_parse_args(
+		$attr,
+		array(
+			'class'   => '',
+			'alt'     => '',
+			'loading' => 'lazy',
+		)
+	);
+
+	if ( ml_attachment_is_deployed( $thumb ) ) {
+		echo wp_get_attachment_image(
+			$thumb,
+			$size,
+			false,
+			array(
+				'class'   => $attr['class'],
+				'alt'     => $attr['alt'],
+				'loading' => $attr['loading'],
+			)
+		);
+		return true;
+	}
+
+	$url = ml_treatment_fallback_image_url( $post_id );
+
+	if ( ! $url ) {
+		return false;
+	}
+
+	printf(
+		'<img src="%1$s" class="%2$s" alt="%3$s" loading="%4$s" decoding="async" />',
+		esc_url( $url ),
+		esc_attr( $attr['class'] ),
+		esc_attr( $attr['alt'] ),
+		esc_attr( $attr['loading'] )
+	);
+
+	return true;
+}
+
+/**
+ * Hero image URL: the Customizer image when it is deployed, otherwise the
+ * portrait bundled with the theme.
+ *
+ * @param string $size Registered image size.
+ * @return string
+ */
+function ml_hero_image_url( $size = 'ml-portrait' ) {
+	$id = ml_hero_image_id();
+
+	if ( ml_attachment_is_deployed( $id ) ) {
+		$url = wp_get_attachment_image_url( $id, $size );
+		if ( $url ) {
+			return $url;
+		}
+	}
+
+	$relative = 'assets/images/hero.jpg';
+
+	if ( is_readable( ML_THEME_DIR . '/' . $relative ) ) {
+		return ML_THEME_URI . '/' . $relative . '?v=' . ml_asset_version( $relative );
+	}
+
+	return '';
+}
+
+/**
  * Editorial image URLs for treatment layouts.
  *
  * Starts with the site hero portrait, then large media-library images that
@@ -153,7 +300,7 @@ function ml_treatment_editorial_images( $limit = 2 ) {
 		$pool    = array();
 		$hero_id = ml_hero_image_id();
 
-		if ( $hero_id ) {
+		if ( ml_attachment_is_deployed( $hero_id ) ) {
 			$hero_url = wp_get_attachment_image_url( $hero_id, 'large' );
 			if ( $hero_url ) {
 				$pool[] = $hero_url;
@@ -191,6 +338,9 @@ function ml_treatment_editorial_images( $limit = 2 ) {
 		);
 
 		foreach ( $candidates as $candidate_id ) {
+			if ( ! ml_attachment_is_deployed( $candidate_id ) ) {
+				continue;
+			}
 			$meta = wp_get_attachment_metadata( $candidate_id );
 			if ( empty( $meta['width'] ) || empty( $meta['height'] ) || $meta['width'] < 900 || $meta['height'] < 600 ) {
 				continue;
