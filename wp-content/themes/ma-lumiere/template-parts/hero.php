@@ -23,9 +23,8 @@ if ( ! $cta_secondary_url ) {
 	$cta_secondary_url = ml_page_url_by_template( 'page-templates/page-treatments.php', get_post_type_archive_link( 'ml_treatment' ) );
 }
 
-$hero_image_id  = ml_hero_image_id();
 $hero_image_url = ml_hero_image_url( 'ml-portrait' );
-$hero_image_alt = $hero_image_id ? (string) get_post_meta( $hero_image_id, '_wp_attachment_image_alt', true ) : '';
+$hero_image_alt = '';
 $phone          = ml_clinic_phone();
 ?>
 
@@ -51,9 +50,7 @@ $phone          = ml_clinic_phone();
 		</div>
 
 		<div class="hero__media" data-reveal="right">
-			<?php if ( $hero_image_id && ml_attachment_is_deployed( $hero_image_id ) ) : ?>
-				<?php echo wp_get_attachment_image( $hero_image_id, 'ml-portrait', false, array( 'class' => 'hero__media-img', 'alt' => $hero_image_alt ) ); ?>
-			<?php elseif ( $hero_image_url ) : ?>
+			<?php if ( $hero_image_url ) : ?>
 				<img class="hero__media-img" src="<?php echo esc_url( $hero_image_url ); ?>" width="900" height="1100" alt="<?php echo esc_attr( $hero_image_alt ); ?>" fetchpriority="high" decoding="async" />
 			<?php else : ?>
 				<div class="hero__media-art" aria-hidden="true"></div>

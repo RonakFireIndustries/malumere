@@ -265,15 +265,6 @@ function ml_treatment_image( $post_id = 0, $size = 'ml-card', $attr = array() ) 
  * @return string
  */
 function ml_hero_image_url( $size = 'ml-portrait' ) {
-	$id = ml_hero_image_id();
-
-	if ( ml_attachment_is_deployed( $id ) ) {
-		$url = wp_get_attachment_image_url( $id, $size );
-		if ( $url ) {
-			return $url;
-		}
-	}
-
 	$relative = 'assets/images/hero.jpg';
 
 	if ( is_readable( ML_THEME_DIR . '/' . $relative ) ) {
