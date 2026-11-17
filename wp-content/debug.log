@@ -2726,3 +2726,119 @@ Stack trace:
 [12-Nov-2026 09:40:57 UTC]   Automatic plugin updates starting...
 [12-Nov-2026 09:40:57 UTC]   Automatic plugin updates complete.
 [12-Nov-2026 09:40:59 UTC] Automatic updates complete.
+[13-Nov-2026 10:58:50 UTC] PHP Warning:  mysqli_real_connect(): (HY000/1045): Access denied for user 'a17590e4_root'@'localhost' (using password: YES) in C:\xampp\htdocs\malumere\wp-includes\class-wpdb.php on line 1990
+[13-Nov-2026 10:59:05 UTC] Automatic updates starting...
+[13-Nov-2026 10:59:06 UTC]   Automatic plugin updates starting...
+[13-Nov-2026 10:59:06 UTC]   Automatic plugin updates complete.
+[13-Nov-2026 10:59:07 UTC] Automatic updates complete.
+[13-Nov-2026 11:31:43 UTC] PHP Warning:  Undefined array key "doctor_name" in C:\xampp\htdocs\malumere\wp-content\plugins\ma-lumiere-clinic-manager\admin\views\_appointment-list.php on line 116
+[13-Nov-2026 11:31:43 UTC] PHP Warning:  Undefined array key "doctor_name" in C:\xampp\htdocs\malumere\wp-content\plugins\ma-lumiere-clinic-manager\admin\views\_appointment-list.php on line 116
+[13-Nov-2026 11:31:43 UTC] PHP Warning:  Undefined array key "doctor_name" in C:\xampp\htdocs\malumere\wp-content\plugins\ma-lumiere-clinic-manager\admin\views\_appointment-list.php on line 116
+[13-Nov-2026 11:31:43 UTC] PHP Warning:  Undefined array key "doctor_name" in C:\xampp\htdocs\malumere\wp-content\plugins\ma-lumiere-clinic-manager\admin\views\_appointment-list.php on line 116
+[13-Nov-2026 11:31:43 UTC] PHP Warning:  Undefined array key "doctor_name" in C:\xampp\htdocs\malumere\wp-content\plugins\ma-lumiere-clinic-manager\admin\views\_appointment-list.php on line 116
+[13-Nov-2026 11:36:03 UTC] PHP Warning:  Undefined array key "doctor_name" in C:\xampp\htdocs\malumere\wp-content\plugins\ma-lumiere-clinic-manager\admin\views\_appointment-list.php on line 116
+[13-Nov-2026 11:36:03 UTC] PHP Warning:  Undefined array key "doctor_name" in C:\xampp\htdocs\malumere\wp-content\plugins\ma-lumiere-clinic-manager\admin\views\_appointment-list.php on line 116
+[13-Nov-2026 11:36:03 UTC] PHP Warning:  Undefined array key "doctor_name" in C:\xampp\htdocs\malumere\wp-content\plugins\ma-lumiere-clinic-manager\admin\views\_appointment-list.php on line 116
+[13-Nov-2026 11:36:03 UTC] PHP Warning:  Undefined array key "doctor_name" in C:\xampp\htdocs\malumere\wp-content\plugins\ma-lumiere-clinic-manager\admin\views\_appointment-list.php on line 116
+[13-Nov-2026 11:36:03 UTC] PHP Warning:  Undefined array key "doctor_name" in C:\xampp\htdocs\malumere\wp-content\plugins\ma-lumiere-clinic-manager\admin\views\_appointment-list.php on line 116
+[13-Nov-2026 11:43:59 UTC] PHP Warning:  Undefined array key "doctor_name" in C:\xampp\htdocs\malumere\wp-content\plugins\ma-lumiere-clinic-manager\admin\views\_appointment-list.php on line 116
+[13-Nov-2026 11:43:59 UTC] PHP Warning:  Undefined array key "doctor_name" in C:\xampp\htdocs\malumere\wp-content\plugins\ma-lumiere-clinic-manager\admin\views\_appointment-list.php on line 116
+[13-Nov-2026 11:43:59 UTC] PHP Warning:  Undefined array key "doctor_name" in C:\xampp\htdocs\malumere\wp-content\plugins\ma-lumiere-clinic-manager\admin\views\_appointment-list.php on line 116
+[13-Nov-2026 11:43:59 UTC] PHP Warning:  Undefined array key "doctor_name" in C:\xampp\htdocs\malumere\wp-content\plugins\ma-lumiere-clinic-manager\admin\views\_appointment-list.php on line 116
+[13-Nov-2026 11:44:00 UTC] PHP Warning:  Undefined array key "doctor_name" in C:\xampp\htdocs\malumere\wp-content\plugins\ma-lumiere-clinic-manager\admin\views\_appointment-list.php on line 116
+[13-Nov-2026 11:49:55 UTC] PHP Warning:  Undefined array key "doctor_name" in C:\xampp\htdocs\malumere\wp-content\plugins\ma-lumiere-clinic-manager\admin\views\_appointment-list.php on line 116
+[13-Nov-2026 11:49:55 UTC] PHP Warning:  Undefined array key "doctor_name" in C:\xampp\htdocs\malumere\wp-content\plugins\ma-lumiere-clinic-manager\admin\views\_appointment-list.php on line 116
+[13-Nov-2026 11:49:55 UTC] PHP Warning:  Undefined array key "doctor_name" in C:\xampp\htdocs\malumere\wp-content\plugins\ma-lumiere-clinic-manager\admin\views\_appointment-list.php on line 116
+[13-Nov-2026 11:49:55 UTC] PHP Warning:  Undefined array key "doctor_name" in C:\xampp\htdocs\malumere\wp-content\plugins\ma-lumiere-clinic-manager\admin\views\_appointment-list.php on line 116
+[13-Nov-2026 11:49:55 UTC] PHP Warning:  Undefined array key "doctor_name" in C:\xampp\htdocs\malumere\wp-content\plugins\ma-lumiere-clinic-manager\admin\views\_appointment-list.php on line 116
+[14-Nov-2026 03:05:35 UTC] Automatic updates starting...
+[14-Nov-2026 03:05:37 UTC]   Automatic plugin updates starting...
+[14-Nov-2026 03:05:37 UTC]   Automatic plugin updates complete.
+[14-Nov-2026 03:05:38 UTC] Automatic updates complete.
+[14-Nov-2026 09:00:03 UTC] Automatic updates starting...
+[14-Nov-2026 09:00:04 UTC]   Automatic plugin updates starting...
+[14-Nov-2026 09:00:04 UTC]   Automatic plugin updates complete.
+[14-Nov-2026 09:00:05 UTC] Automatic updates complete.
+[14-Nov-2026 11:18:53 UTC] ML Clinic: confirmation email not sent for appointment 262: Email sending is disabled for this environment.
+[17-Nov-2026 04:37:33 UTC] Automatic updates starting...
+[17-Nov-2026 04:37:34 UTC]   Automatic plugin updates starting...
+[17-Nov-2026 04:37:34 UTC]   Automatic plugin updates complete.
+[17-Nov-2026 04:37:35 UTC] Automatic updates complete.
+[17-Nov-2026 05:09:11 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function ml_seo_local_area() in C:\xampp\htdocs\malumere\wp-content\themes\ma-lumiere\inc\seo.php:118
+Stack trace:
+#0 C:\xampp\htdocs\malumere\wp-includes\class-wp-hook.php(353): ml_document_title_parts(Array)
+#1 C:\xampp\htdocs\malumere\wp-includes\plugin.php(206): WP_Hook->apply_filters(Array, Array)
+#2 C:\xampp\htdocs\malumere\wp-includes\general-template.php(1520): apply_filters('document_title_...', Array)
+#3 C:\xampp\htdocs\malumere\wp-includes\general-template.php(1548): wp_get_document_title()
+#4 C:\xampp\htdocs\malumere\wp-includes\class-wp-hook.php(353): _wp_render_title_tag('')
+#5 C:\xampp\htdocs\malumere\wp-includes\class-wp-hook.php(377): WP_Hook->apply_filters(NULL, Array)
+#6 C:\xampp\htdocs\malumere\wp-includes\plugin.php(523): WP_Hook->do_action(Array)
+#7 C:\xampp\htdocs\malumere\wp-includes\general-template.php(3441): do_action('wp_head')
+#8 C:\xampp\htdocs\malumere\wp-content\themes\ma-lumiere\header.php(13): wp_head()
+#9 C:\xampp\htdocs\malumere\wp-includes\template.php(880): require_once('C:\\xampp\\htdocs...')
+#10 C:\xampp\htdocs\malumere\wp-includes\template.php(815): load_template('C:\\xampp\\htdocs...', true, Array)
+#11 C:\xampp\htdocs\malumere\wp-includes\general-template.php(48): locate_template(Array, true, true, Array)
+#12 C:\xampp\htdocs\malumere\wp-content\themes\ma-lumiere\front-page.php(12): get_header()
+#13 C:\xampp\htdocs\malumere\wp-includes\template-loader.php(132): include('C:\\xampp\\htdocs...')
+#14 C:\xampp\htdocs\malumere\wp-blog-header.php(19): require_once('C:\\xampp\\htdocs...')
+#15 C:\xampp\htdocs\malumere\index.php(17): require('C:\\xampp\\htdocs...')
+#16 {main}
+  thrown in C:\xampp\htdocs\malumere\wp-content\themes\ma-lumiere\inc\seo.php on line 118
+[17-Nov-2026 05:09:11 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function ml_seo_local_area() in C:\xampp\htdocs\malumere\wp-content\themes\ma-lumiere\inc\seo.php:118
+Stack trace:
+#0 C:\xampp\htdocs\malumere\wp-includes\class-wp-hook.php(353): ml_document_title_parts(Array)
+#1 C:\xampp\htdocs\malumere\wp-includes\plugin.php(206): WP_Hook->apply_filters(Array, Array)
+#2 C:\xampp\htdocs\malumere\wp-includes\general-template.php(1520): apply_filters('document_title_...', Array)
+#3 C:\xampp\htdocs\malumere\wp-includes\general-template.php(1548): wp_get_document_title()
+#4 C:\xampp\htdocs\malumere\wp-includes\class-wp-hook.php(353): _wp_render_title_tag('')
+#5 C:\xampp\htdocs\malumere\wp-includes\class-wp-hook.php(377): WP_Hook->apply_filters(NULL, Array)
+#6 C:\xampp\htdocs\malumere\wp-includes\plugin.php(523): WP_Hook->do_action(Array)
+#7 C:\xampp\htdocs\malumere\wp-includes\general-template.php(3441): do_action('wp_head')
+#8 C:\xampp\htdocs\malumere\wp-content\themes\ma-lumiere\header.php(13): wp_head()
+#9 C:\xampp\htdocs\malumere\wp-includes\template.php(880): require_once('C:\\xampp\\htdocs...')
+#10 C:\xampp\htdocs\malumere\wp-includes\template.php(815): load_template('C:\\xampp\\htdocs...', true, Array)
+#11 C:\xampp\htdocs\malumere\wp-includes\general-template.php(48): locate_template(Array, true, true, Array)
+#12 C:\xampp\htdocs\malumere\wp-content\themes\ma-lumiere\single-ml_treatment.php(11): get_header()
+#13 C:\xampp\htdocs\malumere\wp-includes\template-loader.php(132): include('C:\\xampp\\htdocs...')
+#14 C:\xampp\htdocs\malumere\wp-blog-header.php(19): require_once('C:\\xampp\\htdocs...')
+#15 C:\xampp\htdocs\malumere\index.php(17): require('C:\\xampp\\htdocs...')
+#16 {main}
+  thrown in C:\xampp\htdocs\malumere\wp-content\themes\ma-lumiere\inc\seo.php on line 118
+[17-Nov-2026 05:11:45 UTC] PHP Warning:  Undefined array key "tuesday" in C:\xampp\htdocs\malumere\wp-content\themes\ma-lumiere\inc\seo.php on line 625
+[17-Nov-2026 05:11:45 UTC] PHP Fatal error:  Uncaught TypeError: Unsupported operand types: string + int in C:\xampp\htdocs\malumere\wp-content\themes\ma-lumiere\inc\seo.php:631
+Stack trace:
+#0 C:\xampp\htdocs\malumere\wp-content\themes\ma-lumiere\inc\seo.php(736): ml_opening_hours_schema()
+#1 C:\xampp\htdocs\malumere\wp-content\themes\ma-lumiere\inc\seo.php(766): ml_clinic_schema_node()
+#2 C:\xampp\htdocs\malumere\wp-includes\class-wp-hook.php(353): ml_organization_schema('')
+#3 C:\xampp\htdocs\malumere\wp-includes\class-wp-hook.php(377): WP_Hook->apply_filters(NULL, Array)
+#4 C:\xampp\htdocs\malumere\wp-includes\plugin.php(523): WP_Hook->do_action(Array)
+#5 C:\xampp\htdocs\malumere\wp-includes\general-template.php(3441): do_action('wp_head')
+#6 C:\xampp\htdocs\malumere\wp-content\themes\ma-lumiere\header.php(13): wp_head()
+#7 C:\xampp\htdocs\malumere\wp-includes\template.php(880): require_once('C:\\xampp\\htdocs...')
+#8 C:\xampp\htdocs\malumere\wp-includes\template.php(815): load_template('C:\\xampp\\htdocs...', true, Array)
+#9 C:\xampp\htdocs\malumere\wp-includes\general-template.php(48): locate_template(Array, true, true, Array)
+#10 C:\xampp\htdocs\malumere\wp-content\themes\ma-lumiere\front-page.php(12): get_header()
+#11 C:\xampp\htdocs\malumere\wp-includes\template-loader.php(132): include('C:\\xampp\\htdocs...')
+#12 C:\xampp\htdocs\malumere\wp-blog-header.php(19): require_once('C:\\xampp\\htdocs...')
+#13 C:\xampp\htdocs\malumere\index.php(17): require('C:\\xampp\\htdocs...')
+#14 {main}
+  thrown in C:\xampp\htdocs\malumere\wp-content\themes\ma-lumiere\inc\seo.php on line 631
+[17-Nov-2026 05:11:45 UTC] PHP Warning:  Undefined array key "tuesday" in C:\xampp\htdocs\malumere\wp-content\themes\ma-lumiere\inc\seo.php on line 625
+[17-Nov-2026 05:11:45 UTC] PHP Fatal error:  Uncaught TypeError: Unsupported operand types: string + int in C:\xampp\htdocs\malumere\wp-content\themes\ma-lumiere\inc\seo.php:631
+Stack trace:
+#0 C:\xampp\htdocs\malumere\wp-content\themes\ma-lumiere\inc\seo.php(736): ml_opening_hours_schema()
+#1 C:\xampp\htdocs\malumere\wp-content\themes\ma-lumiere\inc\seo.php(855): ml_clinic_schema_node(false)
+#2 C:\xampp\htdocs\malumere\wp-includes\class-wp-hook.php(353): ml_treatment_schema('')
+#3 C:\xampp\htdocs\malumere\wp-includes\class-wp-hook.php(377): WP_Hook->apply_filters(NULL, Array)
+#4 C:\xampp\htdocs\malumere\wp-includes\plugin.php(523): WP_Hook->do_action(Array)
+#5 C:\xampp\htdocs\malumere\wp-includes\general-template.php(3441): do_action('wp_head')
+#6 C:\xampp\htdocs\malumere\wp-content\themes\ma-lumiere\header.php(13): wp_head()
+#7 C:\xampp\htdocs\malumere\wp-includes\template.php(880): require_once('C:\\xampp\\htdocs...')
+#8 C:\xampp\htdocs\malumere\wp-includes\template.php(815): load_template('C:\\xampp\\htdocs...', true, Array)
+#9 C:\xampp\htdocs\malumere\wp-includes\general-template.php(48): locate_template(Array, true, true, Array)
+#10 C:\xampp\htdocs\malumere\wp-content\themes\ma-lumiere\single-ml_treatment.php(11): get_header()
+#11 C:\xampp\htdocs\malumere\wp-includes\template-loader.php(132): include('C:\\xampp\\htdocs...')
+#12 C:\xampp\htdocs\malumere\wp-blog-header.php(19): require_once('C:\\xampp\\htdocs...')
+#13 C:\xampp\htdocs\malumere\index.php(17): require('C:\\xampp\\htdocs...')
+#14 {main}
+  thrown in C:\xampp\htdocs\malumere\wp-content\themes\ma-lumiere\inc\seo.php on line 631

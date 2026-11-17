@@ -144,6 +144,13 @@ class ML_Rest_Api {
 				'handler' => 'appointment_quick_action',
 			),
 			array(
+				'route'  => '/appointments/(?P<id>[\d]+)/approve',
+				'method' => 'POST',
+				'cap'    => 'ml_manage_appointments',
+				'permission' => 'appointment_manage',
+				'handler' => 'approve_appointment',
+			),
+			array(
 				'route'  => '/appointments/(?P<id>[\d]+)',
 				'method' => 'GET',
 				'cap'    => 'ml_view_appointments',
@@ -1614,6 +1621,21 @@ array(
 			return self::appointment_error( $result, 400 );
 		}
 		return new WP_REST_Response( array( 'data' => $result, 'meta' => array( 'rescheduled' => true ) ), 200 );
+	}
+
+	/**
+	 * Approve (confirm) a pending appointment and email the patient.
+	 *
+	 * @param WP_REST_Request $request Request.
+	 *
+	 * @return WP_REST_Response
+	 */
+	public static function approve_appointment( $request ) {
+		$result = ML_Appointment_Service::approve( (int) $request['id'] );
+		if ( is_wp_error( $result ) ) {
+			return self::appointment_error( $result, 400 );
+		}
+		return rest_ensure_response( array( 'data' => $result, 'meta' => array( 'approved' => true ) ) );
 	}
 
 	public static function cancel_appointment( $request ) {

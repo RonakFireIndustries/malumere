@@ -5,11 +5,11 @@
  * @package ma-lumiere
  */
 
-$eyebrow  = ml_mod( 'ml_hero_eyebrow', __( 'PERSONALISED AESTHETIC & SKIN CARE', 'ma-lumiere' ) );
-$title    = ml_mod( 'ml_hero_title', __( 'Personalised Aesthetic Medicine. Beautifully, Scientifically.', 'ma-lumiere' ) );
+$eyebrow  = ml_mod( 'ml_hero_eyebrow', __( 'Mira Road East · Mira Bhayander', 'ma-lumiere' ) );
+$title    = ml_mod( 'ml_hero_title', __( 'Skin, Hair & Laser Care in Mira Bhayander.', 'ma-lumiere' ) );
 $title    = explode( ' ', $title ); // Simple graceful italics on the closing word.
 $last     = array_pop( $title );
-$text     = ml_mod( 'ml_hero_text', __( 'Medical-grade aesthetic care, tailored to your skin, your concerns and your long-term goals.', 'ma-lumiere' ) );
+$text     = ml_mod( 'ml_hero_text', __( 'Medical dermatology and aesthetic care for Mira Road, Bhayander and nearby areas — planned around your skin, your concerns and your long-term goals.', 'ma-lumiere' ) );
 
 $cta_primary = ml_mod( 'ml_hero_cta_primary', __( 'Book a Consultation', 'ma-lumiere' ) );
 $cta_primary_url = ml_mod( 'ml_hero_cta_primary_url', '' );
@@ -24,8 +24,14 @@ if ( ! $cta_secondary_url ) {
 }
 
 $hero_image_url = ml_hero_image_url( 'ml-portrait' );
-$hero_image_alt = '';
+$hero_image_alt = sprintf(
+	/* translators: 1: clinic name, 2: service area. */
+	__( '%1$s skin clinic in %2$s', 'ma-lumiere' ),
+	ml_seo_brand_name(),
+	ml_seo_local_area()
+);
 $phone          = ml_clinic_phone();
+$locality       = ml_clinic_locality();
 ?>
 
 <section class="hero">
@@ -43,6 +49,7 @@ $phone          = ml_clinic_phone();
 			</div>
 			<?php if ( $phone ) : ?>
 				<div class="hero__meta" data-reveal="fade">
+					<span><?php ml_icon( 'marker', 16 ); ?> <?php echo esc_html( $locality ); ?></span>
 					<span><?php ml_icon( 'phone', 16 ); ?> <?php echo esc_html( $phone ); ?></span>
 					<span><?php ml_icon( 'clock', 16 ); ?> <?php echo esc_html__( 'Consultation by appointment', 'ma-lumiere' ); ?></span>
 				</div>

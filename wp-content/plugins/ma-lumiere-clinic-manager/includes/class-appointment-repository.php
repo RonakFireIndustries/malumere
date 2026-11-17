@@ -440,6 +440,38 @@ class ML_Appointment_Repository {
 	}
 
 	/**
+	 * Whether a patient already holds an upcoming (pending or confirmed)
+	 * appointment today or later. Used to stop one patient from creating
+	 * multiple future bookings from the public form.
+	 *
+	 * @param int $patient_id ml_patients.id.
+	 *
+	 * @return array|null The blocking appointment row, or null when none.
+	 */
+	public static function upcoming_for_patient( $patient_id ) {
+		global $wpdb;
+		$patient_id = absint( $patient_id );
+		if ( ! $patient_id ) {
+			return null;
+		}
+		$table = ML_Database::table( 'appointments' );
+		$row   = $wpdb->get_row(
+			$wpdb->prepare(
+				"SELECT * FROM {$table}
+				 WHERE patient_id = %d
+				   AND status IN ('pending','confirmed')
+				   AND appointment_date >= %s
+				 ORDER BY appointment_date ASC, start_time ASC
+				 LIMIT 1",
+				$patient_id,
+				current_time( 'Y-m-d' )
+			),
+			ARRAY_A
+		);
+		return is_array( $row ) ? self::decorate( $row ) : null;
+	}
+
+	/**
 	 * Filterable, paginated appointment listing with patient lookup.
 	 *
 	 * @param array $args page/per_page/from/to/status/doctor/search.

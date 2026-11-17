@@ -44,10 +44,21 @@
 							<p class="contact-info__label"><?php esc_html_e( 'Write to us', 'ma-lumiere' ); ?></p>
 							<p class="contact-info__value">
 								<a href="mailto:<?php echo esc_attr( ml_clinic_email() ); ?>"><?php echo esc_html( ml_clinic_email() ); ?></a>
+								<br><a href="mailto:info@ma-lumiere.in">info@ma-lumiere.in</a>
 							</p>
 						</div>
 					</div>
 				<?php endif; ?>
+
+				<div class="contact-info__item">
+					<span class="contact-info__icon"><?php ml_icon( 'marker', 20 ); ?></span>
+					<div>
+						<p class="contact-info__label"><?php esc_html_e( 'Google Business', 'ma-lumiere' ); ?></p>
+						<p class="contact-info__value">
+							<a href="https://share.google/nmp0wXmDFFeuzSKNe" target="_blank" rel="noopener">View on Google</a>
+						</p>
+					</div>
+				</div>
 
 				<?php if ( ml_clinic_hours() ) : ?>
 					<div class="contact-info__item">

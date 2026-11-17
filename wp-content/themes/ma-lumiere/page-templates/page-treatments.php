@@ -27,7 +27,10 @@ foreach ( $all_treatments as $treatment ) {
 	}
 	$image_url = ml_treatment_image_url( $treatment->ID, 'large' );
 	if ( $image_url ) {
-		$hero_images[] = $image_url;
+		$hero_images[] = array(
+			'url'   => $image_url,
+			'title' => wp_strip_all_tags( get_the_title( $treatment ) ),
+		);
 	}
 }
 
@@ -43,7 +46,7 @@ $total       = count( $all_treatments );
 
 				<p class="td-hero__cat"><?php esc_html_e( 'Medical & aesthetic dermatology', 'ma-lumiere' ); ?></p>
 				<h1 class="td-hero__title"><?php the_title(); ?></h1>
-				<p class="td-hero__lead"><?php esc_html_e( 'Every treatment begins with a private consultation. Explore the care we offer, then we will shape a plan around your skin and your goals.', 'ma-lumiere' ); ?></p>
+				<p class="td-hero__lead"><?php echo esc_html( sprintf( /* translators: %s: service area. */ __( 'Every treatment begins with a private consultation at our skin clinic in %s. Explore the care we offer, then we will shape a plan around your skin and your goals.', 'ma-lumiere' ), ml_seo_local_area() ) ); ?></p>
 
 				<div class="td-hero__actions">
 					<a class="btn btn--primary" href="<?php echo esc_url( $booking_url ); ?>">
@@ -74,9 +77,9 @@ $total       = count( $all_treatments );
 
 			<div class="td-hero__media td-hero__collage" data-reveal="fade">
 				<?php if ( $hero_images ) : ?>
-					<?php foreach ( $hero_images as $index => $image_url ) : ?>
+					<?php foreach ( $hero_images as $index => $image ) : ?>
 						<figure class="td-hero__tile td-hero__tile--<?php echo (int) $index; ?>">
-							<img src="<?php echo esc_url( $image_url ); ?>" alt="" loading="<?php echo 0 === $index ? 'eager' : 'lazy'; ?>" />
+							<img src="<?php echo esc_url( $image['url'] ); ?>" alt="<?php echo esc_attr( sprintf( /* translators: 1: treatment name, 2: service area. */ __( '%1$s treatment at Ma Lumière in %2$s', 'ma-lumiere' ), $image['title'], ml_seo_local_area() ) ); ?>" loading="<?php echo 0 === $index ? 'eager' : 'lazy'; ?>" />
 						</figure>
 					<?php endforeach; ?>
 				<?php else : ?>

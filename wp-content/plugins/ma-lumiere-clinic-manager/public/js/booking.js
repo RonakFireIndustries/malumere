@@ -18,6 +18,7 @@
 	var steps = null;
 	var state = {
 		step: -1,
+		consultationType: 'new_consultation',
 		treatment: 0,
 		treatmentData: null,
 		date: '',
@@ -63,6 +64,24 @@
 			}
 		}
 		return null;
+	};
+
+	var consultationTypes = function () {
+		return (cfg.consultationTypes && cfg.consultationTypes.length) ? cfg.consultationTypes : [
+			{ key: 'new_consultation', label: 'New' },
+			{ key: 'follow_up', label: 'Follow-up' },
+			{ key: 'treatment_session', label: 'Treatment' }
+		];
+	};
+
+	var consultLabel = function () {
+		var list = consultationTypes();
+		for (var i = 0; i < list.length; i++) {
+			if (list[i].key === state.consultationType) {
+				return list[i].label;
+			}
+		}
+		return state.consultationType || '';
 	};
 
 	var nowLocal = function () {
@@ -145,21 +164,18 @@
 	var renderTreatments = function () {
 		state.step = 0;
 		stepper();
-		var list = cfg.treatments || [];
-		var html = '<h3>' + esc(S.treatment || 'Treatment') + '</h3>';
+		var list = consultationTypes();
+		var html = '<h3>' + esc(S.consultationType || 'Consultation type') + '</h3>';
 		html += '<p class="ml-booking__intro">' + esc(S.stepIntro || 'Choose how you wish to book.') + '</p>';
 		html += '<div class="ml-booking__treatments">';
 		for (var i = 0; i < list.length; i++) {
 			var t = list[i];
-			var mins = parseInt(t.duration, 10);
-			var selected = parseInt(t.id, 10) === state.treatment;
-			html += '<button type="button" class="ml-booking__treatment' + (selected ? ' ml-booking__treatment--selected' : '') + '" data-treatment="' + escAttr(t.id) + '" role="radio" aria-checked="' + (selected ? 'true' : 'false') + '">';
-			html += '<img src="' + escAttr(t.image || '') + '" alt="" loading="lazy" onerror="this.style.display=\'none\'">';
+			var selected = t.key === state.consultationType;
+			html += '<button type="button" class="ml-booking__treatment' + (selected ? ' ml-booking__treatment--selected' : '') + '" data-ctype="' + escAttr(t.key) + '" role="radio" aria-checked="' + (selected ? 'true' : 'false') + '">';
 			html += '<span class="ml-booking__treatment-body">';
-			html += '<span class="ml-booking__treatment-duration">' + (mins > 0 ? esc(mins + ' ' + (S.minutes || 'min')) : '') + '</span>';
-			html += '<span class="ml-booking__treatment-name">' + esc(t.name) + '</span>';
-			if (t.short_desc) {
-				html += '<span class="ml-booking__treatment-desc">' + esc(t.short_desc) + '</span>';
+			html += '<span class="ml-booking__treatment-name">' + esc(t.label) + '</span>';
+			if (t.desc) {
+				html += '<span class="ml-booking__treatment-desc">' + esc(t.desc) + '</span>';
 			}
 			html += '<span class="ml-booking__treatment-cta">' + esc(S.select || 'Select') + ' →</span>';
 			html += '</span></button>';
@@ -198,7 +214,7 @@
 			return;
 		}
 		var html = '<h3>' + esc(S.date || 'Date') + '</h3>';
-		html += '<p class="ml-booking__hint">' + esc(state.treatmentData ? state.treatmentData.name : '') + '</p>';
+		html += '<p class="ml-booking__hint">' + esc(consultLabel()) + '</p>';
 		html += '<div class="ml-booking__dates">';
 		var monthNames = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 		var dayNames = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
@@ -243,7 +259,7 @@
 		state.step = 2;
 		stepper();
 		var html = '<h3>' + esc(S.time || 'Time') + '</h3>';
-		html += '<p class="ml-booking__hint">' + esc(state.treatmentData ? state.treatmentData.name : '') + ' · ' + esc(state.date) + '</p>';
+		html += '<p class="ml-booking__hint">' + esc(consultLabel()) + ' · ' + esc(state.date) + '</p>';
 		if (!slots.length) {
 			html += '<p class="ml-booking__empty">' + esc(S.noSlots || 'No free slots on this day.') + '</p>';
 			html += nav({ back: true });
@@ -270,7 +286,7 @@
 		stepper();
 		var p = state.patient;
 		var html = '<h3>' + esc(S.details || 'Your details') + '</h3>';
-		html += '<p class="ml-booking__hint">' + esc((state.treatmentData ? state.treatmentData.name : '') + ' · ' + state.date + (state.time ? ' · ' + state.time : '')) + '</p>';
+		html += '<p class="ml-booking__hint">' + esc(consultLabel() + ' · ' + state.date + (state.time ? ' · ' + state.time : '')) + '</p>';
 		html += '<form class="ml-booking__form" data-form="details" novalidate>';
 		html += '<input class="ml-booking__hp" type="text" name="' + escAttr('ml_website') + '" tabindex="-1" autocomplete="off" aria-hidden="true">';
 		html += field('first_name', S.firstName || 'First name', p.first_name, true);
@@ -281,7 +297,7 @@
 		html += '<div class="ml-booking__field"><label for="ml-field-gender">' + esc(S.gender || 'Gender (optional)') + '</label>';
 		html += '<select id="ml-field-gender" name="gender"><option value="">—</option><option value="female"' + (p.gender === 'female' ? ' selected' : '') + '>Female</option><option value="male"' + (p.gender === 'male' ? ' selected' : '') + '>Male</option><option value="other"' + (p.gender === 'other' ? ' selected' : '') + '>Other</option><option value="prefer_not_to_say"' + (p.gender === 'prefer_not_to_say' ? ' selected' : '') + '>Prefer not to say</option></select>';
 		html += '<span class="ml-booking__field-error"></span></div>';
-		html += '<div class="ml-booking__field ml-booking__field--full"><label for="ml-field-message">' + esc(S.message || 'Anything we should know? (optional)') + '</label>';
+		html += '<div class="ml-booking__field ml-booking__field--full"><label for="ml-field-message">' + esc(S.reason || 'Brief reason for the consultation (optional)') + '</label>';
 		html += '<textarea id="ml-field-message" name="patient_message" rows="3">' + esc(p.patient_message) + '</textarea>';
 		html += '<span class="ml-booking__field-error"></span></div>';
 		html += '<div class="ml-booking__field ml-booking__field--full"><label class="ml-booking__consent"><input type="checkbox" name="consent" value="1"> <span>' + esc(S.consent || 'I agree to be contacted about my appointment.') + '</span></label>';
@@ -352,11 +368,10 @@
 	var renderReview = function () {
 		state.step = 4;
 		stepper();
-		var t = state.treatmentData ? state.treatmentData.name : 'Consultation';
-		var mins = state.treatmentData ? parseInt(state.treatmentData.duration, 10) : 0;
+		var t = consultLabel();
 		var p = state.patient;
 		var rows = [
-			[S.treatment || 'Treatment', t, 0],
+			[S.consultationType || 'Consultation type', t, 0],
 			[S.date || 'Date', state.date, 1],
 			[S.time || 'Time', state.time + (state.end && state.end !== state.time ? '–' + state.end : ''), 2],
 			[S.firstName || 'First name', p.first_name, 3],
@@ -398,13 +413,13 @@
 		var html = '<div class="ml-booking__success">' +
 			'<span class="ml-booking__check">✓</span>' +
 			'<h3>' + esc(S.confirmed || 'Booking confirmed') + '</h3>' +
-			'<p>' + esc(S.with || 'Consultation') + ': ' + esc(state.treatmentData ? state.treatmentData.name : '') + '</p>' +
+			'<p>' + esc(S.with || 'Consultation') + ': ' + esc(consultLabel()) + '</p>' +
 			'<p>' + esc(state.date) + ' at ' + esc(state.time) + '</p>' +
 			'<p class="ml-booking__success-ref">' + esc(S.ref || 'Reference') + ': ' + esc(appt.booking_reference || '') + '</p>' +
 			'<div class="ml-booking__success-box">' +
 				summaryLine(S.date || 'Date', state.date) +
 				summaryLine(S.time || 'Time', state.time + (state.end ? '–' + state.end : '')) +
-				summaryLine(S.treatment || 'Treatment', state.treatmentData ? state.treatmentData.name : 'Consultation') +
+				summaryLine(S.consultationType || 'Consultation type', consultLabel()) +
 				summaryLine('Reference', appt.booking_reference || '—') +
 			'</div>';
 		if (pay && Number(pay.fee) > 0) {
@@ -611,7 +626,7 @@
 		var fmt = function (d) {
 			return d.toISOString().replace(/[-:]/g, '').replace(/\.\d{3}/, '');
 		};
-		var summary = 'Consultation – ' + (state.treatmentData ? state.treatmentData.name : '');
+		var summary = 'Consultation – ' + consultLabel();
 		var details = 'Appointment ' + (appt.booking_reference || '') + ' with the clinic.';
 		var gcal = 'https://calendar.google.com/calendar/render?action=TEMPLATE&text=' + encodeURIComponent(summary) +
 			'&dates=' + fmt(start) + '/' + fmt(end) +
@@ -675,7 +690,7 @@
 			doctor_id: cfg.doctorId || 0,
 			date: state.date,
 			time: state.time,
-			appointment_type: 'new_consultation',
+			appointment_type: state.consultationType,
 			ml_website: '',
 			idempotency_key: state.idempotency
 		};
@@ -735,6 +750,7 @@
 		var target = e.target;
 		// pick action
 		var actionEl = target.closest('[data-action]');
+		var ctypeEl = target.closest('[data-ctype]');
 		var treatmentEl = target.closest('[data-treatment]');
 		var dateEl = target.closest('[data-date]');
 		var timeEl = target.closest('[data-time]');
@@ -766,6 +782,7 @@
 			if (action === 'again') {
 				state.booking = null;
 				state.paying = false;
+				state.consultationType = 'new_consultation';
 				state.treatment = 0;
 				state.treatmentData = null;
 				state.date = '';
@@ -776,6 +793,14 @@
 				renderTreatments();
 				return;
 			}
+			return;
+		}
+		if (ctypeEl) {
+			state.consultationType = ctypeEl.getAttribute('data-ctype');
+			state.date = '';
+			state.time = '';
+			body.setAttribute('aria-busy', 'true');
+			loadDates();
 			return;
 		}
 		if (treatmentEl) {
@@ -830,11 +855,7 @@
 			state.treatment = parseInt(state.treatmentData.id, 10);
 		}
 		root.addEventListener('click', onClick);
-		if (state.treatmentData) {
-			goTo(1);
-		} else {
-			renderTreatments();
-		}
+		renderTreatments();
 	};
 
 	if (document.readyState !== 'loading') {

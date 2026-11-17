@@ -15,11 +15,13 @@ get_template_part( 'template-parts/hero' );
 get_template_part( 'template-parts/trust' );
 get_template_part( 'template-parts/doctor-section' );
 get_template_part( 'template-parts/treatments-section' );
+get_template_part( 'template-parts/areas' );
 get_template_part( 'template-parts/journey' );
 get_template_part( 'template-parts/philosophy' );
-get_template_part( 'template-parts/results' );
-get_template_part( 'template-parts/testimonials' );
-get_template_part( 'template-parts/blog-section' );
+// Hidden: results, testimonials, blog sections
+// get_template_part( 'template-parts/results' );
+// get_template_part( 'template-parts/testimonials' );
+// get_template_part( 'template-parts/blog-section' );
 get_template_part( 'template-parts/faq-section' );
 get_template_part( 'template-parts/cta-section' );
 get_template_part( 'template-parts/contact-section' );

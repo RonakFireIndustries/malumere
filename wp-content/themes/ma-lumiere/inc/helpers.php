@@ -75,7 +75,7 @@ function ml_clinic_whatsapp() {
  * @return string
  */
 function ml_clinic_hours() {
-	return ml_mod( 'ml_clinic_hours', '' );
+	return ml_mod( 'ml_clinic_hours', "Tuesday – Saturday · 12:00 pm – 9:00 pm\nSunday · 12:00 pm – 5:00 pm\nMonday · Closed" );
 }
 
 /**
@@ -93,7 +93,7 @@ function ml_doctor_name() {
  * @return string
  */
 function ml_doctor_qualifications() {
-	return ml_mod( 'ml_doctor_qualifications', 'Aesthetic Physician' );
+	return ml_mod( 'ml_doctor_qualifications', 'Founder & Aesthetic Physician, Ma Lumière' );
 }
 
 /**
@@ -102,7 +102,14 @@ function ml_doctor_qualifications() {
  * @return string
  */
 function ml_doctor_bio() {
-	return wp_kses_post( ml_mod( 'ml_doctor_bio', '' ) );
+	$default = '<p>I believe good aesthetic care begins with understanding the skin — not simply choosing a procedure.</p>'
+		. '<p>I am Dr. Rishita Ray, an Aesthetic Physician with a background in modern aesthetic medicine and a special interest in skin health, acne, acne scarring and pigmentation.</p>'
+		. '<p>My approach brings together medical understanding, clinical assessment and aesthetic precision. From managing persistent skin concerns to planning advanced aesthetic treatments, I believe every face and every skin type deserves an individualised approach.</p>'
+		. '<p>At Ma Lumière, I founded the clinic around a simple philosophy: diagnosis first, procedures second.</p>'
+		. '<p>I believe in understanding the underlying concern, setting realistic expectations and recommending treatments based on individual needs — never procedures for the sake of procedures.</p>'
+		. '<p>Whether the goal is healthier skin, improved texture, scar management or subtle facial rejuvenation, my focus is on thoughtful treatment planning, natural-looking outcomes and care that evolves with you.</p>'
+		. '<p>Because good aesthetic medicine isn’t about changing who you are. It’s about helping you feel comfortable in your own skin.</p>';
+	return wp_kses_post( ml_mod( 'ml_doctor_bio', $default ) );
 }
 
 /**
@@ -217,11 +224,20 @@ function ml_treatment_image_url( $post_id = 0, $size = 'ml-card' ) {
 function ml_treatment_image( $post_id = 0, $size = 'ml-card', $attr = array() ) {
 	$post_id = $post_id ? $post_id : get_the_ID();
 	$thumb   = $post_id ? get_post_thumbnail_id( $post_id ) : 0;
+	$title   = $post_id ? wp_strip_all_tags( get_the_title( $post_id ) ) : '';
+
 	$attr    = wp_parse_args(
 		$attr,
 		array(
 			'class'   => '',
-			'alt'     => '',
+			'alt'     => $title
+				? sprintf(
+					/* translators: 1: treatment name, 2: clinic locality. */
+					__( '%1$s at Ma Lumière in %2$s', 'ma-lumiere' ),
+					$title,
+					ml_clinic_locality()
+				)
+				: ml_seo_brand_name(),
 			'loading' => 'lazy',
 		)
 	);
