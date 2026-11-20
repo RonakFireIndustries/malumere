@@ -50,16 +50,6 @@
 					</div>
 				<?php endif; ?>
 
-				<div class="contact-info__item">
-					<span class="contact-info__icon"><?php ml_icon( 'marker', 20 ); ?></span>
-					<div>
-						<p class="contact-info__label"><?php esc_html_e( 'Google Business', 'ma-lumiere' ); ?></p>
-						<p class="contact-info__value">
-							<a href="https://share.google/nmp0wXmDFFeuzSKNe" target="_blank" rel="noopener">View on Google</a>
-						</p>
-					</div>
-				</div>
-
 				<?php if ( ml_clinic_hours() ) : ?>
 					<div class="contact-info__item">
 						<span class="contact-info__icon"><?php ml_icon( 'clock', 20 ); ?></span>

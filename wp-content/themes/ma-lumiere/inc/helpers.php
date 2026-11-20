@@ -230,14 +230,7 @@ function ml_treatment_image( $post_id = 0, $size = 'ml-card', $attr = array() ) 
 		$attr,
 		array(
 			'class'   => '',
-			'alt'     => $title
-				? sprintf(
-					/* translators: 1: treatment name, 2: clinic locality. */
-					__( '%1$s at Ma Lumière in %2$s', 'ma-lumiere' ),
-					$title,
-					ml_clinic_locality()
-				)
-				: ml_seo_brand_name(),
+			'alt'     => $title ? $title : 'Ma Lumière',
 			'loading' => 'lazy',
 		)
 	);

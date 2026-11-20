@@ -38,7 +38,7 @@ function ml_customize_register( $wp_customize ) {
 	$wp_customize->add_setting(
 		'ml_hero_eyebrow',
 		array(
-			'default'           => __( 'Mira Road East · Mira Bhayander', 'ma-lumiere' ),
+			'default'           => __( 'Personalised Dermatology & Aesthetic Care', 'ma-lumiere' ),
 			'sanitize_callback' => 'sanitize_text_field',
 		)
 	);
@@ -50,7 +50,7 @@ function ml_customize_register( $wp_customize ) {
 	$wp_customize->add_setting(
 		'ml_hero_title',
 		array(
-			'default'           => __( 'Skin, Hair & Laser Care in Mira Bhayander.', 'ma-lumiere' ),
+			'default'           => __( 'Personalised Dermatology. Beautifully, Scientifically.', 'ma-lumiere' ),
 			'sanitize_callback' => 'sanitize_text_field',
 		)
 	);
@@ -62,7 +62,7 @@ function ml_customize_register( $wp_customize ) {
 	$wp_customize->add_setting(
 		'ml_hero_text',
 		array(
-			'default'           => __( 'Medical dermatology and aesthetic care for Mira Road, Bhayander and nearby areas — planned around your skin, your concerns and your long-term goals.', 'ma-lumiere' ),
+			'default'           => __( 'Medical dermatology and aesthetic care tailored to your skin, your concerns and your journey.', 'ma-lumiere' ),
 			'sanitize_callback' => 'sanitize_text_field',
 		)
 	);

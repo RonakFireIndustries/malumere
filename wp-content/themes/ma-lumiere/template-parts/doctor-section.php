@@ -11,7 +11,6 @@ $name           = ml_doctor_name();
 $qual           = ml_doctor_qualifications();
 $bio            = ml_doctor_bio();
 $expertise      = ml_doctor_expertise();
-$show_cta       = ! isset( $args['show_cta'] ) || (bool) $args['show_cta'];
 ?>
 
 <section class="section doctor" id="doctor">
@@ -41,11 +40,9 @@ $show_cta       = ! isset( $args['show_cta'] ) || (bool) $args['show_cta'];
 					<?php endforeach; ?>
 				</ul>
 			<?php endif; ?>
-			<?php if ( $show_cta ) : ?>
 			<a class="btn btn--primary" href="<?php echo esc_url( ml_page_url_by_template( 'page-templates/page-about.php' ) ); ?>">
 				<?php esc_html_e( 'Meet the Doctor', 'ma-lumiere' ); ?>
 			</a>
-			<?php endif; ?>
 		</div>
 
 	</div>

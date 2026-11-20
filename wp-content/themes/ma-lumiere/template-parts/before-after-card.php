@@ -15,8 +15,8 @@ $has_images = ml_attachment_is_deployed( $before_id ) && ml_attachment_is_deploy
 <figure class="ba-card" data-reveal="up">
 	<div class="ba-slider" data-ba-slider <?php echo $has_images ? 'style="--pos:50"' : ''; ?>>
 		<?php if ( $has_images ) : ?>
-			<img class="ba-slider__img ba-slider__before" src="<?php echo esc_url( wp_get_attachment_image_url( $before_id, 'ml-card' ) ); ?>" alt="<?php echo esc_attr( sprintf( /* translators: 1: treatment name, 2: locality. */ __( '%1$s before treatment at Ma Lumière in %2$s', 'ma-lumiere' ), $treatment ? $treatment : get_the_title(), ml_clinic_locality() ) ); ?>" />
-			<img class="ba-slider__img ba-slider__after" src="<?php echo esc_url( wp_get_attachment_image_url( $after_id, 'ml-card' ) ); ?>" alt="<?php echo esc_attr( sprintf( /* translators: 1: treatment name, 2: locality. */ __( '%1$s after treatment at Ma Lumière in %2$s', 'ma-lumiere' ), $treatment ? $treatment : get_the_title(), ml_clinic_locality() ) ); ?>" />
+			<img class="ba-slider__img ba-slider__before" src="<?php echo esc_url( wp_get_attachment_image_url( $before_id, 'ml-card' ) ); ?>" alt="<?php echo esc_attr( $treatment ? $treatment : get_the_title() ); ?> — before" />
+			<img class="ba-slider__img ba-slider__after" src="<?php echo esc_url( wp_get_attachment_image_url( $after_id, 'ml-card' ) ); ?>" alt="<?php echo esc_attr( $treatment ? $treatment : get_the_title() ); ?> — after" />
 			<span class="ba-slider__label"><?php esc_html_e( 'Before', 'ma-lumiere' ); ?></span>
 			<span class="ba-slider__label ba-slider__label--after"><?php esc_html_e( 'After', 'ma-lumiere' ); ?></span>
 			<div class="ba-slider__handle" aria-hidden="true">

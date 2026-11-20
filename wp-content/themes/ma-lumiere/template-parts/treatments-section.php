@@ -31,7 +31,7 @@ $categories = get_terms(
 		<div class="section__head section__head--center">
 			<p class="eyebrow" data-reveal="fade"><?php esc_html_e( 'What we treat', 'ma-lumiere' ); ?></p>
 			<h2 class="section__title" data-reveal="fade"><?php esc_html_e( 'Aesthetic Medicine, thoughtfully done', 'ma-lumiere' ); ?></h2>
-			<p class="section__lead" data-reveal="fade"><?php echo esc_html( sprintf( /* translators: %s: service area. */ __( 'Medical and aesthetic care across the conditions that matter to you — at our skin clinic in Mira Road East, serving %s.', 'ma-lumiere' ), ml_seo_local_area() ) ); ?></p>
+			<p class="section__lead" data-reveal="fade"><?php esc_html_e( 'Medical and aesthetic care across the conditions that matter to you.', 'ma-lumiere' ); ?></p>
 		</div>
 
 		<?php if ( ! is_wp_error( $categories ) && $categories ) : ?>

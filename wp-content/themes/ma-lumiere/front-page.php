@@ -15,7 +15,6 @@ get_template_part( 'template-parts/hero' );
 get_template_part( 'template-parts/trust' );
 get_template_part( 'template-parts/doctor-section' );
 get_template_part( 'template-parts/treatments-section' );
-get_template_part( 'template-parts/areas' );
 get_template_part( 'template-parts/journey' );
 get_template_part( 'template-parts/philosophy' );
 // Hidden: results, testimonials, blog sections

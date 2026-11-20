@@ -30,7 +30,7 @@ while ( have_posts() ) :
 	<?php
 endwhile;
 
-get_template_part( 'template-parts/doctor-section', null, array( 'show_cta' => false ) );
+get_template_part( 'template-parts/doctor-section' );
 get_template_part( 'template-parts/journey' );
 get_template_part( 'template-parts/philosophy' );
 get_template_part( 'template-parts/cta-section' );
