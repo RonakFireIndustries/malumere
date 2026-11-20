@@ -3,7 +3,7 @@
  * Plugin Name:       Ma Lumière Clinic Manager
  * Plugin URI:        https://malumere.example.local/
  * Description:       Private clinic management system for Ma Lumière Dermatology & Aesthetic Clinic. Handles patients, visits, appointments, prescriptions, follow-ups, billing, payments, photos, medicine inventory, reports and audit logging in dedicated database tables.
- * Version:           1.4.1
+ * Version:           1.4.2
  * Requires at least: 6.0
  * Requires PHP:      7.4
  * Author:            Ma Lumière
@@ -18,7 +18,7 @@
 
 defined( 'ABSPATH' ) || exit;
 
-define( 'ML_CLINIC_VERSION', '1.4.1' );
+define( 'ML_CLINIC_VERSION', '1.4.2' );
 define( 'ML_CLINIC_DB_VERSION', '1.4.1' );
 define( 'ML_CLINIC_PLUGIN_FILE', __FILE__ );
 define( 'ML_CLINIC_PATH', plugin_dir_path( __FILE__ ) );

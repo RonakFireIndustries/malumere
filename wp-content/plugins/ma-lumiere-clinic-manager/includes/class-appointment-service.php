@@ -73,6 +73,20 @@ class ML_Appointment_Service {
 			return $patient;
 		}
 
+		// One upcoming appointment per patient: stop duplicate future bookings.
+		$existing_upcoming = ML_Appointment_Repository::upcoming_for_patient( (int) $patient['id'] );
+		if ( $existing_upcoming ) {
+			ml_audit( 'booking_failed', 'appointment', (int) $existing_upcoming['id'], __( 'Booking rejected: patient already has an upcoming appointment', 'ma-lumiere-clinic' ) );
+			return new WP_Error(
+				'ml_booking_duplicate',
+				sprintf(
+					/* translators: %s: existing booking reference. */
+					__( 'You already have an upcoming appointment (%s). Please contact the clinic to change it.', 'ma-lumiere-clinic' ),
+					(string) $existing_upcoming['booking_reference']
+				)
+			);
+		}
+
 		$doctor = ML_Availability_Service::resolve_doctor( isset( $params['doctor_id'] ) ? absint( $params['doctor_id'] ) : 0 );
 
 		$input = array(
@@ -97,7 +111,7 @@ class ML_Appointment_Service {
 		}
 
 		$appointment = ML_Appointment_Repository::get( $id );
-		self::notify( (int) $id, 'confirmation' );
+		self::notify( (int) $id, 'pending' );
 
 		return self::attach_consultation_fee( $appointment );
 	}
@@ -197,6 +211,23 @@ class ML_Appointment_Service {
 		self::notify( (int) $new_id, 'reschedule', (string) $existing['booking_reference'] );
 
 		return $new;
+	}
+
+	/**
+	 * Approve (confirm) a pending appointment and email the patient.
+	 *
+	 * @param int $id Appointment ID.
+	 *
+	 * @return array|WP_Error Updated appointment or error.
+	 */
+	public static function approve( $id ) {
+		$updated = ML_Appointment_Repository::transition( $id, 'confirmed' );
+		if ( is_wp_error( $updated ) ) {
+			return $updated;
+		}
+		ml_audit( 'appointment_confirmed', 'appointment', (int) $id, __( 'Appointment approved by staff', 'ma-lumiere-clinic' ) );
+		self::notify( (int) $id, 'confirmation' );
+		return $updated;
 	}
 
 	/**
@@ -316,9 +347,13 @@ class ML_Appointment_Service {
 			case 'reschedule':
 				$subject = sprintf( __( '%s — Appointment rescheduled', 'ma-lumiere-clinic' ), $data['summary']['clinic_name'] );
 				break;
+			case 'pending':
+				$template = 'appointment_pending';
+				$subject  = sprintf( __( '%s — Booking received (pending confirmation) %s', 'ma-lumiere-clinic' ), $data['summary']['clinic_name'], $data['summary']['reference'] );
+				break;
 			case 'confirmation':
 			default:
-				$subject = sprintf( __( '%s — Booking confirmation %s', 'ma-lumiere-clinic' ), $data['summary']['clinic_name'], $data['summary']['reference'] );
+				$subject = sprintf( __( '%s — Appointment confirmed %s', 'ma-lumiere-clinic' ), $data['summary']['clinic_name'], $data['summary']['reference'] );
 				break;
 		}
 
@@ -326,11 +361,10 @@ class ML_Appointment_Service {
 		$result  = ML_Email_Service::send( $email, $subject, $message, $template, $data );
 
 		if ( true === $result ) {
-			if ( 'cancellation' === $event ) {
-				return;
+			if ( 'cancellation' !== $event && 'pending' !== $event ) {
+				$wpdb       = $GLOBALS['wpdb'];
+				$wpdb->update( ML_Database::table( 'appointments' ), array( 'confirmation_sent' => 1 ), array( 'id' => $id ), array( '%d' ), array( '%d' ) );
 			}
-			$wpdb       = $GLOBALS['wpdb'];
-			$wpdb->update( ML_Database::table( 'appointments' ), array( 'confirmation_sent' => 1 ), array( 'id' => $id ), array( '%d' ), array( '%d' ) );
 		} elseif ( is_wp_error( $result ) ) {
 			// Logged only; the record itself stays valid.
 			// phpcs:ignore WordPress.PHP.DevelopmentFunctions.error_log
@@ -362,8 +396,12 @@ class ML_Appointment_Service {
 					$lines[] = sprintf( esc_html__( 'Previous reference: %s', 'ma-lumiere-clinic' ), esc_html( $from_reference ) );
 				}
 				break;
+			case 'pending':
+				$lines[] = esc_html__( 'Thank you for your booking request with', 'ma-lumiere-clinic' ) . ' <strong>' . esc_html( $s['clinic_name'] ) . '</strong>.';
+				$lines[] = '<strong>' . esc_html__( 'Your appointment is pending confirmation.', 'ma-lumiere-clinic' ) . '</strong> ' . esc_html__( 'We will email you again as soon as it is approved.', 'ma-lumiere-clinic' );
+				break;
 			default:
-				$lines[] = esc_html__( 'Thank you for booking your appointment with', 'ma-lumiere-clinic' ) . ' <strong>' . esc_html( $s['clinic_name'] ) . '</strong>.';
+				$lines[] = esc_html__( 'Your appointment is confirmed. We look forward to seeing you at', 'ma-lumiere-clinic' ) . ' <strong>' . esc_html( $s['clinic_name'] ) . '</strong>.';
 				break;
 		}
 

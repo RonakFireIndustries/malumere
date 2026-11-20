@@ -20,6 +20,23 @@
 					echo esc_html( $about ? $about : __( 'SKIN | HAIR | LASER ', 'ma-lumiere' ) );
 					?>
 				</p>
+				<p class="footer__about">
+					<?php
+					printf(
+						/* translators: 1: clinic locality, 2: service area. */
+						esc_html__( 'Skin clinic in %1$s, serving %2$s.', 'ma-lumiere' ),
+						esc_html( ml_clinic_locality() ),
+						esc_html( ml_seo_local_area() )
+					);
+
+					$local_url = ml_page_url_by_template( 'page-templates/page-mira-bhayander.php', '' );
+					if ( $local_url ) :
+						?>
+						<a href="<?php echo esc_url( $local_url ); ?>"><?php esc_html_e( 'Skin clinic in Mira Bhayander', 'ma-lumiere' ); ?></a>
+						<?php
+					endif;
+					?>
+				</p>
 				<?php
 				$socials = ml_social_links();
 				if ( $socials ) :
@@ -83,7 +100,9 @@
 					<?php endif; ?>
 					<?php if ( ml_clinic_email() ) : ?>
 						<li><?php ml_icon( 'mail', 16 ); ?><a href="mailto:<?php echo esc_attr( ml_clinic_email() ); ?>"><?php echo esc_html( ml_clinic_email() ); ?></a></li>
+						<li><?php ml_icon( 'mail', 16 ); ?><a href="mailto:info@ma-lumiere.in">info@ma-lumiere.in</a></li>
 					<?php endif; ?>
+					<li><?php ml_icon( 'marker', 16 ); ?><a href="https://share.google/nmp0wXmDFFeuzSKNe" target="_blank" rel="noopener">Google Business</a></li>
 					<?php if ( ml_clinic_hours() ) : ?>
 						<li><?php ml_icon( 'clock', 16 ); ?><span class="contact-info__hours"><?php echo esc_html( ml_clinic_hours() ); ?></span></li>
 					<?php endif; ?>

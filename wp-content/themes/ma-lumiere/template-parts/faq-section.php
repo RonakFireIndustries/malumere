@@ -5,10 +5,12 @@
  * @package ma-lumiere
  */
 
+$faq_limit = isset( $args['limit'] ) ? (int) $args['limit'] : 6;
+
 $faqs = new WP_Query(
 	array(
 		'post_type'      => 'ml_faq',
-		'posts_per_page' => 6,
+		'posts_per_page' => $faq_limit,
 		'post_status'    => 'publish',
 		'orderby'        => 'date',
 		'order'          => 'ASC',

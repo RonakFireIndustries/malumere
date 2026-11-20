@@ -439,6 +439,7 @@ var fields = document.getElementById('ml-detail-fields');
 		var action = btn.getAttribute('data-ml-action');
 		var id = parseInt(btn.getAttribute('data-ml-id'), 10);
 		var labels = {
+			approve: 'Approve this appointment and email the patient?',
 			checkin: 'Check in this patient?',
 			complete: 'Mark this appointment as completed?',
 			no_show: 'Mark this patient as a no-show?'
@@ -451,7 +452,7 @@ var fields = document.getElementById('ml-detail-fields');
 
 	if (confirmOk) {
 		confirmOk.addEventListener('click', function () {
-			var pathByAction = { checkin: 'checkin', complete: 'complete', no_show: 'no-show' };
+			var pathByAction = { approve: 'approve', checkin: 'checkin', complete: 'complete', no_show: 'no-show' };
 			confirmOk.disabled = true;
 			api('appointments/' + modalContext.id + '/' + pathByAction[modalContext.action], { method: 'POST', body: {} })
 				.then(function (resp) {

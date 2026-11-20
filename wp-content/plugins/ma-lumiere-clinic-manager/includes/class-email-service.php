@@ -21,6 +21,7 @@ class ML_Email_Service {
 	 */
 	public static function templates() {
 		return array(
+			'appointment_pending'      => 'appointment-pending',
 			'appointment_confirmation' => 'appointment-confirmation',
 			'appointment_reminder'     => 'appointment-reminder',
 			'appointment_cancellation' => 'appointment-cancellation',

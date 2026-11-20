@@ -122,6 +122,9 @@ $ml_filtered = ( '' !== $ml_s || '' !== $ml_status || '' !== $ml_from || '' !== 
 					<td class="ml-col-actions">
 						<button type="button" class="button button-small" data-ml-open="detail" data-ml-id="<?php echo esc_attr( $ml_a['id'] ); ?>"><?php esc_html_e( 'View', 'ma-lumiere-clinic' ); ?></button>
 						<?php if ( $ml_can_manage && ! in_array( $ml_a['status'], array( 'completed', 'cancelled', 'rescheduled', 'no_show' ), true ) ) : ?>
+							<?php if ( 'pending' === $ml_a['status'] ) : ?>
+								<button type="button" class="button button-primary button-small" data-ml-action="approve" data-ml-id="<?php echo esc_attr( $ml_a['id'] ); ?>"><?php esc_html_e( 'Approve', 'ma-lumiere-clinic' ); ?></button>
+							<?php endif; ?>
 							<?php if ( 'checked_in' !== $ml_a['status'] ) : ?>
 								<button type="button" class="button button-small" data-ml-action="checkin" data-ml-id="<?php echo esc_attr( $ml_a['id'] ); ?>"><?php esc_html_e( 'Check in', 'ma-lumiere-clinic' ); ?></button>
 							<?php endif; ?>

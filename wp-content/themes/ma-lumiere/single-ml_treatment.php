@@ -47,6 +47,7 @@ while ( have_posts() ) :
 	if ( $downtime ) {
 		$facts[] = array( __( 'Downtime', 'ma-lumiere' ), $downtime );
 	}
+	$facts[] = array( __( 'Location', 'ma-lumiere' ), ml_clinic_locality() );
 	$facts[] = array( __( 'Consultation', 'ma-lumiere' ), __( 'By appointment', 'ma-lumiere' ) );
 
 	$has_care = ( $pre || $post_care );
@@ -62,7 +63,7 @@ while ( have_posts() ) :
 		if ( count( $supporting_images ) >= 2 ) {
 			break;
 		}
-		$image_url = get_the_post_thumbnail_url( $related_id, 'large' );
+		$image_url = ml_treatment_image_url( $related_id, 'large' );
 		if ( $image_url && ! in_array( $image_url, $supporting_images, true ) ) {
 			$supporting_images[] = $image_url;
 		}
@@ -75,7 +76,7 @@ while ( have_posts() ) :
 			$supporting_images[] = $editorial_url;
 		}
 	}
-	$featured_url = get_the_post_thumbnail_url( get_the_ID(), 'large' );
+	$featured_url = ml_treatment_image_url( get_the_ID(), 'large' );
 	if ( empty( $supporting_images ) && $featured_url ) {
 		$supporting_images[] = $featured_url;
 	}
@@ -121,9 +122,16 @@ while ( have_posts() ) :
 				</div>
 
 				<div class="td-hero__media" data-reveal="fade">
-					<?php if ( has_post_thumbnail() ) : ?>
-						<?php the_post_thumbnail( 'large' ); ?>
-					<?php else : ?>
+					<?php
+					$hero_alt = sprintf(
+						/* translators: 1: treatment name, 2: service area. */
+						__( '%1$s treatment at Ma Lumière in %2$s', 'ma-lumiere' ),
+						wp_strip_all_tags( get_the_title() ),
+						ml_seo_local_area()
+					);
+
+					if ( ! ml_treatment_image( get_the_ID(), 'large', array( 'alt' => $hero_alt, 'loading' => 'eager' ) ) ) :
+						?>
 						<div class="td-hero__placeholder"><?php esc_html_e( '[TREATMENT IMAGE]', 'ma-lumiere' ); ?></div>
 					<?php endif; ?>
 				</div>
@@ -162,7 +170,7 @@ while ( have_posts() ) :
 
 						<figure class="td-row__media">
 							<?php if ( $image_url ) : ?>
-								<img src="<?php echo esc_url( $image_url ); ?>" alt="" loading="lazy" />
+								<img src="<?php echo esc_url( $image_url ); ?>" alt="<?php echo esc_attr( sprintf( /* translators: 1: treatment name, 2: locality. */ __( '%1$s consultation at Ma Lumière in %2$s', 'ma-lumiere' ), wp_strip_all_tags( get_the_title() ), ml_clinic_locality() ) ); ?>" loading="lazy" />
 							<?php else : ?>
 								<div class="td-row__placeholder"><?php esc_html_e( '[TREATMENT IMAGE]', 'ma-lumiere' ); ?></div>
 							<?php endif; ?>
@@ -195,7 +203,7 @@ while ( have_posts() ) :
 
 						<figure class="td-row__media">
 							<?php if ( $image_url ) : ?>
-								<img src="<?php echo esc_url( $image_url ); ?>" alt="" loading="lazy" />
+								<img src="<?php echo esc_url( $image_url ); ?>" alt="<?php echo esc_attr( sprintf( /* translators: 1: treatment name, 2: locality. */ __( '%1$s skin assessment at Ma Lumière in %2$s', 'ma-lumiere' ), wp_strip_all_tags( get_the_title() ), ml_clinic_locality() ) ); ?>" loading="lazy" />
 							<?php else : ?>
 								<div class="td-row__placeholder"><?php esc_html_e( '[TREATMENT IMAGE]', 'ma-lumiere' ); ?></div>
 							<?php endif; ?>
@@ -234,7 +242,7 @@ while ( have_posts() ) :
 
 						<figure class="td-row__media">
 							<?php if ( $image_url ) : ?>
-								<img src="<?php echo esc_url( $image_url ); ?>" alt="" loading="lazy" />
+								<img src="<?php echo esc_url( $image_url ); ?>" alt="<?php echo esc_attr( sprintf( /* translators: 1: treatment name, 2: locality. */ __( '%1$s treatment process at Ma Lumière in %2$s', 'ma-lumiere' ), wp_strip_all_tags( get_the_title() ), ml_clinic_locality() ) ); ?>" loading="lazy" />
 							<?php else : ?>
 								<div class="td-row__placeholder"><?php esc_html_e( '[TREATMENT IMAGE]', 'ma-lumiere' ); ?></div>
 							<?php endif; ?>
@@ -272,6 +280,7 @@ while ( have_posts() ) :
 					<p class="eyebrow"><?php esc_html_e( 'Your next step', 'ma-lumiere' ); ?></p>
 					<h2><?php esc_html_e( 'Book a consultation', 'ma-lumiere' ); ?></h2>
 					<p><?php esc_html_e( 'Every treatment begins with a private consultation, a skin assessment and a plan built around your goals.', 'ma-lumiere' ); ?></p>
+					<p><?php printf( /* translators: 1: service area, 2: locality. */ esc_html__( 'Serving %1$s and nearby areas from our clinic in %2$s.', 'ma-lumiere' ), esc_html( ml_seo_local_area() ), esc_html( ml_clinic_locality() ) ); ?></p>
 					<a class="btn btn--primary btn--block" href="<?php echo esc_url( $booking_url ); ?>">
 						<?php esc_html_e( 'Book a Consultation', 'ma-lumiere' ); ?>
 					</a>

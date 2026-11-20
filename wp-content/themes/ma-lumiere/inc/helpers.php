@@ -75,7 +75,7 @@ function ml_clinic_whatsapp() {
  * @return string
  */
 function ml_clinic_hours() {
-	return ml_mod( 'ml_clinic_hours', '' );
+	return ml_mod( 'ml_clinic_hours', "Tuesday – Saturday · 12:00 pm – 9:00 pm\nSunday · 12:00 pm – 5:00 pm\nMonday · Closed" );
 }
 
 /**
@@ -93,7 +93,7 @@ function ml_doctor_name() {
  * @return string
  */
 function ml_doctor_qualifications() {
-	return ml_mod( 'ml_doctor_qualifications', 'Aesthetic Physician' );
+	return ml_mod( 'ml_doctor_qualifications', 'Founder & Aesthetic Physician, Ma Lumière' );
 }
 
 /**
@@ -102,7 +102,14 @@ function ml_doctor_qualifications() {
  * @return string
  */
 function ml_doctor_bio() {
-	return wp_kses_post( ml_mod( 'ml_doctor_bio', '' ) );
+	$default = '<p>I believe good aesthetic care begins with understanding the skin — not simply choosing a procedure.</p>'
+		. '<p>I am Dr. Rishita Ray, an Aesthetic Physician with a background in modern aesthetic medicine and a special interest in skin health, acne, acne scarring and pigmentation.</p>'
+		. '<p>My approach brings together medical understanding, clinical assessment and aesthetic precision. From managing persistent skin concerns to planning advanced aesthetic treatments, I believe every face and every skin type deserves an individualised approach.</p>'
+		. '<p>At Ma Lumière, I founded the clinic around a simple philosophy: diagnosis first, procedures second.</p>'
+		. '<p>I believe in understanding the underlying concern, setting realistic expectations and recommending treatments based on individual needs — never procedures for the sake of procedures.</p>'
+		. '<p>Whether the goal is healthier skin, improved texture, scar management or subtle facial rejuvenation, my focus is on thoughtful treatment planning, natural-looking outcomes and care that evolves with you.</p>'
+		. '<p>Because good aesthetic medicine isn’t about changing who you are. It’s about helping you feel comfortable in your own skin.</p>';
+	return wp_kses_post( ml_mod( 'ml_doctor_bio', $default ) );
 }
 
 /**
@@ -137,6 +144,153 @@ function ml_hero_image_id() {
 }
 
 /**
+ * Whether an attachment's file is actually present on this server.
+ *
+ * A media-library URL is only as reliable as the uploads directory behind it.
+ * Hosts that deploy code but not `wp-content/uploads` keep the attachment rows
+ * in the database while the files 404, which renders as broken-image icons.
+ * Checking the file lets templates fall back to artwork bundled with the theme.
+ *
+ * @param int $attachment_id Attachment ID.
+ * @return bool
+ */
+function ml_attachment_is_deployed( $attachment_id ) {
+	$attachment_id = (int) $attachment_id;
+
+	if ( ! $attachment_id ) {
+		return false;
+	}
+
+	$file = get_attached_file( $attachment_id );
+
+	return $file && file_exists( $file );
+}
+
+/**
+ * URL of the theme-bundled photo for a treatment, keyed by its slug.
+ *
+ * @param int $post_id Treatment post ID. Defaults to the current post.
+ * @return string Empty string when no bundled photo exists.
+ */
+function ml_treatment_fallback_image_url( $post_id = 0 ) {
+	$post_id = $post_id ? $post_id : get_the_ID();
+	$slug    = $post_id ? get_post_field( 'post_name', $post_id ) : '';
+
+	if ( ! $slug ) {
+		return '';
+	}
+
+	$relative = 'assets/images/treatments/' . sanitize_file_name( $slug ) . '.jpg';
+	$file     = ML_THEME_DIR . '/' . $relative;
+
+	if ( ! is_readable( $file ) ) {
+		return '';
+	}
+
+	return ML_THEME_URI . '/' . $relative . '?v=' . ml_asset_version( $relative );
+}
+
+/**
+ * Image URL for a treatment: media library when the file is deployed, else the
+ * bundled photo shipped with the theme.
+ *
+ * @param int    $post_id Treatment post ID. Defaults to the current post.
+ * @param string $size    Registered image size.
+ * @return string Empty string when neither source is available.
+ */
+function ml_treatment_image_url( $post_id = 0, $size = 'ml-card' ) {
+	$post_id = $post_id ? $post_id : get_the_ID();
+	$thumb   = $post_id ? get_post_thumbnail_id( $post_id ) : 0;
+
+	if ( ml_attachment_is_deployed( $thumb ) ) {
+		$url = wp_get_attachment_image_url( $thumb, $size );
+		if ( $url ) {
+			return $url;
+		}
+	}
+
+	return ml_treatment_fallback_image_url( $post_id );
+}
+
+/**
+ * Print a treatment image, preferring the media library and falling back to
+ * the bundled photo.
+ *
+ * @param int    $post_id Treatment post ID. Defaults to the current post.
+ * @param string $size    Registered image size.
+ * @param array  $attr    Extra attributes: class, alt, loading, eager.
+ * @return bool True when an image was printed.
+ */
+function ml_treatment_image( $post_id = 0, $size = 'ml-card', $attr = array() ) {
+	$post_id = $post_id ? $post_id : get_the_ID();
+	$thumb   = $post_id ? get_post_thumbnail_id( $post_id ) : 0;
+	$title   = $post_id ? wp_strip_all_tags( get_the_title( $post_id ) ) : '';
+
+	$attr    = wp_parse_args(
+		$attr,
+		array(
+			'class'   => '',
+			'alt'     => $title
+				? sprintf(
+					/* translators: 1: treatment name, 2: clinic locality. */
+					__( '%1$s at Ma Lumière in %2$s', 'ma-lumiere' ),
+					$title,
+					ml_clinic_locality()
+				)
+				: ml_seo_brand_name(),
+			'loading' => 'lazy',
+		)
+	);
+
+	if ( ml_attachment_is_deployed( $thumb ) ) {
+		echo wp_get_attachment_image(
+			$thumb,
+			$size,
+			false,
+			array(
+				'class'   => $attr['class'],
+				'alt'     => $attr['alt'],
+				'loading' => $attr['loading'],
+			)
+		);
+		return true;
+	}
+
+	$url = ml_treatment_fallback_image_url( $post_id );
+
+	if ( ! $url ) {
+		return false;
+	}
+
+	printf(
+		'<img src="%1$s" class="%2$s" alt="%3$s" loading="%4$s" decoding="async" />',
+		esc_url( $url ),
+		esc_attr( $attr['class'] ),
+		esc_attr( $attr['alt'] ),
+		esc_attr( $attr['loading'] )
+	);
+
+	return true;
+}
+
+/**
+ * Hero image URL: the Customizer image when it is deployed, otherwise the
+ * portrait bundled with the theme.
+ *
+ * @param string $size Registered image size.
+ * @return string
+ */
+function ml_hero_image_url( $size = 'ml-portrait' ) {
+	$relative = 'assets/images/hero.jpg';
+
+	if ( is_readable( ML_THEME_DIR . '/' . $relative ) ) {
+		return ML_THEME_URI . '/' . $relative . '?v=' . ml_asset_version( $relative );
+	}
+
+	return '';
+}
+
+/**
  * Editorial image URLs for treatment layouts.
  *
  * Starts with the site hero portrait, then large media-library images that
@@ -153,7 +307,7 @@ function ml_treatment_editorial_images( $limit = 2 ) {
 		$pool    = array();
 		$hero_id = ml_hero_image_id();
 
-		if ( $hero_id ) {
+		if ( ml_attachment_is_deployed( $hero_id ) ) {
 			$hero_url = wp_get_attachment_image_url( $hero_id, 'large' );
 			if ( $hero_url ) {
 				$pool[] = $hero_url;
@@ -191,6 +345,9 @@ function ml_treatment_editorial_images( $limit = 2 ) {
 		);
 
 		foreach ( $candidates as $candidate_id ) {
+			if ( ! ml_attachment_is_deployed( $candidate_id ) ) {
+				continue;
+			}
 			$meta = wp_get_attachment_metadata( $candidate_id );
 			if ( empty( $meta['width'] ) || empty( $meta['height'] ) || $meta['width'] < 900 || $meta['height'] < 600 ) {
 				continue;

@@ -190,7 +190,7 @@ function ml_get_terms( $taxonomy = 'category' ) {
  * @return void
  */
 function ml_image( $attachment_id, $size = 'ml-card', $class = '', $flag = '[IMAGE PENDING]' ) {
-	if ( $attachment_id ) {
+	if ( ml_attachment_is_deployed( $attachment_id ) ) {
 		echo wp_get_attachment_image( $attachment_id, $size, false, array( 'class' => $class ) );
 		return;
 	}

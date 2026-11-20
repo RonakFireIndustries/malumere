@@ -126,6 +126,9 @@ if ( 'day' === $ml_view ) :
 								<?php echo ml_appt_status_chip( $ml_item['status'] ); ?>
 								<?php if ( $ml_can_manage && ! in_array( $ml_item['status'], array( 'completed', 'cancelled', 'rescheduled', 'no_show' ), true ) ) : ?>
 									<span class="ml-appt-cal__mini">
+										<?php if ( 'pending' === $ml_item['status'] ) : ?>
+											<button type="button" class="button button-primary button-small" data-ml-action="approve" data-ml-id="<?php echo esc_attr( $ml_item['id'] ); ?>"><?php esc_html_e( 'Approve', 'ma-lumiere-clinic' ); ?></button>
+										<?php endif; ?>
 										<button type="button" class="button button-small" data-ml-action="checkin" data-ml-id="<?php echo esc_attr( $ml_item['id'] ); ?>"><?php esc_html_e( 'In', 'ma-lumiere-clinic' ); ?></button>
 										<button type="button" class="button button-small" data-ml-action="complete" data-ml-id="<?php echo esc_attr( $ml_item['id'] ); ?>"><?php esc_html_e( 'Done', 'ma-lumiere-clinic' ); ?></button>
 										<button type="button" class="button button-small" data-ml-open="reschedule" data-ml-id="<?php echo esc_attr( $ml_item['id'] ); ?>"><?php esc_html_e( 'Move', 'ma-lumiere-clinic' ); ?></button>
