@@ -140,6 +140,24 @@ function ml_customize_register( $wp_customize ) {
 		)
 	) );
 
+	$wp_customize->add_setting(
+		'ml_hero_background_image',
+		array(
+			'default'           => 0,
+			'sanitize_callback' => 'absint',
+		)
+	);
+	$wp_customize->add_control( new WP_Customize_Media_Control(
+		$wp_customize,
+		'ml_hero_background_image',
+		array(
+			'label'       => __( 'Hero background image', 'ma-lumiere' ),
+			'description' => __( 'A wide photo shown faintly behind the hero text. Leave empty to use the theme background.', 'ma-lumiere' ),
+			'mime_type'   => 'image',
+			'section'     => 'ml_hero',
+		)
+	) );
+
 	/* ---------- Philosophy ---------- */
 	$wp_customize->add_section(
 		'ml_philosophy',

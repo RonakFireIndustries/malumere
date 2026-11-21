@@ -68,9 +68,9 @@ function ml_handle_contact( $request ) {
 	$subject = sanitize_text_field( (string) $request->get_param( 'subject' ) );
 	$message = sanitize_textarea_field( (string) $request->get_param( 'message' ) );
 
-	if ( ! $name || ! $email || ! $message ) {
+	if ( ! $name || ! $email ) {
 		return new WP_REST_Response(
-			array( 'message' => __( 'Please complete the required fields: name, email and message.', 'ma-lumiere' ) ),
+			array( 'message' => __( 'Please complete the required fields: name and email.', 'ma-lumiere' ) ),
 			422
 		);
 	}
@@ -118,7 +118,7 @@ function ml_handle_contact( $request ) {
 		'<p><strong>' . esc_html( $name ) . '</strong><br/>'
 		. esc_html( $email ) . '<br/>'
 		. esc_html( $phone ? $phone : '—' ) . '</p>'
-		. '<hr/><p>' . nl2br( esc_html( $message ) ) . '</p>'
+		. '<hr/><p>' . ( $message ? nl2br( esc_html( $message ) ) : '—' ) . '</p>'
 	);
 
 	/**

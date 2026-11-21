@@ -36,7 +36,6 @@
 		var errors = [];
 		if (!name) errors.push('name');
 		if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) errors.push('email');
-		if (!messageText) errors.push('message');
 
 		if (errors.length) {
 			showMessage('error', 'Please complete the required fields (' + errors.join(', ') + ').');

@@ -25,10 +25,15 @@ if ( ! $cta_secondary_url ) {
 
 $hero_image_url = ml_hero_image_url( 'ml-portrait' );
 $hero_image_alt = ml_clinic_name();
+$hero_bg_url    = ml_hero_background_image_url();
 $phone          = ml_clinic_phone();
 ?>
 
 <section class="hero">
+	<?php if ( $hero_bg_url ) : ?>
+		<div class="hero__background" aria-hidden="true" style="--hero-bg: url('<?php echo esc_url( $hero_bg_url ); ?>');"></div>
+	<?php endif; ?>
+
 	<div class="container hero__inner">
 
 		<div class="hero__content">

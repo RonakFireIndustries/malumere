@@ -748,6 +748,52 @@ textarea:focus-visible,
   pointer-events: none;
 }
 
+/* Photo backdrop behind the copy; it fades out before the doctor portrait. */
+.hero__background {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background-image: var(--hero-bg);
+  background-position: 28% center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  opacity: 0.82;
+  filter: saturate(0.9) contrast(1.04);
+  -webkit-mask-image: linear-gradient(90deg, #000 0%, #000 62%, transparent 90%);
+  mask-image: linear-gradient(90deg, #000 0%, #000 62%, transparent 90%);
+  transform-origin: center;
+  animation: hero-bg-drift 24s ease-in-out infinite alternate;
+}
+
+.hero__background::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(90deg, rgba(0, 0, 0, 0.28) 0%, rgba(0, 0, 0, 0.42) 48%, rgba(0, 0, 0, 0.78) 100%),
+    linear-gradient(0deg, var(--color-canvas) 0%, rgba(0, 0, 0, 0) 24%);
+}
+
+/* Local scrim keeps the headline readable over the lighter backdrop. */
+.hero__content {
+  position: relative;
+}
+
+.hero__content::before {
+  content: "";
+  position: absolute;
+  inset: -1.5rem -2rem;
+  z-index: -1;
+  pointer-events: none;
+  background: radial-gradient(ellipse at 35% 50%, rgba(0, 0, 0, 0.48) 0%, rgba(0, 0, 0, 0.22) 48%, transparent 78%);
+}
+
+@keyframes hero-bg-drift {
+  from { transform: scale(1); }
+  to   { transform: scale(1.08); }
+}
+
 .hero__inner {
   display: grid;
   grid-template-columns: 1.05fr 0.95fr;
@@ -761,6 +807,7 @@ textarea:focus-visible,
   font-size: 4rem;
   margin-bottom: 0.35em;
   color: var(--color-ink-strong);
+  text-shadow: 0 2px 24px rgba(0, 0, 0, 0.55);
 }
 
 .hero__title em {
@@ -773,6 +820,7 @@ textarea:focus-visible,
   font-size: 1.12rem;
   color: var(--color-stone);
   margin-bottom: var(--sp-lg);
+  text-shadow: 0 1px 12px rgba(0, 0, 0, 0.7);
 }
 
 .hero .eyebrow {
@@ -2678,6 +2726,12 @@ button:disabled {
 
   .hero__inner {
     grid-template-columns: 1fr;
+  }
+
+  .hero__background {
+    opacity: 0.6;
+    -webkit-mask-image: linear-gradient(180deg, #000 0%, #000 45%, transparent 85%);
+    mask-image: linear-gradient(180deg, #000 0%, #000 45%, transparent 85%);
   }
 
   .hero__media {

@@ -284,6 +284,35 @@ function ml_hero_image_url( $size = 'ml-portrait' ) {
 }
 
 /**
+ * Hero background image URL: the Customizer image when it is deployed,
+ * otherwise the wide photo bundled with the theme.
+ *
+ * The bundled fallback is assets/images/hero-bg.jpg (a wide clinic/laser
+ * scene). Its filemtime is appended to the URL so replacing the file always
+ * produces a new cache-busted URL instead of reusing a cached image.
+ *
+ * @return string Empty string when neither source is available.
+ */
+function ml_hero_background_image_url() {
+	$image_id = (int) ml_mod( 'ml_hero_background_image', 0 );
+
+	if ( ml_attachment_is_deployed( $image_id ) ) {
+		$url = wp_get_attachment_image_url( $image_id, 'full' );
+		if ( $url ) {
+			return $url;
+		}
+	}
+
+	$relative = 'assets/images/hero-bg.jpg';
+
+	if ( is_readable( ML_THEME_DIR . '/' . $relative ) ) {
+		return ML_THEME_URI . '/' . $relative . '?v=' . ml_asset_version( $relative );
+	}
+
+	return '';
+}
+
+/**
  * Editorial image URLs for treatment layouts.
  *
  * Starts with the site hero portrait, then large media-library images that

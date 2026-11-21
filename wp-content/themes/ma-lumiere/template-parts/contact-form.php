@@ -41,8 +41,8 @@
 
 	<div data-reveal="fade">
 		<div class="form-field">
-			<label for="cf-message"><?php esc_html_e( 'Message', 'ma-lumiere' ); ?> <span aria-hidden="true">*</span></label>
-			<textarea id="cf-message" name="message" rows="6" required></textarea>
+			<label for="cf-message"><?php esc_html_e( 'Message (optional)', 'ma-lumiere' ); ?></label>
+			<textarea id="cf-message" name="message" rows="6"></textarea>
 		</div>
 	</div>
 

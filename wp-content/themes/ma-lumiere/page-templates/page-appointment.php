@@ -5,8 +5,8 @@
  * Public booking gate. The full multi-step booking flow (treatment → date →
  * slots → details → review → payment → verification → confirmation) is
  * provided by the Ma Lumière Clinic Manager plugin. When the plugin is
- * active it renders its [ml_booking] shortcode here; until then the page
- * presents clinic contact details so visitors can still book directly.
+ * active it renders its [ml_booking] shortcode here; if it is inactive, the
+ * page presents clinic contact details so visitors can still book directly.
  *
  * @package ma-lumiere
  */
@@ -42,7 +42,7 @@ endwhile;
 
 		<?php if ( ! shortcode_exists( 'ml_booking' ) ) : ?>
 			<div class="ph" style="margin-top:var(--sp-lg)">
-				<?php esc_html_e( 'Online booking opens soon — please call or WhatsApp to reserve your consultation.', 'ma-lumiere' ); ?>
+				<?php esc_html_e( 'Online booking is temporarily unavailable — please call or WhatsApp to reserve your consultation.', 'ma-lumiere' ); ?>
 			</div>
 			<?php if ( ml_clinic_phone() || ml_clinic_whatsapp() ) : ?>
 				<div class="td-cta" style="text-align:center;margin-top:var(--sp-lg)">
