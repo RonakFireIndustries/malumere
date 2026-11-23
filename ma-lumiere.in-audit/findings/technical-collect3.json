@@ -1,0 +1,36 @@
+{
+  "https://ma-lumiere.in/treatment/pre-wedding-skin-preparation/": {
+    "status": 200,
+    "final_url": "https://ma-lumiere.in/treatment/pre-wedding-skin-preparation/",
+    "canonical_raw": [
+      "<link rel=\"canonical\" href=\"https://ma-lumiere.in/treatment/pre-wedding-skin-preparation/\" />"
+    ],
+    "bytes": 38179,
+    "title": "Pre-Wedding Skin Preparation · Ma Lumière"
+  },
+  "https://ma-lumiere.in/treatment-type/pre-wedding-skin-preparation/": {
+    "status": 200,
+    "final_url": "https://ma-lumiere.in/treatment-type/pre-wedding-skin-preparation/",
+    "canonical_raw": [],
+    "bytes": 30781,
+    "title": "Pre-Wedding Skin Preparation · Ma Lumière"
+  },
+  "https://ma-lumiere.in/results/acne-treatment-case-reference/": {
+    "status": 200,
+    "final_url": "https://ma-lumiere.in/results/acne-treatment-case-reference/",
+    "canonical_raw": [
+      "<link rel=\"canonical\" href=\"https://ma-lumiere.in/results/acne-treatment-case-reference/\" />"
+    ],
+    "bytes": 30265,
+    "title": "Acne treatment — case reference · Ma Lumière"
+  },
+  "https://ma-lumiere.in/skin-clinic-mira-bhayander/": {
+    "status": 200,
+    "final_url": "https://ma-lumiere.in/skin-clinic-mira-bhayander/",
+    "canonical_raw": [
+      "<link rel=\"canonical\" href=\"https://ma-lumiere.in/skin-clinic-mira-bhayander/\" />"
+    ],
+    "bytes": 33376,
+    "title": "Skin Clinic in Mira Bhayander · Ma Lumière"
+  }
+}

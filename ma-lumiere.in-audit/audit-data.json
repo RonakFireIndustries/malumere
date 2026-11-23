@@ -1,0 +1,345 @@
+{
+  "summary": {
+    "health_score": 56,
+    "local_seo_score": 31,
+    "current_estimate_health_score": 65,
+    "current_estimate_local_seo_score": 41,
+    "score_status": "Current figures are static-signal estimates of the local implementation, not measured rankings, traffic, conversions or local-pack performance.",
+    "business_type": "Single brick-and-mortar medical aesthetic / skin clinic (Healthcare, YMYL)",
+    "audit_date": "2026-11-23",
+    "top_findings": [
+      "Live placeholder case study and before/after placeholders are patient-visible and in metadata",
+      "Google Business Profile exists but has zero website integration and a false FAQ directions claim",
+      "NAP inconsistency: brand-name variants, phone without +91, unresolved PIN conflict 401105 vs 401107",
+      "Thin duplicate /treatment-type/* pages in sitemap with no canonical competing with real service pages",
+      "Minimal entity/E-E-A-T schema: no physician credentials, FAQPage, geo, hours, areaServed or review proof"
+    ],
+    "quick_wins": [
+      "Remove or noindex placeholder results page and hide unfinished before/after sections",
+      "Define one canonical NAP and correct Justdial/Practo + contact/directions links",
+      "Link the orphaned Mira Bhayander location page from nav, footer and homepage FAQ",
+      "Deploy expanded @graph schema (clinic + physician + FAQ + reviewed medical pages)",
+      "Fix 5 missing metas, duplicate titles, archive canonicals and 9 generic anchors"
+    ]
+  },
+  "categories": [
+    {
+      "name": "Technical SEO",
+      "score": 79,
+      "weight": 22,
+      "what_works": [
+        "robots.txt 200 with Allow: / and valid sitemap declaration",
+        "Valid 35-URL sitemap, 0 invalid/duplicate/cross-host URLs",
+        "All 10 sampled pages HTTP 200 with self-canonicals and no noindex",
+        "HTTPS + single-hop HTTP→HTTPS and www→apex redirects, valid TLS 1.3",
+        "Server-rendered content with raw/rendered parity, lightweight HTML"
+      ],
+      "findings": [
+        {
+          "title": "Thin duplicate treatment-type pages without canonical",
+          "severity": "High",
+          "description": "8 /treatment-type/* URLs in sitemap are 32-64 words with no canonical and duplicate titles/H1s against richer /treatment/* pages.",
+          "recommendation": "Canonical to matching /treatment/* page or noindex,follow and remove from sitemap."
+        },
+        {
+          "title": "Orphaned local money page",
+          "severity": "High",
+          "description": "/skin-clinic-mira-bhayander/, /blog/ and results page are not linked from sampled navigation hubs.",
+          "recommendation": "Add crawlable nav/footer/contextual links."
+        },
+        {
+          "title": "Missing security and cache headers",
+          "severity": "Medium",
+          "description": "HSTS, CSP, nosniff, X-Frame-Options, Referrer-Policy, Cache-Control, ETag and Expires absent on tested responses.",
+          "recommendation": "Add after confirming subdomain HTTPS; long immutable cache for versioned assets, short revalidating cache for HTML."
+        },
+        {
+          "title": "Image dimensions and lazy above-the-fold image",
+          "severity": "Medium",
+          "description": "8/12 homepage and 11/19 treatments images lack width/height; /about/ lazy-loads its first image.",
+          "recommendation": "Add intrinsic dimensions or aspect-ratio; remove lazy from hero images."
+        }
+      ]
+    },
+    {
+      "name": "Content Quality",
+      "score": 45,
+      "weight": 23,
+      "what_works": [
+        "Homepage 1,114 words and location page 576 words",
+        "Medically sensible treatment sequencing and direct FAQ answers",
+        "All 6 priority treatments have dedicated URLs"
+      ],
+      "findings": [
+        {
+          "title": "Live placeholder case study",
+          "severity": "Critical",
+          "description": "/results/acne-treatment-case-reference/ exposes consent-placeholder text in body and meta description (39 words).",
+          "recommendation": "Noindex/remove until real consented content exists; publish an educational alternative."
+        },
+        {
+          "title": "YMYL E-E-A-T gap",
+          "severity": "High",
+          "description": "Dr Rishita Ray named but no degree, registration, experience, reviewer attribution or clinical citations; blog author is admin/Organization.",
+          "recommendation": "Add verified credentials, author/reviewer boxes, lastReviewed and authoritative citations."
+        },
+        {
+          "title": "Templated thin treatment copy",
+          "severity": "Medium",
+          "description": "6 priority pages are 364-397 words with identical 11-section skeleton (~84 shared 5-word sequences).",
+          "recommendation": "Expand to 700-1,000 words of condition-specific substance each."
+        }
+      ]
+    },
+    {
+      "name": "On-Page SEO",
+      "score": 47,
+      "weight": 20,
+      "what_works": [
+        "One H1 per page on all 18 sampled URLs",
+        "No heading-level skips on treatment pages",
+        "No mixed content"
+      ],
+      "findings": [
+        {
+          "title": "Metadata gaps and duplicate titles",
+          "severity": "High",
+          "description": "5 pages missing meta descriptions; home title 83 chars; treatment vs treatment-type titles/H1s identical; canonicals missing on blog index and archives.",
+          "recommendation": "Unique localised titles/metas, unique archive headings, add canonicals."
+        },
+        {
+          "title": "Generic anchors and weak internal linking",
+          "severity": "Medium",
+          "description": "9 'Learn more' anchors on homepage; treatment pages do not link to location page, FAQs or results page.",
+          "recommendation": "Descriptive anchors and contextual hub-and-spoke links."
+        }
+      ]
+    },
+    {
+      "name": "Schema / Structured Data",
+      "score": 42,
+      "weight": 10,
+      "what_works": [
+        "0 invalid JSON-LD blocks across 18 sampled pages",
+        "BreadcrumbList on inner pages and BlogPosting on the post"
+      ],
+      "findings": [
+        {
+          "title": "Extremely thin entity data sitewide",
+          "severity": "High",
+          "description": "Only homepage has clinic entity with streetAddress only; no geo, postalCode, hours, areaServed, @id, sameAs, Person, FAQPage, MedicalProcedure or MedicalWebPage.",
+          "recommendation": "Deploy the @graph pattern in findings/content-schema.md with verified facts only."
+        }
+      ]
+    },
+    {
+      "name": "Performance (estimated, not field-measured)",
+      "score": 55,
+      "weight": 10,
+      "what_works": [
+        "Small image bytes (hero ~64 KB, portrait ~147 KB)",
+        "Correct hero handling with fetchpriority=high and not lazy"
+      ],
+      "findings": [
+        {
+          "title": "No field CWV data available",
+          "severity": "High",
+          "description": "No PSI/CrUX/GSC credentials; PSI returned 429. LCP/INP/CLS cannot be reported.",
+          "recommendation": "Connect a Google API key / GSC to measure field data."
+        },
+        {
+          "title": "Render-blocking CSS and no cache headers",
+          "severity": "Medium",
+          "description": "3 external stylesheets + 5 inline style blocks per page; no Cache-Control/ETag.",
+          "recommendation": "Inline critical CSS, defer non-critical, add cache headers."
+        }
+      ]
+    },
+    {
+      "name": "AI Search Readiness",
+      "score": 64,
+      "weight": 10,
+      "what_works": [
+        "Server-rendered, real 404s, permissive robots.txt with search/citation crawlers allowed",
+        "Clean accessibility tree: 0 unnamed interactive nodes, semantic landmarks",
+        "Direct quotable FAQ answers and named physician in copy"
+      ],
+      "findings": [
+        {
+          "title": "No LLM discovery layer",
+          "severity": "Medium",
+          "description": "llms.txt 404, no text/markdown negotiation, no Vary: Accept, all /.well-known paths 404.",
+          "recommendation": "Add a short llms.txt as a low-cost discovery aid; not a ranking factor."
+        },
+        {
+          "title": "Location page hidden from navigation",
+          "severity": "Medium",
+          "description": "0 links to /skin-clinic-mira-bhayander/ from homepage nav/footer.",
+          "recommendation": "Add visible nav/footer/contextual links."
+        }
+      ]
+    },
+    {
+      "name": "Images",
+      "score": 60,
+      "weight": 5,
+      "what_works": [
+        "12 homepage images with 0 missing alt; modest file sizes",
+        "Hero image correctly prioritised"
+      ],
+      "findings": [
+        {
+          "title": "Live before/after placeholders",
+          "severity": "High",
+          "description": "Unfinished placeholder strings on acne treatment and results pages; no real results images.",
+          "recommendation": "Publish consented de-identified images or hide sections."
+        },
+        {
+          "title": "Image hygiene gaps",
+          "severity": "Medium",
+          "description": "8/12 homepage images lack dimensions; informative treatment images have empty alts; og:image missing on 8/10 pages.",
+          "recommendation": "Add dimensions, descriptive alts and 1200x630 og:image."
+        }
+      ]
+    },
+    {
+      "name": "Local SEO (goal-specific, separate score)",
+      "score": 31,
+      "weight": 0,
+      "what_works": [
+        "LocalIntent title on homepage and a 576-word location page",
+        "6 dedicated priority service pages",
+        "Visible NAP, hours and tel: link on contact page"
+      ],
+      "findings": [
+        {
+          "title": "GBP zero website integration",
+          "severity": "Critical",
+          "description": "No map, place ID, GBP URL or review widget; FAQ falsely claims a Maps directions link exists.",
+          "recommendation": "Audit GBP, add directions link/lazy map, capture place ID."
+        },
+        {
+          "title": "No review proof",
+          "severity": "High",
+          "description": "No rating/review schema or on-site testimonials; competitors show social proof.",
+          "recommendation": "Launch compliant steady review cadence and owner responses."
+        },
+        {
+          "title": "NAP inconsistency and PIN conflict",
+          "severity": "Critical",
+          "description": "Brand variants, phone without +91, 401105 vs 401107 unresolved, directory name 'Lumiere Clinic'.",
+          "recommendation": "Define and propagate one verified canonical NAP."
+        },
+        {
+          "title": "Doorway risk for corridor scaling",
+          "severity": "High",
+          "description": "One page per Western Railway station would be thin and fail the swap test.",
+          "recommendation": "Use one hub + 6 service spokes + at most 4-5 unique cluster pages."
+        }
+      ]
+    }
+  ],
+  "action_plan": {
+    "phases": [
+      {
+        "name": "Phase 1: Critical Fixes",
+        "timeframe": "Week 1",
+        "items": [
+          "Remove/noindex placeholder results page and before/after placeholders",
+          "Audit GBP categories, NAP, hours, photos and capture place ID/Insights",
+          "Define one verified canonical NAP and correct directories",
+          "Add real directions link and tel: link to contact/location pages",
+          "Link orphaned location page from nav/footer/homepage",
+          "Canonicalise or de-index thin treatment-type pages",
+          "Fix metas, duplicate titles and archive canonicals"
+        ]
+      },
+      {
+        "name": "Phase 2: High-Impact Improvements",
+        "timeframe": "Weeks 2-3",
+        "items": [
+          "Deploy @graph schema with clinic, physician, FAQ and medical pages",
+          "Add credentials, reviewer attribution and clinical citations",
+          "Expand 6 priority treatment pages to 700-1,000 words",
+          "Launch compliant review cadence across 5 platforms",
+          "Publish consented results imagery or hide sections",
+          "Fix image dimensions, alts, lazy hero and og:image",
+          "Add security/cache headers and critical CSS"
+        ]
+      },
+      {
+        "name": "Phase 3: Content & Authority",
+        "timeframe": "Month 2",
+        "items": [
+          "Claim Bing Places, Apple Business, Facebook, Sulekha and aggregators",
+          "Build corridor hub + spokes + at most 4-5 unique cluster pages",
+          "Local digital PR and best-of list placements",
+          "Maintain locally relevant reviewed blog cadence"
+        ]
+      },
+      {
+        "name": "Phase 4: Monitoring & Iteration",
+        "timeframe": "Ongoing",
+        "items": [
+          "Connect GSC, GA4, PSI/CrUX and GBP data sources",
+          "Run geo-grid rankings across Churchgate-Dahanu monthly",
+          "Monitor review velocity and NAP consistency",
+          "Capture SEO drift baseline and validate schema after deploy",
+          "Optional llms.txt discovery aid"
+        ]
+      }
+    ]
+  },
+  "implementation": {
+    "status": "Implemented and verified on local XAMPP copy only; not deployed to production.",
+    "backup_directory": "ma-lumiere.in-audit/backups/20261123-142646/",
+    "backup_files": [
+      "theme-ma-lumiere.zip",
+      "database.sql"
+    ],
+    "rollback": "Restore theme-ma-lumiere.zip over wp-content/themes/ma-lumiere and restore database.sql from the same backup.",
+    "completed": [
+      "Removed patient-visible placeholder strings from database and theme templates; results page now contains educational copy without patient images or outcome claims.",
+      "Standardised NAP to PIN 401105, full verified address, +91 99878 02355 display and tel:+919987802355 links.",
+      "Added address-based Google Maps directions link; no Place ID or unverified GBP share URL used.",
+      "Added unique SEO titles and meta descriptions to homepage, About, Treatments, Booking, Contact, FAQs, Blog and location page.",
+      "Revised four treatment pillars with equal attention; Botox optimized on existing /treatment/injectables-facial-contouring/ URL.",
+      "Set nine treatment_category archives to noindex,follow with canonicals and sitemap exclusion; sitemap now has 29 URLs.",
+      "Linked /skin-clinic-mira-bhayander/ from footer and treatment pages, ending its orphan state.",
+      "Added linked JSON-LD: MedicalClinic+LocalBusiness, WebSite, Person (jobTitle Aesthetic Physician), WebPage, Service and BreadcrumbList; retained BlogPosting.",
+      "Deliberately omitted geo, structured hours, Place ID, reviews/ratings, FAQPage and MedicalProcedure markup."
+    ],
+    "verification": {
+      "implementation_checks": "9/9 PASS (findings/implementation-verification.json)",
+      "jsonld_checks": "4/4 sampled URLs VALID, 0 errors (findings/jsonld-verification.json)",
+      "rendered_page_checks": "5/5 sampled URLs HTTP 200, canonicals/robots correct, 0 placeholders (findings/page-verification.txt)",
+      "php_lint": "PHP_LINT_OK 51 files",
+      "rendered_placeholder_count": 0,
+      "sitemap_urls": 29
+    },
+    "owner_actions": [
+      "Convert the supplied share URL to a canonical GBP/Maps URL and supply any genuine Place ID; never invent one.",
+      "Verify GBP categories, exact name, address, PIN, phone, hours, photos, posts and insights.",
+      "Launch compliant review acquisition with no incentives, gating or fabricated reviews.",
+      "Correct directory citations including Justdial/Practo variants and add only real sameAs URLs.",
+      "Supply verified credentials, clinical citations, reviewer attribution and any consented patient assets.",
+      "Connect GSC, GA4, GBP Insights and CrUX/PSI to replace static estimates with measured data.",
+      "Approve production deployment and take a fresh production backup and SEO-drift baseline."
+    ],
+    "faq_schema_decision": "No FAQPage markup added because Google retired FAQ rich results in 2026; visible FAQs remain for users and agents."
+  },
+  "artifacts": {
+    "findings_dir": "findings/",
+    "screenshots_dir": "screenshots/",
+    "local_report_baseline": "LOCAL-SEO-ANALYSIS-ma-lumiere.in.md",
+    "local_report_updated": "LOCAL-SEO-ANALYSIS.md",
+    "implementation_log": "CHANGELOG.md",
+    "deployment_runbook": "DEPLOYMENT-AND-OWNER-ACTIONS.md",
+    "schema_record": "SCHEMA-IMPLEMENTATION.md",
+    "verification": [
+      "findings/implementation-verification.json",
+      "findings/jsonld-verification.json",
+      "findings/page-verification.txt"
+    ]
+  }
+}

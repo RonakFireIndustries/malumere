@@ -56,7 +56,7 @@ $categories = get_terms(
 				wp_reset_postdata();
 			else :
 				?>
-				<div class="ph" style="grid-column:1/-1">[TREATMENTS REQUIRED — add treatments in the WordPress admin]</div>
+
 			<?php endif; ?>
 		</div>
 

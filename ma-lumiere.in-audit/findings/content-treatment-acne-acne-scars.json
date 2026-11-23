@@ -1,0 +1,104 @@
+﻿{
+  "url": "https://ma-lumiere.in/treatment/acne-acne-scars/",
+  "source": "url",
+  "status_code": 200,
+  "headers_available": true,
+  "facts": {
+    "title": "Acne & Acne Scars \u00b7 Ma Lumi\u00e8re",
+    "title_length": 30,
+    "title_count": 1,
+    "meta_description": "Evidence-led acne care and considered scar treatment \u2014 for active breakouts and their after-effects.",
+    "meta_description_length": 100,
+    "h1": [
+      "Acne & Acne Scars"
+    ],
+    "h1_count": 1,
+    "heading_level_skips": 0,
+    "template_heading_level_skips": 0,
+    "canonical": "https://ma-lumiere.in/treatment/acne-acne-scars/",
+    "canonical_status": "self",
+    "canonical_note": null,
+    "meta_robots": "robots: max-image-preview:large",
+    "x_robots_tag": null,
+    "x_robots_other_agents": [],
+    "hreflang_count": 0,
+    "lang": "en-US",
+    "has_doctype": true,
+    "meta_charset": "utf-8",
+    "header_charset": "utf-8",
+    "has_viewport": true,
+    "images": {
+      "total": 5,
+      "missing_alt": 0,
+      "empty_alt": 4,
+      "missing_dimensions": 4,
+      "first_image_lazy": false
+    },
+    "links": {
+      "total": 24,
+      "without_text": 0,
+      "generic_anchor": 0,
+      "http_on_https": 0
+    },
+    "mixed_content": 0,
+    "url": {
+      "length": 48,
+      "query_params": []
+    },
+    "html_bytes": 38797,
+    "dom": {
+      "nodes": 275,
+      "max_depth": 12,
+      "max_children": 43,
+      "widest_element": "head"
+    },
+    "open_graph": {
+      "og:image": "https://ma-lumiere.in/wp-content/uploads/2026/10/wix_acne2-2.jpg",
+      "og:site_name": "Ma Lumi\u00e8re",
+      "og:locale": "en_US",
+      "og:type": "website",
+      "og:title": "Acne & Acne Scars",
+      "og:url": "https://ma-lumiere.in/treatment/acne-acne-scars/",
+      "og:description": "Evidence-led acne care and considered scar treatment \u2014 for active breakouts and their after-effects."
+    },
+    "jsonld_blocks": 1,
+    "jsonld_invalid": 0,
+    "word_count": 397,
+    "words_measured": true,
+    "title_relevance": 0.67,
+    "description_relevance": 1.0
+  },
+  "findings": [
+    {
+      "id": "images-missing-dimensions",
+      "severity": "Medium",
+      "message": "Some images have no width and height attributes, which lets the layout shift while they load.",
+      "evidence": "4 of 5 images: https://ma-lumiere.in/wp-content/themes/ma-lumiere/assets..., https://ma-lumiere.in/wp-content/uploads/2026/09/pexels-3..., https://ma-lumiere.in/wp-content/uploads/2026/09/pexels-3....",
+      "count": 4
+    }
+  ],
+  "not_checked": [],
+  "thresholds": {
+    "title_min_chars": 30,
+    "title_max_chars": 60,
+    "meta_description_min_chars": 120,
+    "meta_description_max_chars": 160,
+    "url_max_chars": 100,
+    "html_max_bytes": 2000000,
+    "thin_content_min_words": 200,
+    "dom_max_depth": 32,
+    "dom_max_children": 60,
+    "title_relevance_min": 0.3,
+    "description_relevance_min": 0.2,
+    "relevance_min_words": 50,
+    "evidence_max_chars": 200
+  },
+  "summary": {
+    "Critical": 0,
+    "High": 0,
+    "Medium": 1,
+    "Low": 0,
+    "total": 1,
+    "checks_run": 47
+  }
+}

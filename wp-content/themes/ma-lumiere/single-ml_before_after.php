@@ -14,7 +14,7 @@ while ( have_posts() ) :
 	$after_id  = (int) get_post_meta( get_the_ID(), '_ml_ba_after', true );
 	$treatment = get_post_meta( get_the_ID(), '_ml_ba_treatment', true );
 	$terms     = get_the_terms( get_the_ID(), 'treatment_category' );
-	$has       = $before_id && $after_id;
+	$has       = ml_attachment_is_deployed( $before_id ) && ml_attachment_is_deployed( $after_id );
 	?>
 
 	<section class="page-hero" style="padding-bottom:0">
@@ -24,7 +24,7 @@ while ( have_posts() ) :
 				<p class="card__cat" style="margin-bottom:.4em"><?php echo esc_html( $terms[0]->name ); ?></p>
 			<?php endif; ?>
 			<h1 class="page-hero__title"><?php echo esc_html( $treatment ? $treatment : get_the_title() ); ?></h1>
-			<p class="page-hero__lead"><?php esc_html_e( 'Shared with consent. Individual outcomes vary.', 'ma-lumiere' ); ?></p>
+			<p class="page-hero__lead"><?php echo esc_html( $has ? __( 'Shared with consent. Individual outcomes vary.', 'ma-lumiere' ) : __( 'Educational information only. Individual treatment plans and outcomes vary after consultation.', 'ma-lumiere' ) ); ?></p>
 		</div>
 	</section>
 
@@ -43,7 +43,9 @@ while ( have_posts() ) :
 					</div>
 				</div>
 			<?php else : ?>
-				<div class="ph">[BEFORE/AFTER IMAGES REQUIRED]</div>
+				<div class="entry-content" style="padding:var(--sp-lg);border:1px solid rgba(255,255,255,.08);border-radius:var(--radius-lg);">
+					<p><?php esc_html_e( 'Consent-approved before-and-after photographs are not published on this page at this time. A consultation includes a discussion of expected changes, timelines, and whether a treatment is appropriate for your skin concern.', 'ma-lumiere' ); ?></p>
+				</div>
 			<?php endif; ?>
 
 			<div class="entry-content" style="margin-top:var(--sp-lg)">

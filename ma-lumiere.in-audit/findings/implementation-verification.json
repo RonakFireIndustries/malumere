@@ -1,0 +1,54 @@
+{
+    "checks": [
+        {
+            "name": "NAP_PIN_401105",
+            "status": "PASS",
+            "detail": "Shop No. 117, 1st Floor, Ma Lumière Clinic, Vasudev Sky High, Kanakia Road, Beverly Park, Mira Road East, Maharashtra 401105, India"
+        },
+        {
+            "name": "PHONE_PLUS_91",
+            "status": "PASS",
+            "detail": "+91 99878 02355"
+        },
+        {
+            "name": "PHONE_HREF",
+            "status": "PASS",
+            "detail": "+919987802355"
+        },
+        {
+            "name": "DIRECTIONS_LINK",
+            "status": "PASS",
+            "detail": "https://www.google.com/maps/dir/?api=1&destination=Shop%20No.%20117%2C%201st%20Floor%2C%20Ma%20Lumi%C3%A8re%20Clinic%2C%20Vasudev%20Sky%20High%2C%20Kanakia%20Road%2C%20Beverly%20Park%2C%20Mira%20Road%20East%2C%20Maharashtra%20401105%2C%20India"
+        },
+        {
+            "name": "DB_PLACEHOLDERS_REMOVED",
+            "status": "PASS",
+            "detail": "[]"
+        },
+        {
+            "name": "BOTOX_TERM_LABEL",
+            "status": "PASS",
+            "detail": "Botox &amp; Injectables"
+        },
+        {
+            "name": "BOTOX_PILLAR_UPDATED",
+            "status": "PASS",
+            "detail": "Botox &amp; Injectable Aesthetic Treatments"
+        },
+        {
+            "name": "KEY_PAGE_META_PRESENT",
+            "status": "PASS",
+            "detail": "missing: "
+        },
+        {
+            "name": "SITEMAP_EXCLUDES_NOINDEX_TERMS",
+            "status": "PASS",
+            "detail": "urls=29"
+        }
+    ],
+    "summary": {
+        "total": 9,
+        "passed": 9,
+        "failed": 0
+    }
+}

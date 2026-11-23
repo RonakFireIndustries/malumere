@@ -1,0 +1,524 @@
+﻿
+====================================================================================================
+FILE: about.html
+JSONLD blocks: 1
+  TYPE: BreadcrumbList | keys: ['@context', '@type', 'itemListElement']
+    itemListElement:
+      TYPE: ListItem | keys: ['@type', 'item', 'name', 'position']
+      TYPE: ListItem | keys: ['@type', 'item', 'name', 'position']
+HEADINGS:
+  h1 | About
+  h2 | Dr. Rishita Ray
+  h2 | Care that follows a considered path
+  h3 | Consultation
+  h3 | Skin Assessment
+  h3 | Personalised Plan
+  h3 | Treatment
+  h3 | Follow-up
+  h2 | Begin Your Skin Journey
+MAIN TEXT (first 3000):
+Home / About About MEET YOUR PHYSICIAN Dr. Rishita Ray Founder & Aesthetic Physician, Ma LumiΦre I believe good aesthetic care begins with understanding the skin ù not simply choosing a procedure. I am Dr. Rishita Ray, an Aesthetic Physician with a background in modern aesthetic medicine and a special interest in skin health, acne, acne scarring and pigmentation. My approach brings together medical understanding, clinical assessment and aesthetic precision. From managing persistent skin concerns to planning advanced aesthetic treatments, I believe every face and every skin type deserves an individualised approach. At Ma LumiΦre, I founded the clinic around a simple philosophy: diagnosis first, procedures second. I believe in understanding the underlying concern, setting realistic expectations and recommending treatments based on individual needs ù never procedures for the sake of procedures. Whether the goal is healthier skin, improved texture, scar management or subtle facial rejuvenation, my focus is on thoughtful treatment planning, natural-looking outcomes and care that evolves with you. Because good aesthetic medicine isnÆt about changing who you are. ItÆs about helping you feel comfortable in your own skin. Meet the Doctor The journey Care that follows a considered path 01 Consultation A private discussion of your concerns, history and expectations. 02 Skin Assessment A careful clinical examination of your skin and its needs. 03 Personalised Plan A plan designed for your skin type, concerns and lifestyle. 04 Treatment Medical or aesthetic treatment carried out with care and precision. 05 Follow-up Reviewing progress and refining your plan as your skin responds. Our philosophy Your skin deserves more than a routine. It deserves a plan. Beautiful skin begins with understanding ù exactly how your skin behaves, what it has been through, and what it needs going forward. At Ma LumiΦre, every journey starts with a conversation and a careful assessment, then develops into a plan built around you. Begin your skin journey Begin Your Skin Journey Book a private consultation and let us design a plan around your skin ù its history, its concerns and the results you hope for. Book a Consultation Contact the clinic
+LINKS (internal, first 80):
+  Skip to content -> #primary
+  MA LUMI╚RE SKIN | HAIR | LASER -> https://ma-lumiere.in/
+  Home -> https://ma-lumiere.in/
+  About -> https://ma-lumiere.in/about/
+  Treatments -> https://ma-lumiere.in/treatments/
+  FAQs -> https://ma-lumiere.in/faqs/
+  Contact -> https://ma-lumiere.in/contact/
+  Book Consultation -> https://ma-lumiere.in/book-consultation/
+  Meet the Doctor -> https://ma-lumiere.in/about/
+  Book a Consultation -> https://ma-lumiere.in/book-consultation/
+  Contact the clinic -> https://ma-lumiere.in/contact/
+  Hair Loss & Hair Thinning -> https://ma-lumiere.in/treatment/hair-loss-hair-thinning/
+  Pre-Wedding Skin Preparation -> https://ma-lumiere.in/treatment/pre-wedding-skin-preparation/
+  Acne & Acne Scars -> https://ma-lumiere.in/treatment/acne-acne-scars/
+  Laser Hair Reduction -> https://ma-lumiere.in/treatment/laser-hair-reduction/
+  Pigmentation & Uneven Skin Tone -> https://ma-lumiere.in/treatment/pigmentation-uneven-skin-tone/
+  Laser Tattoo Removal -> https://ma-lumiere.in/treatment/laser-tattoo-removal/
+  9987802355 -> tel:9987802355
+  malumiere2026@gmail.com -> mailto:malumiere2026@gmail.com
+  info@ma-lumiere.in -> mailto:info@ma-lumiere.in
+  Privacy Policy -> https://ma-lumiere.in/?page_id=3
+SIGNAL COUNTS: {'rishita': 2, 'ray': 2, 'medical': 2, 'review': 1, 'doctor': 1, 'who ': 1, 'acne': 2, 'scar': 2, 'pigment': 1, 'book': 2}
+
+====================================================================================================
+FILE: blog-post.html
+JSONLD blocks: 2
+  TYPE: BlogPosting | keys: ['@context', '@id', '@type', 'articleSection', 'author', 'dateModified', 'datePublished', 'description', 'headline', 'inLanguage', 'keywords', 'mainEntityOfPage', 'publisher']
+    author:
+      TYPE: Organization | keys: ['@type', 'name', 'url']
+    publisher:
+      TYPE: Organization | keys: ['@type', 'logo', 'name', 'url']
+  TYPE: BreadcrumbList | keys: ['@context', '@type', 'itemListElement']
+    itemListElement:
+      TYPE: ListItem | keys: ['@type', 'item', 'name', 'position']
+      TYPE: ListItem | keys: ['@type', 'item', 'name', 'position']
+      TYPE: ListItem | keys: ['@type', 'item', 'name', 'position']
+      TYPE: ListItem | keys: ['@type', 'item', 'name', 'position']
+HEADINGS:
+  h1 | Face Treatments in Mira Bhayander: A Practical Guide
+  h2 | Start with the concern, not the treatment
+  h2 | Acne and acne scars
+  h2 | Pigmentation and uneven tone
+  h2 | Facial rejuvenation and texture
+  h2 | Laser hair reduction
+  h2 | Questions to ask at your consultation
+  h2 | Local care, close to home
+  h2 | You may also like
+  h3 | Welcome to Ma LumiΦre
+  h4 | Leave a Reply Cancel reply
+MAIN TEXT (first 3000):
+Home / Blog / Uncategorized / Face Treatments in Mira Bhayander: A Practical Guide Face Treatments in Mira Bhayander: A Practical Guide admin November 17, 2026 3 min read Uncategorized ôFace treatmentö can mean very different things depending on who is asking. For one person it means getting acne under control. For another it means softening acne scars, evening out pigmentation, or looking rested before a wedding. This guide explains how we think about face treatments at Ma LumiΦre in Mira Road East, and what to consider before booking. Start with the concern, not the treatment It is easy to arrive with a treatment name in mind because of something seen online. A more useful starting point is the concern itself: when did it begin, what has changed, what have you already tried, and how much downtime can you realistically manage? Two patients can have the same visible concern and need different plans. Acne that is still active is not treated in the same way as acne that has settled and left marks. Pigmentation after sun exposure behaves differently from melasma. A consultation exists to tell these apart. Acne and acne scars When acne is active, the priority is calming inflammation and preventing new lesions. That may involve prescription creams, oral medication or in-clinic treatments, alongside a skincare routine that does not irritate the skin further. Scars are addressed after the acne is stable. Textural scars, dark marks and redness each respond to different approaches, and most plans combine more than one. Improvements are gradual; anyone promising scar removal in a single session is oversimplifying. Pigmentation and uneven tone Pigmentation is one of the most common concerns we see in Mira Road and Bhayander, partly because of sun exposure and partly because melasma is common. Treatment usually starts with daily sun protection and a careful review of products already in use. Active ingredients, peels or laser-based options may then be considered. Aggressive treatment can make pigmentation worse, especially in Indian skin, so a measured plan with regular review is safer than a strong single session. Facial rejuvenation and texture Facial rejuvenation is not about changing your face. It is about improving skin quality ù tone, texture, hydration and early fine lines ù so the skin looks healthier. Plans may include skin boosters, gentle resurfacing or other in-clinic treatments, depending on your assessment. Enlarged pores and uneven texture often improve alongside acne and pigmentation care rather than through a separate procedure. Looking at the skin as a whole usually produces more natural results. Laser hair reduction Laser hair reduction suits both women and men, but it is not a one-session fix. Hair grows in cycles, so a series of sessions is planned around the area and your hair type. A patch test and a clear discussion of expectations come before the first session. Questions to ask at your consultation What concern are we treating first,
+LINKS (internal, first 80):
+  Skip to content -> #primary
+  MA LUMI╚RE SKIN | HAIR | LASER -> https://ma-lumiere.in/
+  Home -> https://ma-lumiere.in/
+  About -> https://ma-lumiere.in/about/
+  Treatments -> https://ma-lumiere.in/treatments/
+  FAQs -> https://ma-lumiere.in/faqs/
+  Contact -> https://ma-lumiere.in/contact/
+  Book Consultation -> https://ma-lumiere.in/book-consultation/
+  Blog -> https://ma-lumiere.in/blog/
+  Uncategorized -> https://ma-lumiere.in/category/uncategorized/
+  Mira Bhayander -> https://ma-lumiere.in/tag/mira-bhayander/
+  Mira Road -> https://ma-lumiere.in/tag/mira-road/
+  Skin Consultation -> https://ma-lumiere.in/tag/skin-consultation/
+   -> https://ma-lumiere.in/2026/09/22/welcome-to-ma-lumiere/
+  Welcome to Ma LumiΦre -> https://ma-lumiere.in/2026/09/22/welcome-to-ma-lumiere/
+  Read article -> https://ma-lumiere.in/2026/09/22/welcome-to-ma-lumiere/
+  Cancel reply -> /2026/11/17/face-treatments-mira-bhayander-guide/#respond
+  Hair Loss & Hair Thinning -> https://ma-lumiere.in/treatment/hair-loss-hair-thinning/
+  Pre-Wedding Skin Preparation -> https://ma-lumiere.in/treatment/pre-wedding-skin-preparation/
+  Acne & Acne Scars -> https://ma-lumiere.in/treatment/acne-acne-scars/
+  Laser Hair Reduction -> https://ma-lumiere.in/treatment/laser-hair-reduction/
+  Pigmentation & Uneven Skin Tone -> https://ma-lumiere.in/treatment/pigmentation-uneven-skin-tone/
+  Laser Tattoo Removal -> https://ma-lumiere.in/treatment/laser-tattoo-removal/
+  9987802355 -> tel:9987802355
+  malumiere2026@gmail.com -> mailto:malumiere2026@gmail.com
+  info@ma-lumiere.in -> mailto:info@ma-lumiere.in
+  Privacy Policy -> https://ma-lumiere.in/?page_id=3
+SIGNAL COUNTS: {'review': 2, 'before': 3, 'after': 2, 'published': 1, 'who ': 1, 'acne': 9, 'scar': 5, 'pigment': 6, 'hair': 4, 'wedding': 1, 'laser': 3, 'mira': 9, 'bhayander': 6, 'book': 2}
+
+====================================================================================================
+FILE: contact.html
+JSONLD blocks: 1
+  TYPE: BreadcrumbList | keys: ['@context', '@type', 'itemListElement']
+    itemListElement:
+      TYPE: ListItem | keys: ['@type', 'item', 'name', 'position']
+      TYPE: ListItem | keys: ['@type', 'item', 'name', 'position']
+HEADINGS:
+  h1 | Contact
+  h2 | We would love to hear from you
+MAIN TEXT (first 3000):
+Home / Contact Contact Get in touch We would love to hear from you Find us Shop no. 117 1st floor Ma lumiere clinic , Vasudev sky high , Kanakia Rd, Om Ram Sagar phase 1 . beverly park, mira rd east 401105 Call us 9987802355 Write to us malumiere2026@gmail.com info@ma-lumiere.in Opening hours Tuesday û Saturday ╖ 12:00 pm û 9:00 pm Sunday ╖ 12:00 pm û 5:00 pm Monday ╖ Closed Name * Phone * Email * How can we help? * Select an option Consultation Acne / Acne Scars Pigmentation Hair Loss Laser Hair Reduction Injectables Others Message (optional) Leave this field empty Send message Your details are used only to respond to your enquiry.
+LINKS (internal, first 80):
+  Skip to content -> #primary
+  MA LUMI╚RE SKIN | HAIR | LASER -> https://ma-lumiere.in/
+  Home -> https://ma-lumiere.in/
+  About -> https://ma-lumiere.in/about/
+  Treatments -> https://ma-lumiere.in/treatments/
+  FAQs -> https://ma-lumiere.in/faqs/
+  Contact -> https://ma-lumiere.in/contact/
+  Book Consultation -> https://ma-lumiere.in/book-consultation/
+  9987802355 -> tel:9987802355
+  malumiere2026@gmail.com -> mailto:malumiere2026@gmail.com
+  info@ma-lumiere.in -> mailto:info@ma-lumiere.in
+  Hair Loss & Hair Thinning -> https://ma-lumiere.in/treatment/hair-loss-hair-thinning/
+  Pre-Wedding Skin Preparation -> https://ma-lumiere.in/treatment/pre-wedding-skin-preparation/
+  Acne & Acne Scars -> https://ma-lumiere.in/treatment/acne-acne-scars/
+  Laser Hair Reduction -> https://ma-lumiere.in/treatment/laser-hair-reduction/
+  Pigmentation & Uneven Skin Tone -> https://ma-lumiere.in/treatment/pigmentation-uneven-skin-tone/
+  Laser Tattoo Removal -> https://ma-lumiere.in/treatment/laser-tattoo-removal/
+  Privacy Policy -> https://ma-lumiere.in/?page_id=3
+SIGNAL COUNTS: {'acne': 2, 'scar': 1, 'pigment': 1, 'hair': 2, 'injectable': 1, 'laser': 1, 'mira': 1}
+
+====================================================================================================
+FILE: faqs.html
+JSONLD blocks: 1
+  TYPE: BreadcrumbList | keys: ['@context', '@type', 'itemListElement']
+    itemListElement:
+      TYPE: ListItem | keys: ['@type', 'item', 'name', 'position']
+      TYPE: ListItem | keys: ['@type', 'item', 'name', 'position']
+HEADINGS:
+  h1 | FAQs
+  h3 | How do I book an appointment?
+  h3 | Where is Ma LumiΦre skin clinic located?
+  h3 | Do you see patients from Bhayander?
+  h3 | What happens at the first skin consultation?
+  h3 | How much does a skin or face treatment cost?
+  h3 | Is laser hair reduction suitable for men and women?
+  h3 | Can you treat acne scars and pigmentation?
+  h2 | Begin Your Skin Journey
+MAIN TEXT (first 3000):
+Home / FAQs FAQs Common questions about consultations, treatments and care at Ma LumiΦre. How do I book an appointment? Online booking is now open ù choose a treatment, pick a date and time, and confirm your consultation in a few steps. You can still call or WhatsApp the clinic, contact details are on this page and in the footer. Where is Ma LumiΦre skin clinic located? Ma LumiΦre is on the first floor of Vasudev Sky High, Kanakia Road, Beverly Park, Mira Road East, 401105. It is a short drive from Bhayander East, Bhayander West and Kashimira. The contact page includes a Google Maps link for directions. Do you see patients from Bhayander? Yes. A large share of our patients travel from Bhayander East, Bhayander West and Kashimira. Consultations are by appointment, so we recommend calling ahead and allowing extra time during peak traffic on the Mira RoadûBhayander stretch. What happens at the first skin consultation? We review your skin, medical history and previous treatments, then discuss what is likely to help and what is not. You will receive a clear plan, an estimate of sessions and the cost before deciding whether to proceed. There is no obligation to book a treatment on the day. How much does a skin or face treatment cost? Cost depends on the treatment, the area treated and the number of sessions required. A quotation is given after your consultation, once the plan is clear. We do not recommend packages before your skin has been assessed. Is laser hair reduction suitable for men and women? Yes. Laser hair reduction can be planned for both men and women on the face, underarms, legs, back, chest and other areas. Suitability depends on hair colour, skin type and medical history, so a consultation and patch test come first. Can you treat acne scars and pigmentation? Yes, but they are usually managed in stages. Active acne is brought under control first, then scars or pigmentation are treated with an appropriate plan. Results build gradually over sessions, and we will explain the realistic timeline and maintenance involved. Begin your skin journey Begin Your Skin Journey Book a private consultation and let us design a plan around your skin ù its history, its concerns and the results you hope for. Book a Consultation Contact the clinic
+LINKS (internal, first 80):
+  Skip to content -> #primary
+  MA LUMI╚RE SKIN | HAIR | LASER -> https://ma-lumiere.in/
+  Home -> https://ma-lumiere.in/
+  About -> https://ma-lumiere.in/about/
+  Treatments -> https://ma-lumiere.in/treatments/
+  FAQs -> https://ma-lumiere.in/faqs/
+  Contact -> https://ma-lumiere.in/contact/
+  Book Consultation -> https://ma-lumiere.in/book-consultation/
+  Book a Consultation -> https://ma-lumiere.in/book-consultation/
+  Contact the clinic -> https://ma-lumiere.in/contact/
+  Hair Loss & Hair Thinning -> https://ma-lumiere.in/treatment/hair-loss-hair-thinning/
+  Pre-Wedding Skin Preparation -> https://ma-lumiere.in/treatment/pre-wedding-skin-preparation/
+  Acne & Acne Scars -> https://ma-lumiere.in/treatment/acne-acne-scars/
+  Laser Hair Reduction -> https://ma-lumiere.in/treatment/laser-hair-reduction/
+  Pigmentation & Uneven Skin Tone -> https://ma-lumiere.in/treatment/pigmentation-uneven-skin-tone/
+  Laser Tattoo Removal -> https://ma-lumiere.in/treatment/laser-tattoo-removal/
+  9987802355 -> tel:9987802355
+  malumiere2026@gmail.com -> mailto:malumiere2026@gmail.com
+  info@ma-lumiere.in -> mailto:info@ma-lumiere.in
+  Privacy Policy -> https://ma-lumiere.in/?page_id=3
+SIGNAL COUNTS: {'medical': 2, 'review': 1, 'before': 2, 'after': 1, 'acne': 2, 'scar': 2, 'pigment': 2, 'hair': 3, 'laser': 2, 'mira': 4, 'bhayander': 6, 'faq': 2, 'appointment': 2, 'book': 5}
+
+====================================================================================================
+FILE: home.html
+JSONLD blocks: 1
+  TYPE: ['MedicalClinic', 'HealthAndBeautyBusiness'] | keys: ['@context', '@type', 'address', 'email', 'logo', 'name', 'telephone', 'url']
+    address:
+      TYPE: PostalAddress | keys: ['@type', 'streetAddress']
+HEADINGS:
+  h1 | Personalised Aesthetic Medicine. Beautifully, Scientifically.
+  h2 | Dr. Rishita Ray
+  h2 | Aesthetic Medicine, thoughtfully done
+  h3 | Hair Loss & Hair Thinning
+  h3 | Pre-Wedding Skin Preparation
+  h3 | Acne & Acne Scars
+  h3 | Laser Hair Reduction
+  h3 | Pigmentation & Uneven Skin Tone
+  h3 | Laser Tattoo Removal
+  h3 | Healthy Aging & Skin Rejuvenation
+  h3 | Injectables & Facial Contouring
+  h3 | Enlarged Pores
+  h2 | Care that follows a considered path
+  h3 | Consultation
+  h3 | Skin Assessment
+  h3 | Personalised Plan
+  h3 | Treatment
+  h3 | Follow-up
+  h2 | Frequently asked questions
+  h3 | How do I book an appointment?
+  h3 | Where is Ma LumiΦre skin clinic located?
+  h3 | Do you see patients from Bhayander?
+  h3 | What happens at the first skin consultation?
+  h3 | How much does a skin or face treatment cost?
+  h3 | Is laser hair reduction suitable for men and women?
+  h2 | Begin Your Skin Journey
+  h2 | We would love to hear from you
+MAIN TEXT (first 3000):
+PERSONALISED AESTHETIC & SKIN CARE Personalised Aesthetic Medicine. Beautifully, Scientifically. Medical-grade aesthetic care, tailored to your skin, your concerns and your long-term goals. Book a Consultation Explore Treatments 9987802355 Consultation by appointment Personalised Care Every plan is tailored to your skin, your history and your goals ù never a one-size-fits-all routine. Evidence-Based Approach Treatments are chosen on current medical evidence for your specific condition. Advanced Aesthetics From medical-grade skin treatments to advanced aesthetic procedures ù thoughtfully selected for your individual needs. Patient-Centred Clear consultation, honest guidance and care that respects your time and comfort. MEET YOUR PHYSICIAN Dr. Rishita Ray Founder & Aesthetic Physician, Ma LumiΦre I believe good aesthetic care begins with understanding the skin ù not simply choosing a procedure. I am Dr. Rishita Ray, an Aesthetic Physician with a background in modern aesthetic medicine and a special interest in skin health, acne, acne scarring and pigmentation. My approach brings together medical understanding, clinical assessment and aesthetic precision. From managing persistent skin concerns to planning advanced aesthetic treatments, I believe every face and every skin type deserves an individualised approach. At Ma LumiΦre, I founded the clinic around a simple philosophy: diagnosis first, procedures second. I believe in understanding the underlying concern, setting realistic expectations and recommending treatments based on individual needs ù never procedures for the sake of procedures. Whether the goal is healthier skin, improved texture, scar management or subtle facial rejuvenation, my focus is on thoughtful treatment planning, natural-looking outcomes and care that evolves with you. Because good aesthetic medicine isnÆt about changing who you are. ItÆs about helping you feel comfortable in your own skin. Meet the Doctor What we treat Aesthetic Medicine, thoughtfully done Medical and aesthetic care across the conditions that matter to you. Acne & Acne Scars Hair Loss & Hair Thinning Healthy Aging & Skin Rejuvenation Injectables & Facial Contouring Laser Hair Reduction Laser Tattoo Removal Other Concerns We Treat Pigmentation & Uneven Skin Tone Hair Loss & Hair Thinning Hair Loss & Hair Thinning Clinical assessment and personalised plans for thinning, shedding and hair-fall concerns. Learn more Pre-Wedding Skin Preparation Pre-Wedding Skin Preparation A calm, scheduled skin plan so you walk into your day with confidence ù not last-minute fixes. Learn more Acne & Acne Scars Acne & Acne Scars Evidence-led acne care and considered scar treatment ù for active breakouts and their after-effects. Learn more Laser Hair Reduction Laser Hair Reduction Clinic-grade laser for long-term hair reduction across face and body, planned around your skin type. Learn more Pigmentation & Uneven Skin Tone Pigmentation & Uneven Skin Tone Targeted care for dark spots, 
+LINKS (internal, first 80):
+  Skip to content -> #primary
+  MA LUMI╚RE SKIN | HAIR | LASER -> https://ma-lumiere.in/
+  Home -> https://ma-lumiere.in/
+  About -> https://ma-lumiere.in/about/
+  Treatments -> https://ma-lumiere.in/treatments/
+  FAQs -> https://ma-lumiere.in/faqs/
+  Contact -> https://ma-lumiere.in/contact/
+  Book Consultation -> https://ma-lumiere.in/book-consultation/
+  Book a Consultation -> https://ma-lumiere.in/book-consultation/
+  Explore Treatments -> https://ma-lumiere.in/treatments/
+  Meet the Doctor -> https://ma-lumiere.in/about/
+  Acne & Acne Scars -> https://ma-lumiere.in/treatment-type/acne-acne-scars/
+  Hair Loss & Hair Thinning -> https://ma-lumiere.in/treatment-type/hair-loss-hair-thinning/
+  Healthy Aging & Skin Rejuvenation -> https://ma-lumiere.in/treatment-type/healthy-aging-skin-rejuvenation/
+  Injectables & Facial Contouring -> https://ma-lumiere.in/treatment-type/injectables-facial-contouring/
+  Laser Hair Reduction -> https://ma-lumiere.in/treatment-type/laser-hair-reduction/
+  Laser Tattoo Removal -> https://ma-lumiere.in/treatment-type/laser-tattoo-removal/
+  Other Concerns We Treat -> https://ma-lumiere.in/treatment-type/other-concerns-we-treat/
+  Pigmentation & Uneven Skin Tone -> https://ma-lumiere.in/treatment-type/pigmentation-uneven-skin-tone/
+   -> https://ma-lumiere.in/treatment/hair-loss-hair-thinning/
+  Hair Loss & Hair Thinning -> https://ma-lumiere.in/treatment/hair-loss-hair-thinning/
+  Learn more -> https://ma-lumiere.in/treatment/hair-loss-hair-thinning/
+   -> https://ma-lumiere.in/treatment/pre-wedding-skin-preparation/
+  Pre-Wedding Skin Preparation -> https://ma-lumiere.in/treatment/pre-wedding-skin-preparation/
+  Learn more -> https://ma-lumiere.in/treatment/pre-wedding-skin-preparation/
+   -> https://ma-lumiere.in/treatment/acne-acne-scars/
+  Acne & Acne Scars -> https://ma-lumiere.in/treatment/acne-acne-scars/
+  Learn more -> https://ma-lumiere.in/treatment/acne-acne-scars/
+   -> https://ma-lumiere.in/treatment/laser-hair-reduction/
+  Laser Hair Reduction -> https://ma-lumiere.in/treatment/laser-hair-reduction/
+  Learn more -> https://ma-lumiere.in/treatment/laser-hair-reduction/
+   -> https://ma-lumiere.in/treatment/pigmentation-uneven-skin-tone/
+  Pigmentation & Uneven Skin Tone -> https://ma-lumiere.in/treatment/pigmentation-uneven-skin-tone/
+  Learn more -> https://ma-lumiere.in/treatment/pigmentation-uneven-skin-tone/
+   -> https://ma-lumiere.in/treatment/laser-tattoo-removal/
+  Laser Tattoo Removal -> https://ma-lumiere.in/treatment/laser-tattoo-removal/
+  Learn more -> https://ma-lumiere.in/treatment/laser-tattoo-removal/
+   -> https://ma-lumiere.in/treatment/healthy-aging-skin-rejuvenation/
+  Healthy Aging & Skin Rejuvenation -> https://ma-lumiere.in/treatment/healthy-aging-skin-rejuvenation/
+  Learn more -> https://ma-lumiere.in/treatment/healthy-aging-skin-rejuvenation/
+   -> https://ma-lumiere.in/treatment/injectables-facial-contouring/
+  Injectables & Facial Contouring -> https://ma-lumiere.in/treatment/injectables-facial-contouring/
+  Learn more -> https://ma-lumiere.in/treatment/injectables-facial-contouring/
+   -> https://ma-lumiere.in/treatment/enlarged-pores/
+  Enlarged Pores -> https://ma-lumiere.in/treatment/enlarged-pores/
+  Learn more -> https://ma-lumiere.in/treatment/enlarged-pores/
+  View all treatments -> https://ma-lumiere.in/treatments/
+  Contact the clinic -> https://ma-lumiere.in/contact/
+  9987802355 -> tel:9987802355
+  malumiere2026@gmail.com -> mailto:malumiere2026@gmail.com
+  info@ma-lumiere.in -> mailto:info@ma-lumiere.in
+  Privacy Policy -> https://ma-lumiere.in/?page_id=3
+SIGNAL COUNTS: {'rishita': 2, 'ray': 2, 'medical': 8, 'review': 2, 'before': 2, 'after': 2, 'doctor': 1, 'who ': 1, 'evidence': 3, 'acne': 11, 'scar': 7, 'pigment': 5, 'hair': 16, 'wedding': 2, 'injectable': 5, 'laser': 11, 'mira': 5, 'bhayander': 6, 'appointment': 3, 'book': 6}
+
+====================================================================================================
+FILE: results.html
+JSONLD blocks: 1
+  TYPE: BreadcrumbList | keys: ['@context', '@type', 'itemListElement']
+    itemListElement:
+      TYPE: ListItem | keys: ['@type', 'item', 'name', 'position']
+      TYPE: ListItem | keys: ['@type', 'item', 'name', 'position']
+HEADINGS:
+  h1 | Acne management
+MAIN TEXT (first 3000):
+Home / Acne treatment ù case reference Acne & Acne Scars Acne management Shared with consent. Individual outcomes vary. [BEFORE/AFTER IMAGES REQUIRED] [REAL, CONSENT-APPROVED CASE REQUIRED ù before/after images must be uploaded here and must not reveal patient identity.] Discuss your skin goals
+LINKS (internal, first 80):
+  Skip to content -> #primary
+  MA LUMI╚RE SKIN | HAIR | LASER -> https://ma-lumiere.in/
+  Home -> https://ma-lumiere.in/
+  About -> https://ma-lumiere.in/about/
+  Treatments -> https://ma-lumiere.in/treatments/
+  FAQs -> https://ma-lumiere.in/faqs/
+  Contact -> https://ma-lumiere.in/contact/
+  Book Consultation -> https://ma-lumiere.in/book-consultation/
+  Discuss your skin goals -> https://ma-lumiere.in/book-consultation/
+  Hair Loss & Hair Thinning -> https://ma-lumiere.in/treatment/hair-loss-hair-thinning/
+  Pre-Wedding Skin Preparation -> https://ma-lumiere.in/treatment/pre-wedding-skin-preparation/
+  Acne & Acne Scars -> https://ma-lumiere.in/treatment/acne-acne-scars/
+  Laser Hair Reduction -> https://ma-lumiere.in/treatment/laser-hair-reduction/
+  Pigmentation & Uneven Skin Tone -> https://ma-lumiere.in/treatment/pigmentation-uneven-skin-tone/
+  Laser Tattoo Removal -> https://ma-lumiere.in/treatment/laser-tattoo-removal/
+  9987802355 -> tel:9987802355
+  malumiere2026@gmail.com -> mailto:malumiere2026@gmail.com
+  info@ma-lumiere.in -> mailto:info@ma-lumiere.in
+  Privacy Policy -> https://ma-lumiere.in/?page_id=3
+SIGNAL COUNTS: {'before': 2, 'after': 2, 'consent': 2, 'reference': 1, 'acne': 4, 'scar': 1}
+
+====================================================================================================
+FILE: skin-clinic.html
+JSONLD blocks: 1
+  TYPE: BreadcrumbList | keys: ['@context', '@type', 'itemListElement']
+    itemListElement:
+      TYPE: ListItem | keys: ['@type', 'item', 'name', 'position']
+      TYPE: ListItem | keys: ['@type', 'item', 'name', 'position']
+HEADINGS:
+  h1 | Skin Clinic in Mira Bhayander
+  h2 | A skin clinic for Mira Road and Bhayander
+  h2 | Face treatments in Mira Bhayander
+  h2 | Skin concerns we treat
+  h2 | Laser hair reduction and hair loss
+  h2 | What happens at your first consultation
+  h2 | Fees and realistic expectations
+  h2 | Book a consultation in Mira Road East
+MAIN TEXT (first 3000):
+Home / Skin Clinic in Mira Bhayander Skin Clinic in Mira Bhayander A skin, hair and laser clinic in Mira Road East, serving Mira Bhayander ù face treatments, acne and pigmentation care, laser hair reduction and more. Ma LumiΦre is a skin, hair and laser clinic in Mira Road East, a short drive from Bhayander East, Bhayander West and Kashimira. If you have been searching for a skin clinic in Mira Bhayander ù or for a face treatment planned around your skin rather than chosen from a menu ù this page explains what we do and how to begin. A skin clinic for Mira Road and Bhayander Ma LumiΦre was founded on a simple principle: diagnosis first, procedures second. Before any treatment is recommended, we assess your skin, ask about your history, and talk through what can realistically change. That conversation matters more than the device used afterwards. Patients travel to the clinic from across Mira Road, Bhayander, Kashimira, Dahisar, Borivali and Thane. Some are managing a long-term concern such as acne or pigmentation. Others want to prepare for a wedding, address the first signs of ageing, or simply understand why their skin has changed. Face treatments in Mira Bhayander Most face treatments begin with the same question: what is actually happening in the skin? Once that is clear, a plan may include medical acne care, acne scar treatment, pigmentation correction, skin rejuvenation, or a combination staged over several visits. Facial rejuvenation is planned around your features and your comfort level. The aim is a fresher, healthier version of your own face ù not a different one. Where a concern is better managed with skincare, lifestyle changes or time, we will say so rather than add another procedure. Skin concerns we treat Active acne, recurring breakouts and hormonal patterns Acne scars, textural changes and enlarged pores Pigmentation, melasma and uneven skin tone Dullness, tired-looking skin and uneven texture Fine lines and early signs of ageing Moles, skin tags and other small skin lesions Excessive sweating (hyperhidrosis) Laser hair reduction and hair loss Laser hair reduction is available for women and men, with a patch test and a realistic session plan agreed in advance. Hair loss and thinning are assessed differently: we look at pattern, scalp health and possible contributing factors before discussing treatment. What happens at your first consultation Your first visit is a private consultation, not a sales appointment. We review your skin and medical history, discuss what has and has not worked, and explain the options that fit your concern. You will leave with a clear plan, an idea of how many sessions may be needed, and the cost before anything begins. If a treatment is not appropriate for you, we will tell you. If a concern needs a different specialist, we will say that too. Fees and realistic expectations Costs depend on the treatment, the area being treated and the number of sessions. You will receive a quotation after your consultati
+LINKS (internal, first 80):
+  Skip to content -> #primary
+  MA LUMI╚RE SKIN | HAIR | LASER -> https://ma-lumiere.in/
+  Home -> https://ma-lumiere.in/
+  About -> https://ma-lumiere.in/about/
+  Treatments -> https://ma-lumiere.in/treatments/
+  FAQs -> https://ma-lumiere.in/faqs/
+  Contact -> https://ma-lumiere.in/contact/
+  Book Consultation -> https://ma-lumiere.in/book-consultation/
+  Hair Loss & Hair Thinning -> https://ma-lumiere.in/treatment/hair-loss-hair-thinning/
+  Pre-Wedding Skin Preparation -> https://ma-lumiere.in/treatment/pre-wedding-skin-preparation/
+  Acne & Acne Scars -> https://ma-lumiere.in/treatment/acne-acne-scars/
+  Laser Hair Reduction -> https://ma-lumiere.in/treatment/laser-hair-reduction/
+  Pigmentation & Uneven Skin Tone -> https://ma-lumiere.in/treatment/pigmentation-uneven-skin-tone/
+  Laser Tattoo Removal -> https://ma-lumiere.in/treatment/laser-tattoo-removal/
+  9987802355 -> tel:9987802355
+  malumiere2026@gmail.com -> mailto:malumiere2026@gmail.com
+  info@ma-lumiere.in -> mailto:info@ma-lumiere.in
+  Privacy Policy -> https://ma-lumiere.in/?page_id=3
+SIGNAL COUNTS: {'medical': 2, 'review': 1, 'before': 3, 'after': 2, 'specialist': 1, 'acne': 6, 'scar': 2, 'pigment': 4, 'hair': 7, 'wedding': 1, 'laser': 5, 'mira': 13, 'bhayander': 10, 'appointment': 3, 'book': 2}
+
+====================================================================================================
+FILE: treatment-acne.html
+JSONLD blocks: 1
+  TYPE: BreadcrumbList | keys: ['@context', '@type', 'itemListElement']
+    itemListElement:
+      TYPE: ListItem | keys: ['@type', 'item', 'name', 'position']
+      TYPE: ListItem | keys: ['@type', 'item', 'name', 'position']
+      TYPE: ListItem | keys: ['@type', 'item', 'name', 'position']
+HEADINGS:
+  h1 | Acne & Acne Scars
+  h2 | How it works
+  h2 | Who it is for
+  h2 | Concerns it addresses
+  h2 | Treatment process
+  h2 | Expected results
+  h2 | Preparation & aftercare
+  h3 | Before the treatment
+  h3 | After the treatment
+  h2 | Book a consultation
+  h2 | What happens next
+  h2 | Questions about this treatment
+  h3 | Should I treat acne or scars first?
+  h3 | Is acne treatment permanent?
+  h2 | Real results
+  h3 | Acne management
+  h2 | Begin Your Skin Journey
+MAIN TEXT (first 3000):
+Home / Treatments / Acne & Acne Scars Acne & Acne Scars Acne & Acne Scars Evidence-led acne care and considered scar treatment ù for active breakouts and their after-effects. Book a Consultation Explore the treatment Sessions Acne: ongoing; scars: 4û6 Downtime Noneû48 hours Consultation By appointment Acne is common, but the reasons behind it vary ù and so does the right treatment. We treat the active breakouts first, then address the marks and texture they leave behind. Active acne and acne scars are two different problems that need two different plans. Treating scars while skin is still breaking out wastes time; clearing breakouts without addressing texture leaves the reminder behind. We do both, in order. How it works Assessment of acne type and severity, medical management of active breakouts, then a staged approach to post-acne marks and texture once skin is stable. Who it is for Anyone with active pimples, cysts or persistent congestion, or leftover red marks, pits or uneven texture after acne. Concerns it addresses Whiteheads, blackheads, inflammatory breakouts, hormonal acne, post-acne redness, marks and textural scarring. Treatment process Acne assessment and severity grading Active-breakout treatment plan Home routine and lifestyle review Scar and texture phase once skin is clear Expected results Active acne improves over weeks to months; scar treatment is planned only after skin is stable, and expectations are set per scar type. Preparation & aftercare Before the treatment Bring a list of products and treatments you have already tried. After the treatment Do not pick or squeeze ù it is the single biggest cause of avoidable scarring. Your next step Book a consultation Every treatment begins with a private consultation, a skin assessment and a plan built around your goals. Book a Consultation Prefer to talk? 9987802355 What happens next Consultation & skin assessment A personalised treatment plan Treatment and follow-up Good to know Questions about this treatment Should I treat acne or scars first? Always the active acne. Scar treatments are planned once breakouts are controlled. Is acne treatment permanent? It controls and clears active acne; maintenance depends on your pattern and triggers. Before & after Real results [BEFORE/AFTER IMAGES REQUIRED] Acne management Acne & Acne Scars Begin your skin journey Begin Your Skin Journey Book a private consultation and let us design a plan around your skin ù its history, its concerns and the results you hope for. Book a Consultation Contact the clinic
+LINKS (internal, first 80):
+  Skip to content -> #primary
+  MA LUMI╚RE SKIN | HAIR | LASER -> https://ma-lumiere.in/
+  Home -> https://ma-lumiere.in/
+  About -> https://ma-lumiere.in/about/
+  Treatments -> https://ma-lumiere.in/treatments/
+  FAQs -> https://ma-lumiere.in/faqs/
+  Contact -> https://ma-lumiere.in/contact/
+  Book Consultation -> https://ma-lumiere.in/book-consultation/
+  Acne & Acne Scars -> https://ma-lumiere.in/treatment-type/acne-acne-scars/
+  Book a Consultation -> https://ma-lumiere.in/book-consultation/
+  Explore the treatment -> #how-it-works
+  9987802355 -> tel:9987802355
+  Contact the clinic -> https://ma-lumiere.in/contact/
+  Hair Loss & Hair Thinning -> https://ma-lumiere.in/treatment/hair-loss-hair-thinning/
+  Pre-Wedding Skin Preparation -> https://ma-lumiere.in/treatment/pre-wedding-skin-preparation/
+  Acne & Acne Scars -> https://ma-lumiere.in/treatment/acne-acne-scars/
+  Laser Hair Reduction -> https://ma-lumiere.in/treatment/laser-hair-reduction/
+  Pigmentation & Uneven Skin Tone -> https://ma-lumiere.in/treatment/pigmentation-uneven-skin-tone/
+  Laser Tattoo Removal -> https://ma-lumiere.in/treatment/laser-tattoo-removal/
+  malumiere2026@gmail.com -> mailto:malumiere2026@gmail.com
+  info@ma-lumiere.in -> mailto:info@ma-lumiere.in
+  Privacy Policy -> https://ma-lumiere.in/?page_id=3
+SIGNAL COUNTS: {'medical': 1, 'review': 1, 'before': 3, 'after': 7, 'who ': 1, 'evidence': 1, 'acne': 25, 'scar': 15, 'appointment': 1, 'book': 5}
+
+====================================================================================================
+FILE: treatment-type-acne.html
+JSONLD blocks: 1
+  TYPE: BreadcrumbList | keys: ['@context', '@type', 'itemListElement']
+    itemListElement:
+      TYPE: ListItem | keys: ['@type', 'item', 'name', 'position']
+      TYPE: ListItem | keys: ['@type', 'item', 'name', 'position']
+      TYPE: ListItem | keys: ['@type', 'item', 'name', 'position']
+HEADINGS:
+  h1 | Acne & Acne Scars
+  h3 | Acne & Acne Scars
+  h3 | Acne treatment ù case reference
+MAIN TEXT (first 3000):
+Home / Treatments / Treatment Type: Acne & Acne Scars Acne & Acne Scars Acne & Acne Scars Acne & Acne Scars Evidence-led acne care and considered scar treatment ù for active breakouts and their after-effects. Learn more [IMAGE REQUIRED] Acne & Acne Scars Acne treatment ù case reference [REAL, CONSENT-APPROVED CASE REQUIRED ù before/after images must be uploaded here and must not reveal patient identity.] Learn more View all treatments
+LINKS (internal, first 80):
+  Skip to content -> #primary
+  MA LUMI╚RE SKIN | HAIR | LASER -> https://ma-lumiere.in/
+  Home -> https://ma-lumiere.in/
+  About -> https://ma-lumiere.in/about/
+  Treatments -> https://ma-lumiere.in/treatments/
+  FAQs -> https://ma-lumiere.in/faqs/
+  Contact -> https://ma-lumiere.in/contact/
+  Book Consultation -> https://ma-lumiere.in/book-consultation/
+   -> https://ma-lumiere.in/treatment/acne-acne-scars/
+  Acne & Acne Scars -> https://ma-lumiere.in/treatment/acne-acne-scars/
+  Learn more -> https://ma-lumiere.in/treatment/acne-acne-scars/
+  [IMAGE REQUIRED] -> https://ma-lumiere.in/results/acne-treatment-case-reference/
+  Acne treatment ù case reference -> https://ma-lumiere.in/results/acne-treatment-case-reference/
+  Learn more -> https://ma-lumiere.in/results/acne-treatment-case-reference/
+  View all treatments -> https://ma-lumiere.in/treatments/
+  Hair Loss & Hair Thinning -> https://ma-lumiere.in/treatment/hair-loss-hair-thinning/
+  Pre-Wedding Skin Preparation -> https://ma-lumiere.in/treatment/pre-wedding-skin-preparation/
+  Laser Hair Reduction -> https://ma-lumiere.in/treatment/laser-hair-reduction/
+  Pigmentation & Uneven Skin Tone -> https://ma-lumiere.in/treatment/pigmentation-uneven-skin-tone/
+  Laser Tattoo Removal -> https://ma-lumiere.in/treatment/laser-tattoo-removal/
+  9987802355 -> tel:9987802355
+  malumiere2026@gmail.com -> mailto:malumiere2026@gmail.com
+  info@ma-lumiere.in -> mailto:info@ma-lumiere.in
+  Privacy Policy -> https://ma-lumiere.in/?page_id=3
+SIGNAL COUNTS: {'before': 1, 'after': 2, 'consent': 1, 'reference': 1, 'evidence': 1, 'acne': 12, 'scar': 6}
+
+====================================================================================================
+FILE: treatments.html
+JSONLD blocks: 1
+  TYPE: BreadcrumbList | keys: ['@context', '@type', 'itemListElement']
+    itemListElement:
+      TYPE: ListItem | keys: ['@type', 'item', 'name', 'position']
+      TYPE: ListItem | keys: ['@type', 'item', 'name', 'position']
+HEADINGS:
+  h1 | Treatments
+  h2 | Every treatment, in one place
+  h3 | Hair Loss & Hair Thinning
+  h3 | Pre-Wedding Skin Preparation
+  h3 | Acne & Acne Scars
+  h3 | Laser Hair Reduction
+  h3 | Pigmentation & Uneven Skin Tone
+  h3 | Laser Tattoo Removal
+  h3 | Healthy Aging & Skin Rejuvenation
+  h3 | Injectables & Facial Contouring
+  h3 | Enlarged Pores
+  h3 | Mole and Skin Tag Removal
+  h3 | Hyperhidrosis (Excessive Sweating)
+  h3 | Uneven Skin Texture
+  h3 | Dull & Tired Skin
+  h3 | Facial Rejuvenation
+  h3 | Preventive Skin Care
+  h2 | Begin Your Skin Journey
+MAIN TEXT (first 3000):
+Home / Treatments Medical & aesthetic dermatology Treatments Every treatment begins with a private consultation. Explore the care we offer, then we will shape a plan around your skin and your goals. Book a Consultation View all treatments Treatments 15 Approach Bespoke First step Consultation The treatment menu Every treatment, in one place A complete index of the care we offer. Each treatment begins with a private consultation and is planned around your skin, your goals, and your schedule. 01 Hair Loss & Hair Thinning Clinical assessment and personalised plans for thinning, shedding and hair-fall concerns. Duration 45 Sessions 4û6 (assessment-led) Downtime None Explore treatment 02 Pre-Wedding Skin Preparation A calm, scheduled skin plan so you walk into your day with confidence ù not last-minute fixes. Duration 40 Sessions Timeline-based (often 3û5) Downtime Minimal (treatment-dependent) Explore treatment 03 Acne & Acne Scars Evidence-led acne care and considered scar treatment ù for active breakouts and their after-effects. Duration 30 Sessions Acne: ongoing; scars: 4û6 Downtime Noneû48 hours Explore treatment 04 Laser Hair Reduction Clinic-grade laser for long-term hair reduction across face and body, planned around your skin type. Duration 20û60 Sessions 6û8, spaced 4û8 weeks Downtime None Explore treatment 05 Pigmentation & Uneven Skin Tone Targeted care for dark spots, sun damage and uneven tone ù built around your skin, not a trend. Duration 30 Sessions 4û6 Downtime Noneûseveral days (treatment-dependent) Explore treatment 06 Laser Tattoo Removal Q-switched laser treatment to fade unwanted tattoos, spaced safely across the clearing cycle. Duration 10û30 Sessions 6û10+ (design-dependent) Downtime 3û7 days (surface) Explore treatment 07 Healthy Aging & Skin Rejuvenation A long-view approach to skin health ù resilience, texture and radiance at every age. Duration 45 Sessions 3û6 per cycle Downtime Noneû48 hours Explore treatment 08 Injectables & Facial Contouring Subtle, anatomy-led injectable work ù softening, balancing and contouring without looking done. Duration 30 Sessions 1 per cycle (reviewed) Downtime Noneû48 hours Explore treatment 09 Enlarged Pores Texture-focused care to refine the look of enlarged pores and keep congestion under control. Duration 40 Sessions 3û4 Downtime Noneû24 hours Explore treatment 10 Mole and Skin Tag Removal Assessment-first removal of benign moles and skin tags, with the right method for each lesion. Duration 20 Sessions Usually 1 Downtime A few days (site-dependent) Explore treatment 11 Hyperhidrosis (Excessive Sweating) Practical treatment for sweating that goes beyond normal ù underarms, palms and beyond. Duration 30 Sessions Method-dependent (often 1û4) Downtime None Explore treatment 12 Uneven Skin Texture Resurfacing and barrier-focused care for rough, bumpy or uneven surface texture. Duration 40 Sessions 3û4 Downtime Noneû48 hours Explore treatment 13 Dull & Tired Skin Radiance-focused treatments fo
+LINKS (internal, first 80):
+  Skip to content -> #primary
+  MA LUMI╚RE SKIN | HAIR | LASER -> https://ma-lumiere.in/
+  Home -> https://ma-lumiere.in/
+  About -> https://ma-lumiere.in/about/
+  Treatments -> https://ma-lumiere.in/treatments/
+  FAQs -> https://ma-lumiere.in/faqs/
+  Contact -> https://ma-lumiere.in/contact/
+  Book Consultation -> https://ma-lumiere.in/book-consultation/
+  Book a Consultation -> https://ma-lumiere.in/book-consultation/
+  View all treatments -> #treatment-index
+  Hair Loss & Hair Thinning -> https://ma-lumiere.in/treatment/hair-loss-hair-thinning/
+  Explore treatment -> https://ma-lumiere.in/treatment/hair-loss-hair-thinning/
+   -> https://ma-lumiere.in/treatment/hair-loss-hair-thinning/
+  Pre-Wedding Skin Preparation -> https://ma-lumiere.in/treatment/pre-wedding-skin-preparation/
+  Explore treatment -> https://ma-lumiere.in/treatment/pre-wedding-skin-preparation/
+   -> https://ma-lumiere.in/treatment/pre-wedding-skin-preparation/
+  Acne & Acne Scars -> https://ma-lumiere.in/treatment/acne-acne-scars/
+  Explore treatment -> https://ma-lumiere.in/treatment/acne-acne-scars/
+   -> https://ma-lumiere.in/treatment/acne-acne-scars/
+  Laser Hair Reduction -> https://ma-lumiere.in/treatment/laser-hair-reduction/
+  Explore treatment -> https://ma-lumiere.in/treatment/laser-hair-reduction/
+   -> https://ma-lumiere.in/treatment/laser-hair-reduction/
+  Pigmentation & Uneven Skin Tone -> https://ma-lumiere.in/treatment/pigmentation-uneven-skin-tone/
+  Explore treatment -> https://ma-lumiere.in/treatment/pigmentation-uneven-skin-tone/
+   -> https://ma-lumiere.in/treatment/pigmentation-uneven-skin-tone/
+  Laser Tattoo Removal -> https://ma-lumiere.in/treatment/laser-tattoo-removal/
+  Explore treatment -> https://ma-lumiere.in/treatment/laser-tattoo-removal/
+   -> https://ma-lumiere.in/treatment/laser-tattoo-removal/
+  Healthy Aging & Skin Rejuvenation -> https://ma-lumiere.in/treatment/healthy-aging-skin-rejuvenation/
+  Explore treatment -> https://ma-lumiere.in/treatment/healthy-aging-skin-rejuvenation/
+   -> https://ma-lumiere.in/treatment/healthy-aging-skin-rejuvenation/
+  Injectables & Facial Contouring -> https://ma-lumiere.in/treatment/injectables-facial-contouring/
+  Explore treatment -> https://ma-lumiere.in/treatment/injectables-facial-contouring/
+   -> https://ma-lumiere.in/treatment/injectables-facial-contouring/
+  Enlarged Pores -> https://ma-lumiere.in/treatment/enlarged-pores/
+  Explore treatment -> https://ma-lumiere.in/treatment/enlarged-pores/
+   -> https://ma-lumiere.in/treatment/enlarged-pores/
+  Mole and Skin Tag Removal -> https://ma-lumiere.in/treatment/mole-and-skin-tag-removal/
+  Explore treatment -> https://ma-lumiere.in/treatment/mole-and-skin-tag-removal/
+   -> https://ma-lumiere.in/treatment/mole-and-skin-tag-removal/
+  Hyperhidrosis (Excessive Sweating) -> https://ma-lumiere.in/treatment/hyperhidrosis-excessive-sweating/
+  Explore treatment -> https://ma-lumiere.in/treatment/hyperhidrosis-excessive-sweating/
+   -> https://ma-lumiere.in/treatment/hyperhidrosis-excessive-sweating/
+  Uneven Skin Texture -> https://ma-lumiere.in/treatment/uneven-skin-texture/
+  Explore treatment -> https://ma-lumiere.in/treatment/uneven-skin-texture/
+   -> https://ma-lumiere.in/treatment/uneven-skin-texture/
+  Dull & Tired Skin -> https://ma-lumiere.in/treatment/dull-tired-skin/
+  Explore treatment -> https://ma-lumiere.in/treatment/dull-tired-skin/
+   -> https://ma-lumiere.in/treatment/dull-tired-skin/
+  Facial Rejuvenation -> https://ma-lumiere.in/treatment/facial-rejuvenation/
+  Explore treatment -> https://ma-lumiere.in/treatment/facial-rejuvenation/
+   -> https://ma-lumiere.in/treatment/facial-rejuvenation/
+  Preventive Skin Care -> https://ma-lumiere.in/treatment/preventive-skin-care/
+  Explore treatment -> https://ma-lumiere.in/treatment/preventive-skin-care/
+   -> https://ma-lumiere.in/treatment/preventive-skin-care/
+  Contact the clinic -> https://ma-lumiere.in/contact/
+  9987802355 -> tel:9987802355
+  malumiere2026@gmail.com -> mailto:malumiere2026@gmail.com
+  info@ma-lumiere.in -> mailto:info@ma-lumiere.in
+  Privacy Policy -> https://ma-lumiere.in/?page_id=3
+SIGNAL COUNTS: {'dermatolog': 1, 'medical': 1, 'review': 1, 'after': 1, 'evidence': 2, 'acne': 4, 'scar': 3, 'pigment': 1, 'hair': 5, 'wedding': 1, 'injectable': 2, 'laser': 4, 'book': 3}

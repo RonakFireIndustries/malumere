@@ -26,7 +26,7 @@ get_header(); ?>
 				endwhile;
 			else :
 				?>
-				<div class="ph" style="grid-column:1/-1">[REAL BEFORE & AFTER RESULTS REQUIRED — add consent-approved case studies]</div>
+				<div class="entry-content" style="grid-column:1/-1"><p><?php esc_html_e( 'Consent-approved before-and-after photographs are not published here at this time. Treatment plans and expected outcomes are discussed during consultation.', 'ma-lumiere' ); ?></p></div>
 			<?php endif; ?>
 		</div>
 		<?php the_posts_pagination(); ?>

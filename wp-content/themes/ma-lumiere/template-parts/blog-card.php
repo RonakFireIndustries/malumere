@@ -12,8 +12,6 @@ $cats = get_the_category();
 		<?php
 		if ( has_post_thumbnail() ) {
 			the_post_thumbnail( 'ml-card' );
-		} else {
-			echo '<div class="ph" style="border:0;border-radius:0;min-height:100%">[IMAGE REQUIRED]</div>';
 		}
 		?>
 	</a>

@@ -21,8 +21,6 @@ $expertise      = ml_doctor_expertise();
 				<?php echo wp_get_attachment_image( $image_id, 'ml-portrait', false, array( 'class' => 'doctor__img' ) ); ?>
 			<?php elseif ( $image_fallback ) : ?>
 				<img class="doctor__img" src="<?php echo esc_url( $image_fallback ); ?>" width="900" height="1100" alt="<?php echo esc_attr( $name ); ?>" loading="lazy" decoding="async" />
-			<?php else : ?>
-				<div class="ph" style="border-radius:var(--radius-arch);min-height:480px">[DOCTOR IMAGE]</div>
 			<?php endif; ?>
 		</div>
 

@@ -1,0 +1,31 @@
+URL http://localhost/malumere/ STATUS 200
+TITLE Ma Lumière | Skin &#038; Aesthetic Clinic in Mira Road East
+DESC Ma Lumière is a medical skin and aesthetic care clinic in Mira Road East, offering consultations for acne, pigmentation, hair loss and injectables.
+CANON http://localhost/malumere/
+H1 Personalised Aesthetic Medicine. Beautifully, Scientifically.
+PLACEHOLDERS 0
+URL http://localhost/malumere/contact/ STATUS 200
+TITLE Contact Ma Lumière | Skin Clinic in Mira Road East
+DESC Find Ma Lumière in Mira Road East, Maharashtra 401105. Call, message or use the directions link to plan your visit to the clinic.
+CANON http://localhost/malumere/contact/
+H1 Contact
+PLACEHOLDERS 0
+URL http://localhost/malumere/treatment/injectables-facial-contouring/ STATUS 200
+TITLE Botox &#038; Injectable Treatments in Mira Road | Ma Lumière
+DESC Explore Botox and injectable aesthetic treatments in Mira Road East. Facial assessment, conservative planning, suitability and aftercare explained.
+CANON http://localhost/malumere/treatment/injectables-facial-contouring/
+H1 Botox &amp; Injectable Aesthetic Treatments
+PLACEHOLDERS 0
+URL http://localhost/malumere/results/acne-treatment-case-reference/ STATUS 200
+TITLE Acne Treatment: What to Expect · Ma Lumière
+DESC Educational information about acne treatment planning. Individual outcomes vary after consultation.
+CANON http://localhost/malumere/results/acne-treatment-case-reference/
+H1 Acne Treatment: What to Expect
+PLACEHOLDERS 0
+URL http://localhost/malumere/treatment-type/acne-acne-scars/ STATUS 200
+TITLE Acne &amp; Acne Scars · Ma Lumière
+DESC Articles about Acne &amp; Acne Scars from the Ma Lumière skin journal.
+CANON http://localhost/malumere/treatment/acne-acne-scars/
+ROBOTS noindex,follow,max-image-preview:large
+H1 Acne &amp; Acne Scars
+PLACEHOLDERS 0

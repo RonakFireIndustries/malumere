@@ -189,7 +189,7 @@ function ml_get_terms( $taxonomy = 'category' ) {
  * @param string $flag          Placeholder text when no image.
  * @return void
  */
-function ml_image( $attachment_id, $size = 'ml-card', $class = '', $flag = '[IMAGE PENDING]' ) {
+function ml_image( $attachment_id, $size = 'ml-card', $class = '', $flag = '' ) {
 	if ( ml_attachment_is_deployed( $attachment_id ) ) {
 		echo wp_get_attachment_image( $attachment_id, $size, false, array( 'class' => $class ) );
 		return;

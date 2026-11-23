@@ -1,0 +1,46 @@
+[
+    {
+        "url": "http://localhost/malumere/",
+        "status": "VALID",
+        "blocks": 4,
+        "types": [
+            "MedicalClinic+LocalBusiness",
+            "WebSite",
+            "Person",
+            "WebPage"
+        ],
+        "errors": []
+    },
+    {
+        "url": "http://localhost/malumere/treatment/acne-acne-scars/",
+        "status": "VALID",
+        "blocks": 3,
+        "types": [
+            "WebPage",
+            "Service",
+            "BreadcrumbList"
+        ],
+        "errors": []
+    },
+    {
+        "url": "http://localhost/malumere/treatment/injectables-facial-contouring/",
+        "status": "VALID",
+        "blocks": 3,
+        "types": [
+            "WebPage",
+            "Service",
+            "BreadcrumbList"
+        ],
+        "errors": []
+    },
+    {
+        "url": "http://localhost/malumere/skin-clinic-mira-bhayander/",
+        "status": "VALID",
+        "blocks": 2,
+        "types": [
+            "WebPage",
+            "BreadcrumbList"
+        ],
+        "errors": []
+    }
+]

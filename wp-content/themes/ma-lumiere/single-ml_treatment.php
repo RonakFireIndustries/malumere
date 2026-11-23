@@ -122,7 +122,7 @@ while ( have_posts() ) :
 
 				<div class="td-hero__media" data-reveal="fade">
 					<?php if ( ! ml_treatment_image( get_the_ID(), 'large', array( 'loading' => 'eager' ) ) ) : ?>
-						<div class="td-hero__placeholder"><?php esc_html_e( '[TREATMENT IMAGE]', 'ma-lumiere' ); ?></div>
+						<div class="td-hero__placeholder"><?php esc_html_e( '', 'ma-lumiere' ); ?></div>
 					<?php endif; ?>
 				</div>
 			</div>
@@ -162,7 +162,7 @@ while ( have_posts() ) :
 							<?php if ( $image_url ) : ?>
 								<img src="<?php echo esc_url( $image_url ); ?>" alt="" loading="lazy" />
 							<?php else : ?>
-								<div class="td-row__placeholder"><?php esc_html_e( '[TREATMENT IMAGE]', 'ma-lumiere' ); ?></div>
+								<div class="td-row__placeholder"><?php esc_html_e( '', 'ma-lumiere' ); ?></div>
 							<?php endif; ?>
 						</figure>
 					</div>
@@ -195,7 +195,7 @@ while ( have_posts() ) :
 							<?php if ( $image_url ) : ?>
 								<img src="<?php echo esc_url( $image_url ); ?>" alt="" loading="lazy" />
 							<?php else : ?>
-								<div class="td-row__placeholder"><?php esc_html_e( '[TREATMENT IMAGE]', 'ma-lumiere' ); ?></div>
+								<div class="td-row__placeholder"><?php esc_html_e( '', 'ma-lumiere' ); ?></div>
 							<?php endif; ?>
 						</figure>
 					</div>
@@ -234,7 +234,7 @@ while ( have_posts() ) :
 							<?php if ( $image_url ) : ?>
 								<img src="<?php echo esc_url( $image_url ); ?>" alt="" loading="lazy" />
 							<?php else : ?>
-								<div class="td-row__placeholder"><?php esc_html_e( '[TREATMENT IMAGE]', 'ma-lumiere' ); ?></div>
+								<div class="td-row__placeholder"><?php esc_html_e( '', 'ma-lumiere' ); ?></div>
 							<?php endif; ?>
 						</figure>
 					</div>
@@ -276,8 +276,14 @@ while ( have_posts() ) :
 					<?php if ( ml_clinic_phone() ) : ?>
 						<p class="td-book__phone">
 							<?php esc_html_e( 'Prefer to talk?', 'ma-lumiere' ); ?>
-							<a href="tel:<?php echo esc_attr( preg_replace( '/[^0-9+]/', '', ml_clinic_phone() ) ); ?>"><?php echo esc_html( ml_clinic_phone() ); ?></a>
+							<a href="tel:<?php echo esc_attr( ml_clinic_phone_href() ); ?>"><?php echo esc_html( ml_clinic_phone() ); ?></a>
 						</p>
+					<?php endif; ?>
+					<?php
+					$location_url = ml_page_url_by_template( 'page-templates/page-mira-bhayander.php', '' );
+					if ( $location_url && '#' !== $location_url ) :
+						?>
+						<p><a href="<?php echo esc_url( $location_url ); ?>"><?php esc_html_e( 'Find our Mira Road clinic and directions', 'ma-lumiere' ); ?></a></p>
 					<?php endif; ?>
 				</div>
 

@@ -1,0 +1,27 @@
+﻿{
+  "url": "https://ma-lumiere.in/treatment/acne-acne-scars/",
+  "status_code": 200,
+  "render_error": null,
+  "html_findings": {
+    "real_buttons": 3,
+    "real_anchors": 30,
+    "div_onclick_widgets": 0,
+    "semantic_landmarks": 18,
+    "inputs_without_aria": 0,
+    "inputs_without_label": 0
+  },
+  "a11y_findings": {
+    "tree_present": true,
+    "total_nodes": 487,
+    "interactive_nodes": 32,
+    "role_button": 2,
+    "role_link": 30,
+    "role_generic": 41,
+    "unnamed_interactive": 0
+  },
+  "score": 100,
+  "score_status": "complete",
+  "partial": false,
+  "partial_reasons": [],
+  "issues": []
+}

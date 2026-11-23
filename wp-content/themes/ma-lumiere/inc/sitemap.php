@@ -144,20 +144,7 @@ function ml_sitemap_render() {
 		}
 	}
 
-	$terms = get_terms(
-		array(
-			'taxonomy'   => 'treatment_category',
-			'hide_empty' => true,
-		)
-	);
-	if ( ! is_wp_error( $terms ) ) {
-		foreach ( $terms as $term ) {
-			$link = get_term_link( $term );
-			if ( ! is_wp_error( $link ) ) {
-				ml_sitemap_entry( ml_sitemap_url( $link ), '', 'weekly', '0.5' );
-			}
-		}
-	}
+	// Treatment-category archives are noindex consolidations and are intentionally excluded.
 
 	echo '</urlset>' . "\n";
 	exit;

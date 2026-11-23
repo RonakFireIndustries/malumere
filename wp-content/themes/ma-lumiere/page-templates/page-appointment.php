@@ -47,7 +47,7 @@ endwhile;
 			<?php if ( ml_clinic_phone() || ml_clinic_whatsapp() ) : ?>
 				<div class="td-cta" style="text-align:center;margin-top:var(--sp-lg)">
 					<?php if ( ml_clinic_phone() ) : ?>
-						<a class="btn btn--primary" href="tel:<?php echo esc_attr( preg_replace( '/[^0-9+]/', '', ml_clinic_phone() ) ); ?>"><?php echo esc_html( ml_clinic_phone() ); ?></a>
+						<a class="btn btn--primary" href="tel:<?php echo esc_attr( ml_clinic_phone_href() ); ?>"><?php echo esc_html( ml_clinic_phone() ); ?></a>
 					<?php endif; ?>
 					<?php if ( ml_clinic_whatsapp() ) : ?>
 						<a class="btn btn--outline" href="https://wa.me/<?php echo esc_attr( preg_replace( '/[^0-9]/', '', ml_clinic_whatsapp() ) ); ?>" target="_blank" rel="noopener noreferrer"><?php esc_html_e( 'WhatsApp the clinic', 'ma-lumiere' ); ?></a>

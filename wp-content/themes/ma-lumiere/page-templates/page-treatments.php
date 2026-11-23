@@ -80,7 +80,7 @@ $total       = count( $all_treatments );
 						</figure>
 					<?php endforeach; ?>
 				<?php else : ?>
-					<div class="td-hero__placeholder"><?php esc_html_e( '[TREATMENT IMAGES]', 'ma-lumiere' ); ?></div>
+					<div class="td-hero__placeholder"><?php esc_html_e( '', 'ma-lumiere' ); ?></div>
 				<?php endif; ?>
 			</div>
 		</div>
@@ -96,7 +96,7 @@ $total       = count( $all_treatments );
 		</header>
 
 		<?php if ( ! $all_treatments ) : ?>
-			<div class="ph">[TREATMENTS REQUIRED — add treatments in the WordPress admin]</div>
+			<div class="ph"></div>
 		<?php else : ?>
 			<div class="treatments-list">
 				<?php foreach ( $all_treatments as $index => $treatment ) : ?>
@@ -154,7 +154,7 @@ $total       = count( $all_treatments );
 						<figure class="td-row__media treatments-list__media">
 							<a href="<?php the_permalink(); ?>" tabindex="-1" aria-hidden="true">
 								<?php if ( ! ml_treatment_image( get_the_ID(), 'ml-card' ) ) : ?>
-									<span class="td-row__placeholder"><?php esc_html_e( '[TREATMENT IMAGE]', 'ma-lumiere' ); ?></span>
+									<span class="td-row__placeholder"><?php esc_html_e( '', 'ma-lumiere' ); ?></span>
 								<?php endif; ?>
 							</a>
 						</figure>

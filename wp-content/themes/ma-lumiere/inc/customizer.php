@@ -206,7 +206,7 @@ function ml_customize_register( $wp_customize ) {
 	$wp_customize->add_setting(
 		'ml_doctor_name',
 		array(
-			'default'           => __( '[DOCTOR NAME REQUIRED]', 'ma-lumiere' ),
+			'default'           => '',
 			'sanitize_callback' => 'sanitize_text_field',
 		)
 	);
@@ -218,7 +218,7 @@ function ml_customize_register( $wp_customize ) {
 	$wp_customize->add_setting(
 		'ml_doctor_qualifications',
 		array(
-			'default'           => __( '[DOCTOR QUALIFICATIONS REQUIRED]', 'ma-lumiere' ),
+			'default'           => '',
 			'sanitize_callback' => 'sanitize_text_field',
 		)
 	);
@@ -365,8 +365,36 @@ function ml_customize_register( $wp_customize ) {
 	);
 	$wp_customize->add_control( 'ml_map_embed', array(
 		'label'       => __( 'Map embed HTML', 'ma-lumiere' ),
-		'description' => __( 'Paste an <iframe> embed (Google Maps) to display it on the Contact page.', 'ma-lumiere' ),
+		'description' => __( 'Paste an owner-supplied <iframe> embed for the verified clinic location. Leave empty if no verified embed is available.', 'ma-lumiere' ),
 		'type'        => 'textarea',
+		'section'     => 'ml_clinic',
+	) );
+
+	$wp_customize->add_setting(
+		'ml_gbp_url',
+		array(
+			'default'           => '',
+			'sanitize_callback' => 'esc_url_raw',
+		)
+	);
+	$wp_customize->add_control( 'ml_gbp_url', array(
+		'label'       => __( 'Google Business Profile URL', 'ma-lumiere' ),
+		'description' => __( 'Verified Google Business Profile or Maps listing URL. Do not use unverified share links.', 'ma-lumiere' ),
+		'type'        => 'url',
+		'section'     => 'ml_clinic',
+	) );
+
+	$wp_customize->add_setting(
+		'ml_directions_url',
+		array(
+			'default'           => '',
+			'sanitize_callback' => 'esc_url_raw',
+		)
+	);
+	$wp_customize->add_control( 'ml_directions_url', array(
+		'label'       => __( 'Directions URL override', 'ma-lumiere' ),
+		'description' => __( 'Optional verified directions link. If empty, the site generates a directions link from the clinic address.', 'ma-lumiere' ),
+		'type'        => 'url',
 		'section'     => 'ml_clinic',
 	) );
 

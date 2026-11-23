@@ -1,0 +1,130 @@
+﻿{
+  "target": "https://ma-lumiere.in",
+  "robots_url": "https://ma-lumiere.in/robots.txt",
+  "declared": [
+    {
+      "url": "https://ma-lumiere.in/sitemap.xml",
+      "query_redacted": false
+    }
+  ],
+  "found": [
+    {
+      "url": "https://ma-lumiere.in/sitemap.xml/",
+      "query_redacted": false,
+      "source": "robots.txt",
+      "status_code": 200,
+      "kind": "urlset",
+      "valid": true,
+      "error": null
+    }
+  ],
+  "checked": [
+    {
+      "url": "https://ma-lumiere.in/sitemap.xml/",
+      "query_redacted": false,
+      "source": "robots.txt",
+      "status_code": 200,
+      "kind": "urlset",
+      "valid": true,
+      "error": null
+    },
+    {
+      "url": "https://ma-lumiere.in/sitemap_index.xml",
+      "query_redacted": false,
+      "source": "common_path",
+      "status_code": 404,
+      "kind": null,
+      "valid": false,
+      "error": "HTTP 404"
+    },
+    {
+      "url": "https://ma-lumiere.in/sitemap-index.xml",
+      "query_redacted": false,
+      "source": "common_path",
+      "status_code": 404,
+      "kind": null,
+      "valid": false,
+      "error": "HTTP 404"
+    },
+    {
+      "url": "https://ma-lumiere.in/wp-sitemap.xml",
+      "query_redacted": false,
+      "source": "common_path",
+      "status_code": 404,
+      "kind": null,
+      "valid": false,
+      "error": "HTTP 404"
+    }
+  ],
+  "warnings": [],
+  "error": null,
+  "expanded": {
+    "files": [
+      {
+        "url": "https://ma-lumiere.in/sitemap.xml/",
+        "query_redacted": false,
+        "source": "robots.txt",
+        "status_code": 200,
+        "kind": "urlset",
+        "valid": true,
+        "error": null,
+        "gzip": false,
+        "bytes": 6276,
+        "decompressed_bytes": null,
+        "url_count": 35,
+        "child_count": 0,
+        "invalid_loc_count": 0,
+        "duplicate_count": 0,
+        "lastmod_count": 26,
+        "lastmod_invalid_count": 0,
+        "lastmod_oldest": "2026-09-22",
+        "lastmod_newest": "2026-11-17",
+        "lastmod_most_common": "2026-09-23",
+        "lastmod_identical_share": 0.5769,
+        "cross_host_url_count": 0,
+        "cross_host_url_examples": [],
+        "redacted_url_count": 0,
+        "redacted_url_examples": [],
+        "findings": [],
+        "sample_urls": [
+          "https://ma-lumiere.in/",
+          "https://ma-lumiere.in/about/",
+          "https://ma-lumiere.in/treatments/",
+          "https://ma-lumiere.in/book-consultation/",
+          "https://ma-lumiere.in/contact/",
+          "https://ma-lumiere.in/faqs/",
+          "https://ma-lumiere.in/blog/",
+          "https://ma-lumiere.in/skin-clinic-mira-bhayander/",
+          "https://ma-lumiere.in/treatment/acne-acne-scars/",
+          "https://ma-lumiere.in/treatment/dull-tired-skin/",
+          "https://ma-lumiere.in/treatment/enlarged-pores/",
+          "https://ma-lumiere.in/treatment/facial-rejuvenation/",
+          "https://ma-lumiere.in/treatment/hair-loss-hair-thinning/",
+          "https://ma-lumiere.in/treatment/healthy-aging-skin-rejuvenation/",
+          "https://ma-lumiere.in/treatment/hyperhidrosis-excessive-sweating/",
+          "https://ma-lumiere.in/treatment/injectables-facial-contouring/",
+          "https://ma-lumiere.in/treatment/laser-hair-reduction/",
+          "https://ma-lumiere.in/treatment/laser-tattoo-removal/",
+          "https://ma-lumiere.in/treatment/mole-and-skin-tag-removal/",
+          "https://ma-lumiere.in/treatment/pigmentation-uneven-skin-tone/"
+        ]
+      }
+    ],
+    "totals": {
+      "sitemap_files": 1,
+      "total_urls": 35,
+      "unique_urls": 35,
+      "duplicates_within_files": 0,
+      "duplicates_across_files": 0,
+      "invalid_locs": 0
+    },
+    "children": {
+      "limit": 50,
+      "listed": 0,
+      "fetched": 0,
+      "skipped": 0
+    },
+    "truncated": false,
+    "sample_size": 20
+  }
+}

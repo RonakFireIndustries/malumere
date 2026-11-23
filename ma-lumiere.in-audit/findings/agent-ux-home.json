@@ -1,0 +1,27 @@
+﻿{
+  "url": "https://ma-lumiere.in/",
+  "status_code": 200,
+  "render_error": null,
+  "html_findings": {
+    "real_buttons": 8,
+    "real_anchors": 65,
+    "div_onclick_widgets": 0,
+    "semantic_landmarks": 23,
+    "inputs_without_aria": 4,
+    "inputs_without_label": 0
+  },
+  "a11y_findings": {
+    "tree_present": true,
+    "total_nodes": 870,
+    "interactive_nodes": 68,
+    "role_button": 7,
+    "role_link": 56,
+    "role_generic": 40,
+    "unnamed_interactive": 0
+  },
+  "score": 100,
+  "score_status": "complete",
+  "partial": false,
+  "partial_reasons": [],
+  "issues": []
+}

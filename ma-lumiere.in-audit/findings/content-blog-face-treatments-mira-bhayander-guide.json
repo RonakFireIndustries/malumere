@@ -1,0 +1,108 @@
+﻿{
+  "url": "https://ma-lumiere.in/2026/11/17/face-treatments-mira-bhayander-guide/",
+  "source": "url",
+  "status_code": 200,
+  "headers_available": true,
+  "facts": {
+    "title": "Face Treatments in Mira Bhayander: A Practical Guide \u00b7 Ma Lumi\u00e8re",
+    "title_length": 65,
+    "title_count": 1,
+    "meta_description": "A practical guide to face treatments in Mira Bhayander \u2014 acne, acne scars, pigmentation, skin texture and laser hair reduction, explained by Ma Lumi\u00e8re in Mir\u2026",
+    "meta_description_length": 159,
+    "h1": [
+      "Face Treatments in Mira Bhayander: A Practical Guide"
+    ],
+    "h1_count": 1,
+    "heading_level_skips": 0,
+    "template_heading_level_skips": 0,
+    "canonical": "https://ma-lumiere.in/2026/11/17/face-treatments-mira-bhayander-guide/",
+    "canonical_status": "self",
+    "canonical_note": null,
+    "meta_robots": "robots: max-image-preview:large",
+    "x_robots_tag": null,
+    "x_robots_other_agents": [],
+    "hreflang_count": 0,
+    "lang": "en-US",
+    "has_doctype": true,
+    "meta_charset": "utf-8",
+    "header_charset": "utf-8",
+    "has_viewport": true,
+    "images": {
+      "total": 2,
+      "missing_alt": 0,
+      "empty_alt": 1,
+      "missing_dimensions": 0,
+      "first_image_lazy": false
+    },
+    "links": {
+      "total": 30,
+      "without_text": 0,
+      "generic_anchor": 0,
+      "http_on_https": 0
+    },
+    "mixed_content": 0,
+    "url": {
+      "length": 70,
+      "query_params": []
+    },
+    "html_bytes": 39668,
+    "dom": {
+      "nodes": 240,
+      "max_depth": 13,
+      "max_children": 43,
+      "widest_element": "head"
+    },
+    "open_graph": {
+      "og:site_name": "Ma Lumi\u00e8re",
+      "og:locale": "en_US",
+      "og:type": "article",
+      "og:title": "Face Treatments in Mira Bhayander: A Practical Guide",
+      "og:url": "https://ma-lumiere.in/2026/11/17/face-treatments-mira-bhayander-guide/",
+      "og:description": "A practical guide to face treatments in Mira Bhayander \u2014 acne, acne scars, pigmentation, skin texture and laser hair reduction, explained by Ma Lumi\u00e8re in Mir\u2026"
+    },
+    "jsonld_blocks": 2,
+    "jsonld_invalid": 0,
+    "word_count": 626,
+    "words_measured": true,
+    "title_relevance": 1.0,
+    "description_relevance": 0.88
+  },
+  "findings": [
+    {
+      "id": "title-too-long",
+      "severity": "Medium",
+      "message": "The title is longer than 60 characters and may be truncated in results. This is a display heuristic, not a published search engine limit.",
+      "evidence": "65 characters: Face Treatments in Mira Bhayander: A Practical Guide \u00b7 Ma Lumi\u00e8re"
+    },
+    {
+      "id": "missing-og-image",
+      "severity": "Low",
+      "message": "The page has no og:image, so shared links show no preview image.",
+      "evidence": "og:title is present, og:image is not"
+    }
+  ],
+  "not_checked": [],
+  "thresholds": {
+    "title_min_chars": 30,
+    "title_max_chars": 60,
+    "meta_description_min_chars": 120,
+    "meta_description_max_chars": 160,
+    "url_max_chars": 100,
+    "html_max_bytes": 2000000,
+    "thin_content_min_words": 200,
+    "dom_max_depth": 32,
+    "dom_max_children": 60,
+    "title_relevance_min": 0.3,
+    "description_relevance_min": 0.2,
+    "relevance_min_words": 50,
+    "evidence_max_chars": 200
+  },
+  "summary": {
+    "Critical": 0,
+    "High": 0,
+    "Medium": 1,
+    "Low": 1,
+    "total": 2,
+    "checks_run": 47
+  }
+}

@@ -14,6 +14,10 @@ $testimonials = new WP_Query(
 		'order'          => 'DESC',
 	)
 );
+
+if ( ! $testimonials->have_posts() ) {
+	return;
+}
 ?>
 
 <section class="section section--tint testimonials">
@@ -34,8 +38,6 @@ $testimonials = new WP_Query(
 				wp_reset_postdata();
 				?>
 			</div>
-		<?php else : ?>
-			<div class="ph">[REAL PATIENT TESTIMONIAL REQUIRED — publish only with patient consent]</div>
 		<?php endif; ?>
 
 	</div>

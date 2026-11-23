@@ -1,0 +1,134 @@
+﻿[
+    {
+        "ID": 56,
+        "type": "attachment",
+        "slug": "pexels-6476083",
+        "title": "pexels-6476083",
+        "status": "inherit",
+        "hits": [
+            "dermatolog"
+        ],
+        "permalink": "http://localhost/malumere/pexels-6476083/"
+    },
+    {
+        "ID": 15,
+        "type": "ml_before_after",
+        "slug": "acne-treatment-case-reference",
+        "title": "Acne treatment ΓÇö case reference",
+        "status": "publish",
+        "hits": [
+            "CONSENT-APPROVED CASE REQUIRED"
+        ],
+        "permalink": "http://localhost/malumere/results/acne-treatment-case-reference/"
+    },
+    {
+        "ID": 39,
+        "type": "ml_treatment",
+        "slug": "hair-loss-hair-thinning",
+        "title": "Hair Loss &amp; Hair Thinning",
+        "status": "publish",
+        "hits": [
+            "dermatolog"
+        ],
+        "permalink": "http://localhost/malumere/treatment/hair-loss-hair-thinning/"
+    },
+    {
+        "ID": 67,
+        "type": "ml_treatment",
+        "slug": "preventive-skin-care",
+        "title": "Preventive Skin Care",
+        "status": "publish",
+        "hits": [
+            "dermatolog"
+        ],
+        "permalink": "http://localhost/malumere/treatment/preventive-skin-care/"
+    },
+    {
+        "ID": 13,
+        "type": "post",
+        "slug": "welcome-to-ma-lumiere",
+        "title": "Welcome to Ma Lumi├¿re",
+        "status": "publish",
+        "hits": [
+            "dermatolog"
+        ],
+        "permalink": "http://localhost/malumere/2026/09/22/welcome-to-ma-lumiere/"
+    },
+    {
+        "ID": 76,
+        "type": "post",
+        "slug": "first-skin-consultation-mira-road",
+        "title": "First Skin Consultation in Mira Road: What to Expect",
+        "status": "publish",
+        "hits": [
+            "dermatolog"
+        ],
+        "permalink": "http://localhost/malumere/2026/10/13/first-skin-consultation-mira-road/"
+    },
+    {
+        "ID": 79,
+        "type": "revision",
+        "slug": "76-revision-v1",
+        "title": "Your First Skin Consultation: What to Expect at Ma Lumi├¿re",
+        "status": "inherit",
+        "hits": [
+            "dermatolog"
+        ],
+        "permalink": "http://localhost/malumere/?p=79"
+    },
+    {
+        "ID": 81,
+        "type": "revision",
+        "slug": "13-revision-v1",
+        "title": "Welcome to Ma Lumi├¿re",
+        "status": "inherit",
+        "hits": [
+            "dermatolog"
+        ],
+        "permalink": "http://localhost/malumere/?p=81"
+    },
+    {
+        "ID": 83,
+        "type": "revision",
+        "slug": "76-revision-v1",
+        "title": "Your First Skin Consultation: What to Expect at Ma Lumi├¿re",
+        "status": "inherit",
+        "hits": [
+            "dermatolog"
+        ],
+        "permalink": "http://localhost/malumere/?p=83"
+    },
+    {
+        "ID": 85,
+        "type": "revision",
+        "slug": "76-revision-v1",
+        "title": "Your First Skin Consultation: What to Expect at Ma Lumi├¿re",
+        "status": "inherit",
+        "hits": [
+            "dermatolog"
+        ],
+        "permalink": "http://localhost/malumere/?p=85"
+    },
+    {
+        "ID": 86,
+        "type": "revision",
+        "slug": "76-revision-v1",
+        "title": "Your First Skin Consultation: What to Expect at Ma Lumi├¿re",
+        "status": "inherit",
+        "hits": [
+            "dermatolog"
+        ],
+        "permalink": "http://localhost/malumere/?p=86"
+    },
+    {
+        "ID": 88,
+        "type": "revision",
+        "slug": "76-revision-v1",
+        "title": "First Skin Consultation in Mira Road: What to Expect",
+        "status": "inherit",
+        "hits": [
+            "dermatolog"
+        ],
+        "permalink": "http://localhost/malumere/?p=88"
+    }
+]

@@ -1,0 +1,206 @@
+﻿{
+    "treatment_categories": [
+        {
+            "term_id": 2,
+            "name": "Acne &amp; Acne Scars",
+            "slug": "acne-acne-scars",
+            "count": 2,
+            "description": "",
+            "url": "http://localhost/malumere/treatment-type/acne-acne-scars/",
+            "treatments": [
+                {
+                    "id": 43,
+                    "title": "Acne &amp; Acne Scars",
+                    "url": "http://localhost/malumere/treatment/acne-acne-scars/"
+                }
+            ]
+        },
+        {
+            "term_id": 5,
+            "name": "Hair Loss &amp; Hair Thinning",
+            "slug": "hair-loss-hair-thinning",
+            "count": 1,
+            "description": "",
+            "url": "http://localhost/malumere/treatment-type/hair-loss-hair-thinning/",
+            "treatments": [
+                {
+                    "id": 39,
+                    "title": "Hair Loss &amp; Hair Thinning",
+                    "url": "http://localhost/malumere/treatment/hair-loss-hair-thinning/"
+                }
+            ]
+        },
+        {
+            "term_id": 10,
+            "name": "Healthy Aging &amp; Skin Rejuvenation",
+            "slug": "healthy-aging-skin-rejuvenation",
+            "count": 1,
+            "description": "",
+            "url": "http://localhost/malumere/treatment-type/healthy-aging-skin-rejuvenation/",
+            "treatments": [
+                {
+                    "id": 51,
+                    "title": "Healthy Aging &amp; Skin Rejuvenation",
+                    "url": "http://localhost/malumere/treatment/healthy-aging-skin-rejuvenation/"
+                }
+            ]
+        },
+        {
+            "term_id": 11,
+            "name": "Injectables &amp; Facial Contouring",
+            "slug": "injectables-facial-contouring",
+            "count": 1,
+            "description": "",
+            "url": "http://localhost/malumere/treatment-type/injectables-facial-contouring/",
+            "treatments": [
+                {
+                    "id": 53,
+                    "title": "Injectables &amp; Facial Contouring",
+                    "url": "http://localhost/malumere/treatment/injectables-facial-contouring/"
+                }
+            ]
+        },
+        {
+            "term_id": 7,
+            "name": "Laser Hair Reduction",
+            "slug": "laser-hair-reduction",
+            "count": 1,
+            "description": "",
+            "url": "http://localhost/malumere/treatment-type/laser-hair-reduction/",
+            "treatments": [
+                {
+                    "id": 45,
+                    "title": "Laser Hair Reduction",
+                    "url": "http://localhost/malumere/treatment/laser-hair-reduction/"
+                }
+            ]
+        },
+        {
+            "term_id": 9,
+            "name": "Laser Tattoo Removal",
+            "slug": "laser-tattoo-removal",
+            "count": 1,
+            "description": "",
+            "url": "http://localhost/malumere/treatment-type/laser-tattoo-removal/",
+            "treatments": [
+                {
+                    "id": 49,
+                    "title": "Laser Tattoo Removal",
+                    "url": "http://localhost/malumere/treatment/laser-tattoo-removal/"
+                }
+            ]
+        },
+        {
+            "term_id": 12,
+            "name": "Other Concerns We Treat",
+            "slug": "other-concerns-we-treat",
+            "count": 7,
+            "description": "",
+            "url": "http://localhost/malumere/treatment-type/other-concerns-we-treat/",
+            "treatments": [
+                {
+                    "id": 67,
+                    "title": "Preventive Skin Care",
+                    "url": "http://localhost/malumere/treatment/preventive-skin-care/"
+                },
+                {
+                    "id": 65,
+                    "title": "Facial Rejuvenation",
+                    "url": "http://localhost/malumere/treatment/facial-rejuvenation/"
+                },
+                {
+                    "id": 61,
+                    "title": "Uneven Skin Texture",
+                    "url": "http://localhost/malumere/treatment/uneven-skin-texture/"
+                },
+                {
+                    "id": 63,
+                    "title": "Dull &amp; Tired Skin",
+                    "url": "http://localhost/malumere/treatment/dull-tired-skin/"
+                },
+                {
+                    "id": 59,
+                    "title": "Hyperhidrosis (Excessive Sweating)",
+                    "url": "http://localhost/malumere/treatment/hyperhidrosis-excessive-sweating/"
+                },
+                {
+                    "id": 57,
+                    "title": "Mole and Skin Tag Removal",
+                    "url": "http://localhost/malumere/treatment/mole-and-skin-tag-removal/"
+                },
+                {
+                    "id": 55,
+                    "title": "Enlarged Pores",
+                    "url": "http://localhost/malumere/treatment/enlarged-pores/"
+                }
+            ]
+        },
+        {
+            "term_id": 8,
+            "name": "Pigmentation &amp; Uneven Skin Tone",
+            "slug": "pigmentation-uneven-skin-tone",
+            "count": 1,
+            "description": "",
+            "url": "http://localhost/malumere/treatment-type/pigmentation-uneven-skin-tone/",
+            "treatments": [
+                {
+                    "id": 47,
+                    "title": "Pigmentation &amp; Uneven Skin Tone",
+                    "url": "http://localhost/malumere/treatment/pigmentation-uneven-skin-tone/"
+                }
+            ]
+        },
+        {
+            "term_id": 6,
+            "name": "Pre-Wedding Skin Preparation",
+            "slug": "pre-wedding-skin-preparation",
+            "count": 1,
+            "description": "",
+            "url": "http://localhost/malumere/treatment-type/pre-wedding-skin-preparation/",
+            "treatments": [
+                {
+                    "id": 41,
+                    "title": "Pre-Wedding Skin Preparation",
+                    "url": "http://localhost/malumere/treatment/pre-wedding-skin-preparation/"
+                }
+            ]
+        }
+    ],
+    "faqs": [
+        {
+            "id": 110,
+            "title": "Where is Ma Lumi├¿re skin clinic located?",
+            "content": "<p>Ma Lumi├¿re is on the first floor of Vasudev Sky High, Kanakia Road, Beverly Park, Mira Road East, 401105. It is a short drive from Bhayander East, Bhayander West and Kashimira. The contact page includes a Google Maps link for directions.</p>"
+        },
+        {
+            "id": 111,
+            "title": "Do you see patients from Bhayander?",
+            "content": "<p>Yes. A large share of our patients travel from Bhayander East, Bhayander West and Kashimira. Consultations are by appointment, so we recommend calling ahead and allowing extra time during peak traffic on the Mira RoadΓÇôBhayander stretch.</p>"
+        },
+        {
+            "id": 112,
+            "title": "What happens at the first skin consultation?",
+            "content": "<p>We review your skin, medical history and previous treatments, then discuss what is likely to help and what is not. You will receive a clear plan, an estimate of sessions and the cost before deciding whether to proceed. There is no obligation to book a treatment on the day.</p>"
+        },
+        {
+            "id": 113,
+            "title": "How much does a skin or face treatment cost?",
+            "content": "<p>Cost depends on the treatment, the area treated and the number of sessions required. A quotation is given after your consultation, once the plan is clear. We do not recommend packages before your skin has been assessed.</p>"
+        },
+        {
+            "id": 114,
+            "title": "Is laser hair reduction suitable for men and women?",
+            "content": "<p>Yes. Laser hair reduction can be planned for both men and women on the face, underarms, legs, back, chest and other areas. Suitability depends on hair colour, skin type and medical history, so a consultation and patch test come first.</p>"
+        },
+        {
+            "id": 115,
+            "title": "Can you treat acne scars and pigmentation?",
+            "content": "<p>Yes, but they are usually managed in stages. Active acne is brought under control first, then scars or pigmentation are treated with an appropriate plan. Results build gradually over sessions, and we will explain the realistic timeline and maintenance involved.</p>"
+        },
+        {
+            "id": 16,
+            "title": "How do I book an appointment?",
+            "content": "Online booking is now open ΓÇö choose a treatment, pick a date and time, and confirm your consultation in a few steps. You can still call or WhatsApp the clinic; contact details are on this page and in the footer."
+        }
+    ]
+}

@@ -33,8 +33,6 @@ $faqs = new WP_Query(
 				wp_reset_postdata();
 				?>
 			</div>
-		<?php else : ?>
-			<div class="ph">[FAQ CONTENT REQUIRED — add FAQs in the WordPress admin]</div>
 		<?php endif; ?>
 
 	</div>

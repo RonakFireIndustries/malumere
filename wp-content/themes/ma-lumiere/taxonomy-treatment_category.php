@@ -31,7 +31,7 @@ $term = get_queried_object();
 				endwhile;
 			else :
 				?>
-				<div class="ph" style="grid-column:1/-1">[NO TREATMENTS IN THIS CATEGORY YET]</div>
+				<div class="entry-content" style="grid-column:1/-1"><p><?php esc_html_e( 'Treatments in this category are being reviewed. Please view all treatments or book a consultation for guidance.', 'ma-lumiere' ); ?></p></div>
 			<?php endif; ?>
 		</div>
 

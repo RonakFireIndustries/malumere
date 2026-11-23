@@ -1,0 +1,127 @@
+﻿{
+  "url": "https://ma-lumiere.in/blog/",
+  "source": "url",
+  "status_code": 200,
+  "headers_available": true,
+  "facts": {
+    "title": "Blog \u00b7 Ma Lumi\u00e8re",
+    "title_length": 17,
+    "title_count": 1,
+    "meta_description": "Skin knowledge from Ma Lumi\u00e8re in Mira Road East, Mumbai: practical guides to skin treatments, consultations, and aftercare.",
+    "meta_description_length": 124,
+    "h1": [
+      "Blog"
+    ],
+    "h1_count": 1,
+    "heading_level_skips": 1,
+    "template_heading_level_skips": 0,
+    "canonical": null,
+    "canonical_status": "missing",
+    "canonical_note": null,
+    "meta_robots": "robots: max-image-preview:large",
+    "x_robots_tag": null,
+    "x_robots_other_agents": [],
+    "hreflang_count": 0,
+    "lang": "en-US",
+    "has_doctype": true,
+    "meta_charset": "utf-8",
+    "header_charset": "utf-8",
+    "has_viewport": true,
+    "images": {
+      "total": 2,
+      "missing_alt": 0,
+      "empty_alt": 1,
+      "missing_dimensions": 0,
+      "first_image_lazy": false
+    },
+    "links": {
+      "total": 26,
+      "without_text": 0,
+      "generic_anchor": 0,
+      "http_on_https": 0
+    },
+    "mixed_content": 0,
+    "url": {
+      "length": 27,
+      "query_params": []
+    },
+    "html_bytes": 31478,
+    "dom": {
+      "nodes": 173,
+      "max_depth": 12,
+      "max_children": 35,
+      "widest_element": "head"
+    },
+    "open_graph": {
+      "og:site_name": "Ma Lumi\u00e8re",
+      "og:locale": "en_US",
+      "og:type": "website",
+      "og:title": "Blog \u00b7 Ma Lumi\u00e8re",
+      "og:url": "https://ma-lumiere.in/blog",
+      "og:description": "Skin knowledge from Ma Lumi\u00e8re in Mira Road East, Mumbai: practical guides to skin treatments, consultations, and aftercare."
+    },
+    "jsonld_blocks": 1,
+    "jsonld_invalid": 0,
+    "word_count": 80,
+    "words_measured": true,
+    "title_relevance": 1.0,
+    "description_relevance": 0.83
+  },
+  "findings": [
+    {
+      "id": "title-too-short",
+      "severity": "Medium",
+      "message": "The title is shorter than 30 characters. A very short title rarely describes the page well enough to earn a click. This is a heuristic, not a search engine rule.",
+      "evidence": "17 characters: Blog \u00b7 Ma Lumi\u00e8re"
+    },
+    {
+      "id": "missing-canonical",
+      "severity": "Medium",
+      "message": "The page has no canonical link. Search engines then choose the preferred URL themselves.",
+      "evidence": "no <link rel=\"canonical\"> with an href"
+    },
+    {
+      "id": "thin-content",
+      "severity": "Medium",
+      "message": "The page has fewer than 200 words of visible body text. Google has no minimum word count, so this is not a ranking rule. Check that the page fully answers what a visitor came for.",
+      "evidence": "80 words of visible body text"
+    },
+    {
+      "id": "heading-level-skip",
+      "severity": "Low",
+      "message": "Heading levels skip inside the main content, for example from H2 to H4. Google Search does not mind heading order, but screen reader users move through a page by heading level.",
+      "evidence": "1 skipped heading level(s) in the main content",
+      "count": 1
+    },
+    {
+      "id": "missing-og-image",
+      "severity": "Low",
+      "message": "The page has no og:image, so shared links show no preview image.",
+      "evidence": "og:title is present, og:image is not"
+    }
+  ],
+  "not_checked": [],
+  "thresholds": {
+    "title_min_chars": 30,
+    "title_max_chars": 60,
+    "meta_description_min_chars": 120,
+    "meta_description_max_chars": 160,
+    "url_max_chars": 100,
+    "html_max_bytes": 2000000,
+    "thin_content_min_words": 200,
+    "dom_max_depth": 32,
+    "dom_max_children": 60,
+    "title_relevance_min": 0.3,
+    "description_relevance_min": 0.2,
+    "relevance_min_words": 50,
+    "evidence_max_chars": 200
+  },
+  "summary": {
+    "Critical": 0,
+    "High": 0,
+    "Medium": 3,
+    "Low": 2,
+    "total": 5,
+    "checks_run": 47
+  }
+}

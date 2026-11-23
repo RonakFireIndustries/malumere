@@ -68,7 +68,11 @@
 					if ( ! $treatments ) {
 						echo '<li><a href="' . esc_url( ml_page_url_by_template( 'page-templates/page-treatments.php' ) ) . '">' . esc_html__( 'View all treatments', 'ma-lumiere' ) . '</a></li>';
 					}
-					?>
+					$location_url = ml_page_url_by_template( 'page-templates/page-mira-bhayander.php', '' );
+					if ( $location_url && '#' !== $location_url ) :
+						?>
+						<li><a href="<?php echo esc_url( $location_url ); ?>"><?php esc_html_e( 'Skin clinic in Mira-Bhayander', 'ma-lumiere' ); ?></a></li>
+					<?php endif; ?>
 				</ul>
 			</div>
 
@@ -76,10 +80,13 @@
 				<p class="footer__heading"><?php esc_html_e( 'Contact', 'ma-lumiere' ); ?></p>
 				<ul class="footer__contact">
 					<?php if ( ml_clinic_address() ) : ?>
-						<li><?php ml_icon( 'marker', 80 ); ?><span><?php echo esc_html( ml_clinic_address() ); ?></span></li>
+						<li><?php ml_icon( 'marker', 16 ); ?><span><?php echo esc_html( ml_clinic_address() ); ?></span></li>
 					<?php endif; ?>
 					<?php if ( ml_clinic_phone() ) : ?>
-						<li><?php ml_icon( 'phone', 16 ); ?><a href="tel:<?php echo esc_attr( preg_replace( '/[^0-9+]/', '', ml_clinic_phone() ) ); ?>"><?php echo esc_html( ml_clinic_phone() ); ?></a></li>
+						<li><?php ml_icon( 'phone', 16 ); ?><a href="tel:<?php echo esc_attr( ml_clinic_phone_href() ); ?>"><?php echo esc_html( ml_clinic_phone() ); ?></a></li>
+					<?php endif; ?>
+					<?php if ( ml_clinic_directions_url() ) : ?>
+						<li><?php ml_icon( 'marker', 16 ); ?><a href="<?php echo esc_url( ml_clinic_directions_url() ); ?>" target="_blank" rel="noopener noreferrer"><?php esc_html_e( 'Get directions', 'ma-lumiere' ); ?></a></li>
 					<?php endif; ?>
 					<?php if ( ml_clinic_email() ) : ?>
 						<li><?php ml_icon( 'mail', 16 ); ?><a href="mailto:<?php echo esc_attr( ml_clinic_email() ); ?>"><?php echo esc_html( ml_clinic_email() ); ?></a></li>

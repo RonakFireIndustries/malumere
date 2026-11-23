@@ -18,6 +18,7 @@ $results = new WP_Query(
 		'order'          => 'DESC',
 	)
 );
+$has_results = $results->have_posts();
 ?>
 
 <section class="section results" id="results">
@@ -25,13 +26,13 @@ $results = new WP_Query(
 
 		<div class="section__head section__head--center">
 			<p class="eyebrow" data-reveal="fade"><?php esc_html_e( 'Results', 'ma-lumiere' ); ?></p>
-			<h2 class="section__title" data-reveal="fade"><?php esc_html_e( 'The difference, honestly shown', 'ma-lumiere' ); ?></h2>
+			<h2 class="section__title" data-reveal="fade"><?php echo esc_html( $has_results ? __( 'The difference, honestly shown', 'ma-lumiere' ) : __( 'How treatment plans are planned', 'ma-lumiere' ) ); ?></h2>
 			<p class="section__lead" data-reveal="fade">
-				<?php esc_html_e( 'Real outcomes from the clinic, shared with consent and care for privacy. Individual results vary.', 'ma-lumiere' ); ?>
+				<?php echo esc_html( $has_results ? __( 'Real outcomes from the clinic, shared with consent and care for privacy. Individual results vary.', 'ma-lumiere' ) : __( 'Patient photographs are not published here at this time. A consultation explains what can realistically change, the likely sequence of treatment and the factors that affect outcomes.', 'ma-lumiere' ) ); ?>
 			</p>
 		</div>
 
-		<?php if ( $results->have_posts() ) : ?>
+		<?php if ( $has_results ) : ?>
 			<div class="results__grid">
 				<?php
 				while ( $results->have_posts() ) :
@@ -41,8 +42,6 @@ $results = new WP_Query(
 				wp_reset_postdata();
 				?>
 			</div>
-		<?php else : ?>
-			<div class="ph">[REAL BEFORE & AFTER RESULTS REQUIRED — add consent-approved case studies]</div>
 		<?php endif; ?>
 
 	</div>

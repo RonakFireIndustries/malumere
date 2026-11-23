@@ -1,0 +1,92 @@
+﻿[
+    {
+        "ID": 2,
+        "title": "Sample Page",
+        "slug": "sample-page",
+        "template": "default",
+        "seo_title": "",
+        "seo_description": "",
+        "url": "http://localhost/malumere/sample-page/"
+    },
+    {
+        "ID": 3,
+        "title": "Privacy Policy",
+        "slug": "privacy-policy",
+        "template": "default",
+        "seo_title": "",
+        "seo_description": "",
+        "url": "http://localhost/malumere/?page_id=3"
+    },
+    {
+        "ID": 6,
+        "title": "Home",
+        "slug": "home",
+        "template": "",
+        "seo_title": "",
+        "seo_description": "",
+        "url": "http://localhost/malumere/"
+    },
+    {
+        "ID": 7,
+        "title": "About",
+        "slug": "about",
+        "template": "page-templates/page-about.php",
+        "seo_title": "",
+        "seo_description": "",
+        "url": "http://localhost/malumere/about/"
+    },
+    {
+        "ID": 8,
+        "title": "Treatments",
+        "slug": "treatments",
+        "template": "page-templates/page-treatments.php",
+        "seo_title": "",
+        "seo_description": "",
+        "url": "http://localhost/malumere/treatments/"
+    },
+    {
+        "ID": 9,
+        "title": "Book Consultation",
+        "slug": "book-consultation",
+        "template": "page-templates/page-appointment.php",
+        "seo_title": "",
+        "seo_description": "",
+        "url": "http://localhost/malumere/book-consultation/"
+    },
+    {
+        "ID": 10,
+        "title": "Contact",
+        "slug": "contact",
+        "template": "page-templates/page-contact.php",
+        "seo_title": "",
+        "seo_description": "",
+        "url": "http://localhost/malumere/contact/"
+    },
+    {
+        "ID": 11,
+        "title": "FAQs",
+        "slug": "faqs",
+        "template": "page-templates/page-faq.php",
+        "seo_title": "",
+        "seo_description": "",
+        "url": "http://localhost/malumere/faqs/"
+    },
+    {
+        "ID": 12,
+        "title": "Blog",
+        "slug": "blog",
+        "template": "",
+        "seo_title": "",
+        "seo_description": "",
+        "url": "http://localhost/malumere/blog/"
+    },
+    {
+        "ID": 109,
+        "title": "Skin Clinic in Mira Bhayander",
+        "slug": "skin-clinic-mira-bhayander",
+        "template": "page-templates/page-mira-bhayander.php",
+        "seo_title": "Skin Clinic in Mira Bhayander | Face & Skin Treatments",
+        "seo_description": "Looking for a skin clinic in Mira Bhayander? Ma Lumi├¿re in Mira Road East offers face treatments, acne and pigmentation care, laser hair reduction and more.",
+        "url": "http://localhost/malumere/skin-clinic-mira-bhayander/"
+    }
+]

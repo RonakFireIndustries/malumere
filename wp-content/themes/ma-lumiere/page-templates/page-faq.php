@@ -39,9 +39,7 @@ $faqs = get_posts(
 <section class="section">
 	<div class="container">
 
-		<?php if ( ! $faqs ) : ?>
-			<div class="ph">[FAQ CONTENT REQUIRED — add FAQs in the WordPress admin]</div>
-		<?php endif; ?>
+
 
 		<?php if ( ! is_wp_error( $topics ) && $topics ) : ?>
 			<ul class="chips">

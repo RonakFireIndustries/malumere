@@ -1,0 +1,68 @@
+{
+  "sitemap_no_slash": {
+    "status": 301,
+    "location": "https://ma-lumiere.in/sitemap.xml/",
+    "headers": {
+      "Cache-Control": null,
+      "Expires": null,
+      "ETag": null,
+      "Last-Modified": null,
+      "Pragma": null,
+      "Age": null,
+      "Content-Type": "text/html; charset=UTF-8",
+      "X-Content-Type-Options": null,
+      "Server": "Apache"
+    }
+  },
+  "asset_css": {
+    "status": 200,
+    "location": null,
+    "headers": {
+      "Cache-Control": null,
+      "Expires": null,
+      "ETag": null,
+      "Last-Modified": "Mon, 23 Nov 2026 06:19:29 GMT",
+      "Pragma": null,
+      "Age": null,
+      "Content-Type": "text/css",
+      "X-Content-Type-Options": null,
+      "Server": "Apache"
+    }
+  },
+  "asset_js": {
+    "status": 200,
+    "location": null,
+    "headers": {
+      "Cache-Control": null,
+      "Expires": null,
+      "ETag": null,
+      "Last-Modified": "Mon, 23 Nov 2026 06:19:21 GMT",
+      "Pragma": null,
+      "Age": null,
+      "Content-Type": "application/javascript",
+      "X-Content-Type-Options": null,
+      "Server": "Apache"
+    }
+  },
+  "blog_links_to_articles": [
+    "https://ma-lumiere.in/2026/09/22/welcome-to-ma-lumiere/",
+    "https://ma-lumiere.in/2026/11/17/face-treatments-mira-bhayander-guide/",
+    "https://ma-lumiere.in/treatment/acne-acne-scars/",
+    "https://ma-lumiere.in/treatment/hair-loss-hair-thinning/",
+    "https://ma-lumiere.in/treatment/laser-hair-reduction/",
+    "https://ma-lumiere.in/treatment/laser-tattoo-removal/",
+    "https://ma-lumiere.in/treatment/pigmentation-uneven-skin-tone/",
+    "https://ma-lumiere.in/treatment/pre-wedding-skin-preparation/"
+  ],
+  "css": {
+    "bytes": 57578,
+    "media_queries": 5,
+    "max_width_queries": 24
+  },
+  "stack_signals": {
+    "generator_meta": true,
+    "wp_json_link_header": true,
+    "php_session_cookie": false,
+    "x_powered_by": null
+  }
+}

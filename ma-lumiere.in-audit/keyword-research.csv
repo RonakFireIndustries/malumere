@@ -1,0 +1,111 @@
+keyword,cluster,intent,location,estimated_monthly_volume,estimated_difficulty,recommended_landing_page,priority,content_format,data_status
+acne treatment clinic mira road,Acne & acne scars,commercial,Mira Road,200-500,Medium,/treatment/acne-acne-scars/,High,Service page,ESTIMATE
+acne scar treatment mira road,Acne & acne scars,commercial,Mira Road,150-400,Medium,/treatment/acne-acne-scars/,High,Service page,ESTIMATE
+best acne doctor bhayander,Acne & acne scars,commercial,Bhayander,100-300,Medium,/skin-clinic-mira-bhayander/,High,Location hub,ESTIMATE
+pimples treatment near me mira road,Acne & acne scars,commercial,Mira Road,200-500,High,/treatment/acne-acne-scars/,High,Service page,ESTIMATE
+acne clinic borivali,Acne & acne scars,commercial,Borivali,100-300,Medium,/skin-clinic-mira-bhayander/,Medium,Location hub,ESTIMATE
+acne scar removal dahisar,Acne & acne scars,commercial,Dahisar,50-200,Low,/treatment/acne-acne-scars/,Medium,Service page,ESTIMATE
+skin doctor for acne kandivali,Acne & acne scars,commercial,Kandivali,100-250,Medium,/skin-clinic-mira-bhayander/,Medium,Location hub,ESTIMATE
+acne treatment options,Acne & acne scars,informational,India/Generic,3000-8000,High,/blog/,Medium,Blog guide,ESTIMATE
+how to treat acne scars,Acne & acne scars,informational,India/Generic,2000-5000,High,/blog/,Medium,Blog guide,ESTIMATE
+types of acne scars,Acne & acne scars,informational,India/Generic,500-1500,Medium,/blog/,Low,Blog post,ESTIMATE
+acne causes and prevention,Acne & acne scars,informational,India/Generic,1000-3000,Medium,/blog/,Low,Blog post,ESTIMATE
+can acne scars be removed,Acne & acne scars,question,India/Generic,1000-3000,Medium,/faqs/,Medium,FAQ,ESTIMATE
+is acne treatment safe,Acne & acne scars,question,India/Generic,300-800,Low,/faqs/,Low,FAQ,ESTIMATE
+how long does acne treatment take,Acne & acne scars,question,India/Generic,500-1500,Medium,/faqs/,Medium,FAQ,ESTIMATE
+will acne come back after treatment,Acne & acne scars,question,India/Generic,200-600,Low,/faqs/,Low,FAQ,ESTIMATE
+laser vs microneedling for acne scars,Acne & acne scars,comparison,India/Generic,300-800,Medium,/blog/,Medium,Comparison article,ESTIMATE
+acne treatment vs home remedies,Acne & acne scars,comparison,India/Generic,200-500,Low,/blog/,Low,Comparison article,ESTIMATE
+chemical peel vs laser for acne scars,Acne & acne scars,comparison,India/Generic,300-800,Medium,/blog/,Medium,Comparison article,ESTIMATE
+acne treatment cost mira road,Acne & acne scars,cost,Mira Road,100-300,Low,/treatment/acne-acne-scars/,High,Cost guide,ESTIMATE
+acne scar treatment cost india,Acne & acne scars,cost,India/Generic,1000-3000,Medium,/blog/,Medium,Cost guide,ESTIMATE
+pimples treatment cost near bhayander,Acne & acne scars,cost,Bhayander,50-200,Low,/treatment/acne-acne-scars/,Medium,Cost guide,ESTIMATE
+acne treatment mira bhayander,Acne & acne scars,location,Mira Bhayander,200-500,Medium,/skin-clinic-mira-bhayander/,High,Location hub,ESTIMATE
+acne clinic vasai,Acne & acne scars,location,Vasai,100-250,Low,/skin-clinic-mira-bhayander/,Low,Location hub,ESTIMATE
+acne doctor nallasopara,Acne & acne scars,location,Nalasopara,50-200,Low,/skin-clinic-mira-bhayander/,Low,Location hub,ESTIMATE
+acne treatment andheri,Acne & acne scars,location,Andheri,200-500,High,/skin-clinic-mira-bhayander/,Low,Location hub,ESTIMATE
+acne treatment virar,Acne & acne scars,location,Virar,50-200,Low,/skin-clinic-mira-bhayander/,Low,Location hub,ESTIMATE
+acne treatment goregaon,Acne & acne scars,location,Goregaon,100-250,Medium,/skin-clinic-mira-bhayander/,Low,Location hub,ESTIMATE
+acne scars treatment andheri,Acne & acne scars,location,Andheri,150-400,High,/skin-clinic-mira-bhayander/,Low,Location hub,ESTIMATE
+botox clinic mira road,Botox / injectables,commercial,Mira Road,150-400,Medium,/treatment/injectables-facial-contouring/,High,Service page,ESTIMATE
+botox treatment bhayander,Botox / injectables,commercial,Bhayander,100-300,Medium,/treatment/injectables-facial-contouring/,High,Service page,ESTIMATE
+botox near me,Botox / injectables,commercial,Mira Road,500-1500,High,/treatment/injectables-facial-contouring/,Medium,Service page,ESTIMATE
+facial contouring clinic mira road,Botox / injectables,commercial,Mira Road,50-200,Low,/treatment/injectables-facial-contouring/,Medium,Service page,ESTIMATE
+botox doctor borivali,Botox / injectables,commercial,Borivali,100-250,Medium,/skin-clinic-mira-bhayander/,Medium,Location hub,ESTIMATE
+injectable treatment dahisar,Botox / injectables,commercial,Dahisar,50-150,Low,/treatment/injectables-facial-contouring/,Low,Service page,ESTIMATE
+what is botox,Botox / injectables,informational,India/Generic,5000-15000,High,/blog/,Medium,Blog guide,ESTIMATE
+botox for wrinkles,Botox / injectables,informational,India/Generic,2000-5000,High,/blog/,Medium,Blog guide,ESTIMATE
+how does botox work,Botox / injectables,informational,India/Generic,1500-4000,High,/blog/,Low,Blog post,ESTIMATE
+facial contouring treatment guide,Botox / injectables,informational,India/Generic,200-600,Low,/blog/,Low,Blog post,ESTIMATE
+is botox safe,Botox / injectables,question,India/Generic,3000-8000,High,/faqs/,Medium,FAQ,ESTIMATE
+how long does botox last,Botox / injectables,question,India/Generic,2000-5000,High,/faqs/,Medium,FAQ,ESTIMATE
+does botox hurt,Botox / injectables,question,India/Generic,800-2000,Medium,/faqs/,Low,FAQ,ESTIMATE
+can botox be reversed,Botox / injectables,question,India/Generic,300-800,Low,/faqs/,Low,FAQ,ESTIMATE
+at what age can you get botox,Botox / injectables,question,India/Generic,500-1500,Medium,/faqs/,Low,FAQ,ESTIMATE
+botox vs fillers,Botox / injectables,comparison,India/Generic,2500-6000,High,/blog/,Medium,Comparison article,ESTIMATE
+botox vs dermal fillers for face,Botox / injectables,comparison,India/Generic,800-2000,Medium,/blog/,Low,Comparison article,ESTIMATE
+botox cost mira road,Botox / injectables,cost,Mira Road,100-300,Low,/treatment/injectables-facial-contouring/,High,Cost guide,ESTIMATE
+botox cost india,Botox / injectables,cost,India/Generic,3000-8000,High,/blog/,Medium,Cost guide,ESTIMATE
+botox price bhayander,Botox / injectables,cost,Bhayander,50-200,Low,/treatment/injectables-facial-contouring/,Medium,Cost guide,ESTIMATE
+botox treatment mira bhayander,Botox / injectables,location,Mira Bhayander,150-400,Medium,/skin-clinic-mira-bhayander/,High,Location hub,ESTIMATE
+botox clinic kandivali,Botox / injectables,location,Kandivali,100-250,Medium,/skin-clinic-mira-bhayander/,Medium,Location hub,ESTIMATE
+botox clinic malad,Botox / injectables,location,Malad,100-250,Medium,/skin-clinic-mira-bhayander/,Low,Location hub,ESTIMATE
+botox treatment vasai,Botox / injectables,location,Vasai,50-150,Low,/skin-clinic-mira-bhayander/,Low,Location hub,ESTIMATE
+botox andheri west,Botox / injectables,location,Andheri,200-500,High,/skin-clinic-mira-bhayander/,Low,Location hub,ESTIMATE
+botox clinic jogeshwari,Botox / injectables,location,Jogeshwari,100-250,Medium,/skin-clinic-mira-bhayander/,Low,Location hub,ESTIMATE
+botox treatment naigaon,Botox / injectables,location,Naigaon,50-150,Low,/skin-clinic-mira-bhayander/,Low,Location hub,ESTIMATE
+hair loss treatment mira road,Hair loss & hair thinning,commercial,Mira Road,200-500,Medium,/treatment/hair-loss-hair-thinning/,High,Service page,ESTIMATE
+hair thinning clinic bhayander,Hair loss & hair thinning,commercial,Bhayander,100-300,Medium,/treatment/hair-loss-hair-thinning/,High,Service page,ESTIMATE
+hair doctor near me mira road,Hair loss & hair thinning,commercial,Mira Road,150-400,Medium,/treatment/hair-loss-hair-thinning/,High,Service page,ESTIMATE
+hair fall treatment borivali,Hair loss & hair thinning,commercial,Borivali,200-500,High,/skin-clinic-mira-bhayander/,Medium,Location hub,ESTIMATE
+hair loss clinic dahisar,Hair loss & hair thinning,commercial,Dahisar,50-200,Low,/treatment/hair-loss-hair-thinning/,Medium,Service page,ESTIMATE
+best hair thinning doctor kandivali,Hair loss & hair thinning,commercial,Kandivali,100-250,Medium,/skin-clinic-mira-bhayander/,Medium,Location hub,ESTIMATE
+causes of hair loss,Hair loss & hair thinning,informational,India/Generic,5000-15000,High,/blog/,Medium,Blog guide,ESTIMATE
+how to stop hair fall,Hair loss & hair thinning,informational,India/Generic,5000-15000,High,/blog/,Medium,Blog guide,ESTIMATE
+hair thinning causes in women,Hair loss & hair thinning,informational,India/Generic,1500-4000,High,/blog/,Low,Blog post,ESTIMATE
+types of hair loss,Hair loss & hair thinning,informational,India/Generic,800-2000,Medium,/blog/,Low,Blog post,ESTIMATE
+hair fall after illness,Hair loss & hair thinning,informational,India/Generic,500-1500,Medium,/blog/,Low,Blog post,ESTIMATE
+can hair loss be reversed,Hair loss & hair thinning,question,India/Generic,1500-4000,High,/faqs/,Medium,FAQ,ESTIMATE
+is hair loss treatment safe,Hair loss & hair thinning,question,India/Generic,300-800,Low,/faqs/,Low,FAQ,ESTIMATE
+how long does hair treatment take to show results,Hair loss & hair thinning,question,India/Generic,500-1500,Medium,/faqs/,Medium,FAQ,ESTIMATE
+can stress cause hair loss,Hair loss & hair thinning,question,India/Generic,1500-4000,Medium,/blog/,Low,Blog post,ESTIMATE
+hair oil vs medical hair treatment,Hair loss & hair thinning,comparison,India/Generic,300-800,Low,/blog/,Low,Comparison article,ESTIMATE
+prp vs minoxidil for hair loss,Hair loss & hair thinning,comparison,India/Generic,800-2000,Medium,/blog/,Medium,Comparison article,ESTIMATE
+hair loss treatment cost mira road,Hair loss & hair thinning,cost,Mira Road,100-300,Low,/treatment/hair-loss-hair-thinning/,High,Cost guide,ESTIMATE
+hair fall treatment cost india,Hair loss & hair thinning,cost,India/Generic,2000-5000,Medium,/blog/,Medium,Cost guide,ESTIMATE
+hair treatment cost bhayander,Hair loss & hair thinning,cost,Bhayander,50-200,Low,/treatment/hair-loss-hair-thinning/,Medium,Cost guide,ESTIMATE
+hair loss treatment mira bhayander,Hair loss & hair thinning,location,Mira Bhayander,150-400,Medium,/skin-clinic-mira-bhayander/,High,Location hub,ESTIMATE
+hair fall clinic vasai,Hair loss & hair thinning,location,Vasai,100-250,Low,/skin-clinic-mira-bhayander/,Low,Location hub,ESTIMATE
+hair loss doctor naigaon,Hair loss & hair thinning,location,Naigaon,50-150,Low,/skin-clinic-mira-bhayander/,Low,Location hub,ESTIMATE
+hair thinning treatment andheri,Hair loss & hair thinning,location,Andheri,200-500,High,/skin-clinic-mira-bhayander/,Low,Location hub,ESTIMATE
+hair clinic jogeshwari,Hair loss & hair thinning,location,Jogeshwari,100-250,Medium,/skin-clinic-mira-bhayander/,Low,Location hub,ESTIMATE
+hair fall treatment virar,Hair loss & hair thinning,location,Virar,50-200,Low,/skin-clinic-mira-bhayander/,Low,Location hub,ESTIMATE
+hair thinning treatment goregaon,Hair loss & hair thinning,location,Goregaon,100-250,Medium,/skin-clinic-mira-bhayander/,Low,Location hub,ESTIMATE
+pigmentation treatment mira road,Pigmentation & uneven skin tone,commercial,Mira Road,200-500,Medium,/treatment/pigmentation-uneven-skin-tone/,High,Service page,ESTIMATE
+uneven skin tone clinic bhayander,Pigmentation & uneven skin tone,commercial,Bhayander,100-300,Medium,/treatment/pigmentation-uneven-skin-tone/,High,Service page,ESTIMATE
+dark spots treatment near me mira road,Pigmentation & uneven skin tone,commercial,Mira Road,200-500,Medium,/treatment/pigmentation-uneven-skin-tone/,High,Service page,ESTIMATE
+melasma treatment borivali,Pigmentation & uneven skin tone,commercial,Borivali,150-400,Medium,/skin-clinic-mira-bhayander/,Medium,Location hub,ESTIMATE
+skin pigmentation clinic dahisar,Pigmentation & uneven skin tone,commercial,Dahisar,50-200,Low,/treatment/pigmentation-uneven-skin-tone/,Medium,Service page,ESTIMATE
+tan removal clinic kandivali,Pigmentation & uneven skin tone,commercial,Kandivali,100-300,Medium,/skin-clinic-mira-bhayander/,Medium,Location hub,ESTIMATE
+causes of pigmentation,Pigmentation & uneven skin tone,informational,India/Generic,3000-8000,High,/blog/,Medium,Blog guide,ESTIMATE
+how to reduce dark spots,Pigmentation & uneven skin tone,informational,India/Generic,2500-6000,High,/blog/,Medium,Blog guide,ESTIMATE
+melasma causes and treatment,Pigmentation & uneven skin tone,informational,India/Generic,1500-4000,High,/blog/,Low,Blog post,ESTIMATE
+types of skin pigmentation,Pigmentation & uneven skin tone,informational,India/Generic,500-1500,Medium,/blog/,Low,Blog post,ESTIMATE
+uneven skin tone causes,Pigmentation & uneven skin tone,informational,India/Generic,800-2000,Medium,/blog/,Low,Blog post,ESTIMATE
+can pigmentation be cured,Pigmentation & uneven skin tone,question,India/Generic,1500-4000,High,/faqs/,Medium,FAQ,ESTIMATE
+is pigmentation treatment safe,Pigmentation & uneven skin tone,question,India/Generic,300-800,Low,/faqs/,Low,FAQ,ESTIMATE
+how long does pigmentation treatment take,Pigmentation & uneven skin tone,question,India/Generic,500-1500,Medium,/faqs/,Medium,FAQ,ESTIMATE
+can dark spots be removed permanently,Pigmentation & uneven skin tone,question,India/Generic,1000-3000,Medium,/faqs/,Low,FAQ,ESTIMATE
+does tanning cause pigmentation,Pigmentation & uneven skin tone,question,India/Generic,500-1500,Medium,/blog/,Low,Blog post,ESTIMATE
+laser vs chemical peel for pigmentation,Pigmentation & uneven skin tone,comparison,India/Generic,500-1500,Medium,/blog/,Medium,Comparison article,ESTIMATE
+creams vs laser for dark spots,Pigmentation & uneven skin tone,comparison,India/Generic,300-800,Low,/blog/,Low,Comparison article,ESTIMATE
+pigmentation treatment cost mira road,Pigmentation & uneven skin tone,cost,Mira Road,100-300,Low,/treatment/pigmentation-uneven-skin-tone/,High,Cost guide,ESTIMATE
+melasma treatment cost india,Pigmentation & uneven skin tone,cost,India/Generic,1000-3000,Medium,/blog/,Medium,Cost guide,ESTIMATE
+dark spot removal cost bhayander,Pigmentation & uneven skin tone,cost,Bhayander,50-200,Low,/treatment/pigmentation-uneven-skin-tone/,Medium,Cost guide,ESTIMATE
+pigmentation treatment mira bhayander,Pigmentation & uneven skin tone,location,Mira Bhayander,150-400,Medium,/skin-clinic-mira-bhayander/,High,Location hub,ESTIMATE
+skin pigmentation clinic vasai,Pigmentation & uneven skin tone,location,Vasai,100-250,Low,/skin-clinic-mira-bhayander/,Low,Location hub,ESTIMATE
+dark spots treatment nallasopara,Pigmentation & uneven skin tone,location,Nalasopara,50-200,Low,/skin-clinic-mira-bhayander/,Low,Location hub,ESTIMATE
+pigmentation clinic goregaon,Pigmentation & uneven skin tone,location,Goregaon,100-250,Medium,/skin-clinic-mira-bhayander/,Low,Location hub,ESTIMATE
+melasma treatment malad,Pigmentation & uneven skin tone,location,Malad,100-250,Medium,/skin-clinic-mira-bhayander/,Low,Location hub,ESTIMATE
+skin clinic borivali for pigmentation,Pigmentation & uneven skin tone,location,Borivali,100-250,Medium,/skin-clinic-mira-bhayander/,Medium,Location hub,ESTIMATE
+pigmentation treatment naigaon,Pigmentation & uneven skin tone,location,Naigaon,50-150,Low,/skin-clinic-mira-bhayander/,Low,Location hub,ESTIMATE

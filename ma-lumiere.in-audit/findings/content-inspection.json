@@ -1,0 +1,198 @@
+﻿{
+    "acne-treatment-case-reference": {
+        "ID": 15,
+        "type": "ml_before_after",
+        "title": "Acne treatment ΓÇö case reference",
+        "excerpt": "",
+        "content": "[REAL, CONSENT-APPROVED CASE REQUIRED ΓÇö before/after images must be uploaded here and must not reveal patient identity.]",
+        "meta": {
+            "_ml_ba_treatment": "Acne management"
+        },
+        "permalink": "http://localhost/malumere/results/acne-treatment-case-reference/"
+    },
+    "injectables-facial-contouring": {
+        "ID": 53,
+        "type": "ml_treatment",
+        "title": "Injectables &amp; Facial Contouring",
+        "excerpt": "Subtle, anatomy-led injectable work ΓÇö softening, balancing and contouring without looking done.",
+        "content": "<p>Volume shifts and expression lines are mapped before anything is planned. The intent is refinement: softer lines, better balance, proportions that suit your face ΓÇö with restraint built into the approach.</p>",
+        "meta": {
+            "_ml_treatment_short": "Subtle, anatomy-led injectable work ΓÇö softening, balancing and contouring without looking done.",
+            "_ml_treatment_intro": "<p>Good injectable work is the kind nobody can point to ΓÇö a rested face, balanced proportions, expressions that still move. Everything starts with a facial assessment, not a menu.</p>",
+            "_ml_treatment_overview": "<p>A detailed facial assessment, followed by precisely planned placement of anti-wrinkle or volume treatments to balance and soften ΓÇö never to freeze or overfill.</p>",
+            "_ml_treatment_suitable": "<p>Adults seeking subtle refinement of expression lines, volume balance or facial proportion ΓÇö after a full consultation.</p>",
+            "_ml_treatment_concerns": "<p>Dynamic expression lines, mid-face volume loss, contour imbalance and tired-looking features.</p>",
+            "_ml_treatment_results": "<p>Refined, natural-looking change. Longevity varies by treatment area and product, and is discussed honestly beforehand.</p>",
+            "_ml_treatment_process": "Facial assessment and mapping\nTreatment plan and consent\nPrecise in-clinic placement\nTwo-week review",
+            "_ml_treatment_sessions": "1 per cycle (reviewed)",
+            "_ml_treatment_duration": "30",
+            "_ml_treatment_downtime": "NoneΓÇô48 hours",
+            "_ml_treatment_pre": "<p>Avoid alcohol, anti-inflammatories and blood thinners for 24ΓÇô48 hours unless medically prescribed ΓÇö confirm with us first.</p>",
+            "_ml_treatment_post": "<p>Skip intense exercise, saunas and facial treatments for 24ΓÇô48 hours; attend the review appointment.</p>",
+            "_ml_treatment_faqs": "Will I still look like myself? || That is the aim ΓÇö the plan is built around your features, not a template.\nHow long does it last? || It depends on the product and area; we set expectations before you consent to anything."
+        },
+        "permalink": "http://localhost/malumere/treatment/injectables-facial-contouring/"
+    },
+    "acne-acne-scars": {
+        "ID": 43,
+        "type": "ml_treatment",
+        "title": "Acne &amp; Acne Scars",
+        "excerpt": "Evidence-led acne care and considered scar treatment ΓÇö for active breakouts and their after-effects.",
+        "content": "<p>Active acne and acne scars are two different problems that need two different plans. Treating scars while skin is still breaking out wastes time; clearing breakouts without addressing texture leaves the reminder behind. We do both, in order.</p>",
+        "meta": {
+            "_ml_treatment_short": "Evidence-led acne care and considered scar treatment ΓÇö for active breakouts and their after-effects.",
+            "_ml_treatment_intro": "<p>Acne is common, but the reasons behind it vary ΓÇö and so does the right treatment. We treat the active breakouts first, then address the marks and texture they leave behind.</p>",
+            "_ml_treatment_overview": "<p>Assessment of acne type and severity, medical management of active breakouts, then a staged approach to post-acne marks and texture once skin is stable.</p>",
+            "_ml_treatment_suitable": "<p>Anyone with active pimples, cysts or persistent congestion, or leftover red marks, pits or uneven texture after acne.</p>",
+            "_ml_treatment_concerns": "<p>Whiteheads, blackheads, inflammatory breakouts, hormonal acne, post-acne redness, marks and textural scarring.</p>",
+            "_ml_treatment_results": "<p>Active acne improves over weeks to months; scar treatment is planned only after skin is stable, and expectations are set per scar type.</p>",
+            "_ml_treatment_process": "Acne assessment and severity grading\nActive-breakout treatment plan\nHome routine and lifestyle review\nScar and texture phase once skin is clear",
+            "_ml_treatment_sessions": "Acne: ongoing; scars: 4ΓÇô6",
+            "_ml_treatment_duration": "30",
+            "_ml_treatment_downtime": "NoneΓÇô48 hours",
+            "_ml_treatment_pre": "<p>Bring a list of products and treatments you have already tried.</p>",
+            "_ml_treatment_post": "<p>Do not pick or squeeze ΓÇö it is the single biggest cause of avoidable scarring.</p>",
+            "_ml_treatment_faqs": "Should I treat acne or scars first? || Always the active acne. Scar treatments are planned once breakouts are controlled.\nIs acne treatment permanent? || It controls and clears active acne; maintenance depends on your pattern and triggers."
+        },
+        "permalink": "http://localhost/malumere/treatment/acne-acne-scars/"
+    },
+    "pigmentation-uneven-skin-tone": {
+        "ID": 47,
+        "type": "ml_treatment",
+        "title": "Pigmentation &amp; Uneven Skin Tone",
+        "excerpt": "Targeted care for dark spots, sun damage and uneven tone ΓÇö built around your skin, not a trend.",
+        "content": "<p>Uneven tone is usually a mix of causes layered together. We identify which are active (especially sun and heat exposure) and which are settled marks, then treat accordingly ΓÇö with sun protection as the non-negotiable foundation.</p>",
+        "meta": {
+            "_ml_treatment_short": "Targeted care for dark spots, sun damage and uneven tone ΓÇö built around your skin, not a trend.",
+            "_ml_treatment_intro": "<p>Pigmentation comes in many forms ΓÇö sun spots, post-acne marks, melasma ΓÇö and each responds differently. Correct diagnosis is the first step, because treating the wrong type can make it worse.</p>",
+            "_ml_treatment_overview": "<p>Diagnosis of the pigment type, a barrier-safe home routine, and staged in-clinic treatment to fade excess pigment evenly.</p>",
+            "_ml_treatment_suitable": "<p>Anyone with sun spots, post-inflammatory marks, melasma patches or a generally uneven complexion.</p>",
+            "_ml_treatment_concerns": "<p>Sun spots, freckling, post-acne dark marks, melasma, dullness and blotchy tone.</p>",
+            "_ml_treatment_results": "<p>Marks fade gradually over multiple cycles of treatment; daily SPF and avoiding triggers matter as much as the treatment itself.</p>",
+            "_ml_treatment_process": "Pigment diagnosis and skin analysis\nSun-protection and barrier plan\nStaged in-clinic treatment\nReview and maintenance",
+            "_ml_treatment_sessions": "4ΓÇô6",
+            "_ml_treatment_duration": "30",
+            "_ml_treatment_downtime": "NoneΓÇôseveral days (treatment-dependent)",
+            "_ml_treatment_pre": "<p>Stop any self-tanning products and share your current skincare with us at the consult.</p>",
+            "_ml_treatment_post": "<p>Daily broad-spectrum SPF and sun avoidance are essential ΓÇö pigment returns quickly without them.</p>",
+            "_ml_treatment_faqs": "Is pigmentation permanent? || Many forms fade substantially; melasma in particular can relapse, so maintenance is planned.\nCan I treat it in summer? || Often yes with the right protocol and strict sun protection ΓÇö we decide case by case."
+        },
+        "permalink": "http://localhost/malumere/treatment/pigmentation-uneven-skin-tone/"
+    },
+    "hair-loss-hair-thinning": {
+        "ID": 39,
+        "type": "ml_treatment",
+        "title": "Hair Loss &amp; Hair Thinning",
+        "excerpt": "Clinical assessment and personalised plans for thinning, shedding and hair-fall concerns.",
+        "content": "<p>Not every strand of hair fall is the same ΓÇö some shed diffuse, some thin at the crown, some recede at the temples. A consultation helps identify what you are actually dealing with so the plan, not a generic product, does the work.</p><p>Every recommendation is made in-clinic after an examination; nothing here replaces a personal consultation.</p>",
+        "meta": {
+            "_ml_treatment_short": "Clinical assessment and personalised plans for thinning, shedding and hair-fall concerns.",
+            "_ml_treatment_intro": "<p>Hair loss and thinning can follow stress, hormones, nutrition, medication or genetics. At Ma Lumi├¿re we first understand the pattern and the cause, then map a plan suited to your scalp and goals.</p>",
+            "_ml_treatment_overview": "<p>Assessment of the scalp and hair history, followed by targeted treatments and a maintenance routine designed around the underlying pattern of loss.</p>",
+            "_ml_treatment_suitable": "<p>Men and women noticing increased shedding, widening parts, reduced density or a family history of thinning.</p>",
+            "_ml_treatment_concerns": "<p>Diffuse hair fall, crown thinning, receding hairline, post-partum shedding, stress-related loss.</p>",
+            "_ml_treatment_results": "<p>Progress is gradual ΓÇö hair cycles take months. Your dermatologist sets realistic milestones at the consultation rather than promising fixed timelines.</p>",
+            "_ml_treatment_process": "Scalp and history assessment\nIdentifying contributing factors\nPersonalised in-clinic plan\nHome-care and maintenance routine",
+            "_ml_treatment_sessions": "4ΓÇô6 (assessment-led)",
+            "_ml_treatment_duration": "45",
+            "_ml_treatment_downtime": "None",
+            "_ml_treatment_pre": "<p>Come with a note of recent illnesses, medications and any family history of thinning.</p>",
+            "_ml_treatment_post": "<p>Follow the prescribed routine consistently; hair responds to sustained care, not one-off sessions.</p>",
+            "_ml_treatment_faqs": "Is hair loss always permanent? || Not necessarily. Many forms are temporary or stabilisable once the trigger is identified ΓÇö that is exactly what the consultation is for.\nWhen will I see change? || Hair grows slowly, so assessments are spaced over months to judge response fairly."
+        },
+        "permalink": "http://localhost/malumere/treatment/hair-loss-hair-thinning/"
+    },
+    "laser-hair-reduction": {
+        "ID": 45,
+        "type": "ml_treatment",
+        "title": "Laser Hair Reduction",
+        "excerpt": "Clinic-grade laser for long-term hair reduction across face and body, planned around your skin type.",
+        "content": "<p>Hair grows in cycles, and the laser only works on follicles in the active phase ΓÇö which is why sessions are spaced several weeks apart. Consistency across the full cycle is what delivers the reduction.</p>",
+        "meta": {
+            "_ml_treatment_short": "Clinic-grade laser for long-term hair reduction across face and body, planned around your skin type.",
+            "_ml_treatment_intro": "<p>Laser hair reduction targets the follicle to progressively reduce regrowth. Settings are chosen for your skin tone and hair type ΓÇö safety and response both depend on getting that match right.</p>",
+            "_ml_treatment_overview": "<p>Cooling-assisted laser energy is delivered over the treatment area to disable active follicles; regrowth becomes finer and lighter over successive sessions.</p>",
+            "_ml_treatment_suitable": "<p>Most skin types and areas ΓÇö face, underarms, arms, legs, bikini and back. A patch test is done before full courses.</p>",
+            "_ml_treatment_concerns": "<p>Unwanted facial or body hair, ingrown hairs, irritation from shaving and waxing, repeated regrowth.</p>",
+            "_ml_treatment_results": "<p>Progressive reduction in density and thickness. Maintenance may occasionally be needed, as hormones can stimulate new follicles over time.</p>",
+            "_ml_treatment_process": "Consultation and patch test\nArea mapping and settings selection\nSession delivery with cooling\nSpaced follow-up sessions",
+            "_ml_treatment_sessions": "6ΓÇô8, spaced 4ΓÇô8 weeks",
+            "_ml_treatment_duration": "20ΓÇô60",
+            "_ml_treatment_downtime": "None",
+            "_ml_treatment_pre": "<p>No waxing or plucking for 4 weeks before; avoid sun exposure to the area.</p>",
+            "_ml_treatment_post": "<p>Expect mild redness for a short while ΓÇö use SPF and skip hot showers, saunas and scrubs for 24ΓÇô48 hours.</p>",
+            "_ml_treatment_faqs": "Does laser hair reduction hurt? || Most people describe a quick warm snap; cooling keeps it comfortable.\nHow many sessions will I need? || Typically 6ΓÇô8, but skin type, area and hair colour all affect the count."
+        },
+        "permalink": "http://localhost/malumere/treatment/laser-hair-reduction/"
+    },
+    "pre-wedding-skin-preparation": {
+        "ID": 41,
+        "type": "ml_treatment",
+        "title": "Pre-Wedding Skin Preparation",
+        "excerpt": "A calm, scheduled skin plan so you walk into your day with confidence ΓÇö not last-minute fixes.",
+        "content": "<p>We work backwards from your date: what can be done, what should wait, and what must not be attempted close to the day. The goal is clear, comfortable, camera-ready skin ΓÇö and no surprises.</p>",
+        "meta": {
+            "_ml_treatment_short": "A calm, scheduled skin plan so you walk into your day with confidence ΓÇö not last-minute fixes.",
+            "_ml_treatment_intro": "<p>Wedding skin is about timing. With a plan that starts early enough, concerns are addressed in a safe sequence ΓÇö without risky last-minute experiments the week of the event.</p>",
+            "_ml_treatment_overview": "<p>A staged plan combining in-clinic treatments and a simple home routine, sequenced so your skin is settled and glowing when it matters.</p>",
+            "_ml_treatment_suitable": "<p>Brides, grooms and wedding parties planning ahead ΓÇö ideally starting 8ΓÇô12 weeks before the event.</p>",
+            "_ml_treatment_concerns": "<p>Dullness, uneven tone, texture, breakouts, pre-event glow and overall skin confidence.</p>",
+            "_ml_treatment_results": "<p>Expect steady improvement in clarity and radiance. Aggressive treatments are deliberately avoided close to your date.</p>",
+            "_ml_treatment_process": "Consultation and date-based timeline\nSkin analysis and priority setting\nStaged in-clinic treatments\nSimple home routine and check-ins",
+            "_ml_treatment_sessions": "Timeline-based (often 3ΓÇô5)",
+            "_ml_treatment_duration": "40",
+            "_ml_treatment_downtime": "Minimal (treatment-dependent)",
+            "_ml_treatment_pre": "<p>Share your event date first ΓÇö everything else is scheduled around it.</p>",
+            "_ml_treatment_post": "<p>Keep new products out of the routine in the final weeks; introduce nothing untested before the day.</p>",
+            "_ml_treatment_faqs": "How early should I start? || About 2ΓÇô3 months ahead gives comfortable room to stage treatments safely.\nCan I do something the week of the wedding? || Only gentle, low-risk care ΓÇö anything more aggressive is scheduled well before your date."
+        },
+        "permalink": "http://localhost/malumere/treatment/pre-wedding-skin-preparation/"
+    },
+    "skin-clinic-mira-bhayander": {
+        "ID": 109,
+        "type": "page",
+        "title": "Skin Clinic in Mira Bhayander",
+        "excerpt": "A skin, hair and laser clinic in Mira Road East, serving Mira Bhayander ΓÇö face treatments, acne and pigmentation care, laser hair reduction and more.",
+        "content": "<p><strong>Ma Lumi├¿re</strong> is a skin, hair and laser clinic in Mira Road East, a short drive from Bhayander East, Bhayander West and Kashimira. If you have been searching for a skin clinic in Mira Bhayander ΓÇö or for a face treatment planned around your skin rather than chosen from a menu ΓÇö this page explains what we do and how to begin.</p>\n\n<h2>A skin clinic for Mira Road and Bhayander</h2>\n<p>Ma Lumi├¿re was founded on a simple principle: diagnosis first, procedures second. Before any treatment is recommended, we assess your skin, ask about your history, and talk through what can realistically change. That conversation matters more than the device used afterwards.</p>\n<p>Patients travel to the clinic from across Mira Road, Bhayander, Kashimira, Dahisar, Borivali and Thane. Some are managing a long-term concern such as acne or pigmentation. Others want to prepare for a wedding, address the first signs of ageing, or simply understand why their skin has changed.</p>\n\n<h2>Face treatments in Mira Bhayander</h2>\n<p>Most face treatments begin with the same question: what is actually happening in the skin? Once that is clear, a plan may include medical acne care, acne scar treatment, pigmentation correction, skin rejuvenation, or a combination staged over several visits.</p>\n<p>Facial rejuvenation is planned around your features and your comfort level. The aim is a fresher, healthier version of your own face ΓÇö not a different one. Where a concern is better managed with skincare, lifestyle changes or time, we will say so rather than add another procedure.</p>\n\n<h2>Skin concerns we treat</h2>\n<ul>\n<li>Active acne, recurring breakouts and hormonal patterns</li>\n<li>Acne scars, textural changes and enlarged pores</li>\n<li>Pigmentation, melasma and uneven skin tone</li>\n<li>Dullness, tired-looking skin and uneven texture</li>\n<li>Fine lines and early signs of ageing</li>\n<li>Moles, skin tags and other small skin lesions</li>\n<li>Excessive sweating (hyperhidrosis)</li>\n</ul>\n\n<h2>Laser hair reduction and hair loss</h2>\n<p>Laser hair reduction is available for women and men, with a patch test and a realistic session plan agreed in advance. Hair loss and thinning are assessed differently: we look at pattern, scalp health and possible contributing factors before discussing treatment.</p>\n\n<h2>What happens at your first consultation</h2>\n<p>Your first visit is a private consultation, not a sales appointment. We review your skin and medical history, discuss what has and has not worked, and explain the options that fit your concern. You will leave with a clear plan, an idea of how many sessions may be needed, and the cost before anything begins.</p>\n<p>If a treatment is not appropriate for you, we will tell you. If a concern needs a different specialist, we will say that too.</p>\n\n<h2>Fees and realistic expectations</h2>\n<p>Costs depend on the treatment, the area being treated and the number of sessions. You will receive a quotation after your consultation, with no obligation to proceed. Skin treatments rarely produce instant, permanent results; we will explain the likely timeline, the maintenance involved and the limits of what can be achieved.</p>\n\n<h2>Book a consultation in Mira Road East</h2>\n<p>The clinic is on the first floor of Vasudev Sky High, Kanakia Road, Beverly Park, Mira Road East, 401105. Consultations are by appointment, Tuesday to Sunday. To book, call the clinic or use the appointment page. If you are travelling from Bhayander, allow a little extra time during peak hours.</p>",
+        "meta": {
+            "_wp_page_template": "page-templates/page-mira-bhayander.php",
+            "_ml_seo_title": "Skin Clinic in Mira Bhayander | Face & Skin Treatments",
+            "_ml_seo_description": "Looking for a skin clinic in Mira Bhayander? Ma Lumi├¿re in Mira Road East offers face treatments, acne and pigmentation care, laser hair reduction and more.",
+            "_ml_seo_focus_keyword": "skin clinic in Mira Bhayander"
+        },
+        "permalink": "http://localhost/malumere/skin-clinic-mira-bhayander/"
+    },
+    "faqs": {
+        "ID": 11,
+        "type": "page",
+        "title": "FAQs",
+        "excerpt": "",
+        "content": "",
+        "meta": {
+            "_wp_page_template": "page-templates/page-faq.php"
+        },
+        "permalink": "http://localhost/malumere/faqs/"
+    },
+    "contact": {
+        "ID": 10,
+        "type": "page",
+        "title": "Contact",
+        "excerpt": "",
+        "content": "",
+        "meta": {
+            "_wp_page_template": "page-templates/page-contact.php"
+        },
+        "permalink": "http://localhost/malumere/contact/"
+    },
+    "about": {
+        "ID": 7,
+        "type": "page",
+        "title": "About",
+        "excerpt": "",
+        "content": "",
+        "meta": {
+            "_wp_page_template": "page-templates/page-about.php"
+        },
+        "permalink": "http://localhost/malumere/about/"
+    }
+}

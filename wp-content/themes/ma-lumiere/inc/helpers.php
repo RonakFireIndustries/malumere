@@ -39,7 +39,7 @@ function ml_clinic_name() {
  * @return string
  */
 function ml_clinic_address() {
-	return ml_mod( 'ml_clinic_address', 'Shop no. 117 1st floor Ma lumiere clinic , Vasudev sky high , Kanakia  Rd, Om Ram Sagar phase 1 . beverly park, mira rd east 401105' );
+	return ml_mod( 'ml_clinic_address', 'Shop No. 117, 1st Floor, Ma Lumière Clinic, Vasudev Sky High, Kanakia Road, Beverly Park, Mira Road East, Maharashtra 401105, India' );
 }
 
 /**
@@ -48,7 +48,52 @@ function ml_clinic_address() {
  * @return string
  */
 function ml_clinic_phone() {
-	return ml_mod( 'ml_clinic_phone', '9987802355' );
+	return ml_mod( 'ml_clinic_phone', '+91 99878 02355' );
+}
+
+/**
+ * Tel: href for the clinic phone.
+ *
+ * @return string
+ */
+function ml_clinic_phone_href() {
+	$phone = preg_replace( '/[^0-9+]/', '', (string) ml_clinic_phone() );
+	if ( '' === $phone ) {
+		return '';
+	}
+	if ( '0' === $phone[0] ) {
+		$phone = '+91' . substr( $phone, 1 );
+	}
+	if ( strpos( $phone, '+' ) !== 0 && preg_match( '/^[0-9]{10}$/', $phone ) ) {
+		$phone = '+91' . $phone;
+	}
+	return $phone;
+}
+
+/**
+ * Google Maps directions URL based on clinic address.
+ *
+ * @return string
+ */
+function ml_clinic_directions_url() {
+	$override = trim( (string) ml_mod( 'ml_directions_url', '' ) );
+	if ( $override ) {
+		return $override;
+	}
+	$address = trim( (string) ml_clinic_address() );
+	if ( '' === $address ) {
+		return '';
+	}
+	return 'https://www.google.com/maps/dir/?api=1&destination=' . rawurlencode( $address );
+}
+
+/**
+ * Verified Google Business Profile URL, if provided by owner.
+ *
+ * @return string
+ */
+function ml_clinic_gbp_url() {
+	return trim( (string) ml_mod( 'ml_gbp_url', '' ) );
 }
 
 /**

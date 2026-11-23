@@ -1,0 +1,141 @@
+﻿{
+  "url": "https://ma-lumiere.in/treatment-type/laser-hair-reduction/",
+  "source": "url",
+  "status_code": 200,
+  "headers_available": true,
+  "facts": {
+    "title": "Laser Hair Reduction \u00b7 Ma Lumi\u00e8re",
+    "title_length": 33,
+    "title_count": 1,
+    "meta_description": "Articles about Laser Hair Reduction from the Ma Lumi\u00e8re skin journal.",
+    "meta_description_length": 69,
+    "h1": [
+      "Laser Hair Reduction"
+    ],
+    "h1_count": 1,
+    "heading_level_skips": 1,
+    "template_heading_level_skips": 0,
+    "canonical": null,
+    "canonical_status": "missing",
+    "canonical_note": null,
+    "meta_robots": "robots: max-image-preview:large",
+    "x_robots_tag": null,
+    "x_robots_other_agents": [],
+    "hreflang_count": 0,
+    "lang": "en-US",
+    "has_doctype": true,
+    "meta_charset": "utf-8",
+    "header_charset": "utf-8",
+    "has_viewport": true,
+    "images": {
+      "total": 2,
+      "missing_alt": 0,
+      "empty_alt": 1,
+      "missing_dimensions": 1,
+      "first_image_lazy": true
+    },
+    "links": {
+      "total": 23,
+      "without_text": 0,
+      "generic_anchor": 1,
+      "http_on_https": 0
+    },
+    "mixed_content": 0,
+    "url": {
+      "length": 58,
+      "query_params": []
+    },
+    "html_bytes": 30617,
+    "dom": {
+      "nodes": 160,
+      "max_depth": 12,
+      "max_children": 37,
+      "widest_element": "head"
+    },
+    "open_graph": {
+      "og:site_name": "Ma Lumi\u00e8re",
+      "og:locale": "en_US",
+      "og:type": "website",
+      "og:title": "Laser Hair Reduction \u00b7 Ma Lumi\u00e8re",
+      "og:url": "https://ma-lumiere.in/treatment-type/laser-hair-reduction",
+      "og:description": "Articles about Laser Hair Reduction from the Ma Lumi\u00e8re skin journal."
+    },
+    "jsonld_blocks": 1,
+    "jsonld_invalid": 0,
+    "word_count": 32,
+    "words_measured": true,
+    "title_relevance": 0.75,
+    "description_relevance": 0.57
+  },
+  "findings": [
+    {
+      "id": "missing-canonical",
+      "severity": "Medium",
+      "message": "The page has no canonical link. Search engines then choose the preferred URL themselves.",
+      "evidence": "no <link rel=\"canonical\"> with an href"
+    },
+    {
+      "id": "images-missing-dimensions",
+      "severity": "Medium",
+      "message": "Some images have no width and height attributes, which lets the layout shift while they load.",
+      "evidence": "1 of 2 images: https://ma-lumiere.in/wp-content/themes/ma-lumiere/assets...",
+      "count": 1
+    },
+    {
+      "id": "first-image-lazy-loaded",
+      "severity": "Medium",
+      "message": "The first image in the main content is lazy loaded. It is often the largest paint, and lazy loading delays it.",
+      "evidence": "loading=\"lazy\" on https://ma-lumiere.in/wp-content/themes/ma-lumiere/assets/images/treatments/laser-hair-reduction.jpg?v=1795414761"
+    },
+    {
+      "id": "thin-content",
+      "severity": "Medium",
+      "message": "The page has fewer than 200 words of visible body text. Google has no minimum word count, so this is not a ranking rule. Check that the page fully answers what a visitor came for.",
+      "evidence": "32 words of visible body text"
+    },
+    {
+      "id": "heading-level-skip",
+      "severity": "Low",
+      "message": "Heading levels skip inside the main content, for example from H2 to H4. Google Search does not mind heading order, but screen reader users move through a page by heading level.",
+      "evidence": "1 skipped heading level(s) in the main content",
+      "count": 1
+    },
+    {
+      "id": "generic-anchor-text",
+      "severity": "Low",
+      "message": "Some links in the content use generic text such as \"click here\", which says nothing about where they lead.",
+      "evidence": "1 link(s): \"Learn more\" to https://ma-lumiere.in/treatment/laser-hai...",
+      "count": 1
+    },
+    {
+      "id": "missing-og-image",
+      "severity": "Low",
+      "message": "The page has no og:image, so shared links show no preview image.",
+      "evidence": "og:title is present, og:image is not"
+    }
+  ],
+  "not_checked": [],
+  "thresholds": {
+    "title_min_chars": 30,
+    "title_max_chars": 60,
+    "meta_description_min_chars": 120,
+    "meta_description_max_chars": 160,
+    "url_max_chars": 100,
+    "html_max_bytes": 2000000,
+    "thin_content_min_words": 200,
+    "dom_max_depth": 32,
+    "dom_max_children": 60,
+    "title_relevance_min": 0.3,
+    "description_relevance_min": 0.2,
+    "relevance_min_words": 50,
+    "evidence_max_chars": 200
+  },
+  "summary": {
+    "Critical": 0,
+    "High": 0,
+    "Medium": 4,
+    "Low": 3,
+    "total": 7,
+    "checks_run": 47
+  }
+}

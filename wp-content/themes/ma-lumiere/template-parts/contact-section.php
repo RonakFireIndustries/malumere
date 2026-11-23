@@ -21,6 +21,9 @@
 						<div>
 							<p class="contact-info__label"><?php esc_html_e( 'Find us', 'ma-lumiere' ); ?></p>
 							<p class="contact-info__value"><?php echo esc_html( ml_clinic_address() ); ?></p>
+							<?php if ( ml_clinic_directions_url() ) : ?>
+								<p class="contact-info__value"><a href="<?php echo esc_url( ml_clinic_directions_url() ); ?>" target="_blank" rel="noopener noreferrer"><?php esc_html_e( 'Get directions', 'ma-lumiere' ); ?></a></p>
+							<?php endif; ?>
 						</div>
 					</div>
 				<?php endif; ?>
@@ -31,7 +34,7 @@
 						<div>
 							<p class="contact-info__label"><?php esc_html_e( 'Call us', 'ma-lumiere' ); ?></p>
 							<p class="contact-info__value">
-								<a href="tel:<?php echo esc_attr( preg_replace( '/[^0-9+]/', '', ml_clinic_phone() ) ); ?>"><?php echo esc_html( ml_clinic_phone() ); ?></a>
+								<a href="tel:<?php echo esc_attr( ml_clinic_phone_href() ); ?>"><?php echo esc_html( ml_clinic_phone() ); ?></a>
 							</p>
 						</div>
 					</div>

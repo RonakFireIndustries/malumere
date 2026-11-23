@@ -1,0 +1,122 @@
+﻿{
+  "url": "https://ma-lumiere.in/",
+  "source": "url",
+  "status_code": 200,
+  "headers_available": true,
+  "facts": {
+    "title": "Ma Lumi\u00e8re \u00b7 Skin, hair and laser clinic in Mira Road East, serving Mira Bhayander.",
+    "title_length": 83,
+    "title_count": 1,
+    "meta_description": "Ma Lumi\u00e8re is a medical and aesthetic skin clinic in Mira Road East, Mumbai, offering personalised treatments for skin, hair, and ageing concerns.",
+    "meta_description_length": 146,
+    "h1": [
+      "Personalised Aesthetic Medicine. Beautifully, Scientifically."
+    ],
+    "h1_count": 1,
+    "heading_level_skips": 0,
+    "template_heading_level_skips": 0,
+    "canonical": "https://ma-lumiere.in/",
+    "canonical_status": "self",
+    "canonical_note": null,
+    "meta_robots": "robots: max-image-preview:large",
+    "x_robots_tag": null,
+    "x_robots_other_agents": [],
+    "hreflang_count": 0,
+    "lang": "en-US",
+    "has_doctype": true,
+    "meta_charset": "utf-8",
+    "header_charset": "utf-8",
+    "has_viewport": true,
+    "images": {
+      "total": 12,
+      "missing_alt": 0,
+      "empty_alt": 1,
+      "missing_dimensions": 8,
+      "first_image_lazy": false
+    },
+    "links": {
+      "total": 58,
+      "without_text": 0,
+      "generic_anchor": 9,
+      "http_on_https": 0
+    },
+    "mixed_content": 0,
+    "url": {
+      "length": 22,
+      "query_params": []
+    },
+    "html_bytes": 63581,
+    "dom": {
+      "nodes": 531,
+      "max_depth": 12,
+      "max_children": 45,
+      "widest_element": "head"
+    },
+    "open_graph": {
+      "og:site_name": "Ma Lumi\u00e8re",
+      "og:locale": "en_US",
+      "og:type": "website",
+      "og:title": "MA LUMI\u00c8RE \u00b7 Medical & Aesthetic Skin Clinic in Mira Road East",
+      "og:url": "https://ma-lumiere.in/",
+      "og:description": "Ma Lumi\u00e8re is a medical and aesthetic skin clinic in Mira Road East, Mumbai, offering personalised treatments for skin, hair, and ageing concerns."
+    },
+    "jsonld_blocks": 1,
+    "jsonld_invalid": 0,
+    "word_count": 1114,
+    "words_measured": true,
+    "title_relevance": 0.9,
+    "description_relevance": 0.8
+  },
+  "findings": [
+    {
+      "id": "title-too-long",
+      "severity": "Medium",
+      "message": "The title is longer than 60 characters and may be truncated in results. This is a display heuristic, not a published search engine limit.",
+      "evidence": "83 characters: Ma Lumi\u00e8re \u00b7 Skin, hair and laser clinic in Mira Road East, serving Mira Bhayander."
+    },
+    {
+      "id": "images-missing-dimensions",
+      "severity": "Medium",
+      "message": "Some images have no width and height attributes, which lets the layout shift while they load.",
+      "evidence": "8 of 12 images: https://ma-lumiere.in/wp-content/themes/ma-lumiere/assets..., https://ma-lumiere.in/wp-content/themes/ma-lumiere/assets..., https://ma-lumiere.in/wp-content/themes/ma-lumiere/assets...",
+      "count": 8
+    },
+    {
+      "id": "generic-anchor-text",
+      "severity": "Low",
+      "message": "Some links in the content use generic text such as \"click here\", which says nothing about where they lead.",
+      "evidence": "9 link(s): \"Learn more\" to https://ma-lumiere.in/treatment/hair-loss..., \"Learn more\" to https://ma-lumiere.in/treatment/pre-weddi..., \"Learn more\" to https://ma-lumiere.in/treatment/acne-acne...,...",
+      "count": 9
+    },
+    {
+      "id": "missing-og-image",
+      "severity": "Low",
+      "message": "The page has no og:image, so shared links show no preview image.",
+      "evidence": "og:title is present, og:image is not"
+    }
+  ],
+  "not_checked": [],
+  "thresholds": {
+    "title_min_chars": 30,
+    "title_max_chars": 60,
+    "meta_description_min_chars": 120,
+    "meta_description_max_chars": 160,
+    "url_max_chars": 100,
+    "html_max_bytes": 2000000,
+    "thin_content_min_words": 200,
+    "dom_max_depth": 32,
+    "dom_max_children": 60,
+    "title_relevance_min": 0.3,
+    "description_relevance_min": 0.2,
+    "relevance_min_words": 50,
+    "evidence_max_chars": 200
+  },
+  "summary": {
+    "Critical": 0,
+    "High": 0,
+    "Medium": 2,
+    "Low": 2,
+    "total": 4,
+    "checks_run": 47
+  }
+}

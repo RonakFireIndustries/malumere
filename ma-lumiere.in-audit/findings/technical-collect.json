@@ -1,0 +1,351 @@
+{
+  "robots": {
+    "status": 200,
+    "text": "User-agent: *\nAllow: /\n\nSitemap: https://ma-lumiere.in/sitemap.xml\n",
+    "headers": {
+      "Date": "Mon, 23 Nov 2026 07:38:37 GMT",
+      "Server": "Apache",
+      "Last-Modified": "Mon, 23 Nov 2026 05:53:13 GMT",
+      "Accept-Ranges": "bytes",
+      "Content-Length": "67",
+      "Keep-Alive": "timeout=5, max=75",
+      "Connection": "Keep-Alive",
+      "Content-Type": "text/plain"
+    }
+  },
+  "headers": {
+    "https://ma-lumiere.in/": {
+      "status": 200,
+      "headers": {
+        "Date": "Mon, 23 Nov 2026 07:38:38 GMT",
+        "Server": "Apache",
+        "Link": "<https://ma-lumiere.in/wp-json/>; rel=\"https://api.w.org/\", <https://ma-lumiere.in/wp-json/wp/v2/pages/6>; rel=\"alternate\"; title=\"JSON\"; type=\"application/json\", <https://ma-lumiere.in/>; rel=shortlink",
+        "Vary": "Accept-Encoding",
+        "Content-Encoding": "gzip",
+        "Keep-Alive": "timeout=5, max=74",
+        "Connection": "Keep-Alive",
+        "Transfer-Encoding": "chunked",
+        "Content-Type": "text/html; charset=UTF-8"
+      }
+    },
+    "https://ma-lumiere.in/treatments/": {
+      "status": 200,
+      "headers": {
+        "Date": "Mon, 23 Nov 2026 07:38:41 GMT",
+        "Server": "Apache",
+        "Link": "<https://ma-lumiere.in/wp-json/>; rel=\"https://api.w.org/\", <https://ma-lumiere.in/wp-json/wp/v2/pages/8>; rel=\"alternate\"; title=\"JSON\"; type=\"application/json\", <https://ma-lumiere.in/?p=8>; rel=shortlink",
+        "Vary": "Accept-Encoding",
+        "Content-Encoding": "gzip",
+        "Keep-Alive": "timeout=5, max=75",
+        "Connection": "Keep-Alive",
+        "Transfer-Encoding": "chunked",
+        "Content-Type": "text/html; charset=UTF-8"
+      }
+    },
+    "https://ma-lumiere.in/treatment/acne-acne-scars/": {
+      "status": 200,
+      "headers": {
+        "Date": "Mon, 23 Nov 2026 07:38:42 GMT",
+        "Server": "Apache",
+        "Link": "<https://ma-lumiere.in/wp-json/>; rel=\"https://api.w.org/\", <https://ma-lumiere.in/wp-json/wp/v2/ml_treatment/43>; rel=\"alternate\"; title=\"JSON\"; type=\"application/json\", <https://ma-lumiere.in/?p=43>; rel=shortlink",
+        "Vary": "Accept-Encoding",
+        "Content-Encoding": "gzip",
+        "Content-Length": "12173",
+        "Keep-Alive": "timeout=5, max=75",
+        "Connection": "Keep-Alive",
+        "Content-Type": "text/html; charset=UTF-8"
+      }
+    },
+    "https://ma-lumiere.in/sitemap.xml/": {
+      "status": 200,
+      "headers": {
+        "Date": "Mon, 23 Nov 2026 07:38:42 GMT",
+        "Server": "Apache",
+        "X-Content-Type-Options": "nosniff",
+        "Vary": "Accept-Encoding",
+        "Content-Encoding": "gzip",
+        "Content-Length": "764",
+        "Keep-Alive": "timeout=5, max=75",
+        "Connection": "Keep-Alive",
+        "Content-Type": "application/xml; charset=UTF-8"
+      }
+    }
+  },
+  "html_pages": {
+    "https://ma-lumiere.in/": {
+      "status": 200,
+      "bytes": 63581,
+      "stylesheets": [
+        "https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Manrope:wght@400;500;600;700;800&display=swap",
+        "https://ma-lumiere.in/wp-content/themes/ma-lumiere/style.css?ver=1795414761",
+        "https://ma-lumiere.in/wp-content/themes/ma-lumiere/assets/css/site.css?ver=1795414769"
+      ],
+      "inline_style_blocks": 5,
+      "scripts": [
+        "https://ma-lumiere.in/wp-content/themes/ma-lumiere/assets/js/main.js?ver=1795414761",
+        "https://ma-lumiere.in/wp-content/themes/ma-lumiere/assets/js/before-after.js?ver=1795414761",
+        "https://ma-lumiere.in/wp-content/themes/ma-lumiere/assets/js/contact-form.js?ver=1795414769"
+      ],
+      "preconnect": [
+        "https://fonts.gstatic.com"
+      ],
+      "prefetch_preload": [
+        [
+          "dns-prefetch",
+          "//fonts.googleapis.com",
+          null,
+          null
+        ]
+      ],
+      "history_pushState": false,
+      "base64_data_uri_count": 0,
+      "inline_style_chars": 14683,
+      "font_face_count": 0,
+      "google_fonts_links": [
+        "https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Manrope:wght@400;500;600;700;800&display=swap"
+      ]
+    },
+    "https://ma-lumiere.in/treatments/": {
+      "status": 200,
+      "bytes": 56959,
+      "stylesheets": [
+        "https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Manrope:wght@400;500;600;700;800&display=swap",
+        "https://ma-lumiere.in/wp-content/themes/ma-lumiere/style.css?ver=1795414761",
+        "https://ma-lumiere.in/wp-content/themes/ma-lumiere/assets/css/site.css?ver=1795414769"
+      ],
+      "inline_style_blocks": 5,
+      "scripts": [
+        "https://ma-lumiere.in/wp-content/themes/ma-lumiere/assets/js/main.js?ver=1795414761"
+      ],
+      "preconnect": [
+        "https://fonts.gstatic.com"
+      ],
+      "prefetch_preload": [
+        [
+          "dns-prefetch",
+          "//fonts.googleapis.com",
+          null,
+          null
+        ]
+      ],
+      "history_pushState": false,
+      "base64_data_uri_count": 0,
+      "inline_style_chars": 14683,
+      "font_face_count": 0,
+      "google_fonts_links": [
+        "https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Manrope:wght@400;500;600;700;800&display=swap"
+      ]
+    },
+    "https://ma-lumiere.in/blog/": {
+      "status": 200,
+      "bytes": 31478,
+      "stylesheets": [
+        "https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Manrope:wght@400;500;600;700;800&display=swap",
+        "https://ma-lumiere.in/wp-content/themes/ma-lumiere/style.css?ver=1795414761",
+        "https://ma-lumiere.in/wp-content/themes/ma-lumiere/assets/css/site.css?ver=1795414769"
+      ],
+      "inline_style_blocks": 5,
+      "scripts": [
+        "https://ma-lumiere.in/wp-content/themes/ma-lumiere/assets/js/main.js?ver=1795414761"
+      ],
+      "preconnect": [
+        "https://fonts.gstatic.com"
+      ],
+      "prefetch_preload": [
+        [
+          "dns-prefetch",
+          "//fonts.googleapis.com",
+          null,
+          null
+        ]
+      ],
+      "history_pushState": false,
+      "base64_data_uri_count": 0,
+      "inline_style_chars": 14683,
+      "font_face_count": 0,
+      "google_fonts_links": [
+        "https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Manrope:wght@400;500;600;700;800&display=swap"
+      ]
+    },
+    "https://ma-lumiere.in/about/": {
+      "status": 200,
+      "bytes": 33889,
+      "stylesheets": [
+        "https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Manrope:wght@400;500;600;700;800&display=swap",
+        "https://ma-lumiere.in/wp-content/themes/ma-lumiere/style.css?ver=1795414761",
+        "https://ma-lumiere.in/wp-content/themes/ma-lumiere/assets/css/site.css?ver=1795414769"
+      ],
+      "inline_style_blocks": 5,
+      "scripts": [
+        "https://ma-lumiere.in/wp-content/themes/ma-lumiere/assets/js/main.js?ver=1795414761"
+      ],
+      "preconnect": [
+        "https://fonts.gstatic.com"
+      ],
+      "prefetch_preload": [
+        [
+          "dns-prefetch",
+          "//fonts.googleapis.com",
+          null,
+          null
+        ]
+      ],
+      "history_pushState": false,
+      "base64_data_uri_count": 0,
+      "inline_style_chars": 14683,
+      "font_face_count": 0,
+      "google_fonts_links": [
+        "https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Manrope:wght@400;500;600;700;800&display=swap"
+      ]
+    }
+  },
+  "sitemap_url_count": 35,
+  "sitemap_coverage": [
+    {
+      "url": "https://ma-lumiere.in/",
+      "linked_from_sampled_pages": true
+    },
+    {
+      "url": "https://ma-lumiere.in/about/",
+      "linked_from_sampled_pages": true
+    },
+    {
+      "url": "https://ma-lumiere.in/treatments/",
+      "linked_from_sampled_pages": true
+    },
+    {
+      "url": "https://ma-lumiere.in/book-consultation/",
+      "linked_from_sampled_pages": true
+    },
+    {
+      "url": "https://ma-lumiere.in/contact/",
+      "linked_from_sampled_pages": true
+    },
+    {
+      "url": "https://ma-lumiere.in/faqs/",
+      "linked_from_sampled_pages": true
+    },
+    {
+      "url": "https://ma-lumiere.in/blog/",
+      "linked_from_sampled_pages": false
+    },
+    {
+      "url": "https://ma-lumiere.in/skin-clinic-mira-bhayander/",
+      "linked_from_sampled_pages": false
+    },
+    {
+      "url": "https://ma-lumiere.in/treatment/acne-acne-scars/",
+      "linked_from_sampled_pages": true
+    },
+    {
+      "url": "https://ma-lumiere.in/treatment/dull-tired-skin/",
+      "linked_from_sampled_pages": true
+    },
+    {
+      "url": "https://ma-lumiere.in/treatment/enlarged-pores/",
+      "linked_from_sampled_pages": true
+    },
+    {
+      "url": "https://ma-lumiere.in/treatment/facial-rejuvenation/",
+      "linked_from_sampled_pages": true
+    },
+    {
+      "url": "https://ma-lumiere.in/treatment/hair-loss-hair-thinning/",
+      "linked_from_sampled_pages": true
+    },
+    {
+      "url": "https://ma-lumiere.in/treatment/healthy-aging-skin-rejuvenation/",
+      "linked_from_sampled_pages": true
+    },
+    {
+      "url": "https://ma-lumiere.in/treatment/hyperhidrosis-excessive-sweating/",
+      "linked_from_sampled_pages": true
+    },
+    {
+      "url": "https://ma-lumiere.in/treatment/injectables-facial-contouring/",
+      "linked_from_sampled_pages": true
+    },
+    {
+      "url": "https://ma-lumiere.in/treatment/laser-hair-reduction/",
+      "linked_from_sampled_pages": true
+    },
+    {
+      "url": "https://ma-lumiere.in/treatment/laser-tattoo-removal/",
+      "linked_from_sampled_pages": true
+    },
+    {
+      "url": "https://ma-lumiere.in/treatment/mole-and-skin-tag-removal/",
+      "linked_from_sampled_pages": true
+    },
+    {
+      "url": "https://ma-lumiere.in/treatment/pigmentation-uneven-skin-tone/",
+      "linked_from_sampled_pages": true
+    },
+    {
+      "url": "https://ma-lumiere.in/treatment/pre-wedding-skin-preparation/",
+      "linked_from_sampled_pages": true
+    },
+    {
+      "url": "https://ma-lumiere.in/treatment/preventive-skin-care/",
+      "linked_from_sampled_pages": true
+    },
+    {
+      "url": "https://ma-lumiere.in/treatment/uneven-skin-texture/",
+      "linked_from_sampled_pages": true
+    },
+    {
+      "url": "https://ma-lumiere.in/results/acne-treatment-case-reference/",
+      "linked_from_sampled_pages": false
+    },
+    {
+      "url": "https://ma-lumiere.in/2026/11/17/face-treatments-mira-bhayander-guide/",
+      "linked_from_sampled_pages": true
+    },
+    {
+      "url": "https://ma-lumiere.in/2026/09/22/welcome-to-ma-lumiere/",
+      "linked_from_sampled_pages": true
+    },
+    {
+      "url": "https://ma-lumiere.in/treatment-type/acne-acne-scars/",
+      "linked_from_sampled_pages": true
+    },
+    {
+      "url": "https://ma-lumiere.in/treatment-type/hair-loss-hair-thinning/",
+      "linked_from_sampled_pages": true
+    },
+    {
+      "url": "https://ma-lumiere.in/treatment-type/healthy-aging-skin-rejuvenation/",
+      "linked_from_sampled_pages": true
+    },
+    {
+      "url": "https://ma-lumiere.in/treatment-type/injectables-facial-contouring/",
+      "linked_from_sampled_pages": true
+    },
+    {
+      "url": "https://ma-lumiere.in/treatment-type/laser-hair-reduction/",
+      "linked_from_sampled_pages": true
+    },
+    {
+      "url": "https://ma-lumiere.in/treatment-type/laser-tattoo-removal/",
+      "linked_from_sampled_pages": true
+    },
+    {
+      "url": "https://ma-lumiere.in/treatment-type/other-concerns-we-treat/",
+      "linked_from_sampled_pages": true
+    },
+    {
+      "url": "https://ma-lumiere.in/treatment-type/pigmentation-uneven-skin-tone/",
+      "linked_from_sampled_pages": true
+    },
+    {
+      "url": "https://ma-lumiere.in/treatment-type/pre-wedding-skin-preparation/",
+      "linked_from_sampled_pages": false
+    }
+  ],
+  "orphan_candidates": [
+    "https://ma-lumiere.in/blog/",
+    "https://ma-lumiere.in/skin-clinic-mira-bhayander/",
+    "https://ma-lumiere.in/results/acne-treatment-case-reference/",
+    "https://ma-lumiere.in/treatment-type/pre-wedding-skin-preparation/"
+  ]
+}

@@ -1,0 +1,161 @@
+﻿{
+  "url": "https://ma-lumiere.in/",
+  "host": "ma-lumiere.in",
+  "tls": {
+    "host": "ma-lumiere.in",
+    "port": 443,
+    "connected_ip": "119.18.54.24",
+    "verified": true,
+    "verify_error": null,
+    "verify_code": null,
+    "certificate_read": true,
+    "subject": {
+      "common_name": "*.ma-lumiere.in",
+      "organization": null
+    },
+    "issuer": {
+      "common_name": "YR1",
+      "organization": "Let's Encrypt"
+    },
+    "not_before": "2026-09-28T10:18:43Z",
+    "not_after": "2026-12-27T10:18:42Z",
+    "days_until_expiry": 34,
+    "expired": false,
+    "not_yet_valid": false,
+    "san": [
+      "*.ma-lumiere.in",
+      "ma-lumiere.in",
+      "ma-lumiere.in.ronakfire.com",
+      "www.ma-lumiere.in.ronakfire.com"
+    ],
+    "san_count": 4,
+    "covers_host": true,
+    "sibling_host": "www.ma-lumiere.in",
+    "covers_sibling": true,
+    "protocol": "TLSv1.3",
+    "cipher": "TLS_AES_256_GCM_SHA384",
+    "cipher_bits": 256
+  },
+  "headers": {
+    "url": "https://ma-lumiere.in/",
+    "status": 200,
+    "https": true,
+    "hsts": {
+      "present": false,
+      "value": null,
+      "max_age": null,
+      "include_subdomains": false,
+      "preload": false,
+      "meets_preload_requirements": false,
+      "preload_gaps": [
+        "No Strict-Transport-Security header."
+      ],
+      "preload_scope_note": "Covers the header directives, the certificate and the same-host HTTP redirect when those sections ran. Not checked: that every subdomain serves HTTPS, and that this host is the registrable domain the preload list requires.",
+      "issues": [
+        "Strict-Transport-Security was not sent."
+      ]
+    },
+    "csp": {
+      "present": false,
+      "report_only": false,
+      "policies": 0,
+      "issues": [
+        "Content-Security-Policy was not sent."
+      ]
+    },
+    "x_content_type_options": {
+      "present": false,
+      "value": null,
+      "ok": false
+    },
+    "framing": {
+      "x_frame_options": null,
+      "frame_ancestors": false,
+      "ok": false
+    },
+    "referrer_policy": {
+      "present": false,
+      "value": null,
+      "ok": false
+    },
+    "permissions_policy": {
+      "present": false,
+      "feature_policy_present": false
+    },
+    "cookies": []
+  },
+  "redirects": {
+    "http_to_https": {
+      "checked_url": "http://ma-lumiere.in/",
+      "redirects_to_https": true,
+      "one_hop": true,
+      "first_hop_status": 301,
+      "first_hop_target": "https://ma-lumiere.in/",
+      "first_hop_same_host": true,
+      "permanent": true,
+      "hops": 1,
+      "final_url": "https://ma-lumiere.in/",
+      "error": null
+    },
+    "www": {
+      "host": "ma-lumiere.in",
+      "sibling_host": "www.ma-lumiere.in",
+      "host_final_url": "https://ma-lumiere.in/",
+      "sibling_final_url": "https://ma-lumiere.in/",
+      "sibling_resolves": true,
+      "sibling_tls_error": false,
+      "same_final_url": true,
+      "error": null
+    }
+  },
+  "findings": [
+    {
+      "id": "hsts-missing",
+      "severity": "Medium",
+      "message": "The HTTPS response does not send a Strict-Transport-Security header.",
+      "evidence": {}
+    },
+    {
+      "id": "csp-missing",
+      "severity": "Low",
+      "message": "No Content-Security-Policy header is sent.",
+      "evidence": {}
+    },
+    {
+      "id": "nosniff-missing",
+      "severity": "Low",
+      "message": "X-Content-Type-Options is not set to nosniff.",
+      "evidence": {
+        "value": null
+      }
+    },
+    {
+      "id": "clickjacking-protection-missing",
+      "severity": "Low",
+      "message": "The effective response headers do not restrict framing to specific origins.",
+      "evidence": {
+        "x_frame_options": null
+      }
+    },
+    {
+      "id": "referrer-policy-missing",
+      "severity": "Info",
+      "message": "No Referrer-Policy header is sent, so the browser default applies.",
+      "evidence": {}
+    },
+    {
+      "id": "permissions-policy-missing",
+      "severity": "Info",
+      "message": "No Permissions-Policy header is sent.",
+      "evidence": {}
+    }
+  ],
+  "summary": {
+    "Critical": 0,
+    "High": 0,
+    "Medium": 1,
+    "Low": 3,
+    "Info": 2,
+    "total": 6
+  }
+}

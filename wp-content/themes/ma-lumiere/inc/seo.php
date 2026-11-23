@@ -16,10 +16,105 @@ add_action( 'wp_head', 'ml_seo_head', 1 );
 add_action( 'wp_head', 'ml_organization_schema', 2 );
 add_action( 'wp_head', 'ml_meta_description', 3 );
 add_action( 'wp_head', 'ml_article_schema', 4 );
+add_action( 'wp_head', 'ml_webpage_schema', 5 );
+add_action( 'wp_head', 'ml_canonical_and_robots', 6 );
 add_filter( 'document_title_separator', 'ml_title_separator' );
+add_filter( 'document_title_parts', 'ml_document_title_parts' );
+
+if ( ! ml_has_seo_plugin() ) {
+	remove_action( 'wp_head', 'rel_canonical' );
+}
 
 /**
- * Organization schema on the front page (MedicalClinic subtype).
+ * Use saved per-page SEO titles when present.
+ *
+ * @param array $parts Document title parts.
+ * @return array
+ */
+function ml_document_title_parts( $parts ) {
+	if ( ml_has_seo_plugin() || ! is_singular() ) {
+		return $parts;
+	}
+	$custom = trim( (string) get_post_meta( get_queried_object_id(), '_ml_seo_title', true ) );
+	if ( '' !== $custom ) {
+		$parts['title'] = wp_strip_all_tags( wp_specialchars_decode( $custom, ENT_QUOTES ) );
+		unset( $parts['page'], $parts['tagline'], $parts['site'] );
+	}
+	return $parts;
+}
+
+/**
+ * Canonical URL for the current view.
+ *
+ * Thin treatment-category archives canonicalise to their richer treatment
+ * pages (or the treatments hub for the broad miscellaneous category).
+ *
+ * @return string
+ */
+function ml_canonical_url() {
+	if ( is_front_page() ) {
+		return home_url( '/' );
+	}
+
+	if ( is_tax( 'treatment_category' ) ) {
+		$term = get_queried_object();
+		if ( $term && isset( $term->slug ) ) {
+			$map = array(
+				'acne-acne-scars' => '/treatment/acne-acne-scars/',
+				'hair-loss-hair-thinning' => '/treatment/hair-loss-hair-thinning/',
+				'healthy-aging-skin-rejuvenation' => '/treatment/healthy-aging-skin-rejuvenation/',
+				'injectables-facial-contouring' => '/treatment/injectables-facial-contouring/',
+				'laser-hair-reduction' => '/treatment/laser-hair-reduction/',
+				'laser-tattoo-removal' => '/treatment/laser-tattoo-removal/',
+				'pigmentation-uneven-skin-tone' => '/treatment/pigmentation-uneven-skin-tone/',
+				'pre-wedding-skin-preparation' => '/treatment/pre-wedding-skin-preparation/',
+			);
+			if ( isset( $map[ $term->slug ] ) ) {
+				return home_url( $map[ $term->slug ] );
+			}
+			return ml_page_url_by_template( 'page-templates/page-treatments.php', home_url( '/treatments/' ) );
+		}
+	}
+
+	if ( is_singular() ) {
+		return get_permalink();
+	}
+
+	if ( is_home() && ! is_front_page() ) {
+		$page_for_posts = (int) get_option( 'page_for_posts' );
+		return $page_for_posts ? get_permalink( $page_for_posts ) : home_url( '/blog/' );
+	}
+
+	if ( is_category() || is_tag() || is_tax() || is_post_type_archive() || is_author() ) {
+		return home_url( add_query_arg( array(), $GLOBALS['wp']->request ) );
+	}
+
+	return '';
+}
+
+/**
+ * Print canonical and robots directives.
+ *
+ * @return void
+ */
+function ml_canonical_and_robots() {
+	if ( ml_has_seo_plugin() ) {
+		return;
+	}
+
+	$canonical = ml_canonical_url();
+	if ( $canonical ) {
+		printf( '<link rel="canonical" href="%s" />' . "\n", esc_url( $canonical ) );
+	}
+
+	$noindex = is_search() || is_404() || is_tax( 'treatment_category' );
+	if ( $noindex ) {
+		echo '<meta name="robots" content="noindex,follow,max-image-preview:large" />' . "\n";
+	}
+}
+
+/**
+ * Organization and website schema on the front page.
  */
 function ml_organization_schema() {
 	if ( ! is_front_page() ) {
@@ -30,34 +125,74 @@ function ml_organization_schema() {
 	$url     = home_url( '/' );
 	$logo_id = (int) get_theme_mod( 'custom_logo' );
 	$logo    = $logo_id ? wp_get_attachment_image_url( $logo_id, 'full' ) : ml_default_logo_url();
-	$phone   = ml_clinic_phone();
+	$phone   = ml_clinic_phone_href() ? ml_clinic_phone_href() : ml_clinic_phone();
 	$email   = ml_clinic_email();
 	$address = ml_clinic_address();
+	$same_as = array_values( array_filter( array_map( 'esc_url_raw', ml_social_links() ) ) );
+	$gbp     = ml_clinic_gbp_url();
+	if ( $gbp ) {
+		$same_as[] = $gbp;
+	}
+	$same_as = array_values( array_unique( array_filter( $same_as ) ) );
 
-	$schema = array(
-		'@context' => 'https://schema.org',
-		'@type'    => array( 'MedicalClinic', 'HealthAndBeautyBusiness' ),
-		'name'     => $name,
-		'url'      => $url,
+	$clinic = array(
+		'@context'    => 'https://schema.org',
+		'@type'       => array( 'MedicalClinic', 'LocalBusiness' ),
+		'@id'         => $url . '#clinic',
+		'name'        => $name,
+		'url'         => $url,
+		'description' => __( 'Medical skin and aesthetic care clinic in Mira Road East, Maharashtra.', 'ma-lumiere' ),
+		'telephone'   => $phone,
+		'email'       => $email,
+		'address'     => array(
+			'@type'           => 'PostalAddress',
+			'streetAddress'   => $address,
+			'addressLocality' => 'Mira Road East',
+			'addressRegion'   => 'Maharashtra',
+			'postalCode'      => '401105',
+			'addressCountry'  => 'IN',
+		),
+		'areaServed'  => array(
+			array( '@type' => 'Place', 'name' => 'Mira Road East' ),
+			array( '@type' => 'Place', 'name' => 'Bhayander' ),
+			array( '@type' => 'Place', 'name' => 'Western Railway corridor, Mumbai Metropolitan Region' ),
+		),
+		'hasMap'      => ml_clinic_directions_url(),
 	);
 
 	if ( $logo ) {
-		$schema['logo'] = $logo;
+		$clinic['logo']  = $logo;
+		$clinic['image'] = $logo;
 	}
-	if ( $phone ) {
-		$schema['telephone'] = $phone;
-	}
-	if ( $email ) {
-		$schema['email'] = $email;
-	}
-	if ( $address && '[CLINIC ADDRESS REQUIRED]' !== $address ) {
-		$schema['address'] = array(
-			'@type'    => 'PostalAddress',
-			'streetAddress' => $address,
-		);
+	if ( $same_as ) {
+		$clinic['sameAs'] = $same_as;
 	}
 
-	echo '<script type="application/ld+json">' . wp_json_encode( $schema ) . '</script>' . "\n"; // phpcs:ignore
+	$website = array(
+		'@context'   => 'https://schema.org',
+		'@type'      => 'WebSite',
+		'@id'        => $url . '#website',
+		'url'        => $url,
+		'name'       => $name,
+		'publisher'  => array( '@id' => $url . '#clinic' ),
+		'inLanguage' => 'en-IN',
+	);
+
+	echo '<script type="application/ld+json">' . wp_json_encode( $clinic, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE | JSON_HEX_TAG ) . '</script>' . "\n"; // phpcs:ignore
+	echo '<script type="application/ld+json">' . wp_json_encode( $website, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE | JSON_HEX_TAG ) . '</script>' . "\n"; // phpcs:ignore
+
+	$doctor_name = trim( (string) ml_doctor_name() );
+	if ( $doctor_name ) {
+		$person = array(
+			'@context'  => 'https://schema.org',
+			'@type'     => 'Person',
+			'@id'       => $url . '#aesthetic-physician',
+			'name'      => wp_specialchars_decode( $doctor_name, ENT_QUOTES ),
+			'jobTitle'  => 'Aesthetic Physician',
+			'worksFor'  => array( '@id' => $url . '#clinic' ),
+		);
+		echo '<script type="application/ld+json">' . wp_json_encode( $person, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE | JSON_HEX_TAG ) . '</script>' . "\n"; // phpcs:ignore
+	}
 }
 
 /**
@@ -65,7 +200,8 @@ function ml_organization_schema() {
  */
 function ml_seo_head() {
 	if ( ! ml_has_seo_plugin() ) {
-		$image = get_option( 'site_logo' ) ? wp_get_attachment_image_url( get_option( 'site_logo' ), 'full' ) : '';
+		$logo_id = (int) get_theme_mod( 'custom_logo' );
+		$image   = $logo_id ? wp_get_attachment_image_url( $logo_id, 'full' ) : ml_default_logo_url();
 		if ( ! $image && is_singular() && has_post_thumbnail() ) {
 			$image = get_the_post_thumbnail_url( null, 'large' );
 		}
@@ -109,13 +245,20 @@ function ml_meta_description() {
 
 	$description = '';
 
-	if ( is_front_page() ) {
+	if ( is_singular() ) {
+		$description = trim( (string) get_post_meta( get_queried_object_id(), '_ml_seo_description', true ) );
+	}
+
+	if ( ! $description && is_front_page() ) {
 		$description = __( 'Ma Lumière is a medical and aesthetic skin clinic in Mira Road East, Mumbai, offering personalised treatments for skin, hair, and ageing concerns.', 'ma-lumiere' );
 	} elseif ( is_home() && ! is_front_page() ) {
 		$description = __( 'Skin knowledge from Ma Lumière in Mira Road East, Mumbai: practical guides to skin treatments, consultations, and aftercare.', 'ma-lumiere' );
 	} elseif ( is_singular() ) {
 		$post_id     = get_queried_object_id();
-		$description = get_the_excerpt( $post_id );
+		$description = trim( (string) get_post_meta( $post_id, '_ml_seo_description', true ) );
+		if ( ! $description ) {
+			$description = get_the_excerpt( $post_id );
+		}
 
 		if ( ! $description ) {
 			$description = wp_trim_words(
@@ -158,6 +301,62 @@ function ml_meta_description() {
 	printf( '<meta name="description" content="%1$s"/>' . "\n", $description );
 	printf( '<meta property="og:description" content="%1$s"/>' . "\n", $description );
 	printf( '<meta name="twitter:description" content="%1$s"/>' . "\n", $description );
+}
+
+/**
+ * WebPage and Service schema for singular content.
+ *
+ * @return void
+ */
+function ml_webpage_schema() {
+	if ( ml_has_seo_plugin() || ! is_singular() ) {
+		return;
+	}
+
+	$id          = get_queried_object_id();
+	$url         = get_permalink( $id );
+	$description = wp_strip_all_tags( wp_specialchars_decode( (string) get_the_excerpt( $id ), ENT_QUOTES ) );
+	if ( '' === $description ) {
+		$description = wp_trim_words( wp_strip_all_tags( (string) get_post_field( 'post_content', $id ) ), 32, '…' );
+	}
+
+	$webpage = array(
+		'@context'    => 'https://schema.org',
+		'@type'       => 'WebPage',
+		'@id'         => $url . '#webpage',
+		'url'         => $url,
+		'name'        => wp_strip_all_tags( wp_specialchars_decode( get_the_title( $id ), ENT_QUOTES ) ),
+		'description' => $description,
+		'isPartOf'    => array( '@id' => home_url( '/' ) . '#website' ),
+		'about'       => array( '@id' => home_url( '/' ) . '#clinic' ),
+		'inLanguage'  => 'en-IN',
+	);
+
+	if ( has_post_thumbnail( $id ) ) {
+		$webpage['primaryImageOfPage'] = array(
+			'@type' => 'ImageObject',
+			'url'   => get_the_post_thumbnail_url( $id, 'large' ),
+		);
+	}
+
+	echo '<script type="application/ld+json">' . wp_json_encode( $webpage, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE | JSON_HEX_TAG ) . '</script>' . "\n"; // phpcs:ignore
+
+	if ( 'ml_treatment' === get_post_type( $id ) ) {
+		$service = array(
+			'@context'     => 'https://schema.org',
+			'@type'        => 'Service',
+			'@id'          => $url . '#service',
+			'name'         => $webpage['name'],
+			'description'  => $description,
+			'url'          => $url,
+			'provider'     => array( '@id' => home_url( '/' ) . '#clinic' ),
+			'areaServed'   => array(
+				array( '@type' => 'Place', 'name' => 'Mira Road East' ),
+				array( '@type' => 'Place', 'name' => 'Mira-Bhayander' ),
+			),
+		);
+		echo '<script type="application/ld+json">' . wp_json_encode( $service, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE | JSON_HEX_TAG ) . '</script>' . "\n"; // phpcs:ignore
+	}
 }
 
 /**

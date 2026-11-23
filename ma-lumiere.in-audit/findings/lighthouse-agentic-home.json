@@ -1,0 +1,14 @@
+﻿{
+  "results": [
+    {
+      "source": "psi-mobile",
+      "requested_url": "https://ma-lumiere.in/",
+      "error": "PSI returned HTTP 429: Quota exceeded for quota metric 'Queries' and limit 'Queries per day' of service 'pagespeedonline.googleapis.com' for consumer 'project_number:583797351490'. Configure a Google API key (see /seo google setup)."
+    },
+    {
+      "source": "psi-desktop",
+      "requested_url": "https://ma-lumiere.in/",
+      "error": "PSI returned HTTP 429: Quota exceeded for quota metric 'Queries' and limit 'Queries per day' of service 'pagespeedonline.googleapis.com' for consumer 'project_number:583797351490'. Configure a Google API key (see /seo google setup)."
+    }
+  ]
+}
